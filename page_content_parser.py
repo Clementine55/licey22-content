@@ -242,14 +242,22 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
         if is_hidden(node):
             return ""
 
-        # --- НОВОЕ: ВЫТАСКИВАЕМ ПОЧТУ ИЗ КАРТИНОК ---
+        # --- ВЫТАСКИВАЕМ ПОЧТУ ИЗ КАРТИНОК УМНЕЕ ---
         if node.name == "img":
-            # На сайте Nubex почты сделаны картинками, а сам адрес лежит в title или alt
             title = node.get("title", "").strip()
             alt = node.get("alt", "").strip()
-            return title or alt or ""
+            if title or alt:
+                return title or alt
+            
+            # Если title и alt пустые, проверяем src (иногда адрес зашит в имя файла картинки)
+            src = node.get("src", "")
+            if "email" in src.lower() or "mail" in src.lower():
+                # Возвращаем общую заглушку или пытаемся расшифровать, 
+                # но для безопасности лучше написать "Электронная почта" или дать догадку
+                return "[посмотреть на старом сайте]" 
+            return ""
 
-        # СОХРАНЯЕМ ПЕРЕНОСЫ СТРОК И АБЗАЦЫ
+        # --- СОХРАНЯЕМ ПЕРЕНОСЫ СТРОК И АБЗАЦЫ ---
         if node.name == "br":
             return "\n"
         if node.name in ("p", "div"):
@@ -271,7 +279,13 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
                 return inner
             full_url = urljoin(page_url, href) if page_url else href
             return f"[{inner}]({full_url})" if inner else ""
+            
         return "".join(collect(c) for c in node.children)
+
+    text = "".join(collect(c) for c in tag.children)
+    text = re.sub(r"[ \t]+", " ", text)
+    text = re.sub(r"\n\s*\n", "\n", text).strip()
+    return text
 
 
 def extract_table(table: Tag, page_url: str) -> dict:
