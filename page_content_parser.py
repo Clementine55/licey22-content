@@ -235,10 +235,18 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
     взять их текст как есть. Нужно, когда мы уже отдельно строим "file"-блок
     из этого же тега и не хотим задвоенную markdown-ссылку внутри подписи."""
 
+    def is_hidden(node: Tag) -> bool:
+        style = (node.get("style") or "").replace(" ", "").lower()
+        return "display:none" in style
+
     def collect(node) -> str:
         if isinstance(node, NavigableString):
             return str(node)
         if not isinstance(node, Tag):
+            return ""
+        if is_hidden(node):
+            # напр. <span style="display:none">Не указан</span> — на старом
+            # сайте это скрытая заглушка, показывать её на новом не нужно
             return ""
         if node.name == "br":
             return " "
@@ -263,6 +271,43 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
     # схлопываем пробелы/переносы, как это делает get_text(" ", strip=True)
     text = re.sub(r"\s+", " ", text).strip()
     return text
+
+
+def extract_table(table: Tag, page_url: str) -> dict:
+    """Разбирает <table> в блок {"type": "table", "headers": [...], "rows": [...]}.
+    Строка с одной ячейкой на colspan (частый паттерн — жирный подзаголовок
+    разбивающий таблицу на группы, напр. "Структурные подразделения...")
+    помечается отдельно (span_all), чтобы на Тильде её можно было отрисовать
+    протянутой на всю ширину, а не сикось-накось по колонкам."""
+    headers = []
+    thead = table.find("thead")
+    if thead:
+        for th in thead.find_all(["th", "td"]):
+            headers.append(render_inline_text(th, page_url))
+
+    if thead:
+        thead_tr_ids = {id(tr) for tr in thead.find_all("tr")}
+    else:
+        thead_tr_ids = set()
+
+    tbody = table.find("tbody")
+    trs = tbody.find_all("tr", recursive=False) if tbody else [
+        tr for tr in table.find_all("tr") if id(tr) not in thead_tr_ids
+    ]
+
+    rows = []
+    for tr in trs:
+        cells = tr.find_all(["td", "th"], recursive=False)
+        if not cells:
+            continue
+        if len(cells) == 1 and cells[0].has_attr("colspan"):
+            text = render_inline_text(cells[0], page_url)
+            if text:
+                rows.append({"span_all": True, "text": text})
+            continue
+        rows.append({"span_all": False, "cells": [render_inline_text(c, page_url) for c in cells]})
+
+    return {"type": "table", "headers": headers, "rows": rows}
 
 
 def extract_blocks(soup: BeautifulSoup, page_url: str):
@@ -366,10 +411,17 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
                 blocks.append({"type": "list", "items": items})
             continue
 
-        if node.name == "div" and node.find(["p", "div", "ul", "ol"]):
-            # это просто обёртка (внутри есть другие блоковые теги) —
-            # не разбираем её целиком, дадим дойти обходу до вложенных
-            # <p>/<div>/<ul> по отдельности, иначе рискуем задвоить файлы
+        if node.name == "table":
+            table_block = extract_table(node, page_url)
+            if table_block["headers"] or table_block["rows"]:
+                blocks.append(table_block)
+            mark_seen_recursive(node)
+            continue
+
+        if node.name == "div" and node.find(["p", "div", "ul", "ol", "table"]):
+            # это просто обёртка (внутри есть другие блоковые теги, в т.ч.
+            # таблица) — не разбираем её целиком, дадим дойти обходу до
+            # вложенных тегов по отдельности, иначе рискуем задвоить файлы
             continue
 
         if node.name in ("p", "div"):
@@ -429,6 +481,15 @@ def blocks_to_markdown(page_title: str, page_url: str, blocks) -> str:
             lines.append("**Подстраницы раздела:**")
             for item in b["items"]:
                 lines.append(f"- [{item['title']}]({item['url']})")
+        elif b["type"] == "table":
+            if b["headers"]:
+                lines.append("| " + " | ".join(b["headers"]) + " |")
+                lines.append("|" + "|".join(["---"] * len(b["headers"])) + "|")
+            for row in b["rows"]:
+                if row.get("span_all"):
+                    lines.append(f"**{row['text']}**")
+                else:
+                    lines.append("| " + " | ".join(c.replace("|", "\\|") for c in row["cells"]) + " |")
         lines.append("")
     return "\n".join(lines)
 
