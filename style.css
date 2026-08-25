@@ -17,7 +17,7 @@
     overflow: hidden; /* Обрезает прямые углы таблицы */
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 0 0 1px #e2e8f0; /* Внешняя рамка-тень */
 }
-.lc22-table { width: 100%; border-collapse: collapse; border-style: hidden; text-align: left; background: #ffffff; font-size: 15px; }
+.lc22-table { width: 100%; border-collapse: collapse; border-style: hidden; text-align: left; background: #ffffff; font-size: 14px; }
 .lc22-table th, .lc22-table td { border: 1px solid #e2e8f0; padding: 12px 16px; vertical-align: top; }
 .lc22-table th { background: #f8fafc; font-weight: 600; color: #334155; }
 .lc22-table td.lc22-colspan { background: #f1f5f9; font-weight: 600; text-align: center; }
@@ -39,5 +39,5 @@
 .lc22-file-content { flex-grow: 1; }
 .lc22-file-title { font-size: 16px; font-weight: 500; color: #1f5bff; text-decoration: none; line-height: 1.4; display: block; }
 .lc22-file-title:hover { color: #0044ff; text-decoration: underline; }
-.lc22-status { font-size: 15px; color: #64748b; padding: 20px 0; }
+.lc22-status { font-size: 14px; color: #64748b; padding: 20px 0; }
 .lc22-error { color: #b91c1c; background: #fef2f2; padding: 16px; border-radius: 8px; border: 1px solid #fecaca; }
