@@ -312,6 +312,9 @@ _https://лицей22.рф/sveden/document/_
 📎 [Перечень закупок СМП 2026.xlsx
 (18 КБ)](https://лицей22.рф/_/static/r1.nubex.ru/s139249-bd6/f9223_b4/%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%20%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BE%D0%BA%20%D0%A1%D0%9C%D0%9F%202026.xlsx) (xlsx)
 
+- [base64.txt](https://лицей22.рф/_/static/r1.nubex.ru/s139249-bd6/f9881_5c/base64.txt)
+(1,3 МБ)
+
 ##### 2025
 
 📎 [Перечень закупок 2025 СМП.xlsx
