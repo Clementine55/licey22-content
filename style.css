@@ -9,25 +9,30 @@
 .lc22-dynamic-content a { color: #2563eb; text-decoration: none; transition: color 0.2s; }
 .lc22-dynamic-content a:hover { color: #1d4ed8; text-decoration: underline; }
 
-/* Таблицы с закруглениями */
+/* --- ОБНОВЛЕННЫЕ ТАБЛИЦЫ --- */
 .lc22-table-wrapper { 
     width: 100%; 
     margin: 24px 0; 
-    border-radius: 8px; /* Закругление */
-    overflow: hidden; /* Обрезает прямые углы таблицы */
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 0 0 1px #e2e8f0; /* Внешняя рамка-тень */
+    border-radius: 8px; 
+    overflow: hidden; 
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 0 0 1px #e2e8f0; 
+    overflow-x: visible !important; /* Убиваем прокрутку на ПК */
 }
-.lc22-table { width: 100%; border-collapse: collapse; border-style: hidden; text-align: left; background: #ffffff; font-size: 14px; }
-.lc22-table th, .lc22-table td { border: 1px solid #e2e8f0; padding: 12px 16px; vertical-align: top; }
-.lc22-table th { background: #f8fafc; font-weight: 600; color: #334155; }
-.lc22-table td.lc22-colspan { background: #f1f5f9; font-weight: 600; text-align: center; }
+.lc22-table { width: 100%; border-collapse: collapse; border-style: hidden; background: #ffffff; font-size: 14px; line-height: 1.5; }
+.lc22-table th, .lc22-table td { border: 1px solid #e2e8f0; padding: 12px 16px; vertical-align: middle; overflow-wrap: break-word; }
+.lc22-table th { background: #f8fafc; font-weight: 600; color: #334155; text-align: center; }
 
-/* Прокрутка таблиц только для мобильных */
+/* Центрируем всё, кроме первой колонки */
+.lc22-table td { text-align: center; }
+.lc22-table td:first-child { text-align: left; }
+.lc22-table td.lc22-colspan { background: #f1f5f9; font-weight: 600; text-align: center !important; }
+
+/* Прокрутка таблиц ЖЕСТКО включается только на мобильных */
 @media (max-width: 768px) {
     .lc22-table-wrapper { overflow-x: auto !important; }
 }
 
-/* Файлы */
+/* --- ОБНОВЛЕННЫЕ ФАЙЛЫ --- */
 .lc22-file-group { padding: 0; margin: 0 0 24px 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .lc22-file-card { display: flex; align-items: center; padding: 12px 16px; background: #f8f9fa; border-radius: 8px; border: 1px solid #eaedf0; transition: all 0.2s ease; }
 .lc22-file-card:hover { background: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.06); transform: translateY(-1px); border-color: #cbd5e1; }
@@ -37,7 +42,7 @@
 .lc22-icon-xls { background: #dcfce7; color: #16a34a; }
 .lc22-icon-def { background: #e2e8f0; color: #475569; }
 .lc22-file-content { flex-grow: 1; }
-.lc22-file-title { font-size: 16px; font-weight: 500; color: #1f5bff; text-decoration: none; line-height: 1.4; display: block; }
+.lc22-file-title { font-size: 16px; font-weight: 500; color: #1f5bff; text-decoration: none; line-height: 1.4; display: inline; } /* display: inline нужен для красивого переноса серого текста */
 .lc22-file-title:hover { color: #0044ff; text-decoration: underline; }
 .lc22-status { font-size: 14px; color: #64748b; padding: 20px 0; }
 .lc22-error { color: #b91c1c; background: #fef2f2; padding: 16px; border-radius: 8px; border: 1px solid #fecaca; }
