@@ -241,7 +241,14 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
 
         if is_hidden(node):
             return ""
-            
+
+        # --- НОВОЕ: ВЫТАСКИВАЕМ ПОЧТУ ИЗ КАРТИНОК ---
+        if node.name == "img":
+            # На сайте Nubex почты сделаны картинками, а сам адрес лежит в title или alt
+            title = node.get("title", "").strip()
+            alt = node.get("alt", "").strip()
+            return title or alt or ""
+
         # СОХРАНЯЕМ ПЕРЕНОСЫ СТРОК И АБЗАЦЫ
         if node.name == "br":
             return "\n"
@@ -266,13 +273,6 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
             return f"[{inner}]({full_url})" if inner else ""
         return "".join(collect(c) for c in node.children)
 
-    text = "".join(collect(c) for c in tag.children)
-    # Схлопываем только горизонтальные пробелы, но оставляем переносы строк \n
-    text = re.sub(r"[ \t]+", " ", text)
-    # Убираем лишние пустые строки (больше двух подряд)
-    text = re.sub(r"\n\s*\n", "\n", text).strip()
-    return text
-    
 
 def extract_table(table: Tag, page_url: str) -> dict:
     """Разбирает <table> в блок {"type": "table", "headers": [...], "rows": [...]}.
