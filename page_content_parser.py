@@ -244,10 +244,11 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
             return str(node)
         if not isinstance(node, Tag):
             return ""
-        if is_hidden(node):
-            # напр. <span style="display:none">Не указан</span> — на старом
-            # сайте это скрытая заглушка, показывать её на новом не нужно
+            
+        # Пропускаем узел ТОЛЬКО если его текст — это системная заглушка
+        if node.get_text(strip=True).lower() in ["не указан", "не указаны"]:
             return ""
+
         if node.name == "br":
             return " "
         if node.name in BOLD_TAGS:
