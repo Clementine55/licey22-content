@@ -242,19 +242,24 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
         if is_hidden(node):
             return ""
 
-        # --- ВЫТАСКИВАЕМ ПОЧТУ ИЗ КАРТИНОК УМНЕЕ ---
+        # --- ВЫТАСКИВАЕМ ПОЧТУ ИЗ КАРТИНОК ИЛИ ССЫЛОК MAILTO ---
         if node.name == "img":
             title = node.get("title", "").strip()
             alt = node.get("alt", "").strip()
             if title or alt:
                 return title or alt
             
-            # Если title и alt пустые, проверяем src (иногда адрес зашит в имя файла картинки)
+            # Проверяем, нет ли рядом ссылки с mailto:
+            parent_a = node.find_parent("a")
+            if parent_a and parent_a.get("href", "").startswith("mailto:"):
+                return parent_a["href"].replace("mailto:", "").strip()
+                
+            # Если это картинка-почта от Nubex, забираем имя файла из src 
+            # (иногда там хранится зашифрованный хвост, но проверим параметры)
             src = node.get("src", "")
             if "email" in src.lower() or "mail" in src.lower():
-                # Возвращаем общую заглушку или пытаемся расшифровать, 
-                # но для безопасности лучше написать "Электронная почта" или дать догадку
-                return "[посмотреть на старом сайте]" 
+                # Пробуем вытащить параметры из URL картинки, если они там есть
+                return f"[Почта скрыта в картинке: {src.split('/')[-1]}]"
             return ""
 
         # --- СОХРАНЯЕМ ПЕРЕНОСЫ СТРОК И АБЗАЦЫ ---
