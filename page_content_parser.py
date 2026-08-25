@@ -226,15 +226,6 @@ ITALIC_TAGS = {"i", "em"}
 
 
 def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) -> str:
-    """Собирает текст внутри тега, сохраняя:
-    - жирный/курсивный текст как **bold** / *italic*
-    - обычные гиперссылки (не файлы) как [текст](url) — раньше они
-      просто теряли href и превращались в невзрачный текст.
-
-    plain_links=True — не оборачивать ссылки в markdown-разметку, а просто
-    взять их текст как есть. Нужно, когда мы уже отдельно строим "file"-блок
-    из этого же тега и не хотим задвоенную markdown-ссылку внутри подписи."""
-
     def is_hidden(node: Tag) -> bool:
         style = (node.get("style") or "").replace(" ", "").lower()
         return "display:none" in style
@@ -245,12 +236,19 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
         if not isinstance(node, Tag):
             return ""
             
-        # Пропускаем узел ТОЛЬКО если его текст — это системная заглушка
         if node.get_text(strip=True).lower() in ["не указан", "не указаны"]:
             return ""
 
+        if is_hidden(node):
+            return ""
+            
+        # СОХРАНЯЕМ ПЕРЕНОСЫ СТРОК И АБЗАЦЫ
         if node.name == "br":
-            return " "
+            return "\n"
+        if node.name in ("p", "div"):
+            inner = "".join(collect(c) for c in node.children).strip()
+            return f"\n{inner}\n" if inner else ""
+            
         if node.name in BOLD_TAGS:
             inner = "".join(collect(c) for c in node.children).strip()
             return f"**{inner}**" if inner else ""
@@ -269,10 +267,12 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
         return "".join(collect(c) for c in node.children)
 
     text = "".join(collect(c) for c in tag.children)
-    # схлопываем пробелы/переносы, как это делает get_text(" ", strip=True)
-    text = re.sub(r"\s+", " ", text).strip()
+    # Схлопываем только горизонтальные пробелы, но оставляем переносы строк \n
+    text = re.sub(r"[ \t]+", " ", text)
+    # Убираем лишние пустые строки (больше двух подряд)
+    text = re.sub(r"\n\s*\n", "\n", text).strip()
     return text
-
+    
 
 def extract_table(table: Tag, page_url: str) -> dict:
     """Разбирает <table> в блок {"type": "table", "headers": [...], "rows": [...]}.
