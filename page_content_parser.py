@@ -88,6 +88,13 @@ HEADERS = {"User-Agent": USER_AGENT}
 
 OUTPUT_DIR = Path("pages_content")
 
+# Загружаем словарь почт из внешнего файла
+EMAILS_MAP_FILE = Path("emails_map.json")
+if EMAILS_MAP_FILE.exists():
+    EMAIL_MAP = json.loads(EMAILS_MAP_FILE.read_text(encoding="utf-8"))
+else:
+    EMAIL_MAP = {}
+
 # Сессия requests с ОТКЛЮЧЕННЫМИ скрытыми повторами urllib3. Без этого при
 # сетевых сбоях (обрывы SSL и т.п.) urllib3 внутри себя молча повторяет
 # запрос по несколько раз перед тем как вернуть ошибку — снаружи это
@@ -242,24 +249,31 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
         if is_hidden(node):
             return ""
 
-        # --- ВЫТАСКИВАЕМ ПОЧТУ ИЗ КАРТИНОК ИЛИ ССЫЛОК MAILTO ---
+        # --- ВЫТАСКИВАЕМ ПОЧТУ ИЗ КАРТИНОК ---
         if node.name == "img":
             title = node.get("title", "").strip()
             alt = node.get("alt", "").strip()
             if title or alt:
                 return title or alt
-            
-            # Проверяем, нет ли рядом ссылки с mailto:
-            parent_a = node.find_parent("a")
-            if parent_a and parent_a.get("href", "").startswith("mailto:"):
-                return parent_a["href"].replace("mailto:", "").strip()
-                
-            # Если это картинка-почта от Nubex, забираем имя файла из src 
-            # (иногда там хранится зашифрованный хвост, но проверим параметры)
+
             src = node.get("src", "")
             if "email" in src.lower() or "mail" in src.lower():
-                # Пробуем вытащить параметры из URL картинки, если они там есть
-                return f"[Почта скрыта в картинке: {src.split('/')[-1]}]"
+                from urllib.parse import urlparse
+                query = urlparse(src).query
+                if query:
+                    key = "?" + query
+                    # Если почта есть в словаре и не пустая — возвращаем её
+                    if key in EMAIL_MAP and EMAIL_MAP[key]:
+                        return EMAIL_MAP[key]
+                    else:
+                        # Автоматически добавляем новую абракадабру в файл, чтобы вам было удобно её заполнить
+                        if key not in EMAIL_MAP:
+                            EMAIL_MAP[key] = ""
+                            EMAILS_MAP_FILE.write_text(json.dumps(EMAIL_MAP, ensure_ascii=False, indent=2), encoding="utf-8")
+                            print(f"\n[ВНИМАНИЕ] Найдена новая зашифрованная почта: {key}")
+                            print(f"Она добавлена в файл {EMAILS_MAP_FILE.name}. Впишите туда адрес и перезапустите скрипт!")
+                        
+                        return f"[НЕИЗВЕСТНАЯ ПОЧТА: {key}]"
             return ""
 
         # --- СОХРАНЯЕМ ПЕРЕНОСЫ СТРОК И АБЗАЦЫ ---
