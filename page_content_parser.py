@@ -308,29 +308,27 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
 
 
 def extract_table(table: Tag, page_url: str) -> dict:
-    """Разбирает <table> в блок {"type": "table", "headers": [...], "rows": [...]}.
-    Строка с одной ячейкой на colspan (частый паттерн — жирный подзаголовок
-    разбивающий таблицу на группы, напр. "Структурные подразделения...")
-    помечается отдельно (span_all), чтобы на Тильде её можно было отрисовать
-    протянутой на всю ширину, а не сикось-накось по колонкам."""
     headers = []
-    thead = table.find("thead")
-    if thead:
-        for th in thead.find_all(["th", "td"]):
-            headers.append(render_inline_text(th, page_url))
-
-    if thead:
-        thead_tr_ids = {id(tr) for tr in thead.find_all("tr")}
-    else:
-        thead_tr_ids = set()
-
-    tbody = table.find("tbody")
-    trs = tbody.find_all("tr", recursive=False) if tbody else [
-        tr for tr in table.find_all("tr") if id(tr) not in thead_tr_ids
-    ]
-
     rows = []
-    for tr in trs:
+    
+    # Берем вообще все строки, игнорируя кривые thead/tbody старого сайта
+    trs = table.find_all("tr")
+    if not trs:
+        return {"type": "table", "headers": [], "rows": []}
+        
+    first_tr = trs[0]
+    first_cells = first_tr.find_all(["th", "td"], recursive=False)
+    
+    # Если в первой строке есть хотя бы один <th> или таблица имеет <thead...>, считаем первую строку шапкой
+    is_first_row_th = any(c.name == "th" for c in first_cells)
+    
+    start_idx = 0
+    if is_first_row_th or table.find("thead"):
+        headers = [render_inline_text(c, page_url) for c in first_cells]
+        start_idx = 1
+        
+    # Все остальные строки - это тело таблицы
+    for tr in trs[start_idx:]:
         cells = tr.find_all(["td", "th"], recursive=False)
         if not cells:
             continue
