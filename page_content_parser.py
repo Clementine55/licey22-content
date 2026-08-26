@@ -22,7 +22,6 @@ TARGET_ROOTS = [
     "https://архив.лицей22.рф/16451/",
 ]
 
-# Разрешаем парсеру понимать оба домена, но сканировать он будет только архив
 ALLOWED_PAGE_DOMAINS = {
     "архив.лицей22.рф", 
     "xn--80a1acny.xn--22-mlclgj2f.xn--p1ai", 
@@ -49,11 +48,19 @@ HEADERS = {"User-Agent": USER_AGENT}
 
 OUTPUT_DIR = Path("pages_content")
 
+# Загружаем/создаем карту почт
 EMAILS_MAP_FILE = Path("emails_map.json")
 if EMAILS_MAP_FILE.exists():
     EMAIL_MAP = json.loads(EMAILS_MAP_FILE.read_text(encoding="utf-8"))
 else:
     EMAIL_MAP = {}
+
+# Загружаем/создаем карту ссылок (АВТОМАТИЗАЦИЯ!)
+LINK_MAP_FILE = Path("link_map.json")
+if LINK_MAP_FILE.exists():
+    CUSTOM_LINKS = json.loads(LINK_MAP_FILE.read_text(encoding="utf-8"))
+else:
+    CUSTOM_LINKS = {}
 
 _session = requests.Session()
 _adapter = requests.adapters.HTTPAdapter(max_retries=0)
@@ -90,11 +97,54 @@ def get_extension(url: str) -> str:
 def clean_filename(url: str) -> str:
     return unquote(urlparse(url).path.rsplit("/", 1)[-1])
 
-def slugify(url: str) -> str:
-    path = urlparse(url).path.strip("/") or "index"
+# --- ЛОГИКА ГЕНЕРАЦИИ ИДЕАЛЬНЫХ ССЫЛОК ---
+def get_beautiful_path(url: str) -> str:
+    """Генерирует идеальный путь для Тильды из старой ссылки."""
+    path = urlparse(url).path
     path = re.sub(r"\.(html|htm|php)$", "", path, flags=re.IGNORECASE)
-    slug = re.sub(r"[^a-zA-Z0-9_-]+", "_", path)
+    
+    # Наши правила идеальных ссылок (можно дополнять)
+    path = path.replace("/sveden/employees/programs/", "/employees/")
+    path = path.replace("/sveden/education/", "/education/")
+    path = path.replace("/sveden/", "/")
+    
+    # Убираем двойные слэши и хвосты
+    path = re.sub(r"/+", "/", path).rstrip("/")
+    return path or "/index"
+
+def resolve_url(full_url: str) -> str:
+    """Умная подмена ссылки с использованием link_map.json"""
+    parsed = urlparse(full_url)
+    # Приводим к архивному хосту, если ссылка жестко зашита на старый домен
+    if parsed.hostname in ("лицей22.рф", "xn--22-mlclgj2f.xn--p1ai"):
+        full_url = full_url.replace(parsed.hostname, CANONICAL_HOST)
+        parsed = urlparse(full_url)
+        
+    if not is_allowed_page(full_url) or get_extension(full_url) in FILE_EXTENSIONS:
+        return full_url
+
+    # Ключ для словаря — ссылка без якоря и без слэша на конце
+    base_url_key = full_url.split('#')[0].rstrip('/')
+    
+    # Если ссылки еще нет в нашем словаре — генерируем её и сохраняем!
+    if base_url_key not in CUSTOM_LINKS:
+        beautiful_path = get_beautiful_path(base_url_key)
+        CUSTOM_LINKS[base_url_key] = beautiful_path
+        LINK_MAP_FILE.write_text(json.dumps(CUSTOM_LINKS, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"  [+] Добавлена новая красивая ссылка в link_map.json: {beautiful_path}")
+        
+    target_path = CUSTOM_LINKS[base_url_key]
+    
+    if parsed.fragment:
+        return f"{target_path}#{parsed.fragment}"
+    return target_path
+
+def slugify(url: str) -> str:
+    """Имя JSON файла теперь генерируется строго из красивой ссылки."""
+    target_path = resolve_url(url).split('#')[0] 
+    slug = re.sub(r"[^a-zA-Z0-9_-]+", "_", target_path.strip("/"))
     return slug or "index"
+# ----------------------------------------------------
 
 def fetch(url: str):
     start = time.monotonic()
@@ -153,7 +203,6 @@ def discover_section_pages(prefix: str, start_url: str):
             
             full_url = urljoin(url, href)
             
-            # ЗАЩИТА: Если на старом сайте зашита жесткая ссылка на лицей22.рф, меняем ее на архив, чтобы парсер не лез на Тильду
             parsed_url = urlparse(full_url)
             if parsed_url.hostname in ("лицей22.рф", "xn--22-mlclgj2f.xn--p1ai"):
                 full_url = full_url.replace(parsed_url.hostname, CANONICAL_HOST)
@@ -211,7 +260,6 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
                             EMAIL_MAP[key] = ""
                             EMAILS_MAP_FILE.write_text(json.dumps(EMAIL_MAP, ensure_ascii=False, indent=2), encoding="utf-8")
                             print(f"\n[ВНИМАНИЕ] Найдена новая зашифрованная почта: {key}")
-                            print(f"Она добавлена в {EMAILS_MAP_FILE.name}. Впишите адрес и перезапустите скрипт!")
                         return f"[НЕИЗВЕСТНАЯ ПОЧТА: {key}]"
             return ""
 
@@ -238,13 +286,10 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
                 
             full_url = urljoin(page_url, href) if page_url else href
             
-            if is_allowed_page(full_url) and get_extension(full_url) not in FILE_EXTENSIONS:
-                fragment = urlparse(full_url).fragment
-                full_url = "/" + slugify(full_url)
-                if fragment:
-                    full_url += f"#{fragment}"
+            # --- ИСПОЛЬЗУЕМ УМНУЮ МАРШРУТИЗАЦИЮ ИЗ link_map.json ---
+            resolved_url = resolve_url(full_url)
                     
-            return f"[{inner}]({full_url})" if inner else ""
+            return f"[{inner}]({resolved_url})" if inner else ""
             
         return "".join(collect(c) for c in node.children)
 
@@ -298,13 +343,8 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
             seen_tags.add(tag_id(a))
             full_url = urljoin(page_url, a["href"].strip())
             
-            if is_allowed_page(full_url) and get_extension(full_url) not in FILE_EXTENSIONS:
-                fragment = urlparse(full_url).fragment
-                target_url = "/" + slugify(full_url)
-                if fragment:
-                    target_url += f"#{fragment}"
-            else:
-                target_url = full_url
+            # --- ИСПОЛЬЗУЕМ УМНУЮ МАРШРУТИЗАЦИЮ ИЗ link_map.json ---
+            target_url = resolve_url(full_url)
                 
             child_pages.append({"title": a.get_text(strip=True), "url": target_url})
             
