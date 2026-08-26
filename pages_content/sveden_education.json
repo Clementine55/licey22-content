@@ -1,5 +1,5 @@
 {
-  "url": "https://лицей22.рф/sveden/education/",
+  "url": "https://архив.лицей22.рф/sveden/education/",
   "title": "Образование",
   "blocks": [
     {
@@ -26,21 +26,21 @@
       "link_text": "533_Уведомление о внесении изменений_Лицей № 22 Надежда Сибири.pdf\n(220 КБ) (принят 28.03.2024)",
       "file_name": "533_Уведомление о внесении изменений_Лицей № 22 Надежда Сибири.pdf",
       "extension": "pdf",
-      "file_url": "https://лицей22.рф/_/static/r1.nubex.ru/s139249-bd6/f4172_48/533_%D0%A3%D0%B2%D0%B5%D0%B4%D0%BE%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D0%B2%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9_%D0%9B%D0%B8%D1%86%D0%B5%D0%B9%20%E2%84%96%2022%20%D0%9D%D0%B0%D0%B4%D0%B5%D0%B6%D0%B4%D0%B0%20%D0%A1%D0%B8%D0%B1%D0%B8%D1%80%D0%B8.pdf"
+      "file_url": "https://архив.лицей22.рф/_/static/r1.nubex.ru/s139249-bd6/f4172_48/533_%D0%A3%D0%B2%D0%B5%D0%B4%D0%BE%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D0%B2%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9_%D0%9B%D0%B8%D1%86%D0%B5%D0%B9%20%E2%84%96%2022%20%D0%9D%D0%B0%D0%B4%D0%B5%D0%B6%D0%B4%D0%B0%20%D0%A1%D0%B8%D0%B1%D0%B8%D1%80%D0%B8.pdf"
     },
     {
       "type": "file",
       "link_text": "Реестровая выписка аккредитации.pdf\n(73 КБ) (принят 13.12.2024)",
       "file_name": "Реестровая выписка аккредитации.pdf",
       "extension": "pdf",
-      "file_url": "https://лицей22.рф/_/static/r1.nubex.ru/s139249-bd6/f5718_a6/%D0%A0%D0%B5%D0%B5%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B2%D1%8B%D0%BF%D0%B8%D1%81%D0%BA%D0%B0%20%D0%B0%D0%BA%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%B0%D1%86%D0%B8%D0%B8.pdf"
+      "file_url": "https://архив.лицей22.рф/_/static/r1.nubex.ru/s139249-bd6/f5718_a6/%D0%A0%D0%B5%D0%B5%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B2%D1%8B%D0%BF%D0%B8%D1%81%D0%BA%D0%B0%20%D0%B0%D0%BA%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%B0%D1%86%D0%B8%D0%B8.pdf"
     },
     {
       "type": "file",
       "link_text": "Приказ_Лицей № 22, г. Новосибирск.PDF\n(345 КБ) (принят 28.03.2024)",
       "file_name": "Приказ_Лицей № 22, г. Новосибирск_СЭДД.PDF",
       "extension": "pdf",
-      "file_url": "https://лицей22.рф/_/static/r1.nubex.ru/s139249-bd6/f4174_fe/%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7_%D0%9B%D0%B8%D1%86%D0%B5%D0%B9%20%E2%84%96%2022%2C%20%D0%B3.%20%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA_%D0%A1%D0%AD%D0%94%D0%94.PDF"
+      "file_url": "https://архив.лицей22.рф/_/static/r1.nubex.ru/s139249-bd6/f4174_fe/%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7_%D0%9B%D0%B8%D1%86%D0%B5%D0%B9%20%E2%84%96%2022%2C%20%D0%B3.%20%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA_%D0%A1%D0%AD%D0%94%D0%94.PDF"
     },
     {
       "type": "heading",
@@ -70,7 +70,7 @@
             "очная",
             "4 года",
             "Не указаны",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_4885.html#eduPrac)"
+            "[Ссылка](/sveden_education_program_4885#eduPrac)"
           ]
         },
         {
@@ -124,7 +124,7 @@
       "link_text": "Положение о языке образования.pdf\n(295 КБ)",
       "file_name": "Положение о языке образования.pdf",
       "extension": "pdf",
-      "file_url": "https://лицей22.рф/_/static/r1.nubex.ru/s139249-bd6/f5201_b4/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B5%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.pdf"
+      "file_url": "https://архив.лицей22.рф/_/static/r1.nubex.ru/s139249-bd6/f5201_b4/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B5%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.pdf"
     },
     {
       "type": "heading",
@@ -136,7 +136,7 @@
       "link_text": "Численность обучающихся в 2025-2026 учебном году.pdf\n(208 КБ)",
       "file_name": "Численность обучающихся в 2025-2026 учебном году.pdf",
       "extension": "pdf",
-      "file_url": "https://лицей22.рф/_/static/r1.nubex.ru/s139249-bd6/f8649_5f/%D0%A7%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%BE%D0%B1%D1%83%D1%87%D0%B0%D1%8E%D1%89%D0%B8%D1%85%D1%81%D1%8F%20%D0%B2%202025-2026%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%BC%20%D0%B3%D0%BE%D0%B4%D1%83.pdf"
+      "file_url": "https://архив.лицей22.рф/_/static/r1.nubex.ru/s139249-bd6/f8649_5f/%D0%A7%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%BE%D0%B1%D1%83%D1%87%D0%B0%D1%8E%D1%89%D0%B8%D1%85%D1%81%D1%8F%20%D0%B2%202025-2026%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%BC%20%D0%B3%D0%BE%D0%B4%D1%83.pdf"
     },
     {
       "type": "heading",
@@ -185,12 +185,12 @@
             "начальное общее образование",
             "Основная образовательная программа НОО",
             "очная",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_4885.html#edu_programs_main_description)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_4885.html#edu_plan_description)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_4885.html#edu_learning_programs_description)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_4885.html#edu_kalendar_plan)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_4885.html#edu_prac_programs_description)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_4885.html#edu_methodology_description)"
+            "[Ссылка](/sveden_education_program_4885#edu_programs_main_description)",
+            "[Ссылка](/sveden_education_program_4885#edu_plan_description)",
+            "[Ссылка](/sveden_education_program_4885#edu_learning_programs_description)",
+            "[Ссылка](/sveden_education_program_4885#edu_kalendar_plan)",
+            "[Ссылка](/sveden_education_program_4885#edu_prac_programs_description)",
+            "[Ссылка](/sveden_education_program_4885#edu_methodology_description)"
           ]
         },
         {
@@ -201,12 +201,12 @@
             "основное общее образование",
             "Основная образовательная программа ООО",
             "очная",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5359.html#edu_programs_main_description)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5359.html#edu_plan_description)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5359.html#edu_learning_programs_description)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5359.html#edu_kalendar_plan)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5359.html#edu_prac_programs_description)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5359.html#edu_methodology_description)"
+            "[Ссылка](/sveden_education_program_5359#edu_programs_main_description)",
+            "[Ссылка](/sveden_education_program_5359#edu_plan_description)",
+            "[Ссылка](/sveden_education_program_5359#edu_learning_programs_description)",
+            "[Ссылка](/sveden_education_program_5359#edu_kalendar_plan)",
+            "[Ссылка](/sveden_education_program_5359#edu_prac_programs_description)",
+            "[Ссылка](/sveden_education_program_5359#edu_methodology_description)"
           ]
         },
         {
@@ -217,12 +217,12 @@
             "среднее общее образование",
             "Основная образовательная программа СОО",
             "очно-заочная",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5371.html#edu_programs_main_description)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5371.html#edu_plan_description)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5371.html#edu_learning_programs_description)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5371.html#edu_kalendar_plan)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5371.html#edu_prac_programs_description)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5371.html#edu_methodology_description)"
+            "[Ссылка](/sveden_education_program_5371#edu_programs_main_description)",
+            "[Ссылка](/sveden_education_program_5371#edu_plan_description)",
+            "[Ссылка](/sveden_education_program_5371#edu_learning_programs_description)",
+            "[Ссылка](/sveden_education_program_5371#edu_kalendar_plan)",
+            "[Ссылка](/sveden_education_program_5371#edu_prac_programs_description)",
+            "[Ссылка](/sveden_education_program_5371#edu_methodology_description)"
           ]
         },
         {
@@ -233,12 +233,12 @@
             "дополнительное образование детей и взрослых",
             "Программы дополнительного образования",
             "очная",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5755.html#edu_programs_main_description)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5755.html#edu_plan_description)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5755.html#edu_learning_programs_description)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5755.html#edu_kalendar_plan)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5755.html#edu_prac_programs_description)",
-            "[Ссылка](https://лицей22.рф/sveden/education/program_5755.html#edu_methodology_description)"
+            "[Ссылка](/sveden_education_program_5755#edu_programs_main_description)",
+            "[Ссылка](/sveden_education_program_5755#edu_plan_description)",
+            "[Ссылка](/sveden_education_program_5755#edu_learning_programs_description)",
+            "[Ссылка](/sveden_education_program_5755#edu_kalendar_plan)",
+            "[Ссылка](/sveden_education_program_5755#edu_prac_programs_description)",
+            "[Ссылка](/sveden_education_program_5755#edu_methodology_description)"
           ]
         }
       ]
