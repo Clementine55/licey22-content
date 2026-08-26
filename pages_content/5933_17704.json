@@ -3,7 +3,8 @@
   "title": "Личная безопасность",
   "blocks": [
     {
-      "type": "paragraph",
+      "type": "heading",
+      "level": "h1",
       "text": "Личная безопасность"
     },
     {

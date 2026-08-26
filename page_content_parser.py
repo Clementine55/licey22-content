@@ -102,8 +102,6 @@ def get_beautiful_path(url: str) -> str:
     path = path.replace("/sveden/education/", "/education/")
     path = path.replace("/sveden/", "/")
     path = re.sub(r"/+", "/", path).rstrip("/")
-    
-    # ФИКС: Если путь пустой (главная страница), возвращаем просто "/", а не "/index"
     return path or "/"
 
 def resolve_url(full_url: str) -> str:
@@ -132,7 +130,6 @@ def resolve_url(full_url: str) -> str:
 def slugify(url: str) -> str:
     target_path = resolve_url(url).split('#')[0] 
     slug = re.sub(r"[^a-zA-Z0-9_-]+", "_", target_path.strip("/"))
-    # Если slug пустой (это главная страница "/"), назовем JSON-файл "index"
     return slug or "index"
 
 def fetch(url: str):
@@ -316,12 +313,9 @@ def extract_table(table: Tag, page_url: str) -> dict:
 def extract_blocks(soup: BeautifulSoup, page_url: str):
     root = get_content_root(soup)
     
-    # --- ФИЗИЧЕСКОЕ УДАЛЕНИЕ МУСОРА ПЕРЕД РАЗБОРОМ ---
-    # 1. Жестко вырезаем хлебные крошки (class="path") и элементы с class="hidden"
     for unwanted in root.find_all(class_=["path", "hidden"]):
         unwanted.decompose()
         
-    # 2. Жестко вырезаем невидимые SEO-блоки старого сайта
     for unwanted in root.find_all(style=lambda s: s and "display:none" in s.replace(" ", "").lower()):
         unwanted.decompose()
 
@@ -416,8 +410,22 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
             mark_seen_recursive(node)
             continue
 
-        if node.name == "div" and node.find(["p", "div", "ul", "ol", "table"]):
-            continue
+        if node.name == "div":
+            style = (node.get("style") or "").replace(" ", "").lower()
+            
+            # --- РЕШЕНИЕ ПРОБЛЕМЫ №2: Ловим карточки (panels) ---
+            if "border:" in style and "solid" in style and not node.find("table"):
+                file_links = has_file_link(node)
+                if not file_links:
+                    text = render_inline_text(node, page_url)
+                    if text:
+                        blocks.append({"type": "panel", "text": text})
+                    mark_seen_recursive(node)
+                    continue
+
+            # --- РЕШЕНИЕ ПРОБЛЕМЫ №1: Ищем заголовки h1-h6 при разворачивании div ---
+            if node.find(["p", "div", "ul", "ol", "table", "h1", "h2", "h3", "h4", "h5", "h6"]):
+                continue
 
         if node.name in ("p", "div"):
             file_links = has_file_link(node)
@@ -444,7 +452,8 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
                 mark_seen_recursive(node)
             elif node.name in ("p", "div"):
                 text = render_inline_text(node, page_url)
-                if text:
+                junk_phrases = ["отсутствует", "отсутствуют", "не указан", "не указаны"]
+                if text and text.lower().strip() not in junk_phrases:
                     blocks.append({"type": "paragraph", "text": text})
                 mark_seen_recursive(node)
             continue
@@ -460,6 +469,8 @@ def blocks_to_markdown(page_title: str, page_url: str, blocks) -> str:
             lines.append(f"{hashes} {b['text']}")
         elif b["type"] == "paragraph":
             lines.append(b["text"])
+        elif b["type"] == "panel":
+            lines.append(f"--- ПАНЕЛЬ ---\n{b['text']}\n-------------")
         elif b["type"] == "list":
             for item in b["items"]:
                 lines.append(f"- {item}")
