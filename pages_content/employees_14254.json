@@ -3,10 +3,6 @@
   "title": "Парфенцов Юрий Владимирович",
   "blocks": [
     {
-      "type": "paragraph",
-      "text": "[Главная](/index)\n*→*\n[Сведения об ОО](/sveden)\n*→*\n[Руководство](/managers)"
-    },
-    {
       "type": "heading",
       "level": "h1",
       "text": "Парфенцов Юрий Владимирович"

@@ -102,7 +102,9 @@ def get_beautiful_path(url: str) -> str:
     path = path.replace("/sveden/education/", "/education/")
     path = path.replace("/sveden/", "/")
     path = re.sub(r"/+", "/", path).rstrip("/")
-    return path or "/index"
+    
+    # ФИКС: Если путь пустой (главная страница), возвращаем просто "/", а не "/index"
+    return path or "/"
 
 def resolve_url(full_url: str) -> str:
     parsed = urlparse(full_url)
@@ -130,6 +132,7 @@ def resolve_url(full_url: str) -> str:
 def slugify(url: str) -> str:
     target_path = resolve_url(url).split('#')[0] 
     slug = re.sub(r"[^a-zA-Z0-9_-]+", "_", target_path.strip("/"))
+    # Если slug пустой (это главная страница "/"), назовем JSON-файл "index"
     return slug or "index"
 
 def fetch(url: str):
@@ -312,6 +315,16 @@ def extract_table(table: Tag, page_url: str) -> dict:
 
 def extract_blocks(soup: BeautifulSoup, page_url: str):
     root = get_content_root(soup)
+    
+    # --- ФИЗИЧЕСКОЕ УДАЛЕНИЕ МУСОРА ПЕРЕД РАЗБОРОМ ---
+    # 1. Жестко вырезаем хлебные крошки (class="path") и элементы с class="hidden"
+    for unwanted in root.find_all(class_=["path", "hidden"]):
+        unwanted.decompose()
+        
+    # 2. Жестко вырезаем невидимые SEO-блоки старого сайта
+    for unwanted in root.find_all(style=lambda s: s and "display:none" in s.replace(" ", "").lower()):
+        unwanted.decompose()
+
     blocks = []
     seen_tags = set()
 
@@ -359,12 +372,6 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
             continue
 
         if tag_id(node) in seen_tags or has_seen_ancestor(node):
-            continue
-
-        # --- ЖЕСТКИЙ ЩИТ: ОТСЕКАЕМ СКРЫТЫЕ БЛОКИ МИКРОРАЗМЕТКИ NUBEX ---
-        style = (node.get("style") or "").replace(" ", "").lower()
-        if "display:none" in style or "hidden" in (node.get("class") or []):
-            mark_seen_recursive(node)
             continue
 
         if node.name in HEADING_TAGS:
