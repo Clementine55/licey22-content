@@ -48,14 +48,12 @@ HEADERS = {"User-Agent": USER_AGENT}
 
 OUTPUT_DIR = Path("pages_content")
 
-# Загружаем/создаем карту почт
 EMAILS_MAP_FILE = Path("emails_map.json")
 if EMAILS_MAP_FILE.exists():
     EMAIL_MAP = json.loads(EMAILS_MAP_FILE.read_text(encoding="utf-8"))
 else:
     EMAIL_MAP = {}
 
-# Загружаем/создаем карту ссылок (АВТОМАТИЗАЦИЯ!)
 LINK_MAP_FILE = Path("link_map.json")
 if LINK_MAP_FILE.exists():
     CUSTOM_LINKS = json.loads(LINK_MAP_FILE.read_text(encoding="utf-8"))
@@ -97,25 +95,17 @@ def get_extension(url: str) -> str:
 def clean_filename(url: str) -> str:
     return unquote(urlparse(url).path.rsplit("/", 1)[-1])
 
-# --- ЛОГИКА ГЕНЕРАЦИИ ИДЕАЛЬНЫХ ССЫЛОК ---
 def get_beautiful_path(url: str) -> str:
-    """Генерирует идеальный путь для Тильды из старой ссылки."""
     path = urlparse(url).path
     path = re.sub(r"\.(html|htm|php)$", "", path, flags=re.IGNORECASE)
-    
-    # Наши правила идеальных ссылок (можно дополнять)
     path = path.replace("/sveden/employees/programs/", "/employees/")
     path = path.replace("/sveden/education/", "/education/")
     path = path.replace("/sveden/", "/")
-    
-    # Убираем двойные слэши и хвосты
     path = re.sub(r"/+", "/", path).rstrip("/")
     return path or "/index"
 
 def resolve_url(full_url: str) -> str:
-    """Умная подмена ссылки с использованием link_map.json"""
     parsed = urlparse(full_url)
-    # Приводим к архивному хосту, если ссылка жестко зашита на старый домен
     if parsed.hostname in ("лицей22.рф", "xn--22-mlclgj2f.xn--p1ai"):
         full_url = full_url.replace(parsed.hostname, CANONICAL_HOST)
         parsed = urlparse(full_url)
@@ -123,10 +113,8 @@ def resolve_url(full_url: str) -> str:
     if not is_allowed_page(full_url) or get_extension(full_url) in FILE_EXTENSIONS:
         return full_url
 
-    # Ключ для словаря — ссылка без якоря и без слэша на конце
     base_url_key = full_url.split('#')[0].rstrip('/')
     
-    # Если ссылки еще нет в нашем словаре — генерируем её и сохраняем!
     if base_url_key not in CUSTOM_LINKS:
         beautiful_path = get_beautiful_path(base_url_key)
         CUSTOM_LINKS[base_url_key] = beautiful_path
@@ -140,11 +128,9 @@ def resolve_url(full_url: str) -> str:
     return target_path
 
 def slugify(url: str) -> str:
-    """Имя JSON файла теперь генерируется строго из красивой ссылки."""
     target_path = resolve_url(url).split('#')[0] 
     slug = re.sub(r"[^a-zA-Z0-9_-]+", "_", target_path.strip("/"))
     return slug or "index"
-# ----------------------------------------------------
 
 def fetch(url: str):
     start = time.monotonic()
@@ -232,9 +218,6 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
             return str(node)
         if not isinstance(node, Tag):
             return ""
-            
-        if node.get_text(strip=True).lower() in ["не указан", "не указаны"]:
-            return ""
 
         if is_hidden(node):
             return ""
@@ -285,8 +268,6 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
                 return inner
                 
             full_url = urljoin(page_url, href) if page_url else href
-            
-            # --- ИСПОЛЬЗУЕМ УМНУЮ МАРШРУТИЗАЦИЮ ИЗ link_map.json ---
             resolved_url = resolve_url(full_url)
                     
             return f"[{inner}]({resolved_url})" if inner else ""
@@ -342,10 +323,7 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
         for a in childdocs.find_all("a", href=True):
             seen_tags.add(tag_id(a))
             full_url = urljoin(page_url, a["href"].strip())
-            
-            # --- ИСПОЛЬЗУЕМ УМНУЮ МАРШРУТИЗАЦИЮ ИЗ link_map.json ---
             target_url = resolve_url(full_url)
-                
             child_pages.append({"title": a.get_text(strip=True), "url": target_url})
             
         for li in childdocs.find_all("li"): seen_tags.add(tag_id(li))
@@ -383,19 +361,21 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
         if tag_id(node) in seen_tags or has_seen_ancestor(node):
             continue
 
+        # --- ЖЕСТКИЙ ЩИТ: ОТСЕКАЕМ СКРЫТЫЕ БЛОКИ МИКРОРАЗМЕТКИ NUBEX ---
+        style = (node.get("style") or "").replace(" ", "").lower()
+        if "display:none" in style or "hidden" in (node.get("class") or []):
+            mark_seen_recursive(node)
+            continue
+
         if node.name in HEADING_TAGS:
             text = render_inline_text(node, page_url)
             if text:
                 block_data = {"type": "heading", "level": node.name, "text": text}
-                
-                # Ищем якорь (id) на самом заголовке или на его родительском div
                 anchor_id = node.get("id")
                 if not anchor_id and node.parent and node.parent.name == "div":
                     anchor_id = node.parent.get("id")
-                
                 if anchor_id:
                     block_data["id"] = anchor_id
-                    
                 blocks.append(block_data)
             continue
 
