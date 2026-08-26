@@ -57,9 +57,15 @@ def run(cmd, cwd):
 
 
 def run_pipeline():
-    """Запускает page_content_parser.py и combine_library.py перед публикацией.
-    Оба скрипта ожидаются в этой же папке и сами кладут результат сюда же —
-    копировать никуда не нужно.
+    """Запускает page_content_parser.py, apply_link_map.py и combine_library.py
+    перед публикацией. Все скрипты ожидаются в этой же папке и сами кладут
+    результат сюда же — копировать никуда не нужно.
+
+    apply_link_map.py идёт СРАЗУ после парсера и ДО combine_library.py —
+    это важно: парсер каждый раз перезаписывает pages_content/ с нуля
+    (обходя старый сайт заново), так что замены ссылок нужно накатывать
+    заново при каждом запуске, а library.json должен собираться уже из
+    исправленных ссылок, а не из сырых.
 
     Флаг -u (unbuffered) важен не только для живого терминала, но и для
     крона: если вывод перенаправлен в файл (>> publish.log), Python по
@@ -69,6 +75,15 @@ def run_pipeline():
     if not run([sys.executable, "-u", str(REPO_DIR / "page_content_parser.py")], cwd=REPO_DIR):
         print("Парсер завершился с ошибкой — публикацию прерываю.", file=sys.stderr)
         sys.exit(1)
+
+    link_map_script = REPO_DIR / "apply_link_map.py"
+    if link_map_script.exists():
+        print(f"\n[{datetime.now():%H:%M:%S}] Запускаю apply_link_map.py (замена ссылок по словарю)...", flush=True)
+        if not run([sys.executable, "-u", str(link_map_script)], cwd=REPO_DIR):
+            print("Замена ссылок завершилась с ошибкой — публикацию прерываю.", file=sys.stderr)
+            sys.exit(1)
+    else:
+        print("\n(apply_link_map.py не найден рядом — пропускаю замену ссылок)", flush=True)
 
     print(f"\n[{datetime.now():%H:%M:%S}] Запускаю combine_library.py (сборка library.json/.md)...", flush=True)
     if not run([sys.executable, "-u", str(REPO_DIR / "combine_library.py")], cwd=REPO_DIR):
