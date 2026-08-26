@@ -3,6 +3,10 @@
   "title": "Педагогический состав",
   "blocks": [
     {
+      "type": "paragraph",
+      "text": "[Главная](/index)\n*→*\n[Сведения об ОО](/sveden)"
+    },
+    {
       "type": "heading",
       "level": "h1",
       "text": "Педагогический состав"

@@ -455,7 +455,7 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
                         "file_url": full_url,
                     })
                 mark_seen_recursive(node)
-            elif node.name == "p":
+            elif node.name in ("p", "div"):
                 text = render_inline_text(node, page_url)
                 if text:
                     blocks.append({"type": "paragraph", "text": text})

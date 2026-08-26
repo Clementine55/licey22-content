@@ -3,6 +3,10 @@
   "title": "Основные сведения",
   "blocks": [
     {
+      "type": "paragraph",
+      "text": "[Главная](/index)\n*→*\n[Сведения об ОО](/sveden)"
+    },
+    {
       "type": "heading",
       "level": "h1",
       "text": "Основные сведения"
@@ -143,6 +147,10 @@
       "type": "heading",
       "level": "h4",
       "text": "О местах проведения практики"
+    },
+    {
+      "type": "paragraph",
+      "text": "Не указаны"
     },
     {
       "type": "heading",

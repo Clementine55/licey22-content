@@ -3,6 +3,10 @@
   "title": "Вакантные места для приема (перевода) обучающихся",
   "blocks": [
     {
+      "type": "paragraph",
+      "text": "[Главная](/index)\n*→*\n[Сведения об ОО](/sveden)"
+    },
+    {
       "type": "heading",
       "level": "h1",
       "text": "Вакантные места для приема (перевода) обучающихся"
@@ -193,6 +197,46 @@
       "type": "heading",
       "level": "h2",
       "text": "Информация о количестве вакантных мест для приёма (перевода)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Не используется"
+    },
+    {
+      "type": "paragraph",
+      "text": "Не используется"
+    },
+    {
+      "type": "paragraph",
+      "text": "Не используется"
+    },
+    {
+      "type": "paragraph",
+      "text": "Не используется"
+    },
+    {
+      "type": "paragraph",
+      "text": "Не используется"
+    },
+    {
+      "type": "paragraph",
+      "text": "Не используется"
+    },
+    {
+      "type": "paragraph",
+      "text": "-"
+    },
+    {
+      "type": "paragraph",
+      "text": "-"
+    },
+    {
+      "type": "paragraph",
+      "text": "-"
+    },
+    {
+      "type": "paragraph",
+      "text": "-"
     }
   ]
 }

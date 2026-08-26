@@ -3,6 +3,10 @@
   "title": "Финансово-хозяйственная деятельность",
   "blocks": [
     {
+      "type": "paragraph",
+      "text": "[Главная](/index)\n*→*\n[Сведения об ОО](/sveden)"
+    },
+    {
       "type": "heading",
       "level": "h1",
       "text": "Финансово-хозяйственная деятельность"
@@ -75,6 +79,10 @@
       "type": "heading",
       "level": "h2",
       "text": "Ccылка на страницу организации на сайте bus.gov.ru"
+    },
+    {
+      "type": "paragraph",
+      "text": "[https://bus.gov.ru/info-card/373664](https://bus.gov.ru/info-card/373664)"
     },
     {
       "type": "heading",

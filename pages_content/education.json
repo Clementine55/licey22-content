@@ -3,6 +3,10 @@
   "title": "Образование",
   "blocks": [
     {
+      "type": "paragraph",
+      "text": "[Главная](/index)\n*→*\n[Сведения об ОО](/sveden)"
+    },
+    {
       "type": "heading",
       "level": "h1",
       "text": "Образование"
@@ -242,6 +246,102 @@
           ]
         }
       ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствуют"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствуют"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствуют"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствуют"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствуют"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствуют"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствуют"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствуют"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствуют"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствуют"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствуют"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствует"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствует"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствует"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствует"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствует"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствует"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствует"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствует"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствует"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствует"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствует"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствует"
+    },
+    {
+      "type": "paragraph",
+      "text": "Отсутствует"
     }
   ]
 }
