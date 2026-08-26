@@ -386,7 +386,17 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
         if node.name in HEADING_TAGS:
             text = render_inline_text(node, page_url)
             if text:
-                blocks.append({"type": "heading", "level": node.name, "text": text})
+                block_data = {"type": "heading", "level": node.name, "text": text}
+                
+                # Ищем якорь (id) на самом заголовке или на его родительском div
+                anchor_id = node.get("id")
+                if not anchor_id and node.parent and node.parent.name == "div":
+                    anchor_id = node.parent.get("id")
+                
+                if anchor_id:
+                    block_data["id"] = anchor_id
+                    
+                blocks.append(block_data)
             continue
 
         if node.name in ("ul", "ol"):
