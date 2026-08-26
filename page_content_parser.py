@@ -15,20 +15,21 @@ from bs4 import BeautifulSoup, Tag, NavigableString
 
 # ----------------------------- НАСТРОЙКИ -----------------------------------
 TARGET_ROOTS = [
-    "https://архив.лицей22.рф/sveden/",
-    "https://архив.лицей22.рф/6184/17478/",
-    "https://архив.лицей22.рф/6184/20427/",
-    "https://архив.лицей22.рф/5933/",
-    "https://архив.лицей22.рф/16451/",
+    "https://s3454.nubex.ru/sveden/",
+    "https://s3454.nubex.ru/6184/17478/",
+    "https://s3454.nubex.ru/6184/20427/",
+    "https://s3454.nubex.ru/5933/",
+    "https://s3454.nubex.ru/16451/",
 ]
 
 ALLOWED_PAGE_DOMAINS = {
+    "s3454.nubex.ru",
     "архив.лицей22.рф", 
     "xn--80a1acny.xn--22-mlclgj2f.xn--p1ai", 
     "лицей22.рф", 
     "xn--22-mlclgj2f.xn--p1ai"
 }
-CANONICAL_HOST = "архив.лицей22.рф"
+CANONICAL_HOST = "s3454.nubex.ru"
 
 BLOCKED_URL_SUBSTRINGS = ["/news/", "printmode=yes", "/_data/"]
 CONTENT_SELECTOR_CANDIDATES = ["div.siteContent", "div.content", "body"]
@@ -106,7 +107,8 @@ def get_beautiful_path(url: str) -> str:
 
 def resolve_url(full_url: str) -> str:
     parsed = urlparse(full_url)
-    if parsed.hostname in ("лицей22.рф", "xn--22-mlclgj2f.xn--p1ai"):
+    # ПЕРЕХВАТЫВАЕМ СТАРЫЕ ДОМЕНЫ И МЕНЯЕМ ИХ НА НОВЫЙ NUBEX
+    if parsed.hostname in ("лицей22.рф", "xn--22-mlclgj2f.xn--p1ai", "архив.лицей22.рф"):
         full_url = full_url.replace(parsed.hostname, CANONICAL_HOST)
         parsed = urlparse(full_url)
         
@@ -190,7 +192,8 @@ def discover_section_pages(prefix: str, start_url: str):
             full_url = urljoin(url, href)
             
             parsed_url = urlparse(full_url)
-            if parsed_url.hostname in ("лицей22.рф", "xn--22-mlclgj2f.xn--p1ai"):
+            # ПЕРЕХВАТЫВАЕМ И ЗДЕСЬ
+            if parsed_url.hostname in ("лицей22.рф", "xn--22-mlclgj2f.xn--p1ai", "архив.лицей22.рф"):
                 full_url = full_url.replace(parsed_url.hostname, CANONICAL_HOST)
 
             if is_blocked(full_url) or not is_allowed_page(full_url):
@@ -412,8 +415,6 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
 
         if node.name == "div":
             style = (node.get("style") or "").replace(" ", "").lower()
-            
-            # --- РЕШЕНИЕ ПРОБЛЕМЫ №2: Ловим карточки (panels) ---
             if "border:" in style and "solid" in style and not node.find("table"):
                 file_links = has_file_link(node)
                 if not file_links:
@@ -423,7 +424,6 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
                     mark_seen_recursive(node)
                     continue
 
-            # --- РЕШЕНИЕ ПРОБЛЕМЫ №1: Ищем заголовки h1-h6 при разворачивании div ---
             if node.find(["p", "div", "ul", "ol", "table", "h1", "h2", "h3", "h4", "h5", "h6"]):
                 continue
 
@@ -452,8 +452,7 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
                 mark_seen_recursive(node)
             elif node.name in ("p", "div"):
                 text = render_inline_text(node, page_url)
-                junk_phrases = ["отсутствует", "отсутствуют", "не указан", "не указаны"]
-                if text and text.lower().strip() not in junk_phrases:
+                if text:
                     blocks.append({"type": "paragraph", "text": text})
                 mark_seen_recursive(node)
             continue

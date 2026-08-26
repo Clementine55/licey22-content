@@ -1,5 +1,5 @@
 # Лобарева Татьяна Анатольевна
-_https://архив.лицей22.рф/sveden/employees/5219.html_
+_https://s3454.nubex.ru/sveden/employees/5219.html_
 
 ## Лобарева Татьяна Анатольевна
 

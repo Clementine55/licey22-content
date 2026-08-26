@@ -1,5 +1,5 @@
 # Кулуева Наталья Ивановна
-_https://архив.лицей22.рф/sveden/employees/5221.html_
+_https://s3454.nubex.ru/sveden/employees/5221.html_
 
 ## Кулуева Наталья Ивановна
 

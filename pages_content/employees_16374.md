@@ -1,5 +1,5 @@
 # Данилова Наталья Александровна
-_https://архив.лицей22.рф/sveden/employees/16374.html_
+_https://s3454.nubex.ru/sveden/employees/16374.html_
 
 ## Данилова Наталья Александровна
 

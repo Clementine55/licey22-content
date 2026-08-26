@@ -1,5 +1,5 @@
 # Плетнева Екатерина Геннадьевна
-_https://архив.лицей22.рф/sveden/employees/12798.html_
+_https://s3454.nubex.ru/sveden/employees/12798.html_
 
 ## Плетнева Екатерина Геннадьевна
 

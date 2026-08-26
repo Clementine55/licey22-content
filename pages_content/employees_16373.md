@@ -1,5 +1,5 @@
 # Лозгунова Татьяна Геннадьевна
-_https://архив.лицей22.рф/sveden/employees/16373.html_
+_https://s3454.nubex.ru/sveden/employees/16373.html_
 
 ## Лозгунова Татьяна Геннадьевна
 

@@ -1,5 +1,5 @@
 # Потеряева Лариса Владимировна
-_https://архив.лицей22.рф/sveden/employees/5215.html_
+_https://s3454.nubex.ru/sveden/employees/5215.html_
 
 ## Потеряева Лариса Владимировна
 

@@ -1,5 +1,5 @@
 # Руководство
-_https://архив.лицей22.рф/sveden/managers/_
+_https://s3454.nubex.ru/sveden/managers/_
 
 ## Руководство
 

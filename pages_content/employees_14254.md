@@ -1,5 +1,5 @@
 # Парфенцов Юрий Владимирович
-_https://архив.лицей22.рф/sveden/employees/14254.html_
+_https://s3454.nubex.ru/sveden/employees/14254.html_
 
 ## Парфенцов Юрий Владимирович
 
