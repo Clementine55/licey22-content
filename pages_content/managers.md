@@ -14,7 +14,7 @@ _https://s3454.nubex.ru/sveden/managers/_
  **8(383)222-35-15**
 
 Адрес электронной почты:
- **[НЕИЗВЕСТНАЯ ПОЧТА: ?p=JydZAHlWVBZbWlhDTA==]**
+ **mailto:l_22@edu54.ru**
 
 Потеряева Лариса Владимировна
 
@@ -29,7 +29,7 @@ _https://s3454.nubex.ru/sveden/managers/_
  **8(383) 222-62-18**
 
 Адрес электронной почты:
- **[НЕИЗВЕСТНАЯ ПОЧТА: ?p=JydZAHlWVBZbWlhDTA==]**
+ **mailto:l_22@edu54.ru**
 
 Лобарева Татьяна Анатольевна
 
@@ -42,7 +42,7 @@ _https://s3454.nubex.ru/sveden/managers/_
  **8(383) 222-62-18**
 
 Адрес электронной почты:
- **[НЕИЗВЕСТНАЯ ПОЧТА: ?p=JydZAHlWVBZbWlhDTA==]**
+ **mailto:l_22@edu54.ru**
 
 Плетнева Екатерина Геннадьевна
 
@@ -55,7 +55,7 @@ _https://s3454.nubex.ru/sveden/managers/_
  **8(383) 222-84-61**
 
 Адрес электронной почты:
- **[НЕИЗВЕСТНАЯ ПОЧТА: ?p=JydZAHlWVBZbWlhDTA==]**
+ **mailto:l_22@edu54.ru**
 
 Парфенцов Юрий Владимирович
 
@@ -68,7 +68,7 @@ _https://s3454.nubex.ru/sveden/managers/_
  **8(383) 222-35-24**
 
 Адрес электронной почты:
- **[НЕИЗВЕСТНАЯ ПОЧТА: ?p=JydZAHlWVBZbWlhDTA==]**
+ **mailto:l_22@edu54.ru**
 
 Кулуева Наталья Ивановна
 
@@ -81,7 +81,7 @@ _https://s3454.nubex.ru/sveden/managers/_
  **8(383)222-35-15**
 
 Адрес электронной почты:
- **[НЕИЗВЕСТНАЯ ПОЧТА: ?p=JydZAHlWVBZbWlhDTA==]**
+ **mailto:l_22@edu54.ru**
 
 Данилова Наталья Александровна
 
@@ -94,4 +94,4 @@ _https://s3454.nubex.ru/sveden/managers/_
  **8 (383) 222-84-61**
 
 Адрес электронной почты:
- **[НЕИЗВЕСТНАЯ ПОЧТА: ?p=JydZAHlWVBZbWlhDTA==]**
+ **mailto:l_22@edu54.ru**
