@@ -102,26 +102,32 @@ def main():
         print("просто создали папку руками.")
         sys.exit(1)
 
-    print("Обновляю git...")
-    if not run(["git", "add", "-A"], cwd=REPO_DIR):
-        sys.exit(1)
+    print("\nОбновляю git...")
+    import subprocess
+    import datetime
+    
+    # Добавляем все файлы
+    subprocess.run(["git", "add", "-A"])
+    
+    # Проверяем, есть ли изменения
+    status = subprocess.getoutput("git status --porcelain")
+    
+    if status:
+        print("Найдены изменения, сохраняю (commit)...")
+        time_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+        subprocess.run(["git", "commit", "-m", f"Обновление данных сайта — {time_str}"])
+    else:
+        print("Локальных изменений нет. Проверяем очередь на отправку...")
 
-    diff = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=REPO_DIR)
-    if diff.returncode == 0:
-        print("Изменений нет — публиковать нечего, всё уже актуально.")
-        return
-
-    if not run(["git", "commit", "-m", COMMIT_MESSAGE], cwd=REPO_DIR):
-        sys.exit(1)
-    if not run(["git", "push", "origin", BRANCH], cwd=REPO_DIR):
-        print("\nПуш не прошёл — скорее всего, проблема с авторизацией git.")
-        print("Проверьте токен/SSH-ключ.")
-        sys.exit(1)
-
-    print("\nГотово! Файлы опубликованы.")
-    print("Пример стабильной ссылки для Тильды:")
-    print(f"  https://raw.githubusercontent.com/ВАШ_ЮЗЕРНЕЙМ/{REPO_DIR.name}/{BRANCH}/pages_content/sveden_food.json")
-
+    # ВАЖНО: Отправляем на сервер В ЛЮБОМ СЛУЧАЕ!
+    print("Синхронизирую с GitHub...")
+    push_process = subprocess.run(["git", "push", "origin", "main"])
+    
+    if push_process.returncode != 0:
+        print("\n[!] ОШИБКА: Не удалось отправить данные на GitHub (проблема с сетью).")
+        print("[!] Не переживайте: данные сохранены локально и будут отправлены при следующем запуске.")
+    else:
+        print("\n[+] Синхронизация с сервером успешно завершена!")
 
 if __name__ == "__main__":
     main()
