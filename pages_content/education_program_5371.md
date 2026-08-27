@@ -24,8 +24,8 @@ _https://s3454.nubex.ru/sveden/education/program_5371.html#edu_programs_main_des
 
 ### Ссылка на описание образовательной программы с приложением ее копии
 
-📎 [Проект ООП СОО на 2026-2027 учебный год .pdf
-(788 КБ)](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9884_30/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%9E%D0%9E%D0%9F%20%20%D0%A1%D0%9E%D0%9E%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20.pdf) (pdf)
+📎 [ООП СОО на 2026-2027 учебный год.pdf
+(789 КБ)](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9901_de/%D0%9E%D0%9E%D0%9F%20%20%D0%A1%D0%9E%D0%9E%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf)
 
 📎 [Проект Программы воспитания.pdf
 (1,3 МБ)](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9815_7e/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B%20%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F.pdf) (pdf)
