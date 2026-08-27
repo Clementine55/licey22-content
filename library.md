@@ -1887,6 +1887,12 @@ _(файл: education_program_5371.json)_
 📎 [РП Основы безопасности и защиты Родины 10-11 класс.pdf
 (369 КБ)](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9874_08/%D0%A0%D0%9F%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%B8%20%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D1%8B%20%D0%A0%D0%BE%D0%B4%D0%B8%D0%BD%D1%8B%2010-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf)
 
+📎 [РП Общество 10-11 (база).pdf
+(767 КБ)](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9887_a0/%D0%A0%D0%9F%20%D0%9E%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE%2010-11%20%28%D0%B1%D0%B0%D0%B7%D0%B0%29.pdf) (pdf)
+
+📎 [РП Обществознание 10-11(углуб).pdf
+(953 КБ)](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9888_92/%D0%A0%D0%9F%20%D0%9E%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B5%2010-11%28%D1%83%D0%B3%D0%BB%D1%83%D0%B1%29.pdf) (pdf)
+
 📎 [РП физкультура 10-11 кл.pdf
 (1,0 МБ)](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9875_4e/%D0%A0%D0%9F%20%D1%84%D0%B8%D0%B7%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0%2010-11%20%D0%BA%D0%BB.pdf) (pdf)
 
