@@ -105,7 +105,7 @@
     },
     {
       "type": "paragraph",
-      "text": "[Версия для печати](/5933/5939)"
+      "text": "[Версия для печати](javascript:window.print();)"
     }
   ]
 }

@@ -48,7 +48,7 @@
     },
     {
       "type": "paragraph",
-      "text": "[Версия для печати](/16451/16455)"
+      "text": "[Версия для печати](javascript:window.print();)"
     }
   ]
 }

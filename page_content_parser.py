@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3_
 # -*- coding: utf-8 -*-
 
 import json
@@ -99,9 +99,19 @@ def clean_filename(url: str) -> str:
 def get_beautiful_path(url: str) -> str:
     path = urlparse(url).path
     path = re.sub(r"\.(html|htm|php)$", "", path, flags=re.IGNORECASE)
+    
+    # 1. Жестко убиваем префикс /ru/
+    if path.startswith("/ru/"):
+        path = path[3:]
+    elif path == "/ru":
+        path = "/"
+        
+    # 2. Отрезаем системные папки старого сайта
     path = path.replace("/sveden/employees/programs/", "/employees/")
     path = path.replace("/sveden/education/", "/education/")
     path = path.replace("/sveden/", "/")
+    path = path.replace("/6184/", "/")  # <--- Отрезаем папку 6184
+    
     path = re.sub(r"/+", "/", path).rstrip("/")
     return path or "/"
 
@@ -271,6 +281,11 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
                 return inner
                 
             full_url = urljoin(page_url, href) if page_url else href
+            
+            # --- АВТОМАТИЧЕСКАЯ ПОДМЕНА ВЕРСИИ ДЛЯ ПЕЧАТИ ---
+            if "printmode=yes" in full_url.lower():
+                return f"[{inner}](javascript:window.print();)" if inner else ""
+                
             resolved_url = resolve_url(full_url)
                     
             return f"[{inner}]({resolved_url})" if inner else ""

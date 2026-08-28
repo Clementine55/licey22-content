@@ -56,7 +56,7 @@
     },
     {
       "type": "paragraph",
-      "text": "[Версия для печати](/5933/5977)"
+      "text": "[Версия для печати](javascript:window.print();)"
     }
   ]
 }

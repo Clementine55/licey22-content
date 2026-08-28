@@ -333,7 +333,7 @@
     },
     {
       "type": "paragraph",
-      "text": "[Версия для печати](/5933/5937)"
+      "text": "[Версия для печати](javascript:window.print();)"
     }
   ]
 }
