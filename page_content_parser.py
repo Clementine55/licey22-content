@@ -1,4 +1,4 @@
-#!/usr/bin/env python3_
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import json
@@ -100,24 +100,21 @@ def get_beautiful_path(url: str) -> str:
     path = urlparse(url).path
     path = re.sub(r"\.(html|htm|php)$", "", path, flags=re.IGNORECASE)
     
-    # 1. Жестко убиваем префикс /ru/
     if path.startswith("/ru/"):
         path = path[3:]
     elif path == "/ru":
         path = "/"
         
-    # 2. Отрезаем системные папки старого сайта
     path = path.replace("/sveden/employees/programs/", "/employees/")
     path = path.replace("/sveden/education/", "/education/")
     path = path.replace("/sveden/", "/")
-    path = path.replace("/6184/", "/")  # <--- Отрезаем папку 6184
+    path = path.replace("/6184/", "/")
     
     path = re.sub(r"/+", "/", path).rstrip("/")
     return path or "/"
 
 def resolve_url(full_url: str) -> str:
     parsed = urlparse(full_url)
-    # ПЕРЕХВАТЫВАЕМ СТАРЫЕ ДОМЕНЫ И МЕНЯЕМ ИХ НА НОВЫЙ NUBEX
     if parsed.hostname in ("лицей22.рф", "xn--22-mlclgj2f.xn--p1ai", "архив.лицей22.рф"):
         full_url = full_url.replace(parsed.hostname, CANONICAL_HOST)
         parsed = urlparse(full_url)
@@ -202,7 +199,6 @@ def discover_section_pages(prefix: str, start_url: str):
             full_url = urljoin(url, href)
             
             parsed_url = urlparse(full_url)
-            # ПЕРЕХВАТЫВАЕМ И ЗДЕСЬ
             if parsed_url.hostname in ("лицей22.рф", "xn--22-mlclgj2f.xn--p1ai", "архив.лицей22.рф"):
                 full_url = full_url.replace(parsed_url.hostname, CANONICAL_HOST)
 
@@ -281,13 +277,7 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
                 return inner
                 
             full_url = urljoin(page_url, href) if page_url else href
-            
-            # --- АВТОМАТИЧЕСКАЯ ПОДМЕНА ВЕРСИИ ДЛЯ ПЕЧАТИ ---
-            if "printmode=yes" in full_url.lower():
-                return f"[{inner}](javascript:window.print();)" if inner else ""
-                
             resolved_url = resolve_url(full_url)
-                    
             return f"[{inner}]({resolved_url})" if inner else ""
             
         return "".join(collect(c) for c in node.children)
@@ -336,6 +326,10 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
         
     for unwanted in root.find_all(style=lambda s: s and "display:none" in s.replace(" ", "").lower()):
         unwanted.decompose()
+        
+    for a in root.find_all("a", href=True):
+        if "printmode=yes" in a["href"].lower() or "версия для печати" in a.get_text(strip=True).lower():
+            a.decompose()
 
     blocks = []
     seen_tags = set()
