@@ -149,6 +149,16 @@ _https://s3454.nubex.ru/sveden/catering/_
 
 ### Меню ежедневного горячего питания
 
+#### 04.09.2026г.
+
+📎 [/food/2026-09-04-sm.xlsx (
+ МАОУ «Лицей № 22 «Надежда Сибири»
+ )](https://s3454.nubex.ru/food/2026-09-04-sm.xlsx) (xlsx)
+
+📎 [/food/other_6497/food/2026-09-04-sm.xlsx (
+ Корпус на Чаплыгина, 59
+ )](https://s3454.nubex.ru/food/other_6497/food/2026-09-04-sm.xlsx) (xlsx)
+
 #### 03.09.2026г.
 
 📎 [/food/2026-09-03-sm.xlsx (
@@ -202,7 +212,7 @@ _https://s3454.nubex.ru/sveden/catering/_
 ### Дополнительные файлы по организации питания
 
 📎 [findex.xlsx
-(13 КБ)](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9539_ea/findex.xlsx) (xlsx)
+(13 КБ)](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9917_26/findex.xlsx) (xlsx)
 
 ### Перечень юридических лиц и индивидуальных предпринимателей, оказывающих услуги по организации питания в общеобразовательной организации
 
