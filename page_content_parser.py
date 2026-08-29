@@ -435,6 +435,9 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
         if node.name in HEADING_TAGS:
             text = render_inline_text(node, page_url)
             if text:
+                # Схлопываем все \n и лишние пробелы в один обычный пробел
+                text = " ".join(text.split())
+                
                 block_data = {"type": "heading", "level": node.name, "text": text}
                 anchor_id = node.get("id")
                 if not anchor_id and node.parent and node.parent.name == "div":
