@@ -294,13 +294,22 @@ def build_file_block(container: Tag, anchor: Tag, ext: str, full_url: str, page_
     meta = full_text
     if link_text and link_text in meta:
         meta = meta.replace(link_text, "", 1)
-    
-    # Спасаем мету, если она застряла внутри <a href="...">...</a>
-    if not meta.strip():
-        m = re.search(r'(.*?)([\(\s,]*\d+[\.,]?\d*\s*(?:КБ|МБ|Б|KB|MB|B).*)$', link_text, flags=re.IGNORECASE)
-        if m:
-            link_text = m.group(1).strip()
-            meta = m.group(2).strip()
+
+    # Вытаскиваем "застрявшую" инфу из названия (всё, что начинается с последней скобки)
+    # Это отсеет "(корпус Советская,63" и перенесет в meta
+    m_parens = re.search(r'(.*?)\s*\((.*)$', link_text)
+    if m_parens:
+        link_text = m_parens.group(1).strip()
+        extracted_meta = m_parens.group(2).strip()
+        if extracted_meta:
+            meta = extracted_meta + (", " + meta if meta else "")
+
+    # Достаем размеры (КБ, МБ), если они всё еще болтаются в названии
+    m_size = re.search(r'(.*?)([\(\s,]*\d+[\.,]?\d*\s*(?:КБ|МБ|Б|KB|MB|B).*)$', link_text, flags=re.IGNORECASE)
+    if m_size:
+        link_text = m_size.group(1).strip()
+        extracted_size = m_size.group(2).strip()
+        meta = extracted_size + (", " + meta if meta else "")
 
     meta = re.sub(r"\s+", " ", meta).strip()
     if not link_text:
@@ -312,7 +321,7 @@ def build_file_block(container: Tag, anchor: Tag, ext: str, full_url: str, page_
         link_text = ext_regex.sub('', link_text).strip()
         meta = ext_regex.sub('', meta).strip()
 
-    # Уничтожаем все скобки и висящие запятые в мете
+    # Уничтожаем все скобки и висящие запятые в мете (мы их красиво нарисуем на клиенте)
     if meta:
         meta = re.sub(r'\)\s*\(', ', ', meta)
         meta = re.sub(r'[()]', '', meta)
