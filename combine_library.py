@@ -1,27 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-
-Склеивает результат page_content_parser.py (папку pages_content/ с кучей
-отдельных .json на каждую страницу) в ОДИН файл-библиотеку для удобного
-просмотра и правки одним глазом, без открытия полусотни отдельных файлов.
-
-Важно: library.json — это НЕ то, что вставляется в Тильду. Для сайта
-по-прежнему используются отдельные pages_content/<slug>.json — каждая
-страница Тильды подключает свой файл (см. пример tilda_page_block.html).
-library.json нужен только вам, для ревью и правки текста.
-
-Запуск (из той же папки, где лежит pages_content/):
-    python3 combine_library.py
-
-Результат:
-    library.json — один JSON со всеми страницами (список объектов
-                   {url, title, slug, blocks})
-    library.md    — один Markdown-файл со всеми страницами подряд,
-                   с разделителями — открываете один файл и читаете/правите
-                   весь текст сайта сверху вниз
-
-"""
 
 import json
 from pathlib import Path
@@ -43,7 +21,8 @@ def blocks_to_markdown(page: dict) -> str:
             for item in b["items"]:
                 lines.append(f"- {item}")
         elif b["type"] == "file":
-            lines.append(f"📎 [{b['link_text']}]({b['file_url']}) ({b['extension']})")
+            meta = f" — _{b['meta']}_" if b.get("meta") else ""
+            lines.append(f"📎 [{b['link_text']}]({b['file_url']}) ({b['extension']}){meta}")
         elif b["type"] == "child_pages":
             lines.append("**Подстраницы раздела:**")
             for item in b["items"]:
