@@ -14,43 +14,24 @@ import requests
 from bs4 import BeautifulSoup, Tag, NavigableString
 
 # ----------------------------- НАСТРОЙКИ -----------------------------------
-
-# Корневые страницы разделов. Для КАЖДОЙ скрипт сам проверяет, есть ли у неё
-# подстраницы (div.childdocs, как на /sveden/, /5933/, /16451/), и если да —
-# обходит их все, ограничиваясь путём этого раздела (см. discover_section_pages).
-# Если у страницы подстраниц нет — просто разбирается она одна.
-# ЕДИНСТВЕННОЕ место, где прописан домен старого сайта. Когда сайт переедет
-# на поддомен (например, старый.лицей22.рф) — меняете только эту строку,
-# всё остальное (пути разделов, разрешённые домены, punycode-версия для
-# сравнения кириллического/punycode дублей) пересчитается само.
-OLD_SITE_DOMAIN = "лицей22.рф"
-
-# Пути разделов, которые обходим (без домена — он подставится из OLD_SITE_DOMAIN
-# выше). Для КАЖДОГО скрипт сам проверяет, есть ли у него подстраницы
-# (div.childdocs, как на /sveden/, /5933/, /16451/), и если да — обходит их
-# все, ограничиваясь путём этого раздела (см. discover_section_pages).
-# Если у раздела подстраниц нет — просто разбирается он один.
-TARGET_ROOT_PATHS = [
-    "/sveden/",        # Сведения об ОО
-    "/6184/17478/",    # Региональная инновационная площадка
-    "/6184/20427/",    # Стажировочная площадка инклюзивного образования
-    "/5933/",          # Безопасность
-    "/16451/",         # Отдых детей и их оздоровление
+TARGET_ROOTS = [
+    "https://s3454.nubex.ru/sveden/",
+    "https://s3454.nubex.ru/6184/17478/",
+    "https://s3454.nubex.ru/6184/20427/",
+    "https://s3454.nubex.ru/5933/",
+    "https://s3454.nubex.ru/16451/",
 ]
-TARGET_ROOTS = [f"https://{OLD_SITE_DOMAIN}{path}" for path in TARGET_ROOT_PATHS]
 
-# Punycode-версия считается автоматически (для кириллических доменов вида
-# "лицей22.рф" или "старый.лицей22.рф" браузер и сервер под капотом всё
-# равно используют punycode — сайт бывает доступен под обоими написаниями
-# одновременно, поэтому оба варианта нужно считать "тем же самым доменом").
-_PUNYCODE_DOMAIN = OLD_SITE_DOMAIN.encode("idna").decode("ascii")
-ALLOWED_PAGE_DOMAINS = {OLD_SITE_DOMAIN, _PUNYCODE_DOMAIN}
-CANONICAL_HOST = _PUNYCODE_DOMAIN
+ALLOWED_PAGE_DOMAINS = {
+    "s3454.nubex.ru",
+    "архив.лицей22.рф", 
+    "xn--80a1acny.xn--22-mlclgj2f.xn--p1ai", 
+    "лицей22.рф", 
+    "xn--22-mlclgj2f.xn--p1ai"
+}
+CANONICAL_HOST = "s3454.nubex.ru"
 
 BLOCKED_URL_SUBSTRINGS = ["/news/", "printmode=yes", "/_data/"]
-
-# Кандидаты на контейнер основного контента — берётся первый найденный.
-# Проверено на реальной странице: контент лежит в div.siteContent.
 CONTENT_SELECTOR_CANDIDATES = ["div.siteContent", "div.content", "body"]
 
 HEADING_TAGS = ["h1", "h2", "h3", "h4", "h5", "h6"]
@@ -68,18 +49,18 @@ HEADERS = {"User-Agent": USER_AGENT}
 
 OUTPUT_DIR = Path("pages_content")
 
-# Загружаем словарь почт из внешнего файла
 EMAILS_MAP_FILE = Path("emails_map.json")
 if EMAILS_MAP_FILE.exists():
     EMAIL_MAP = json.loads(EMAILS_MAP_FILE.read_text(encoding="utf-8"))
 else:
     EMAIL_MAP = {}
 
-# Сессия requests с ОТКЛЮЧЕННЫМИ скрытыми повторами urllib3. Без этого при
-# сетевых сбоях (обрывы SSL и т.п.) urllib3 внутри себя молча повторяет
-# запрос по несколько раз перед тем как вернуть ошибку — снаружи это
-# выглядит как "скрипт завис", хотя на самом деле просто идут невидимые
-# попытки. Явный контроль повторов (см. fetch()) с логами понятнее.
+LINK_MAP_FILE = Path("link_map.json")
+if LINK_MAP_FILE.exists():
+    CUSTOM_LINKS = json.loads(LINK_MAP_FILE.read_text(encoding="utf-8"))
+else:
+    CUSTOM_LINKS = {}
+
 _session = requests.Session()
 _adapter = requests.adapters.HTTPAdapter(max_retries=0)
 _session.mount("http://", _adapter)
@@ -89,18 +70,13 @@ _session.mount("https://", _adapter)
 def now() -> str:
     return datetime.now().strftime("%H:%M:%S")
 
-# ----------------------------- ВСПОМОГАТЕЛЬНОЕ ------------------------------
-
-
 def is_blocked(url: str) -> bool:
     low = url.lower()
     return any(s in low for s in BLOCKED_URL_SUBSTRINGS)
 
-
 def is_allowed_page(url: str) -> bool:
     host = (urlparse(url).hostname or "").lower()
     return host in ALLOWED_PAGE_DOMAINS
-
 
 def canonical_key(url: str) -> str:
     parsed = urlparse(url)
@@ -112,22 +88,58 @@ def canonical_key(url: str) -> str:
     path = path.rstrip("/") or "/"
     return f"{CANONICAL_HOST}{path.lower()}"
 
-
 def get_extension(url: str) -> str:
     path = urlparse(url).path
     m = re.search(r"\.[a-zA-Z0-9]{1,5}$", path)
     return m.group(0).lower() if m else ""
 
-
 def clean_filename(url: str) -> str:
     return unquote(urlparse(url).path.rsplit("/", 1)[-1])
 
+def get_beautiful_path(url: str) -> str:
+    path = urlparse(url).path
+    path = re.sub(r"\.(html|htm|php)$", "", path, flags=re.IGNORECASE)
+    
+    if path.startswith("/ru/"):
+        path = path[3:]
+    elif path == "/ru":
+        path = "/"
+        
+    path = path.replace("/sveden/employees/programs/", "/employees/")
+    path = path.replace("/sveden/education/", "/education/")
+    path = path.replace("/sveden/", "/")
+    path = path.replace("/6184/", "/")
+    
+    path = re.sub(r"/+", "/", path).rstrip("/")
+    return path or "/"
+
+def resolve_url(full_url: str) -> str:
+    parsed = urlparse(full_url)
+    if parsed.hostname in ("лицей22.рф", "xn--22-mlclgj2f.xn--p1ai", "архив.лицей22.рф"):
+        full_url = full_url.replace(parsed.hostname, CANONICAL_HOST)
+        parsed = urlparse(full_url)
+        
+    if not is_allowed_page(full_url) or get_extension(full_url) in FILE_EXTENSIONS:
+        return full_url
+
+    base_url_key = full_url.split('#')[0].rstrip('/')
+    
+    if base_url_key not in CUSTOM_LINKS:
+        beautiful_path = get_beautiful_path(base_url_key)
+        CUSTOM_LINKS[base_url_key] = beautiful_path
+        LINK_MAP_FILE.write_text(json.dumps(CUSTOM_LINKS, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"  [+] Добавлена новая красивая ссылка в link_map.json: {beautiful_path}")
+        
+    target_path = CUSTOM_LINKS[base_url_key]
+    
+    if parsed.fragment:
+        return f"{target_path}#{parsed.fragment}"
+    return target_path
 
 def slugify(url: str) -> str:
-    path = urlparse(url).path.strip("/") or "index"
-    slug = re.sub(r"[^a-zA-Z0-9_-]+", "_", path)
+    target_path = resolve_url(url).split('#')[0] 
+    slug = re.sub(r"[^a-zA-Z0-9_-]+", "_", target_path.strip("/"))
     return slug or "index"
-
 
 def fetch(url: str):
     start = time.monotonic()
@@ -141,14 +153,11 @@ def fetch(url: str):
             return resp
         except requests.RequestException as e:
             if attempt == 1:
-                print(f"  [{now()}] [!] попытка {attempt} не удалась ({e}) — пробую ещё раз: {url}",
-                      file=sys.stderr, flush=True)
+                print(f"  [{now()}] [!] попытка {attempt} не удалась ({e}) — пробую ещё раз: {url}", file=sys.stderr, flush=True)
                 continue
             elapsed = time.monotonic() - start
-            print(f"  [{now()}] [!] не удалось загрузить за {elapsed:.1f}с: {url}: {e}",
-                  file=sys.stderr, flush=True)
+            print(f"  [{now()}] [!] не удалось загрузить за {elapsed:.1f}с: {url}: {e}", file=sys.stderr, flush=True)
             return None
-
 
 def get_content_root(soup: BeautifulSoup) -> Tag:
     for sel in CONTENT_SELECTOR_CANDIDATES:
@@ -157,14 +166,7 @@ def get_content_root(soup: BeautifulSoup) -> Tag:
             return node
     return soup
 
-
-# ----------------------------- ОБХОД РАЗДЕЛА /sveden/ -----------------------
-
-
 def discover_section_pages(prefix: str, start_url: str):
-    """Обходит все страницы сайта, чей путь начинается с prefix, и
-    возвращает множество их URL. Используется только для "живых" разделов
-    вроде /sveden/, где заранее не известно, сколько там подстраниц."""
     found = set()
     visited_keys = set()
     queue = deque([start_url])
@@ -193,11 +195,18 @@ def discover_section_pages(prefix: str, start_url: str):
             href = a["href"].strip()
             if not href or href.startswith(("#", "mailto:", "tel:", "javascript:")):
                 continue
+            
             full_url = urljoin(url, href)
+            
+            parsed_url = urlparse(full_url)
+            if parsed_url.hostname in ("лицей22.рф", "xn--22-mlclgj2f.xn--p1ai", "архив.лицей22.рф"):
+                full_url = full_url.replace(parsed_url.hostname, CANONICAL_HOST)
+
             if is_blocked(full_url) or not is_allowed_page(full_url):
                 continue
-            if get_extension(full_url):  # файл, не страница
+            if get_extension(full_url) in FILE_EXTENSIONS:  
                 continue
+            
             full_path = urlparse(full_url).path
             if full_path.startswith(prefix) and canonical_key(full_url) not in visited_keys:
                 queue.append(full_url)
@@ -205,12 +214,8 @@ def discover_section_pages(prefix: str, start_url: str):
     return found
 
 
-# ----------------------------- ИЗВЛЕЧЕНИЕ БЛОКОВ СО СТРАНИЦЫ -----------------
-
-
 BOLD_TAGS = {"b", "strong"}
 ITALIC_TAGS = {"i", "em"}
-
 
 def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) -> str:
     def is_hidden(node: Tag) -> bool:
@@ -222,14 +227,13 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
             return str(node)
         if not isinstance(node, Tag):
             return ""
-            
+
         if node.get_text(strip=True).lower() in ["не указан", "не указаны"]:
             return ""
 
         if is_hidden(node):
             return ""
 
-        # --- ВЫТАСКИВАЕМ ПОЧТУ ИЗ КАРТИНОК ---
         if node.name == "img":
             title = node.get("title", "").strip()
             alt = node.get("alt", "").strip()
@@ -238,25 +242,22 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
 
             src = node.get("src", "")
             if "email" in src.lower() or "mail" in src.lower():
-                from urllib.parse import urlparse
                 query = urlparse(src).query
                 if query:
                     key = "?" + query
-                    # Если почта есть в словаре и не пустая — возвращаем её
                     if key in EMAIL_MAP and EMAIL_MAP[key]:
-                        return EMAIL_MAP[key]
+                        email = EMAIL_MAP[key]
+                        if "@" in email and not email.startswith("mailto:"):
+                            email = "mailto:" + email
+                        return email
                     else:
-                        # Автоматически добавляем новую абракадабру в файл, чтобы вам было удобно её заполнить
                         if key not in EMAIL_MAP:
                             EMAIL_MAP[key] = ""
                             EMAILS_MAP_FILE.write_text(json.dumps(EMAIL_MAP, ensure_ascii=False, indent=2), encoding="utf-8")
                             print(f"\n[ВНИМАНИЕ] Найдена новая зашифрованная почта: {key}")
-                            print(f"Она добавлена в файл {EMAILS_MAP_FILE.name}. Впишите туда адрес и перезапустите скрипт!")
-                        
                         return f"[НЕИЗВЕСТНАЯ ПОЧТА: {key}]"
             return ""
 
-        # --- СОХРАНЯЕМ ПЕРЕНОСЫ СТРОК И АБЗАЦЫ ---
         if node.name == "br":
             return "\n"
         if node.name in ("p", "div"):
@@ -269,15 +270,18 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
         if node.name in ITALIC_TAGS:
             inner = "".join(collect(c) for c in node.children).strip()
             return f"*{inner}*" if inner else ""
+            
         if node.name == "a" and node.get("href"):
             href = node["href"].strip()
             inner = "".join(collect(c) for c in node.children).strip()
-            if not href or href.startswith(("#", "mailto:", "tel:", "javascript:")):
+            if not href or href.startswith(("javascript:")):
                 return inner
             if plain_links:
                 return inner
+                
             full_url = urljoin(page_url, href) if page_url else href
-            return f"[{inner}]({full_url})" if inner else ""
+            resolved_url = resolve_url(full_url)
+            return f"[{inner}]({resolved_url})" if inner else ""
             
         return "".join(collect(c) for c in node.children)
 
@@ -286,26 +290,13 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
     text = re.sub(r"\n\s*\n", "\n", text).strip()
     return text
 
-
 def build_file_block(container: Tag, anchor: Tag, ext: str, full_url: str, page_url: str) -> dict:
-    """Строит file-блок с РАЗДЕЛЁННЫМИ link_text (название — берётся из
-    самой ссылки <a>) и meta (весь сопутствующий текст рядом с ней —
-    размер, дата, место размещения и т.п.).
-
-    Раньше это была одна слепленная строка (весь текст контейнера целиком),
-    и фронтенду приходилось регулярками угадывать на глаз, где кончается
-    название и начинается "мета" — ненадёжно: ломалось на вложенных
-    скобках вида "(297-од от 15.09.2025 (1).pdf, 2 976 КБ)", на случаях
-    без скобок вообще и т.п. Раз мы точно знаем границу <a> в самом DOM —
-    отдаём её явно, а не заставляем JS реконструировать вслепую."""
     link_text = render_inline_text(anchor, page_url, plain_links=True)
     full_text = render_inline_text(container, page_url, plain_links=True)
 
     meta = full_text
     if link_text and link_text in meta:
         meta = meta.replace(link_text, "", 1)
-    # meta — короткая вспомогательная строка (для мелкого серого текста),
-    # внутренние переносы строк тут не нужны — схлопываем в пробелы
     meta = re.sub(r"\s+", " ", meta).strip()
 
     if not link_text:
@@ -320,20 +311,15 @@ def build_file_block(container: Tag, anchor: Tag, ext: str, full_url: str, page_
         "file_url": full_url,
     }
 
-
 def extract_table(table: Tag, page_url: str) -> dict:
     headers = []
     rows = []
-    
-    # Берем вообще все строки, игнорируя кривые thead/tbody старого сайта
     trs = table.find_all("tr")
     if not trs:
         return {"type": "table", "headers": [], "rows": []}
         
     first_tr = trs[0]
     first_cells = first_tr.find_all(["th", "td"], recursive=False)
-    
-    # Если в первой строке есть хотя бы один <th> или таблица имеет <thead...>, считаем первую строку шапкой
     is_first_row_th = any(c.name == "th" for c in first_cells)
     
     start_idx = 0
@@ -341,7 +327,6 @@ def extract_table(table: Tag, page_url: str) -> dict:
         headers = [render_inline_text(c, page_url) for c in first_cells]
         start_idx = 1
         
-    # Все остальные строки - это тело таблицы
     for tr in trs[start_idx:]:
         cells = tr.find_all(["td", "th"], recursive=False)
         if not cells:
@@ -357,41 +342,39 @@ def extract_table(table: Tag, page_url: str) -> dict:
 
 
 def extract_blocks(soup: BeautifulSoup, page_url: str):
-    """Проходит по содержимому страницы сверху вниз и строит список блоков:
-    подзаголовки, абзацы, списки, файлы — в том порядке, в котором они
-    расположены на странице."""
     root = get_content_root(soup)
+    
+    for unwanted in root.find_all(class_=["path", "hidden"]):
+        unwanted.decompose()
+        
+    for unwanted in root.find_all(style=lambda s: s and "display:none" in s.replace(" ", "").lower()):
+        unwanted.decompose()
+        
+    # --- СЖИГАЕМ ССЫЛКУ "ВЕРСИЯ ДЛЯ ПЕЧАТИ" ---
+    for a in root.find_all("a", href=True):
+        if "printmode=yes" in a["href"].lower() or "версия для печати" in a.get_text(strip=True).lower():
+            a.decompose()
+
     blocks = []
-    seen_tags = set()  # чтобы не разбирать один и тот же <p>/<li> дважды
+    seen_tags = set()
 
-    def tag_id(tag):
-        return id(tag)
+    def tag_id(tag): return id(tag)
 
-    # На страницах-разделах (/sveden/, /5933/, /16451/...) вверху лежит
-    # div.childdocs — список ссылок на подстраницы раздела. Это НЕ обычный
-    # текстовый список, а навигация, поэтому выносим её в отдельный тип
-    # блока "child_pages" и исключаем из общего разбора, чтобы не путать
-    # с настоящим content-списком (как в примере с "Безопасность", где
-    # ниже childdocs идёт ещё и реальный текст/файлы).
     childdocs = root.select_one("div.childdocs")
     if childdocs is not None:
         child_pages = []
         for a in childdocs.find_all("a", href=True):
             seen_tags.add(tag_id(a))
             full_url = urljoin(page_url, a["href"].strip())
-            child_pages.append({"title": a.get_text(strip=True), "url": full_url})
-        for li in childdocs.find_all("li"):
-            seen_tags.add(tag_id(li))
-        for ul in childdocs.find_all("ul"):
-            seen_tags.add(tag_id(ul))
+            target_url = resolve_url(full_url)
+            child_pages.append({"title": a.get_text(strip=True), "url": target_url})
+            
+        for li in childdocs.find_all("li"): seen_tags.add(tag_id(li))
+        for ul in childdocs.find_all("ul"): seen_tags.add(tag_id(ul))
         if child_pages:
             blocks.append({"type": "child_pages", "items": child_pages})
 
     def has_file_link(container: Tag):
-        """Возвращает (a_tag, ext, full_url), если внутри container ровно ОДНА
-        ссылка на файл — тогда весь текст container'а (включая соседний текст
-        типа "(рабочая тетрадь)" или "(Корпус на Чаплыгина, 59)") можно взять
-        как подпись файла. Если ссылок на файлы несколько или нет — None."""
         found = []
         for a in container.find_all("a", href=True):
             href = a["href"].strip()
@@ -424,28 +407,27 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
         if node.name in HEADING_TAGS:
             text = render_inline_text(node, page_url)
             if text:
-                blocks.append({"type": "heading", "level": node.name, "text": text})
+                block_data = {"type": "heading", "level": node.name, "text": text}
+                anchor_id = node.get("id")
+                if not anchor_id and node.parent and node.parent.name == "div":
+                    anchor_id = node.parent.get("id")
+                if anchor_id:
+                    block_data["id"] = anchor_id
+                blocks.append(block_data)
             continue
 
         if node.name in ("ul", "ol"):
-            # список целиком обрабатываем здесь и помечаем вложенные li,
-            # чтобы не продублировать их как отдельные абзацы
             items = []
             for li in node.find_all("li", recursive=False):
                 file_links = has_file_link(li)
                 if len(file_links) == 1:
-                    # весь <li> — по сути один файл (как findex.xlsx в
-                    # <li><div><span><a>...</a>(13 КБ)</span></div></li>) —
-                    # выносим отдельным file-блоком, а не строкой списка,
-                    # чтобы файл не показывался на странице дважды
                     a, ext, full_url = file_links[0]
                     blocks.append(build_file_block(li, a, ext, full_url, page_url))
                     mark_seen_recursive(li)
                 else:
                     mark_seen_recursive(li)
                     t = render_inline_text(li, page_url)
-                    if t:
-                        items.append(t)
+                    if t: items.append(t)
             if items:
                 blocks.append({"type": "list", "items": items})
             continue
@@ -458,22 +440,15 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
             continue
 
         if node.name == "div" and node.find(["p", "div", "ul", "ol", "table"]):
-            # это просто обёртка (внутри есть другие блоковые теги, в т.ч.
-            # таблица) — не разбираем её целиком, дадим дойти обходу до
-            # вложенных тегов по отдельности, иначе рискуем задвоить файлы
             continue
 
         if node.name in ("p", "div"):
             file_links = has_file_link(node)
             if len(file_links) == 1:
-                # весь блок — один файл (+ возможно поясняющий текст рядом,
-                # напр. "(рабочая тетрадь)" или "(Корпус на Чаплыгина, 59)")
                 a, ext, full_url = file_links[0]
                 blocks.append(build_file_block(node, a, ext, full_url, page_url))
                 mark_seen_recursive(node)
             elif len(file_links) > 1:
-                # несколько файлов в одном блоке — редкий случай, разносим
-                # каждый отдельным file-блоком по его собственному тексту
                 for a, ext, full_url in file_links:
                     blocks.append({
                         "type": "file",
@@ -485,17 +460,13 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
                     })
                 mark_seen_recursive(node)
             elif node.name == "p":
-                # обычный текстовый абзац — обычные (не файловые) ссылки
-                # сохраняются как [текст](url) внутри текста
                 text = render_inline_text(node, page_url)
                 if text:
                     blocks.append({"type": "paragraph", "text": text})
                 mark_seen_recursive(node)
-            # пустой <div> без файлов — не блок, отдаём его детей на обход дальше
             continue
 
     return blocks
-
 
 def blocks_to_markdown(page_title: str, page_url: str, blocks) -> str:
     lines = [f"# {page_title}", f"_{page_url}_", ""]
@@ -509,7 +480,8 @@ def blocks_to_markdown(page_title: str, page_url: str, blocks) -> str:
             for item in b["items"]:
                 lines.append(f"- {item}")
         elif b["type"] == "file":
-            lines.append(f"📎 [{b['link_text']}]({b['file_url']}) ({b['extension']})")
+            meta_str = f" — _{b['meta']}_" if b.get('meta') else ""
+            lines.append(f"📎 [{b['link_text']}]({b['file_url']}) ({b['extension']}){meta_str}")
         elif b["type"] == "child_pages":
             lines.append("**Подстраницы раздела:**")
             for item in b["items"]:
@@ -527,12 +499,8 @@ def blocks_to_markdown(page_title: str, page_url: str, blocks) -> str:
     return "\n".join(lines)
 
 
-# ----------------------------- ОСНОВНОЙ СЦЕНАРИЙ ----------------------------
-
-
 def main():
     OUTPUT_DIR.mkdir(exist_ok=True)
-
     target_pages = []
 
     for root_url in TARGET_ROOTS:
@@ -542,12 +510,10 @@ def main():
         print(f"[{now()}] Обхожу раздел {prefix} (корень: {root_url}) ...", flush=True)
         pages = discover_section_pages(prefix, root_url)
         if not pages:
-            # на случай сетевых сбоев — не терять хотя бы корневую страницу
             pages = {root_url}
         print(f"[{now()}] Раздел {prefix}: найдено страниц — {len(pages)}", flush=True)
         target_pages.extend(sorted(pages))
 
-    # дедуп по каноническому ключу, сохраняя порядок
     seen_keys = set()
     unique_pages = []
     for url in target_pages:
@@ -580,12 +546,8 @@ def main():
             "blocks": blocks,
         }
 
-        (OUTPUT_DIR / f"{slug}.json").write_text(
-            json.dumps(page_data, ensure_ascii=False, indent=2), encoding="utf-8"
-        )
-        (OUTPUT_DIR / f"{slug}.md").write_text(
-            blocks_to_markdown(page_title, url, blocks), encoding="utf-8"
-        )
+        (OUTPUT_DIR / f"{slug}.json").write_text(json.dumps(page_data, ensure_ascii=False, indent=2), encoding="utf-8")
+        (OUTPUT_DIR / f"{slug}.md").write_text(blocks_to_markdown(page_title, url, blocks), encoding="utf-8")
 
         toc.append({
             "url": url,
@@ -595,14 +557,10 @@ def main():
             "file_count": file_count,
         })
 
-    (OUTPUT_DIR / "_toc.json").write_text(
-        json.dumps(toc, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    (OUTPUT_DIR / "_toc.json").write_text(json.dumps(toc, ensure_ascii=False, indent=2), encoding="utf-8")
 
     print(f"\n[{now()}] Готово. Разобрано страниц: {len(toc)}")
     print(f"Результат в папке: {OUTPUT_DIR.resolve()}")
-    print("Смотрите _toc.json для быстрого обзора всех страниц и подзаголовков.")
-
 
 if __name__ == "__main__":
     main()
