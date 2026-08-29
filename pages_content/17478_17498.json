@@ -3,8 +3,7 @@
   "title": "Контакты",
   "blocks": [
     {
-      "type": "heading",
-      "level": "h1",
+      "type": "paragraph",
       "text": "Контакты"
     },
     {

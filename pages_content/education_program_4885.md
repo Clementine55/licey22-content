@@ -16,96 +16,110 @@ _https://s3454.nubex.ru/sveden/education/program_4885.html#eduPrac_
 
 ### Учебные предметы, курсы, дисциплины (модули)
 
+Не используются
+
 ### Практики
 
 Нет
 
 ### Ссылка на описание образовательной программы с приложением ее копии
 
-📎 [ООП НОО на 2026-2027 учебный год.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9899_5d/%D0%9E%D0%9E%D0%9F%20%D0%9D%D0%9E%D0%9E%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _(563 КБ)_
+📎 [ООП НОО на 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9899_5d/%D0%9E%D0%9E%D0%9F%20%D0%9D%D0%9E%D0%9E%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _563 КБ_
 
-📎 [Проект Программы воспитания.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9715_a6/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B%20%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F.pdf) (pdf) — _(1,3 МБ)_
+📎 [Проект Программы воспитания](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9715_a6/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B%20%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F.pdf) (pdf) — _1,3 МБ_
 
-📎 [ООП НОО 2025-2026 учебный год.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8140_4f/%D0%9E%D0%9E%D0%9F%20%D0%9D%D0%9E%D0%9E%202025-2026%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _(1,4 МБ)_
+📎 [ООП НОО 2025-2026 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8140_4f/%D0%9E%D0%9E%D0%9F%20%D0%9D%D0%9E%D0%9E%202025-2026%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _1,4 МБ_
 
-📎 [Календарный план воспитательной работы на 2026-2027 учебный год НОО.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9877_7d/%D0%9A%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%BB%D0%B0%D0%BD%20%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20%D0%9D%D0%9E%D0%9E.pdf) (pdf) — _(622 КБ)_
+📎 [Календарный план воспитательной работы на 2026-2027 учебный год НОО](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9877_7d/%D0%9A%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%BB%D0%B0%D0%BD%20%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20%D0%9D%D0%9E%D0%9E.pdf) (pdf) — _622 КБ_
 
-📎 [Приложение_к_ООП_НОО_Система_оценки_достижения_планируемых_результатов.docx](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8124_7c/%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BA_%D0%9E%D0%9E%D0%9F_%D0%9D%D0%9E%D0%9E_%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B8_%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D0%BB%D0%B0%D0%BD%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D1%8B%D1%85_%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%BE%D0%B2.docx) (docx) — _(60 КБ)_
+📎 [Приложение_к_ООП_НОО_Система_оценки_достижения_планируемых_результатов](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8124_7c/%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BA_%D0%9E%D0%9E%D0%9F_%D0%9D%D0%9E%D0%9E_%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B8_%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D0%BB%D0%B0%D0%BD%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D1%8B%D1%85_%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%BE%D0%B2.docx) (docx) — _60 КБ_
 
-📎 [АООП НОО ЗПР](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f6177_32/%D0%90%D0%9E%D0%9E%D0%9F%20%D0%9D%D0%9E%D0%9E%20%D0%97%D0%9F%D0%A0%20%282%29.docx) (docx) — _(281 КБ)_
+📎 [АООП НОО ЗПР](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f6177_32/%D0%90%D0%9E%D0%9E%D0%9F%20%D0%9D%D0%9E%D0%9E%20%D0%97%D0%9F%D0%A0%20%282%29.docx) (docx) — _281 КБ_
 
-📎 [АООП НОО РАС](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f6178_43/%D0%90%D0%9E%D0%9E%D0%9F%20%D0%9D%D0%9E%D0%9E%20%D0%A0%D0%90%D0%A1%20%281%29.docx) (docx) — _(402 КБ)_
+📎 [АООП НОО РАС](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f6178_43/%D0%90%D0%9E%D0%9E%D0%9F%20%D0%9D%D0%9E%D0%9E%20%D0%A0%D0%90%D0%A1%20%281%29.docx) (docx) — _402 КБ_
 
-📎 [АОП НОО УО](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f6179_93/%D0%90%D0%9E%D0%9E%D0%9F%20%D0%9D%D0%9E%D0%9E%20%D0%A3%D0%9E%20%281%29.docx) (docx) — _(414 КБ)_
+📎 [АОП НОО УО](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f6179_93/%D0%90%D0%9E%D0%9E%D0%9F%20%D0%9D%D0%9E%D0%9E%20%D0%A3%D0%9E%20%281%29.docx) (docx) — _414 КБ_
 
-📎 [АООП НОО ТНР](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f6180_a4/%D0%90%D0%9E%D0%9E%D0%9F%20%D0%9D%D0%9E%D0%9E%20%D0%A2%D0%9D%D0%A0%20%281%29.docx) (docx) — _(354 КБ)_
+📎 [АООП НОО ТНР](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f6180_a4/%D0%90%D0%9E%D0%9E%D0%9F%20%D0%9D%D0%9E%D0%9E%20%D0%A2%D0%9D%D0%A0%20%281%29.docx) (docx) — _354 КБ_
 
-📎 [Реестровая выписка аккредитации](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9027_f8/%D0%A0%D0%B5%D0%B5%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B2%D1%8B%D0%BF%D0%B8%D1%81%D0%BA%D0%B0%20%D0%B0%D0%BA%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%B0%D1%86%D0%B8%D0%B8%20%281%29.pdf) (pdf) — _(73 КБ)_
+📎 [Реестровая выписка аккредитации](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9027_f8/%D0%A0%D0%B5%D0%B5%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B2%D1%8B%D0%BF%D0%B8%D1%81%D0%BA%D0%B0%20%D0%B0%D0%BA%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%B0%D1%86%D0%B8%D0%B8%20%281%29.pdf) (pdf) — _73 КБ_
 
-📎 [Календарный план воспитательной работы на 2026-2027 учебный год НОО.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9876_f7/%D0%9A%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%BB%D0%B0%D0%BD%20%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20%D0%9D%D0%9E%D0%9E.pdf) (pdf) — _(622 КБ)_
+📎 [Календарный план воспитательной работы на 2026-2027 учебный год НОО](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9876_f7/%D0%9A%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%BB%D0%B0%D0%BD%20%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20%D0%9D%D0%9E%D0%9E.pdf) (pdf) — _622 КБ_
 
 ### Ссылка на учебный план
 
-📎 [Проект учебного плана НОО.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9844_1a/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D0%BB%D0%B0%D0%BD%D0%B0%20%D0%9D%D0%9E%D0%9E.pdf) (pdf) — _(172 КБ)_
+📎 [Проект учебного плана НОО](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9844_1a/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D0%BB%D0%B0%D0%BD%D0%B0%20%D0%9D%D0%9E%D0%9E.pdf) (pdf) — _172 КБ_
 
 ### Ссылки на рабочие программы
 
-📎 [РП Русский язык.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9720_b1/%D0%A0%D0%9F%20%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9%20%D1%8F%D0%B7%D1%8B%D0%BA.pdf) (pdf) — _(4,8 МБ)_
+📎 [РП Русский язык](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9720_b1/%D0%A0%D0%9F%20%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9%20%D1%8F%D0%B7%D1%8B%D0%BA.pdf) (pdf) — _4,8 МБ_
 
-📎 [РП Математика.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9728_c8/%D0%A0%D0%9F%20%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0.pdf) (pdf) — _(2,4 МБ)_
+📎 [РП Математика](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9728_c8/%D0%A0%D0%9F%20%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0.pdf) (pdf) — _2,4 МБ_
 
-📎 [РП Окружающий мир.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9726_69/%D0%A0%D0%9F%20%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%B0%D1%8E%D1%89%D0%B8%D0%B9%20%D0%BC%D0%B8%D1%80.pdf) (pdf) — _(1,8 МБ)_
+📎 [РП Окружающий мир](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9726_69/%D0%A0%D0%9F%20%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%B0%D1%8E%D1%89%D0%B8%D0%B9%20%D0%BC%D0%B8%D1%80.pdf) (pdf) — _1,8 МБ_
 
-📎 [РП Физическая культура.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9721_e2/%D0%A0%D0%9F%20%D0%A4%D0%B8%D0%B7%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0.pdf) (pdf) — _(1,2 МБ)_
+📎 [РП Физическая культура](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9721_e2/%D0%A0%D0%9F%20%D0%A4%D0%B8%D0%B7%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0.pdf) (pdf) — _1,2 МБ_
 
-📎 [РП Английский язык.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9736_6b/%D0%A0%D0%9F%20%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9%20%D1%8F%D0%B7%D1%8B%D0%BA.pdf) (pdf) — _(2,2 МБ)_
+📎 [РП Английский язык](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9736_6b/%D0%A0%D0%9F%20%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9%20%D1%8F%D0%B7%D1%8B%D0%BA.pdf) (pdf) — _2,2 МБ_
 
-📎 [РП Литературное чтение.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9730_93/%D0%A0%D0%9F%20%D0%9B%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%BD%D0%BE%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D0%B5.pdf) (pdf) — _(3,6 МБ)_
+📎 [РП Литературное чтение](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9730_93/%D0%A0%D0%9F%20%D0%9B%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%BD%D0%BE%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D0%B5.pdf) (pdf) — _3,6 МБ_
 
-📎 [РП Труд (технология).pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9718_f7/%D0%A0%D0%9F%20%D0%A2%D1%80%D1%83%D0%B4%20%28%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%29.pdf) (pdf) — _(1,8 МБ)_
+📎 [РП Труд (технология](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9718_f7/%D0%A0%D0%9F%20%D0%A2%D1%80%D1%83%D0%B4%20%28%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%29.pdf) (pdf) — _1,8 МБ_
 
-📎 [РП Умные клетки.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9719_ce/%D0%A0%D0%9F%20%D0%A3%D0%BC%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BB%D0%B5%D1%82%D0%BA%D0%B8.pdf) (pdf) — _(669 КБ)_
+📎 [РП Умные клетки](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9719_ce/%D0%A0%D0%9F%20%D0%A3%D0%BC%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BB%D0%B5%D1%82%D0%BA%D0%B8.pdf) (pdf) — _669 КБ_
 
-📎 [РП Чистописание.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9722_f0/%D0%A0%D0%9F%20%D0%A7%D0%B8%D1%81%D1%82%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5.pdf) (pdf) — _(514 КБ)_
+📎 [РП Чистописание](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9722_f0/%D0%A0%D0%9F%20%D0%A7%D0%B8%D1%81%D1%82%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5.pdf) (pdf) — _514 КБ_
 
-📎 [РП Робототехника.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9723_1a/%D0%A0%D0%9F%20%D0%A0%D0%BE%D0%B1%D0%BE%D1%82%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0.pdf) (pdf) — _(746 КБ)_
+📎 [РП Робототехника](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9723_1a/%D0%A0%D0%9F%20%D0%A0%D0%BE%D0%B1%D0%BE%D1%82%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0.pdf) (pdf) — _746 КБ_
 
-📎 [РП Технопредпринимательство и экономика.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9724_ea/%D0%A0%D0%9F%20%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%BF%D1%80%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B8%20%D1%8D%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%B8%D0%BA%D0%B0.pdf) (pdf) — _(721 КБ)_
+📎 [РП Технопредпринимательство и экономика](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9724_ea/%D0%A0%D0%9F%20%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%BF%D1%80%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%B8%20%D1%8D%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%B8%D0%BA%D0%B0.pdf) (pdf) — _721 КБ_
 
-📎 [РП Программирование и ИТ.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9725_dd/%D0%A0%D0%9F%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D0%98%D0%A2.pdf) (pdf) — _(739 КБ)_
+📎 [РП Программирование и ИТ](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9725_dd/%D0%A0%D0%9F%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D0%98%D0%A2.pdf) (pdf) — _739 КБ_
 
-📎 [РП Наглядная геометрия.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9727_94/%D0%A0%D0%9F%20%D0%9D%D0%B0%D0%B3%D0%BB%D1%8F%D0%B4%D0%BD%D0%B0%D1%8F%20%D0%B3%D0%B5%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%8F.pdf) (pdf) — _(582 КБ)_
+📎 [РП Наглядная геометрия](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9727_94/%D0%A0%D0%9F%20%D0%9D%D0%B0%D0%B3%D0%BB%D1%8F%D0%B4%D0%BD%D0%B0%D1%8F%20%D0%B3%D0%B5%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%8F.pdf) (pdf) — _582 КБ_
 
-📎 [РП Конструирование и протипирование.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9729_c6/%D0%A0%D0%9F%20%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.pdf) (pdf) — _(760 КБ)_
+📎 [РП Конструирование и протипирование](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9729_c6/%D0%A0%D0%9F%20%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.pdf) (pdf) — _760 КБ_
 
-📎 [РП ВД Футбол.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9731_f6/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%A4%D1%83%D1%82%D0%B1%D0%BE%D0%BB.pdf) (pdf) — _(391 КБ)_
+📎 [РП ВД Футбол](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9731_f6/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%A4%D1%83%D1%82%D0%B1%D0%BE%D0%BB.pdf) (pdf) — _391 КБ_
 
-📎 [РП ВД _Защитник Тема.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9717_ee/%D0%A0%D0%9F%C2%A0%D0%92%D0%94%20_%D0%97%D0%B0%D1%89%D0%B8%D1%82%D0%BD%D0%B8%D0%BA%20%D0%A2%D0%B5%D0%BC%D0%B0.pdf) (pdf) — _(443 КБ)_
+📎 [РП ВД _Защитник Тема](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9717_ee/%D0%A0%D0%9F%C2%A0%D0%92%D0%94%20_%D0%97%D0%B0%D1%89%D0%B8%D1%82%D0%BD%D0%B8%D0%BA%20%D0%A2%D0%B5%D0%BC%D0%B0.pdf) (pdf) — _443 КБ_
 
-📎 [РП ВД Орлята России.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9732_a8/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%9E%D1%80%D0%BB%D1%8F%D1%82%D0%B0%20%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8.pdf) (pdf) — _(962 КБ)_
+📎 [РП ВД Орлята России](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9732_a8/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%9E%D1%80%D0%BB%D1%8F%D1%82%D0%B0%20%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8.pdf) (pdf) — _962 КБ_
 
-📎 [РП ВД Учимся писать сочинение.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9733_1b/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%A3%D1%87%D0%B8%D0%BC%D1%81%D1%8F%20%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%20%D1%81%D0%BE%D1%87%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5.pdf) (pdf) — _(560 КБ)_
+📎 [РП ВД Учимся писать сочинение](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9733_1b/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%A3%D1%87%D0%B8%D0%BC%D1%81%D1%8F%20%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%20%D1%81%D0%BE%D1%87%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5.pdf) (pdf) — _560 КБ_
 
-📎 [РП ВД Веселые старты.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9734_3f/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%92%D0%B5%D1%81%D0%B5%D0%BB%D1%8B%D0%B5%20%D1%81%D1%82%D0%B0%D1%80%D1%82%D1%8B.pdf) (pdf) — _(299 КБ)_
+📎 [РП ВД Веселые старты](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9734_3f/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%92%D0%B5%D1%81%D0%B5%D0%BB%D1%8B%D0%B5%20%D1%81%D1%82%D0%B0%D1%80%D1%82%D1%8B.pdf) (pdf) — _299 КБ_
 
-📎 [РП ВД Иголочка.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9735_d8/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%98%D0%B3%D0%BE%D0%BB%D0%BE%D1%87%D0%BA%D0%B0.pdf) (pdf) — _(595 КБ)_
+📎 [РП ВД Иголочка](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9735_d8/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%98%D0%B3%D0%BE%D0%BB%D0%BE%D1%87%D0%BA%D0%B0.pdf) (pdf) — _595 КБ_
 
-📎 [РП ОРКСЭ 4 класс.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9863_f5/%D0%A0%D0%9F%20%D0%9E%D0%A0%D0%9A%D0%A1%D0%AD%204%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _(975 КБ)_
+📎 [РП ОРКСЭ 4 класс](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9863_f5/%D0%A0%D0%9F%20%D0%9E%D0%A0%D0%9A%D0%A1%D0%AD%204%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _975 КБ_
 
 ### Ссылка на календарный учебный график
 
+Не используются
+
 ### Ссылка на рабочие программы практик, предусмотренные соответствующей образовательной программой
+
+Не используются
 
 ### Ссылка на методические и иные документы, разработанные ОО для обеспечения образовательного процесса, а также рабочие программы воспитания и календарные планы воспитательной работы, включаемых в ООП
 
-📎 [Система оценивания НОО.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8627_fa/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%20%20%D0%BE%D1%86%D0%B5%D0%BD%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%9D%D0%9E%D0%9E.pdf) (pdf) — _(1013 КБ)_
+📎 [Система оценивания НОО](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8627_fa/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%20%20%D0%BE%D1%86%D0%B5%D0%BD%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%9D%D0%9E%D0%9E.pdf) (pdf) — _1013 КБ_
 
-📎 [Приказ и положение об электронном обучении и использовании дистанционных образовательных технологий в образовательном процессе.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8981_ee/%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%20%D0%B8%20%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B1%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%BC%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B8%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8%20%D0%B4%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B9%20%D0%B2%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B5.pdf) (pdf) — _(851 КБ)_
+📎 [Приказ и положение об электронном обучении и использовании дистанционных образовательных технологий в образовательном процессе](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8981_ee/%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%20%D0%B8%20%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B1%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%BC%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B8%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8%20%D0%B4%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B9%20%D0%B2%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B5.pdf) (pdf) — _851 КБ_
 
 ### Перечень научных направлений, в рамках которых ведется научная деятельность
 
+Не используется
+
 ### Название научного направления/научной школы
+
+Не используется
 
 ### Результаты научной деятельности
 
+Не используется
+
 ### Сведения о научно-исследовательской базе для осуществления научной деятельности
+
+Не используется

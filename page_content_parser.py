@@ -228,9 +228,6 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
         if not isinstance(node, Tag):
             return ""
 
-        if node.get_text(strip=True).lower() in ["не указан", "не указаны"]:
-            return ""
-
         if is_hidden(node):
             return ""
 
@@ -297,10 +294,32 @@ def build_file_block(container: Tag, anchor: Tag, ext: str, full_url: str, page_
     meta = full_text
     if link_text and link_text in meta:
         meta = meta.replace(link_text, "", 1)
-    meta = re.sub(r"\s+", " ", meta).strip()
+    
+    # Спасаем мету, если она застряла внутри <a href="...">...</a>
+    if not meta.strip():
+        m = re.search(r'(.*?)([\(\s,]*\d+[\.,]?\d*\s*(?:КБ|МБ|Б|KB|MB|B).*)$', link_text, flags=re.IGNORECASE)
+        if m:
+            link_text = m.group(1).strip()
+            meta = m.group(2).strip()
 
+    meta = re.sub(r"\s+", " ", meta).strip()
     if not link_text:
         link_text = anchor.get_text(strip=True) or clean_filename(full_url)
+
+    # Выжигаем расширение из названия и меты
+    if ext:
+        ext_regex = re.compile(rf'\.{ext.lstrip(".")}(?=[\s,\)]|$)', re.IGNORECASE)
+        link_text = ext_regex.sub('', link_text).strip()
+        meta = ext_regex.sub('', meta).strip()
+
+    # Уничтожаем все скобки и висящие запятые в мете
+    if meta:
+        meta = re.sub(r'\)\s*\(', ', ', meta)
+        meta = re.sub(r'[()]', '', meta)
+        meta = re.sub(r'^[,.\s]+', '', meta).strip()
+        meta = re.sub(r'[,.\s]+$', '', meta).strip()
+
+    link_text = re.sub(r'^[\(\s,]+|[\)\s,]+$', '', link_text).strip()
 
     return {
         "type": "file",
@@ -459,7 +478,7 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
                         "file_url": full_url,
                     })
                 mark_seen_recursive(node)
-            elif node.name == "p":
+            elif node.name in ("p", "div"):
                 text = render_inline_text(node, page_url)
                 if text:
                     blocks.append({"type": "paragraph", "text": text})

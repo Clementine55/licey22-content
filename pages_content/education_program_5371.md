@@ -16,136 +16,152 @@ _https://s3454.nubex.ru/sveden/education/program_5371.html#edu_programs_main_des
 
 ### Учебные предметы, курсы, дисциплины (модули)
 
+Не используются
+
 ### Практики
+
+Не используются
 
 ### Ссылка на описание образовательной программы с приложением ее копии
 
-📎 [ООП СОО на 2026-2027 учебный год.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9901_de/%D0%9E%D0%9E%D0%9F%20%20%D0%A1%D0%9E%D0%9E%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _(789 КБ)_
+📎 [ООП СОО на 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9901_de/%D0%9E%D0%9E%D0%9F%20%20%D0%A1%D0%9E%D0%9E%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _789 КБ_
 
-📎 [Проект Программы воспитания.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9815_7e/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B%20%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F.pdf) (pdf) — _(1,3 МБ)_
+📎 [Проект Программы воспитания](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9815_7e/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B%20%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F.pdf) (pdf) — _1,3 МБ_
 
-📎 [Календарный план воспитательной работы на 2026-2027 учебный год СОО.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9879_ca/%D0%9A%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%BB%D0%B0%D0%BD%20%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20%D0%A1%D0%9E%D0%9E.pdf) (pdf) — _(622 КБ)_
+📎 [Календарный план воспитательной работы на 2026-2027 учебный год СОО](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9879_ca/%D0%9A%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%BB%D0%B0%D0%BD%20%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20%D0%A1%D0%9E%D0%9E.pdf) (pdf) — _622 КБ_
 
-📎 [ООП СОО 2025 г.](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f7288_f5/%D0%9E%D0%9E%D0%9F%20%D0%A1%D0%9E%D0%9E%2025-27.pdf) (pdf) — _(9,4 МБ)_
+📎 [ООП СОО 2025 г.](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f7288_f5/%D0%9E%D0%9E%D0%9F%20%D0%A1%D0%9E%D0%9E%2025-27.pdf) (pdf) — _9,4 МБ_
 
-📎 [Реестровая выписка аккредитации](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9029_bb/%D0%A0%D0%B5%D0%B5%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B2%D1%8B%D0%BF%D0%B8%D1%81%D0%BA%D0%B0%20%D0%B0%D0%BA%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%B0%D1%86%D0%B8%D0%B8%20%281%29.pdf) (pdf) — _(73 КБ)_
+📎 [Реестровая выписка аккредитации](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9029_bb/%D0%A0%D0%B5%D0%B5%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B2%D1%8B%D0%BF%D0%B8%D1%81%D0%BA%D0%B0%20%D0%B0%D0%BA%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%B0%D1%86%D0%B8%D0%B8%20%281%29.pdf) (pdf) — _73 КБ_
 
 ### Ссылка на учебный план
 
-📎 [Проект учебного плана СОО на 2026-2027 учебный год.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9816_73/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D0%BB%D0%B0%D0%BD%D0%B0%20%D0%A1%D0%9E%D0%9E%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _(480 КБ)_
+📎 [Проект учебного плана СОО на 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9816_73/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D0%BB%D0%B0%D0%BD%D0%B0%20%D0%A1%D0%9E%D0%9E%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _480 КБ_
 
 ### Ссылки на рабочие программы
 
-📎 [РП Русский язык.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9817_92/%D0%A0%D0%9F%20%20%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9%20%D1%8F%D0%B7%D1%8B%D0%BA.pdf) (pdf) — _(1,5 МБ)_
+📎 [РП Русский язык](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9817_92/%D0%A0%D0%9F%20%20%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9%20%D1%8F%D0%B7%D1%8B%D0%BA.pdf) (pdf) — _1,5 МБ_
 
-📎 [РП Анализ данных 10-11М 2026.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9818_7d/%D0%A0%D0%9F%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%2010-11%D0%9C%202026.pdf) (pdf) — _(655 КБ)_
+📎 [РП Анализ данных 10-11М 2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9818_7d/%D0%A0%D0%9F%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%2010-11%D0%9C%202026.pdf) (pdf) — _655 КБ_
 
-📎 [РП Алгоритмизация и программирование 10-11кл.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9819_13/%D0%A0%D0%9F%20%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%2010-11%D0%BA%D0%BB.pdf) (pdf) — _(736 КБ)_
+📎 [РП Алгоритмизация и программирование 10-11кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9819_13/%D0%A0%D0%9F%20%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%2010-11%D0%BA%D0%BB.pdf) (pdf) — _736 КБ_
 
-📎 [РП Анатомия и морфолоия растений.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9820_11/%D0%A0%D0%9F%20%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BC%D0%B8%D1%8F%20%D0%B8%20%D0%BC%D0%BE%D1%80%D1%84%D0%BE%D0%BB%D0%BE%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%B8%D0%B9.pdf) (pdf) — _(641 КБ)_
+📎 [РП Анатомия и морфолоия растений](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9820_11/%D0%A0%D0%9F%20%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BC%D0%B8%D1%8F%20%D0%B8%20%D0%BC%D0%BE%D1%80%D1%84%D0%BE%D0%BB%D0%BE%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%B8%D0%B9.pdf) (pdf) — _641 КБ_
 
-📎 [РП Анатомия и физиология человека.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9821_9b/%D0%A0%D0%9F%20%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BC%D0%B8%D1%8F%20%D0%B8%20%D1%84%D0%B8%D0%B7%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0.pdf) (pdf) — _(754 КБ)_
+📎 [РП Анатомия и физиология человека](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9821_9b/%D0%A0%D0%9F%20%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BC%D0%B8%D1%8F%20%D0%B8%20%D1%84%D0%B8%D0%B7%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0.pdf) (pdf) — _754 КБ_
 
-📎 [РП ВД Избранные вопросы информатики 11 кл.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9822_ba/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%98%D0%B7%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B8%2011%20%D0%BA%D0%BB.pdf) (pdf) — _(614 КБ)_
+📎 [РП ВД Избранные вопросы информатики 11 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9822_ba/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%98%D0%B7%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B8%2011%20%D0%BA%D0%BB.pdf) (pdf) — _614 КБ_
 
-📎 [РП ВД Космическая медиц 10 класс.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9823_db/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%9A%D0%BE%D1%81%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%2010%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _(474 КБ)_
+📎 [РП ВД Космическая медиц 10 класс](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9823_db/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%9A%D0%BE%D1%81%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%2010%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _474 КБ_
 
-📎 [РП Генная инженерия 10 класс.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9824_c0/%D0%A0%D0%9F%20%D0%93%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F%20%D0%B8%D0%BD%D0%B6%D0%B5%D0%BD%D0%B5%D1%80%D0%B8%D1%8F%2010%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _(707 КБ)_
+📎 [РП Генная инженерия 10 класс](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9824_c0/%D0%A0%D0%9F%20%D0%93%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F%20%D0%B8%D0%BD%D0%B6%D0%B5%D0%BD%D0%B5%D1%80%D0%B8%D1%8F%2010%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _707 КБ_
 
-📎 [РП Кодирование информации 10 кл.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9825_f9/%D0%A0%D0%9F%20%D0%9A%D0%BE%D0%B4%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8%2010%20%D0%BA%D0%BB.pdf) (pdf) — _(491 КБ)_
+📎 [РП Кодирование информации 10 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9825_f9/%D0%A0%D0%9F%20%D0%9A%D0%BE%D0%B4%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8%2010%20%D0%BA%D0%BB.pdf) (pdf) — _491 КБ_
 
-📎 [РП Комп зрение_10_инж_поток 2026-27.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9826_59/%D0%A0%D0%9F%20%D0%9A%D0%BE%D0%BC%D0%BF%20%D0%B7%D1%80%D0%B5%D0%BD%D0%B8%D0%B5_10_%D0%B8%D0%BD%D0%B6_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%202026-27.pdf) (pdf) — _(851 КБ)_
+📎 [РП Комп зрение_10_инж_поток 2026-27](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9826_59/%D0%A0%D0%9F%20%D0%9A%D0%BE%D0%BC%D0%BF%20%D0%B7%D1%80%D0%B5%D0%BD%D0%B8%D0%B5_10_%D0%B8%D0%BD%D0%B6_%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%202026-27.pdf) (pdf) — _851 КБ_
 
-📎 [РП Компьютерное моделирование 11 кл.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9827_c3/%D0%A0%D0%9F%20%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%2011%20%D0%BA%D0%BB.pdf) (pdf) — _(456 КБ)_
+📎 [РП Компьютерное моделирование 11 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9827_c3/%D0%A0%D0%9F%20%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%2011%20%D0%BA%D0%BB.pdf) (pdf) — _456 КБ_
 
-📎 [РП Математические объекты информатики.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9828_52/%D0%A0%D0%9F%20%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D1%8B%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B8.pdf) (pdf) — _(629 КБ)_
+📎 [РП Математические объекты информатики](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9828_52/%D0%A0%D0%9F%20%D0%9C%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D1%8B%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B8.pdf) (pdf) — _629 КБ_
 
-📎 [РП Моделирование физич процессов 11.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9829_f3/%D0%A0%D0%9F%20%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%84%D0%B8%D0%B7%D0%B8%D1%87%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D0%B2%2011.pdf) (pdf) — _(808 КБ)_
+📎 [РП Моделирование физич процессов 11](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9829_f3/%D0%A0%D0%9F%20%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%84%D0%B8%D0%B7%D0%B8%D1%87%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D0%B2%2011.pdf) (pdf) — _808 КБ_
 
-📎 [РП Основы технологий искусственного интеллекта 11ИП 2025.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9830_72/%D0%A0%D0%9F%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B9%20%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D0%B0%2011%D0%98%D0%9F%202025.pdf) (pdf) — _(979 КБ)_
+📎 [РП Основы технологий искусственного интеллекта 11ИП 2025](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9830_72/%D0%A0%D0%9F%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B9%20%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D0%B0%2011%D0%98%D0%9F%202025.pdf) (pdf) — _979 КБ_
 
-📎 [РП Основы технологий искусственного интеллекта.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9831_e0/%D0%A0%D0%9F%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B9%20%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D0%B0.pdf) (pdf) — _(740 КБ)_
+📎 [РП Основы технологий искусственного интеллекта](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9831_e0/%D0%A0%D0%9F%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B9%20%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D0%B0.pdf) (pdf) — _740 КБ_
 
-📎 [РП Пайтон 10-11 кл.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9832_c2/%D0%A0%D0%9F%20%D0%9F%D0%B0%D0%B9%D1%82%D0%BE%D0%BD%2010-11%20%D0%BA%D0%BB.pdf) (pdf) — _(707 КБ)_
+📎 [РП Пайтон 10-11 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9832_c2/%D0%A0%D0%9F%20%D0%9F%D0%B0%D0%B9%D1%82%D0%BE%D0%BD%2010-11%20%D0%BA%D0%BB.pdf) (pdf) — _707 КБ_
 
-📎 [РП Решение расчетных задач по химии.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9833_c8/%D0%A0%D0%9F%20%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%BD%D1%8B%D1%85%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%20%D0%BF%D0%BE%20%D1%85%D0%B8%D0%BC%D0%B8%D0%B8.pdf) (pdf) — _(643 КБ)_
+📎 [РП Решение расчетных задач по химии](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9833_c8/%D0%A0%D0%9F%20%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%BD%D1%8B%D1%85%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%20%D0%BF%D0%BE%20%D1%85%D0%B8%D0%BC%D0%B8%D0%B8.pdf) (pdf) — _643 КБ_
 
-📎 [РП Теоретические основы химии.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9834_c2/%D0%A0%D0%9F%20%D0%A2%D0%B5%D0%BE%D1%80%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%85%D0%B8%D0%BC%D0%B8%D0%B8.pdf) (pdf) — _(886 КБ)_
+📎 [РП Теоретические основы химии](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9834_c2/%D0%A0%D0%9F%20%D0%A2%D0%B5%D0%BE%D1%80%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%85%D0%B8%D0%BC%D0%B8%D0%B8.pdf) (pdf) — _886 КБ_
 
-📎 [РП Теория алгоритмов 11кл.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9835_1d/%D0%A0%D0%9F%20%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F%20%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2%2011%D0%BA%D0%BB.pdf) (pdf) — _(501 КБ)_
+📎 [РП Теория алгоритмов 11кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9835_1d/%D0%A0%D0%9F%20%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F%20%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2%2011%D0%BA%D0%BB.pdf) (pdf) — _501 КБ_
 
-📎 [РП ТПП 10-11 классы.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9836_8d/%D0%A0%D0%9F%20%D0%A2%D0%9F%D0%9F%2010-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B.pdf) (pdf) — _(1,1 МБ)_
+📎 [РП ТПП 10-11 классы](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9836_8d/%D0%A0%D0%9F%20%D0%A2%D0%9F%D0%9F%2010-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B.pdf) (pdf) — _1,1 МБ_
 
-📎 [РП Хиимия и здоровье.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9837_85/%D0%A0%D0%9F%20%D0%A5%D0%B8%D0%B8%D0%BC%D0%B8%D1%8F%20%D0%B8%20%D0%B7%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D1%8C%D0%B5.pdf) (pdf) — _(555 КБ)_
+📎 [РП Хиимия и здоровье](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9837_85/%D0%A0%D0%9F%20%D0%A5%D0%B8%D0%B8%D0%BC%D0%B8%D1%8F%20%D0%B8%20%D0%B7%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D1%8C%D0%B5.pdf) (pdf) — _555 КБ_
 
-📎 [РП Химия в задачах 10-11 класс.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9838_e8/%D0%A0%D0%9F%20%D0%A5%D0%B8%D0%BC%D0%B8%D1%8F%20%D0%B2%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%D1%85%2010-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _(642 КБ)_
+📎 [РП Химия в задачах 10-11 класс](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9838_e8/%D0%A0%D0%9F%20%D0%A5%D0%B8%D0%BC%D0%B8%D1%8F%20%D0%B2%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%D1%85%2010-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _642 КБ_
 
-📎 [РП Химия ВМС 10 класс.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9839_32/%D0%A0%D0%9F%20%D0%A5%D0%B8%D0%BC%D0%B8%D1%8F%20%D0%92%D0%9C%D0%A1%2010%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _(449 КБ)_
+📎 [РП Химия ВМС 10 класс](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9839_32/%D0%A0%D0%9F%20%D0%A5%D0%B8%D0%BC%D0%B8%D1%8F%20%D0%92%D0%9C%D0%A1%2010%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _449 КБ_
 
-📎 [РП Цифровые технологии 10-11.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9840_6b/%D0%A0%D0%9F%20%D0%A6%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D1%8B%D0%B5%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%2010-11.pdf) (pdf) — _(596 КБ)_
+📎 [РП Цифровые технологии 10-11](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9840_6b/%D0%A0%D0%9F%20%D0%A6%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D1%8B%D0%B5%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%2010-11.pdf) (pdf) — _596 КБ_
 
-📎 [РП Эволюция органов и систем животных 11 класс.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9841_bd/%D0%A0%D0%9F%20%D0%AD%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D1%8F%20%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%BE%D0%B2%20%D0%B8%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%20%D0%B6%D0%B8%D0%B2%D0%BE%D1%82%D0%BD%D1%8B%D1%85%2011%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _(949 КБ)_
+📎 [РП Эволюция органов и систем животных 11 класс](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9841_bd/%D0%A0%D0%9F%20%D0%AD%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D1%8F%20%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%BE%D0%B2%20%D0%B8%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%20%D0%B6%D0%B8%D0%B2%D0%BE%D1%82%D0%BD%D1%8B%D1%85%2011%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _949 КБ_
 
-📎 [РП Алгебра 10-11 база.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9845_e4/%D0%A0%D0%9F%20%D0%90%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%2010-11%20%D0%B1%D0%B0%D0%B7%D0%B0.pdf) (pdf) — _(1,7 МБ)_
+📎 [РП Алгебра 10-11 база](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9845_e4/%D0%A0%D0%9F%20%D0%90%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%2010-11%20%D0%B1%D0%B0%D0%B7%D0%B0.pdf) (pdf) — _1,7 МБ_
 
-📎 [РП Химия 10-11 (база).pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9846_b4/%D0%A0%D0%9F%20%D0%A5%D0%B8%D0%BC%D0%B8%D1%8F%2010-11%20%28%D0%B1%D0%B0%D0%B7%D0%B0%29.pdf) (pdf) — _(1,1 МБ)_
+📎 [РП Химия 10-11 (база](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9846_b4/%D0%A0%D0%9F%20%D0%A5%D0%B8%D0%BC%D0%B8%D1%8F%2010-11%20%28%D0%B1%D0%B0%D0%B7%D0%B0%29.pdf) (pdf) — _1,1 МБ_
 
-📎 [РП Химия 10-11 (угл).pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9847_4a/%D0%A0%D0%9F%20%D0%A5%D0%B8%D0%BC%D0%B8%D1%8F%2010-11%20%20%28%D1%83%D0%B3%D0%BB%29.pdf) (pdf) — _(1,3 МБ)_
+📎 [РП Химия 10-11 (угл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9847_4a/%D0%A0%D0%9F%20%D0%A5%D0%B8%D0%BC%D0%B8%D1%8F%2010-11%20%20%28%D1%83%D0%B3%D0%BB%29.pdf) (pdf) — _1,3 МБ_
 
-📎 [РП Молодежная политика в РФ 10-11 кл.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9848_10/%D0%A0%D0%9F%20%D0%9C%D0%BE%D0%BB%D0%BE%D0%B4%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20%D0%B2%20%D0%A0%D0%A4%2010-11%20%D0%BA%D0%BB.pdf) (pdf) — _(759 КБ)_
+📎 [РП Молодежная политика в РФ 10-11 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9848_10/%D0%A0%D0%9F%20%D0%9C%D0%BE%D0%BB%D0%BE%D0%B4%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20%D0%B2%20%D0%A0%D0%A4%2010-11%20%D0%BA%D0%BB.pdf) (pdf) — _759 КБ_
 
-📎 [РП ЛИТ 10-11 (углубл).pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9849_94/%D0%A0%D0%9F%20%D0%9B%D0%98%D0%A2%2010-11%20%28%D1%83%D0%B3%D0%BB%D1%83%D0%B1%D0%BB%29.pdf) (pdf) — _(3,9 МБ)_
+📎 [РП ЛИТ 10-11 (углубл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9849_94/%D0%A0%D0%9F%20%D0%9B%D0%98%D0%A2%2010-11%20%28%D1%83%D0%B3%D0%BB%D1%83%D0%B1%D0%BB%29.pdf) (pdf) — _3,9 МБ_
 
-📎 [РП ЛИТ 10-11 (база).pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9850_c7/%D0%A0%D0%9F%20%D0%9B%D0%98%D0%A2%2010-11%20%28%D0%B1%D0%B0%D0%B7%D0%B0%29.pdf) (pdf) — _(2,1 МБ)_
+📎 [РП ЛИТ 10-11 (база](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9850_c7/%D0%A0%D0%9F%20%D0%9B%D0%98%D0%A2%2010-11%20%28%D0%B1%D0%B0%D0%B7%D0%B0%29.pdf) (pdf) — _2,1 МБ_
 
-📎 [РП Детские молодежнве общ орг 10-11 кл.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9851_f9/%D0%A0%D0%9F%20%D0%94%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BC%D0%BE%D0%BB%D0%BE%D0%B4%D0%B5%D0%B6%D0%BD%D0%B2%D0%B5%20%D0%BE%D0%B1%D1%89%20%D0%BE%D1%80%D0%B3%2010-11%20%D0%BA%D0%BB.pdf) (pdf) — _(755 КБ)_
+📎 [РП Детские молодежнве общ орг 10-11 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9851_f9/%D0%A0%D0%9F%20%D0%94%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BC%D0%BE%D0%BB%D0%BE%D0%B4%D0%B5%D0%B6%D0%BD%D0%B2%D0%B5%20%D0%BE%D0%B1%D1%89%20%D0%BE%D1%80%D0%B3%2010-11%20%D0%BA%D0%BB.pdf) (pdf) — _755 КБ_
 
-📎 [РП Геометрия база 10-11.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9852_14/%D0%A0%D0%9F%20%D0%93%D0%B5%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%8F%20%D0%B1%D0%B0%D0%B7%D0%B0%2010-11.pdf) (pdf) — _(1,3 МБ)_
+📎 [РП Геометрия база 10-11](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9852_14/%D0%A0%D0%9F%20%D0%93%D0%B5%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%8F%20%D0%B1%D0%B0%D0%B7%D0%B0%2010-11.pdf) (pdf) — _1,3 МБ_
 
-📎 [РП Вероятность и статистика 10-11.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9853_0a/%D0%A0%D0%9F%20%D0%92%D0%B5%D1%80%D0%BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%B8%20%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0%2010-11.pdf) (pdf) — _(562 КБ)_
+📎 [РП Вероятность и статистика 10-11](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9853_0a/%D0%A0%D0%9F%20%D0%92%D0%B5%D1%80%D0%BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%B8%20%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0%2010-11.pdf) (pdf) — _562 КБ_
 
-📎 [РП Биология 10-11 (угл).pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9854_a6/%D0%A0%D0%9F%20%D0%91%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%2010-11%20%28%D1%83%D0%B3%D0%BB%29.pdf) (pdf) — _(1,7 МБ)_
+📎 [РП Биология 10-11 (угл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9854_a6/%D0%A0%D0%9F%20%D0%91%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%2010-11%20%28%D1%83%D0%B3%D0%BB%29.pdf) (pdf) — _1,7 МБ_
 
-📎 [РП Английский язык 10-11 кл (угл).pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9855_a4/%D0%A0%D0%9F%20%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9%20%D1%8F%D0%B7%D1%8B%D0%BA%2010-11%20%D0%BA%D0%BB%20%28%D1%83%D0%B3%D0%BB%29.pdf) (pdf) — _(2,1 МБ)_
+📎 [РП Английский язык 10-11 кл (угл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9855_a4/%D0%A0%D0%9F%20%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9%20%D1%8F%D0%B7%D1%8B%D0%BA%2010-11%20%D0%BA%D0%BB%20%28%D1%83%D0%B3%D0%BB%29.pdf) (pdf) — _2,1 МБ_
 
-📎 [РП Английский язык 10-11 кл (база).pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9856_92/%D0%A0%D0%9F%20%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9%20%D1%8F%D0%B7%D1%8B%D0%BA%2010-11%20%D0%BA%D0%BB%20%28%D0%B1%D0%B0%D0%B7%D0%B0%29.pdf) (pdf) — _(2,0 МБ)_
+📎 [РП Английский язык 10-11 кл (база](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9856_92/%D0%A0%D0%9F%20%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9%20%D1%8F%D0%B7%D1%8B%D0%BA%2010-11%20%D0%BA%D0%BB%20%28%D0%B1%D0%B0%D0%B7%D0%B0%29.pdf) (pdf) — _2,0 МБ_
 
-📎 [РП Алгебра 10-11 база.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9857_a7/%D0%A0%D0%9F%20%D0%90%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%2010-11%20%D0%B1%D0%B0%D0%B7%D0%B0.pdf) (pdf) — _(1,7 МБ)_
+📎 [РП Алгебра 10-11 база](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9857_a7/%D0%A0%D0%9F%20%D0%90%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%2010-11%20%D0%B1%D0%B0%D0%B7%D0%B0.pdf) (pdf) — _1,7 МБ_
 
-📎 [РП Алгебра 10-11 (угл).pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9858_84/%D0%A0%D0%9F%20%D0%90%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%2010-11%20%28%D1%83%D0%B3%D0%BB%29.pdf) (pdf) — _(2,1 МБ)_
+📎 [РП Алгебра 10-11 (угл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9858_84/%D0%A0%D0%9F%20%D0%90%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%2010-11%20%28%D1%83%D0%B3%D0%BB%29.pdf) (pdf) — _2,1 МБ_
 
-📎 [РП 10-11 ЛИТ (Первых).pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9859_c0/%D0%A0%D0%9F%2010-11%20%D0%9B%D0%98%D0%A2%20%20%28%D0%9F%D0%B5%D1%80%D0%B2%D1%8B%D1%85%29.pdf) (pdf) — _(1,7 МБ)_
+📎 [РП 10-11 ЛИТ (Первых](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9859_c0/%D0%A0%D0%9F%2010-11%20%D0%9B%D0%98%D0%A2%20%20%28%D0%9F%D0%B5%D1%80%D0%B2%D1%8B%D1%85%29.pdf) (pdf) — _1,7 МБ_
 
-📎 [РП Геометрия 10-11 класс (угл).pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9860_e5/%D0%A0%D0%9F%20%20%D0%93%D0%B5%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%8F%2010-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%20%28%D1%83%D0%B3%D0%BB%29.pdf) (pdf) — _(991 КБ)_
+📎 [РП Геометрия 10-11 класс (угл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9860_e5/%D0%A0%D0%9F%20%20%D0%93%D0%B5%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%8F%2010-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%20%28%D1%83%D0%B3%D0%BB%29.pdf) (pdf) — _991 КБ_
 
-📎 [ВД РП Испанский-это увлекательно.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9872_23/%D0%92%D0%94%20%D0%A0%D0%9F%20%D0%98%D1%81%D0%BF%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9-%D1%8D%D1%82%D0%BE%20%D1%83%D0%B2%D0%BB%D0%B5%D0%BA%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE.pdf) (pdf) — _(679 КБ)_
+📎 [ВД РП Испанский-это увлекательно](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9872_23/%D0%92%D0%94%20%D0%A0%D0%9F%20%D0%98%D1%81%D0%BF%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9-%D1%8D%D1%82%D0%BE%20%D1%83%D0%B2%D0%BB%D0%B5%D0%BA%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE.pdf) (pdf) — _679 КБ_
 
-📎 [РП География 10-11.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9873_4b/%D0%A0%D0%9F%20%D0%93%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F%2010-11.pdf) (pdf) — _(1,3 МБ)_
+📎 [РП География 10-11](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9873_4b/%D0%A0%D0%9F%20%D0%93%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F%2010-11.pdf) (pdf) — _1,3 МБ_
 
-📎 [РП Основы безопасности и защиты Родины 10-11 класс.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9874_08/%D0%A0%D0%9F%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%B8%20%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D1%8B%20%D0%A0%D0%BE%D0%B4%D0%B8%D0%BD%D1%8B%2010-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _(369 КБ)_
+📎 [РП Основы безопасности и защиты Родины 10-11 класс](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9874_08/%D0%A0%D0%9F%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%B8%20%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D1%8B%20%D0%A0%D0%BE%D0%B4%D0%B8%D0%BD%D1%8B%2010-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _369 КБ_
 
-📎 [РП Общество 10-11 (база).pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9887_a0/%D0%A0%D0%9F%20%D0%9E%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE%2010-11%20%28%D0%B1%D0%B0%D0%B7%D0%B0%29.pdf) (pdf) — _(767 КБ)_
+📎 [РП Общество 10-11 (база](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9887_a0/%D0%A0%D0%9F%20%D0%9E%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE%2010-11%20%28%D0%B1%D0%B0%D0%B7%D0%B0%29.pdf) (pdf) — _767 КБ_
 
-📎 [РП Обществознание 10-11(углуб).pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9888_92/%D0%A0%D0%9F%20%D0%9E%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B5%2010-11%28%D1%83%D0%B3%D0%BB%D1%83%D0%B1%29.pdf) (pdf) — _(953 КБ)_
+📎 [РП Обществознание 10-11(углуб](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9888_92/%D0%A0%D0%9F%20%D0%9E%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B5%2010-11%28%D1%83%D0%B3%D0%BB%D1%83%D0%B1%29.pdf) (pdf) — _953 КБ_
 
-📎 [РП физкультура 10-11 кл.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9875_4e/%D0%A0%D0%9F%20%D1%84%D0%B8%D0%B7%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0%2010-11%20%D0%BA%D0%BB.pdf) (pdf) — _(1,0 МБ)_
+📎 [РП физкультура 10-11 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9875_4e/%D0%A0%D0%9F%20%D1%84%D0%B8%D0%B7%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0%2010-11%20%D0%BA%D0%BB.pdf) (pdf) — _1,0 МБ_
 
-📎 [РП История 10-11 класс (база) (1).pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9885_fd/%D0%A0%D0%9F%20%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%2010-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%20%28%D0%B1%D0%B0%D0%B7%D0%B0%29%20%281%29.pdf) (pdf) — _(1,6 МБ)_
+📎 [РП История 10-11 класс (база) (1](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9885_fd/%D0%A0%D0%9F%20%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%2010-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%20%28%D0%B1%D0%B0%D0%B7%D0%B0%29%20%281%29.pdf) (pdf) — _1,6 МБ_
 
-📎 [РП История 10-11класс (угл) (1).pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9886_e8/%D0%A0%D0%9F%20%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%2010-11%D0%BA%D0%BB%D0%B0%D1%81%D1%81%20%28%D1%83%D0%B3%D0%BB%29%20%281%29.pdf) (pdf) — _(1,7 МБ)_
+📎 [РП История 10-11класс (угл) (1](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9886_e8/%D0%A0%D0%9F%20%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%2010-11%D0%BA%D0%BB%D0%B0%D1%81%D1%81%20%28%D1%83%D0%B3%D0%BB%29%20%281%29.pdf) (pdf) — _1,7 МБ_
 
 ### Ссылка на календарный учебный график
 
+Не используются
+
 ### Ссылка на рабочие программы практик, предусмотренные соответствующей образовательной программой
+
+Не используются
 
 ### Ссылка на методические и иные документы, разработанные ОО для обеспечения образовательного процесса, а также рабочие программы воспитания и календарные планы воспитательной работы, включаемых в ООП
 
-📎 [Приказ и положение об электронном обучении и использовании дистанционных образовательных технологий в образовательном процессе.pdf](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8983_f0/%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%20%D0%B8%20%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B1%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%BC%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B8%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8%20%D0%B4%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B9%20%D0%B2%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B5.pdf) (pdf) — _(851 КБ)_
+📎 [Приказ и положение об электронном обучении и использовании дистанционных образовательных технологий в образовательном процессе](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8983_f0/%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%20%D0%B8%20%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B1%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%BC%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B8%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8%20%D0%B4%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B9%20%D0%B2%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B5.pdf) (pdf) — _851 КБ_
 
 ### Перечень научных направлений, в рамках которых ведется научная деятельность
 
+Не используется
+
 ### Название научного направления/научной школы
+
+Не используется
 
 ### Результаты научной деятельности
 
+Не используется
+
 ### Сведения о научно-исследовательской базе для осуществления научной деятельности
+
+Не используется
