@@ -64,9 +64,9 @@ _https://s3454.nubex.ru/sveden/education/program_5359.html#edu_programs_main_des
 
 📎 [РП Английский 5-9 классы](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9748_a4/%D0%A0%D0%9F%20%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9%205-9%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B.pdf) (pdf) — _2,6 МБ_
 
-📎 [РП Биология 5-9 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9749_6f/%D0%A0%D0%9F%20%D0%91%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%205-9%20%D0%BA%D0%BB%20%28%D0%B1%D0%B0%D0%B7%D0%B0%29.pdf) (pdf) — _база, 4,0 МБ_
+📎 [РП Биология 5-9 кл (база](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9749_6f/%D0%A0%D0%9F%20%D0%91%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%205-9%20%D0%BA%D0%BB%20%28%D0%B1%D0%B0%D0%B7%D0%B0%29.pdf) (pdf) — _4,0 МБ_
 
-📎 [РП Биология 6-9 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9750_50/%D0%A0%D0%9F%20%D0%91%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%206-9%20%D0%BA%D0%BB%20%28%D1%83%D0%B3%D0%BB%29.pdf) (pdf) — _угл, 2,5 МБ_
+📎 [РП Биология 6-9 кл (угл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9750_50/%D0%A0%D0%9F%20%D0%91%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%206-9%20%D0%BA%D0%BB%20%28%D1%83%D0%B3%D0%BB%29.pdf) (pdf) — _2,5 МБ_
 
 📎 [РП Биология. Биотехнологии 7 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9751_4c/%D0%A0%D0%9F%20%D0%91%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F.%20%D0%91%D0%B8%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%207%20%D0%BA%D0%BB.pdf) (pdf) — _638 КБ_
 
@@ -198,7 +198,7 @@ _https://s3454.nubex.ru/sveden/education/program_5359.html#edu_programs_main_des
 
 📎 [РП Великие достижения соотечественников 6 класс](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9861_94/%D0%A0%D0%9F%20%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%B8%D0%B5%20%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%D0%BE%D0%BE%D1%82%D0%B5%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%206%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _662 КБ_
 
-📎 [РП Основы безопасности и защиты Родины](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9862_aa/%D0%A0%D0%9F%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%B8%20%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D1%8B%20%D0%A0%D0%BE%D0%B4%D0%B8%D0%BD%D1%8B%20%281%29.pdf) (pdf) — _1, 433 КБ_
+📎 [РП Основы безопасности и защиты Родины (1](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9862_aa/%D0%A0%D0%9F%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%B8%20%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D1%8B%20%D0%A0%D0%BE%D0%B4%D0%B8%D0%BD%D1%8B%20%281%29.pdf) (pdf) — _433 КБ_
 
 📎 [ДНКР 5-7 класс 2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9864_2f/%D0%94%D0%9D%D0%9A%D0%A0%205-7%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%202026.pdf) (pdf) — _790 КБ_
 

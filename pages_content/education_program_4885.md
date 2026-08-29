@@ -64,7 +64,7 @@ _https://s3454.nubex.ru/sveden/education/program_4885.html#eduPrac_
 
 📎 [РП Литературное чтение](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9730_93/%D0%A0%D0%9F%20%D0%9B%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%BD%D0%BE%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D0%B5.pdf) (pdf) — _3,6 МБ_
 
-📎 [РП Труд](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9718_f7/%D0%A0%D0%9F%20%D0%A2%D1%80%D1%83%D0%B4%20%28%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%29.pdf) (pdf) — _технология, 1,8 МБ_
+📎 [РП Труд (технология](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9718_f7/%D0%A0%D0%9F%20%D0%A2%D1%80%D1%83%D0%B4%20%28%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%29.pdf) (pdf) — _1,8 МБ_
 
 📎 [РП Умные клетки](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9719_ce/%D0%A0%D0%9F%20%D0%A3%D0%BC%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BB%D0%B5%D1%82%D0%BA%D0%B8.pdf) (pdf) — _669 КБ_
 

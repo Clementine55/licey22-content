@@ -28,7 +28,7 @@ _https://s3454.nubex.ru/sveden/education/program_5755.html#edu_programs_main_des
 
 📎 [ДООП Разработка VR-приложений на Varwin](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9673_e4/%D0%94%D0%9E%D0%9E%D0%9F%20%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20VR-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B8%CC%86%20%D0%BD%D0%B0%20Varwin.pdf) (pdf) — _272 КБ_
 
-📎 [ДООП Программирование](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9674_8e/%D0%94%D0%9E%D0%9E%D0%9F%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%28%D0%91%D0%B5%D1%80%D0%BB%D0%BE%D0%B3%D0%B0%29.pdf) (pdf) — _Берлога, 2,4 МБ_
+📎 [ДООП Программирование (Берлога](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9674_8e/%D0%94%D0%9E%D0%9E%D0%9F%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%28%D0%91%D0%B5%D1%80%D0%BB%D0%BE%D0%B3%D0%B0%29.pdf) (pdf) — _2,4 МБ_
 
 📎 [ДООП Лидер](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f6161_f0/%D0%94%D0%9E%D0%9E%D0%9F%20%D0%9B%D0%B8%D0%B4%D0%B5%D1%80.pdf) (pdf) — _970 КБ_
 
@@ -74,7 +74,7 @@ _https://s3454.nubex.ru/sveden/education/program_5755.html#edu_programs_main_des
 
 📎 [ДООП Интернет вещей](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9688_2d/%D0%94%D0%9E%D0%9E%D0%9F%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%20%D0%B2%D0%B5%D1%89%D0%B5%D0%B8%CC%86.pdf) (pdf) — _327 КБ_
 
-📎 [ДООП Летающая робототехника](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9689_70/%D0%94%D0%9E%D0%9E%D0%9F%20%D0%9B%D0%B5%D1%82%D0%B0%D1%8E%D1%89%D0%B0%D1%8F%20%D1%80%D0%BE%D0%B1%D0%BE%D1%82%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0%28144%D1%87%29.pdf) (pdf) — _144ч, 386 КБ_
+📎 [ДООП Летающая робототехника(144ч](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9689_70/%D0%94%D0%9E%D0%9E%D0%9F%20%D0%9B%D0%B5%D1%82%D0%B0%D1%8E%D1%89%D0%B0%D1%8F%20%D1%80%D0%BE%D0%B1%D0%BE%D1%82%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0%28144%D1%87%29.pdf) (pdf) — _386 КБ_
 
 📎 [ДООП Летающая робототехника](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9690_0b/%D0%94%D0%9E%D0%9E%D0%9F%20%D0%9B%D0%B5%D1%82%D0%B0%D1%8E%D1%89%D0%B0%D1%8F%20%D1%80%D0%BE%D0%B1%D0%BE%D1%82%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0.pdf) (pdf) — _375 КБ_
 
