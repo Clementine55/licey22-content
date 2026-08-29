@@ -39,6 +39,7 @@ FILE_EXTENSIONS = {
     ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx",
     ".rtf", ".odt", ".ods", ".zip", ".rar", ".7z",
     ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tif", ".tiff",
+    ".mp4",
 }
 
 MAX_PAGES_PER_SECTION = 500
@@ -297,7 +298,7 @@ def build_file_block(container: Tag, anchor: Tag, ext: str, full_url: str, page_
 
     # Вытаскиваем "застрявшую" инфу из названия (всё, что начинается с последней скобки)
     # Это отсеет "(корпус Советская,63" и перенесет в meta
-    
+
     m_parens = re.search(r'(.*)\s*\(([^()]+)\)\s*$', link_text)
     if m_parens:
         link_text = m_parens.group(1).strip()
