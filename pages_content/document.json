@@ -264,19 +264,19 @@
     },
     {
       "type": "file",
-      "link_text": "КУГ 2025-2026 учебный год",
-      "meta": "411 КБ, принят 29.08.2025",
-      "file_name": "КУГ 2025-2026 учебный год.pdf",
-      "extension": "pdf",
-      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f7367_3c/%D0%9A%D0%A3%D0%93%202025-2026%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf"
-    },
-    {
-      "type": "file",
       "link_text": "Положение о режиме занятий",
       "meta": "1,1 МБ, принят 29.08.2025",
       "file_name": "МУНИЦИПАЛЬНОЕ_АВТОНОМНОЕ_ОБЩЕОБРАЗОВАТЕЛЬНОЕ (4)_organized_compressed (1).pdf",
       "extension": "pdf",
       "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8648_08/%D0%9C%D0%A3%D0%9D%D0%98%D0%A6%D0%98%D0%9F%D0%90%D0%9B%D0%AC%D0%9D%D0%9E%D0%95_%D0%90%D0%92%D0%A2%D0%9E%D0%9D%D0%9E%D0%9C%D0%9D%D0%9E%D0%95_%D0%9E%D0%91%D0%A9%D0%95%D0%9E%D0%91%D0%A0%D0%90%D0%97%D0%9E%D0%92%D0%90%D0%A2%D0%95%D0%9B%D0%AC%D0%9D%D0%9E%D0%95%20%284%29_organized_compressed%20%281%29.pdf"
+    },
+    {
+      "type": "file",
+      "link_text": "Календарный учебный график на 2026-2027 учебный год",
+      "meta": "105 КБ",
+      "file_name": "Календарный учебный график на 2026-2027 учебный год.pdf",
+      "extension": "pdf",
+      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10129_d5/%D0%9A%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf"
     },
     {
       "type": "heading",
@@ -358,22 +358,6 @@
       "type": "heading",
       "level": "h4",
       "text": "2025"
-    },
-    {
-      "type": "file",
-      "link_text": "Приказ календарный учебный график 25-26",
-      "meta": "3,2 МБ, принят 29.08.2025",
-      "file_name": "Приказ календарный учебный график 25-26.pdf",
-      "extension": "pdf",
-      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f7181_e2/%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%20%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%2025-26.pdf"
-    },
-    {
-      "type": "file",
-      "link_text": "Приказ об утверждении графика оценочных процедур на 2025-2026 учебный год",
-      "meta": "4,2 МБ, принят 29.08.2025",
-      "file_name": "Приказ об утверждении графика оценочных процедур на 2025-2026 учебный год .pdf",
-      "extension": "pdf",
-      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8535_85/%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%20%D0%BE%D0%B1%20%D1%83%D1%82%D0%B2%D0%B5%D1%80%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BE%D1%87%D0%BD%D1%8B%D1%85%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D0%B4%D1%83%D1%80%20%D0%BD%D0%B0%202025-2026%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20.pdf"
     },
     {
       "type": "file",
@@ -541,14 +525,6 @@
     },
     {
       "type": "file",
-      "link_text": "Положение о закупке товаров работ услуг для нужд",
-      "meta": "1015 КБ, принят 08.11.2021",
-      "file_name": "Положение о закупке товаров работ услуг для нужд.pdf",
-      "extension": "pdf",
-      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f445_c3/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B5%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%20%D0%B4%D0%BB%D1%8F%20%D0%BD%D1%83%D0%B6%D0%B4.pdf"
-    },
-    {
-      "type": "file",
       "link_text": "Положение о поощрении обучающихся",
       "meta": "400 КБ, принят 01.09.2021",
       "file_name": "Положение о поощрении обучающихся 01.09.2021.pdf",
@@ -658,27 +634,11 @@
     },
     {
       "type": "file",
-      "link_text": "Положение о порядке предоставления в пользование обучающимся электронной формы учебников",
-      "meta": "549 КБ, принят 28.08.2020",
-      "file_name": "Положение о порядке предоставления в пользование обучающимся электронной формы учебников.pdf",
-      "extension": "pdf",
-      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f528_a4/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BA%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B2%20%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B1%D1%83%D1%87%D0%B0%D1%8E%D1%89%D0%B8%D0%BC%D1%81%D1%8F%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9%20%D1%84%D0%BE%D1%80%D0%BC%D1%8B%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2.pdf"
-    },
-    {
-      "type": "file",
       "link_text": "Положение о системе зачета результатов",
       "meta": "3,2 МБ, принят 28.08.2020",
       "file_name": "Положение о системе зачета результатов.pdf",
       "extension": "pdf",
       "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f529_fb/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B5%20%D0%B7%D0%B0%D1%87%D0%B5%D1%82%D0%B0%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%BE%D0%B2.pdf"
-    },
-    {
-      "type": "file",
-      "link_text": "Положение об электронном учебно-методическом комплексе в системе дистанционного обучения Moodle",
-      "meta": "1,1 МБ, принят 20.05.2020",
-      "file_name": "Положение об электронном учебно-методическом комплексе в системе дистанционного обучения Moodle.pdf",
-      "extension": "pdf",
-      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f530_78/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B1%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%BC%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%20%D0%B2%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B5%20%D0%B4%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8F%20Moodle.pdf"
     },
     {
       "type": "file",
@@ -745,7 +705,7 @@
     },
     {
       "type": "file",
-      "link_text": "на сайт",
+      "link_text": "Санитарно-эпидемиологическое заключение",
       "meta": "10,6 МБ",
       "file_name": "на сайт.pdf",
       "extension": "pdf",
@@ -776,22 +736,6 @@
     },
     {
       "type": "file",
-      "link_text": "Отчет о проведении специальной оценки условий труда от 26.12.2022 г.",
-      "meta": "9,8 МБ",
-      "file_name": "Отчет о проведении специальной оценки условий труда от 26.12.2022 г..pdf",
-      "extension": "pdf",
-      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f4740_a4/%D0%9E%D1%82%D1%87%D0%B5%D1%82%20%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B8%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B8%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9%20%D1%82%D1%80%D1%83%D0%B4%D0%B0%20%D0%BE%D1%82%2026.12.2022%20%D0%B3..pdf"
-    },
-    {
-      "type": "file",
-      "link_text": "Отчет о проведении специальной оценки труда от 17.02.2023 г.",
-      "meta": "9,9 МБ",
-      "file_name": "Отчет о проведении специальной оценки труда от 17.02.2023 г..pdf",
-      "extension": "pdf",
-      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f4741_b2/%D0%9E%D1%82%D1%87%D0%B5%D1%82%20%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B8%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B8%20%D1%82%D1%80%D1%83%D0%B4%D0%B0%20%D0%BE%D1%82%2017.02.2023%20%D0%B3..pdf"
-    },
-    {
-      "type": "file",
       "link_text": "Отчет о проведении специальной оценки труда от 07.05.2024 г.",
       "meta": "8,2 МБ",
       "file_name": "Отчет о проведении специальной оценки труда от 07.05.2024 г..pdf",
@@ -800,61 +744,11 @@
     },
     {
       "type": "file",
-      "link_text": "Перечень закупок СМП 2024.",
-      "meta": "21 КБ",
-      "file_name": "Перечень закупок СМП 2024..xlsx",
-      "extension": "xlsx",
-      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9038_56/%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%20%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BE%D0%BA%20%D0%A1%D0%9C%D0%9F%202024..xlsx"
-    },
-    {
-      "type": "file",
-      "link_text": "Перечень закупок 2025 СМП.",
-      "meta": "18 КБ",
-      "file_name": "Перечень закупок 2025 СМП..xlsx",
-      "extension": "xlsx",
-      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9037_79/%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%20%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BE%D0%BA%202025%20%D0%A1%D0%9C%D0%9F..xlsx"
-    },
-    {
-      "type": "file",
       "link_text": "Перечень закупок СМП 2026",
       "meta": "18 КБ",
       "file_name": "Перечень закупок СМП 2026.xlsx",
       "extension": "xlsx",
       "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9223_b4/%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%20%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BE%D0%BA%20%D0%A1%D0%9C%D0%9F%202026.xlsx"
-    },
-    {
-      "type": "heading",
-      "level": "h4",
-      "text": "2025"
-    },
-    {
-      "type": "file",
-      "link_text": "Перечень закупок 2025 СМП",
-      "meta": "18 КБ, принят 23.06.2025",
-      "file_name": "Перечень закупок 2025 СМП.xlsx",
-      "extension": "xlsx",
-      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f7172_84/%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%20%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BE%D0%BA%202025%20%D0%A1%D0%9C%D0%9F.xlsx"
-    },
-    {
-      "type": "file",
-      "link_text": "Перечень МСП на 2025",
-      "meta": "170 КБ, принят 30.12.2025",
-      "file_name": "Перечень МСП на 2025.pdf",
-      "extension": "pdf",
-      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8786_02/%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%20%D0%9C%D0%A1%D0%9F%20%D0%BD%D0%B0%202025.pdf"
-    },
-    {
-      "type": "heading",
-      "level": "h4",
-      "text": "2024"
-    },
-    {
-      "type": "file",
-      "link_text": "Перечень закупок СМП 2024",
-      "meta": "21 КБ, принят 29.12.2024",
-      "file_name": "Перечень закупок СМП 2024.xlsx",
-      "extension": "xlsx",
-      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f7173_f6/%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%20%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BE%D0%BA%20%D0%A1%D0%9C%D0%9F%202024.xlsx"
     }
   ]
 }

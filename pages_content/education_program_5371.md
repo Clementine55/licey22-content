@@ -24,19 +24,17 @@ _https://s3454.nubex.ru/sveden/education/program_5371.html#edu_programs_main_des
 
 ### Ссылка на описание образовательной программы с приложением ее копии
 
-📎 [ООП СОО на 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9901_de/%D0%9E%D0%9E%D0%9F%20%20%D0%A1%D0%9E%D0%9E%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _789 КБ_
+📎 [ООП СОО на 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10141_bc/%D0%9E%D0%9E%D0%9F%20%20%D0%A1%D0%9E%D0%9E%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _943 КБ_
 
-📎 [Проект Программы воспитания](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9815_7e/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B%20%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F.pdf) (pdf) — _1,3 МБ_
+📎 [Программа воспитания на 2026-2027 учебны год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10142_92/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _1,4 МБ_
 
 📎 [Календарный план воспитательной работы на 2026-2027 учебный год СОО](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9879_ca/%D0%9A%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%BB%D0%B0%D0%BD%20%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20%D0%A1%D0%9E%D0%9E.pdf) (pdf) — _622 КБ_
-
-📎 [ООП СОО 2025 г.](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f7288_f5/%D0%9E%D0%9E%D0%9F%20%D0%A1%D0%9E%D0%9E%2025-27.pdf) (pdf) — _9,4 МБ_
 
 📎 [Реестровая выписка аккредитации](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9029_bb/%D0%A0%D0%B5%D0%B5%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B2%D1%8B%D0%BF%D0%B8%D1%81%D0%BA%D0%B0%20%D0%B0%D0%BA%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%B0%D1%86%D0%B8%D0%B8%20%281%29.pdf) (pdf) — _73 КБ_
 
 ### Ссылка на учебный план
 
-📎 [Проект учебного плана СОО на 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9816_73/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D0%BB%D0%B0%D0%BD%D0%B0%20%D0%A1%D0%9E%D0%9E%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _480 КБ_
+📎 [Учебный план СОО на 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10136_05/%D0%A3%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%BB%D0%B0%D0%BD%20%D0%A1%D0%9E%D0%9E%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _1020 КБ_
 
 ### Ссылки на рабочие программы
 
@@ -140,7 +138,7 @@ _https://s3454.nubex.ru/sveden/education/program_5371.html#edu_programs_main_des
 
 ### Ссылка на календарный учебный график
 
-Не используются
+📎 [Календарный учебный график на 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10132_b9/%D0%9A%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _105 КБ_
 
 ### Ссылка на рабочие программы практик, предусмотренные соответствующей образовательной программой
 

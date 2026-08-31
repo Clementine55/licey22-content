@@ -89,11 +89,9 @@
       "Региональные документы",
       "Муниципальные документы",
       "2022",
-      "Прочие документы",
-      "2025",
-      "2024"
+      "Прочие документы"
     ],
-    "file_count": 86
+    "file_count": 74
   },
   {
     "url": "https://s3454.nubex.ru/sveden/eduStandarts/",
@@ -128,7 +126,7 @@
     "file_count": 5
   },
   {
-    "url": "https://s3454.nubex.ru/sveden/education/program_4885.html#eduPrac",
+    "url": "https://s3454.nubex.ru/sveden/education/program_4885.html#eduPred",
     "title": "Основная образовательная программа НОО",
     "slug": "education_program_4885",
     "headings": [
@@ -146,10 +144,10 @@
       "Результаты научной деятельности",
       "Сведения о научно-исследовательской базе для осуществления научной деятельности"
     ],
-    "file_count": 35
+    "file_count": 38
   },
   {
-    "url": "https://s3454.nubex.ru/sveden/education/program_5359.html#edu_programs_main_description",
+    "url": "https://s3454.nubex.ru/sveden/education/program_5359.html#eduPred",
     "title": "Основная образовательная программа ООО",
     "slug": "education_program_5359",
     "headings": [
@@ -167,7 +165,7 @@
       "Результаты научной деятельности",
       "Сведения о научно-исследовательской базе для осуществления научной деятельности"
     ],
-    "file_count": 105
+    "file_count": 138
   },
   {
     "url": "https://s3454.nubex.ru/sveden/education/program_5371.html#edu_programs_main_description",
@@ -233,10 +231,10 @@
   },
   {
     "url": "https://s3454.nubex.ru/sveden/employees/14254.html",
-    "title": "Парфенцов Юрий Владимирович",
+    "title": "Гельцер Евгения Николаевна",
     "slug": "employees_14254",
     "headings": [
-      "Парфенцов Юрий Владимирович"
+      "Гельцер Евгения Николаевна"
     ],
     "file_count": 0
   },
@@ -251,10 +249,19 @@
   },
   {
     "url": "https://s3454.nubex.ru/sveden/employees/16374.html",
-    "title": "Данилова Наталья Александровна",
+    "title": "Фирюлина Наталья Александровна",
     "slug": "employees_16374",
     "headings": [
-      "Данилова Наталья Александровна"
+      "Фирюлина Наталья Александровна"
+    ],
+    "file_count": 0
+  },
+  {
+    "url": "https://s3454.nubex.ru/sveden/employees/22241.html",
+    "title": "Парфенцов Юрий Владимирович",
+    "slug": "employees_22241",
+    "headings": [
+      "Парфенцов Юрий Владимирович"
     ],
     "file_count": 0
   },
@@ -374,10 +381,11 @@
       "Заместители",
       "[Лобарева Татьяна Анатольевна](/employees/5219)",
       "[Плетнева Екатерина Геннадьевна](/employees/12798)",
-      "[Парфенцов Юрий Владимирович](/employees/14254)",
+      "[Гельцер Евгения Николаевна](/employees/14254)",
       "[Кулуева Наталья Ивановна](/employees/5221)",
-      "[Данилова Наталья Александровна](/employees/16374)",
-      "[Лозгунова Татьяна Геннадьевна](/employees/16373)"
+      "[Фирюлина Наталья Александровна](/employees/16374)",
+      "[Лозгунова Татьяна Геннадьевна](/employees/16373)",
+      "[Парфенцов Юрий Владимирович](/employees/22241)"
     ],
     "file_count": 0
   },

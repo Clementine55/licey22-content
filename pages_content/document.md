@@ -77,9 +77,9 @@ _https://s3454.nubex.ru/sveden/document/_
 
 ### Режим занятий обучающихся
 
-📎 [КУГ 2025-2026 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f7367_3c/%D0%9A%D0%A3%D0%93%202025-2026%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _411 КБ, принят 29.08.2025_
-
 📎 [Положение о режиме занятий](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8648_08/%D0%9C%D0%A3%D0%9D%D0%98%D0%A6%D0%98%D0%9F%D0%90%D0%9B%D0%AC%D0%9D%D0%9E%D0%95_%D0%90%D0%92%D0%A2%D0%9E%D0%9D%D0%9E%D0%9C%D0%9D%D0%9E%D0%95_%D0%9E%D0%91%D0%A9%D0%95%D0%9E%D0%91%D0%A0%D0%90%D0%97%D0%9E%D0%92%D0%90%D0%A2%D0%95%D0%9B%D0%AC%D0%9D%D0%9E%D0%95%20%284%29_organized_compressed%20%281%29.pdf) (pdf) — _1,1 МБ, принят 29.08.2025_
+
+📎 [Календарный учебный график на 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10129_d5/%D0%9A%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _105 КБ_
 
 ### Формы, периодичность и порядок текущего контроля успеваемости и промежуточной аттестации обучающихся
 
@@ -104,10 +104,6 @@ _https://s3454.nubex.ru/sveden/document/_
 📎 [ДК_по_снижению_бюрократической_нагрузки_на_педработников_МАОУ_Лицей](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8880_69/%D0%94%D0%9A_%D0%BF%D0%BE_%D1%81%D0%BD%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E_%D0%B1%D1%8E%D1%80%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%BD%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8_%D0%BD%D0%B0_%D0%BF%D0%B5%D0%B4%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2_%D0%9C%D0%90%D0%9E%D0%A3_%D0%9B%D0%B8%D1%86%D0%B5%D0%B9.pdf) (pdf) — _2,3 МБ, принят 20.01.2026_
 
 ##### 2025
-
-📎 [Приказ календарный учебный график 25-26](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f7181_e2/%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%20%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%2025-26.pdf) (pdf) — _3,2 МБ, принят 29.08.2025_
-
-📎 [Приказ об утверждении графика оценочных процедур на 2025-2026 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8535_85/%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%20%D0%BE%D0%B1%20%D1%83%D1%82%D0%B2%D0%B5%D1%80%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BE%D1%87%D0%BD%D1%8B%D1%85%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D0%B4%D1%83%D1%80%20%D0%BD%D0%B0%202025-2026%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20.pdf) (pdf) — _4,2 МБ, принят 29.08.2025_
 
 📎 [Должностная инструкция учителя](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8647_fe/organized%20%2818%29.pdf) (pdf) — _4,8 МБ, принят 18.11.2025_
 
@@ -153,8 +149,6 @@ _https://s3454.nubex.ru/sveden/document/_
 
 ##### 2021
 
-📎 [Положение о закупке товаров работ услуг для нужд](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f445_c3/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B5%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%20%D0%B4%D0%BB%D1%8F%20%D0%BD%D1%83%D0%B6%D0%B4.pdf) (pdf) — _1015 КБ, принят 08.11.2021_
-
 📎 [Положение о поощрении обучающихся](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f446_86/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D0%BF%D0%BE%D0%BE%D1%89%D1%80%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%BE%D0%B1%D1%83%D1%87%D0%B0%D1%8E%D1%89%D0%B8%D1%85%D1%81%D1%8F%2001.09.2021.pdf) (pdf) — _400 КБ, принят 01.09.2021_
 
 📎 [Положение о практической подготовке](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f447_5b/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B5%2001.09.2021.pdf) (pdf) — _360 КБ, принят 01.09.2021_
@@ -183,11 +177,7 @@ _https://s3454.nubex.ru/sveden/document/_
 
 📎 [Положение о единых требованиях к одежде обучающихся](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f527_59/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D0%B5%D0%B4%D0%B8%D0%BD%D1%8B%D1%85%20%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%D1%85%20%D0%BA%20%D0%BE%D0%B4%D0%B5%D0%B6%D0%B4%D0%B5%20%D0%BE%D0%B1%D1%83%D1%87%D0%B0%D1%8E%D1%89%D0%B8%D1%85%D1%81%D1%8F.pdf) (pdf) — _574 КБ, принят 28.08.2020_
 
-📎 [Положение о порядке предоставления в пользование обучающимся электронной формы учебников](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f528_a4/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BA%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B2%20%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B1%D1%83%D1%87%D0%B0%D1%8E%D1%89%D0%B8%D0%BC%D1%81%D1%8F%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9%20%D1%84%D0%BE%D1%80%D0%BC%D1%8B%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2.pdf) (pdf) — _549 КБ, принят 28.08.2020_
-
 📎 [Положение о системе зачета результатов](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f529_fb/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B5%20%D0%B7%D0%B0%D1%87%D0%B5%D1%82%D0%B0%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%BE%D0%B2.pdf) (pdf) — _3,2 МБ, принят 28.08.2020_
-
-📎 [Положение об электронном учебно-методическом комплексе в системе дистанционного обучения Moodle](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f530_78/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B1%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%BC%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%20%D0%B2%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B5%20%D0%B4%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8F%20Moodle.pdf) (pdf) — _1,1 МБ, принят 20.05.2020_
 
 📎 [Положение о сетевой форме реализации образовательных программ](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f531_9f/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D1%81%D0%B5%D1%82%D0%B5%D0%B2%D0%BE%D0%B9%20%D1%84%D0%BE%D1%80%D0%BC%D0%B5%20%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC.pdf) (pdf) — _6,1 МБ, принят 30.06.2020_
 
@@ -207,7 +197,7 @@ _https://s3454.nubex.ru/sveden/document/_
 
 ### Региональные документы
 
-📎 [на сайт](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f3551_9a/%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82.pdf) (pdf) — _10,6 МБ_
+📎 [Санитарно-эпидемиологическое заключение](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f3551_9a/%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82.pdf) (pdf) — _10,6 МБ_
 
 ### Муниципальные документы
 
@@ -217,24 +207,6 @@ _https://s3454.nubex.ru/sveden/document/_
 
 ### Прочие документы
 
-📎 [Отчет о проведении специальной оценки условий труда от 26.12.2022 г.](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f4740_a4/%D0%9E%D1%82%D1%87%D0%B5%D1%82%20%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B8%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B8%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B9%20%D1%82%D1%80%D1%83%D0%B4%D0%B0%20%D0%BE%D1%82%2026.12.2022%20%D0%B3..pdf) (pdf) — _9,8 МБ_
-
-📎 [Отчет о проведении специальной оценки труда от 17.02.2023 г.](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f4741_b2/%D0%9E%D1%82%D1%87%D0%B5%D1%82%20%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B8%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B8%20%D1%82%D1%80%D1%83%D0%B4%D0%B0%20%D0%BE%D1%82%2017.02.2023%20%D0%B3..pdf) (pdf) — _9,9 МБ_
-
 📎 [Отчет о проведении специальной оценки труда от 07.05.2024 г.](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f4742_25/%D0%9E%D1%82%D1%87%D0%B5%D1%82%20%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B8%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B8%20%D1%82%D1%80%D1%83%D0%B4%D0%B0%20%D0%BE%D1%82%2007.05.2024%20%D0%B3..pdf) (pdf) — _8,2 МБ_
 
-📎 [Перечень закупок СМП 2024.](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9038_56/%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%20%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BE%D0%BA%20%D0%A1%D0%9C%D0%9F%202024..xlsx) (xlsx) — _21 КБ_
-
-📎 [Перечень закупок 2025 СМП.](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9037_79/%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%20%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BE%D0%BA%202025%20%D0%A1%D0%9C%D0%9F..xlsx) (xlsx) — _18 КБ_
-
 📎 [Перечень закупок СМП 2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9223_b4/%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%20%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BE%D0%BA%20%D0%A1%D0%9C%D0%9F%202026.xlsx) (xlsx) — _18 КБ_
-
-##### 2025
-
-📎 [Перечень закупок 2025 СМП](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f7172_84/%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%20%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BE%D0%BA%202025%20%D0%A1%D0%9C%D0%9F.xlsx) (xlsx) — _18 КБ, принят 23.06.2025_
-
-📎 [Перечень МСП на 2025](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8786_02/%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%20%D0%9C%D0%A1%D0%9F%20%D0%BD%D0%B0%202025.pdf) (pdf) — _170 КБ, принят 30.12.2025_
-
-##### 2024
-
-📎 [Перечень закупок СМП 2024](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f7173_f6/%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%20%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BE%D0%BA%20%D0%A1%D0%9C%D0%9F%202024.xlsx) (xlsx) — _21 КБ, принят 29.12.2024_
