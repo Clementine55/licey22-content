@@ -207,9 +207,12 @@ def discover_section_pages(prefix: str, start_url: str):
                 continue
             
             full_path = urlparse(full_url).path
+            
             if full_path.startswith("/ru/"):
-                full_path = full_path[3:]
+                full_url = full_url.replace("/ru/", "/", 1)
+                full_path = urlparse(full_url).path
             elif full_path == "/ru":
+                full_url = full_url.replace("/ru", "/", 1)
                 full_path = "/"
                 
             if full_path.startswith(prefix) and canonical_key(full_url) not in visited_keys:
