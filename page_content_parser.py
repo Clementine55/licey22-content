@@ -13,11 +13,16 @@ from urllib.parse import urljoin, urlparse, unquote
 import requests
 from bs4 import BeautifulSoup, Tag, NavigableString
 
-# ----------------------------- НАСТРОЙКИ -----------------------------------
 TARGET_ROOTS = [
     "https://s3454.nubex.ru/sveden/",
     "https://s3454.nubex.ru/6184/17478/",
     "https://s3454.nubex.ru/6184/20427/",
+    "https://s3454.nubex.ru/6184/6022/",
+    "https://s3454.nubex.ru/6184/6001/",
+    "https://s3454.nubex.ru/6184/6070/",
+    "https://s3454.nubex.ru/6184/19067/",
+    "https://s3454.nubex.ru/6184/7191/",
+    "https://s3454.nubex.ru/6184/7226/",
     "https://s3454.nubex.ru/5933/",
     "https://s3454.nubex.ru/16451/",
 ]
@@ -39,7 +44,7 @@ FILE_EXTENSIONS = {
     ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx",
     ".rtf", ".odt", ".ods", ".zip", ".rar", ".7z",
     ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tif", ".tiff",
-    ".mp4",
+    ".mp4", ".avi", ".mov",
 }
 
 MAX_PAGES_PER_SECTION = 500
@@ -235,10 +240,8 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
         if node.name == "img":
             title = node.get("title", "").strip()
             alt = node.get("alt", "").strip()
-            if title or alt:
-                return title or alt
+            src = node.get("src", "").strip()
 
-            src = node.get("src", "")
             if "email" in src.lower() or "mail" in src.lower():
                 query = urlparse(src).query
                 if query:
@@ -252,8 +255,19 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
                         if key not in EMAIL_MAP:
                             EMAIL_MAP[key] = ""
                             EMAILS_MAP_FILE.write_text(json.dumps(EMAIL_MAP, ensure_ascii=False, indent=2), encoding="utf-8")
-                            print(f"\n[ВНИМАНИЕ] Найдена новая зашифрованная почта: {key}")
                         return f"[НЕИЗВЕСТНАЯ ПОЧТА: {key}]"
+
+            # --- ЕСЛИ ЭТО ОБЫЧНАЯ КАРТИНКА ---
+            if src:
+                # Если нам нужен голый текст (например, для названия файла), картинки скипаем
+                if plain_links:
+                    return title or alt or "Изображение"
+                
+                full_src = urljoin(page_url, src)
+                resolved_src = resolve_url(full_src)
+                alt_text = title or alt or "Изображение"
+                # Возвращаем красивую Markdown разметку для картинки
+                return f"\n![{alt_text}]({resolved_src})\n"
             return ""
 
         if node.name == "br":
@@ -283,10 +297,15 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
             
         return "".join(collect(c) for c in node.children)
 
+    # Если мы передали саму картинку как корень
+    if tag.name == "img":
+        return collect(tag).strip()
+
     text = "".join(collect(c) for c in tag.children)
     text = re.sub(r"[ \t]+", " ", text)
     text = re.sub(r"\n\s*\n", "\n", text).strip()
     return text
+
 
 def build_file_block(container: Tag, anchor: Tag, ext: str, full_url: str, page_url: str) -> dict:
     link_text = render_inline_text(anchor, page_url, plain_links=True)
@@ -296,41 +315,36 @@ def build_file_block(container: Tag, anchor: Tag, ext: str, full_url: str, page_
     if link_text and link_text in meta:
         meta = meta.replace(link_text, "", 1)
 
-    # Вытаскиваем "застрявшую" инфу из названия (всё, что начинается с последней скобки)
-    # Это отсеет "(корпус Советская,63" и перенесет в meta
+    size_pattern = re.compile(r'([\(,\s]*\d+[\.,]?\d*\s*(?:КБ|МБ|Б|KB|MB|B)[^\)]*\)?)$', re.IGNORECASE)
+    match_inside_link = size_pattern.search(link_text)
+    
+    if match_inside_link:
+        extracted_meta = match_inside_link.group(1).strip()
+        link_text = link_text[:match_inside_link.start()].strip()
+        meta = extracted_meta + (" " + meta if meta else "")
+    else:
+        fallback_match = re.search(r'(\([^\)]+\))$', link_text)
+        if fallback_match and fallback_match.start() > 0:
+            extracted_meta = fallback_match.group(1).strip()
+            link_text = link_text[:fallback_match.start()].strip()
+            meta = extracted_meta + (" " + meta if meta else "")
 
-    m_parens = re.search(r'(.*)\s*\(([^()]+)\)\s*$', link_text)
-    if m_parens:
-        link_text = m_parens.group(1).strip()
-        extracted_meta = m_parens.group(2).strip()
-        if extracted_meta:
-            meta = extracted_meta + (", " + meta if meta else "")
-
-    # Достаем размеры (КБ, МБ), если они всё еще болтаются в названии
-    m_size = re.search(r'(.*?)([\(\s,]*\d+[\.,]?\d*\s*(?:КБ|МБ|Б|KB|MB|B).*)$', link_text, flags=re.IGNORECASE)
-    if m_size:
-        link_text = m_size.group(1).strip()
-        extracted_size = m_size.group(2).strip()
-        meta = extracted_size + (", " + meta if meta else "")
-
-    meta = re.sub(r"\s+", " ", meta).strip()
-    if not link_text:
-        link_text = anchor.get_text(strip=True) or clean_filename(full_url)
-
-    # Выжигаем расширение из названия и меты
     if ext:
         ext_regex = re.compile(rf'\.{ext.lstrip(".")}(?=[\s,\)]|$)', re.IGNORECASE)
         link_text = ext_regex.sub('', link_text).strip()
         meta = ext_regex.sub('', meta).strip()
 
-    # Уничтожаем все скобки и висящие запятые в мете (мы их красиво нарисуем на клиенте)
+    meta = re.sub(r"\s+", " ", meta).strip()
     if meta:
-        meta = re.sub(r'\)\s*\(', ', ', meta)
-        meta = re.sub(r'[()]', '', meta)
-        meta = re.sub(r'^[,.\s]+', '', meta).strip()
-        meta = re.sub(r'[,.\s]+$', '', meta).strip()
+        meta = re.sub(r'\)\s*\(', ', ', meta) 
+        meta = re.sub(r'[()]', '', meta)       
+        meta = re.sub(r'^[,.\s]+', '', meta).strip() 
+        meta = re.sub(r'[,.\s]+$', '', meta).strip() 
 
-    link_text = re.sub(r'^[\(\s,]+|[\)\s,]+$', '', link_text).strip()
+    link_text = re.sub(r'[,.\s\(\)]+$', '', link_text).strip()
+
+    if not link_text:
+        link_text = anchor.get_text(strip=True) or clean_filename(full_url)
 
     return {
         "type": "file",
@@ -380,7 +394,6 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
     for unwanted in root.find_all(style=lambda s: s and "display:none" in s.replace(" ", "").lower()):
         unwanted.decompose()
         
-    # --- СЖИГАЕМ ССЫЛКУ "ВЕРСИЯ ДЛЯ ПЕЧАТИ" ---
     for a in root.find_all("a", href=True):
         if "printmode=yes" in a["href"].lower() or "версия для печати" in a.get_text(strip=True).lower():
             a.decompose()
@@ -437,16 +450,7 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
         if node.name in HEADING_TAGS:
             text = render_inline_text(node, page_url)
             if text:
-                # Схлопываем все \n и лишние пробелы в один обычный пробел
-                text = " ".join(text.split())
-                
-                block_data = {"type": "heading", "level": node.name, "text": text}
-                anchor_id = node.get("id")
-                if not anchor_id and node.parent and node.parent.name == "div":
-                    anchor_id = node.parent.get("id")
-                if anchor_id:
-                    block_data["id"] = anchor_id
-                blocks.append(block_data)
+                blocks.append({"type": "heading", "level": node.name, "text": text})
             continue
 
         if node.name in ("ul", "ol"):
@@ -472,10 +476,12 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
             mark_seen_recursive(node)
             continue
 
-        if node.name == "div" and node.find(["p", "div", "ul", "ol", "table"]):
+        # --- ДОБАВИЛИ ЗАГОЛОВКИ В ПРОПУСК! ТЕПЕРЬ ОНИ НЕ БУДУТ ТЕКСТОМ ---
+        if node.name == "div" and node.find(["p", "div", "ul", "ol", "table", "h1", "h2", "h3", "h4", "h5", "h6"]):
             continue
 
-        if node.name in ("p", "div"):
+        # --- ТЕПЕРЬ ПАРСЕР ВИДИТ И КАРТИНКИ БЕЗ ТЕКСТА ---
+        if node.name in ("p", "div", "img", "figure"):
             file_links = has_file_link(node)
             if len(file_links) == 1:
                 a, ext, full_url = file_links[0]
@@ -492,7 +498,7 @@ def extract_blocks(soup: BeautifulSoup, page_url: str):
                         "file_url": full_url,
                     })
                 mark_seen_recursive(node)
-            elif node.name in ("p", "div"):
+            elif node.name in ("p", "div", "img", "figure"):
                 text = render_inline_text(node, page_url)
                 if text:
                     blocks.append({"type": "paragraph", "text": text})

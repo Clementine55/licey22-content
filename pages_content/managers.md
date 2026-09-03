@@ -16,7 +16,7 @@ _https://s3454.nubex.ru/sveden/managers/_
 Адрес электронной почты:
  **mailto:l_22@edu54.ru**
 
-Потеряева Лариса Владимировна
+![Потеряева Лариса Владимировна](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/d663adbdaa_fit-in~240x0__f2799_5b.jpg)
 
 #### Заместители
 
@@ -31,7 +31,7 @@ _https://s3454.nubex.ru/sveden/managers/_
 Адрес электронной почты:
  **mailto:l_22@edu54.ru**
 
-Лобарева Татьяна Анатольевна
+![Лобарева Татьяна Анатольевна](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/5f67489121_fit-in~240x0__f5200_03.jpg)
 
 ##### [Плетнева Екатерина Геннадьевна](/employees/12798)
 
@@ -44,7 +44,7 @@ _https://s3454.nubex.ru/sveden/managers/_
 Адрес электронной почты:
  **mailto:l_22@edu54.ru**
 
-Плетнева Екатерина Геннадьевна
+![Плетнева Екатерина Геннадьевна](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/954d9c3367_fit-in~240x0__f9030_76.jpg)
 
 ##### [Гельцер Евгения Николаевна](/employees/14254)
 
@@ -68,7 +68,7 @@ _https://s3454.nubex.ru/sveden/managers/_
 Адрес электронной почты:
  **mailto:l_22@edu54.ru**
 
-Кулуева Наталья Ивановна
+![Кулуева Наталья Ивановна](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/41bba02e99_fit-in~240x0__f5199_22.jpg)
 
 ##### [Фирюлина Наталья Александровна](/employees/16374)
 

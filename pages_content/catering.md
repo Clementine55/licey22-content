@@ -197,7 +197,7 @@ _https://s3454.nubex.ru/sveden/catering/_
 
 📎 [Меню на 02.09.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9908_06/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2002.09.2026.pdf) (pdf)
 
-Дополнительные файлы по организации питания
+### Дополнительные файлы по организации питания
 
 📎 [findex](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9917_26/findex.xlsx) (xlsx) — _13 КБ_
 
@@ -216,3 +216,5 @@ _https://s3454.nubex.ru/sveden/catering/_
 ООО Компаньон
 
 ### Ответы на вопросы родителей по питанию
+
+[![Изображение](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f1401_26/Banner_kchestvo_pitaniya.jpg)](https://revizorro.onf.ru/#contact)

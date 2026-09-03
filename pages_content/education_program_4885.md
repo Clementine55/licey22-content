@@ -66,7 +66,7 @@ _https://s3454.nubex.ru/sveden/education/program_4885.html#eduPred_
 
 📎 [РП ОРКСЭ 4 класс](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9933_4e/%D0%A0%D0%9F%20%D0%9E%D0%A0%D0%9A%D0%A1%D0%AD%204%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _613 КБ_
 
-📎 [РП Робототехника. 4 кл.](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9934_1d/%D0%A0%D0%9F%20%D0%A0%D0%BE%D0%B1%D0%BE%D1%82%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0.%204%20%D0%BA%D0%BB..pdf) (pdf) — _415 КБ_
+📎 [РП Робототехника. 4 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9934_1d/%D0%A0%D0%9F%20%D0%A0%D0%BE%D0%B1%D0%BE%D1%82%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0.%204%20%D0%BA%D0%BB..pdf) (pdf) — _415 КБ_
 
 📎 [РП Русски язык 1-4](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9935_e6/%D0%A0%D0%9F%20%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%20%D1%8F%D0%B7%D1%8B%D0%BA%201-4.pdf) (pdf) — _2,2 МБ_
 
