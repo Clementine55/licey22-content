@@ -15,14 +15,7 @@ from bs4 import BeautifulSoup, Tag, NavigableString
 
 TARGET_ROOTS = [
     "https://s3454.nubex.ru/sveden/",
-    "https://s3454.nubex.ru/6184/17478/",
-    "https://s3454.nubex.ru/6184/20427/",
-    "https://s3454.nubex.ru/6184/6022/",
-    "https://s3454.nubex.ru/6184/6001/",
-    "https://s3454.nubex.ru/6184/6070/",
-    "https://s3454.nubex.ru/6184/19067/",
-    "https://s3454.nubex.ru/6184/7191/",
-    "https://s3454.nubex.ru/6184/7226/",
+    "https://s3454.nubex.ru/6184/",
     "https://s3454.nubex.ru/5933/",
     "https://s3454.nubex.ru/16451/",
 ]
