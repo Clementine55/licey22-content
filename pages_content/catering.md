@@ -126,15 +126,15 @@ _https://s3454.nubex.ru/sveden/catering/_
 
 Типовое меню:
 
-📎 [Корпус на ул. Советская](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8825_f4/tm2026-sm.xlsx) (xlsx) — _;_
+📎 [Корпус на ул. Советская](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10147_42/tm2026-sm.XLSX) (xlsx) — _;_
 
-📎 [Корпус на ул. Чаплыгина](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9606_49/tm2026-sm.xlsx) (xlsx)
+📎 [Корпус на ул. Чаплыгина](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10148_49/tm2026-sm%20%281%29.XLSX) (xlsx)
 
 Календарь питания:
 
-📎 [Корпус на ул. Советская](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9515_ad/kp2026%20%D0%A1%D0%BE%D0%B2.xlsx) (xlsx) — _;_
+📎 [Корпус на ул. Советская](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10149_88/kp2026%20%D0%A1%D0%BE%D0%B2.xlsx) (xlsx) — _;_
 
-📎 [Корпус на ул. Чаплыгина](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9516_33/kp2026%20%D0%A7%D0%B0%D0%BF%D0%BB.xlsx) (xlsx)
+📎 [Корпус на ул. Чаплыгина](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10150_96/kp2026%20%D0%A7%D0%B0%D0%BF%D0%BB.xlsx) (xlsx)
 
 ### Сведения об условиях питания и охраны здоровья обучающихся
 
