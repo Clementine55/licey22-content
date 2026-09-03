@@ -149,6 +149,16 @@ _https://s3454.nubex.ru/sveden/catering/_
 
 ### Меню ежедневного горячего питания
 
+#### 08.09.2026г.
+
+📎 [/food/2026-09-08-sm](https://s3454.nubex.ru/food/2026-09-08-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
+
+#### 07.09.2026г.
+
+📎 [/food/2026-09-07-sm](https://s3454.nubex.ru/food/2026-09-07-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
+
+📎 [/food/other_6497/food/2026-09-07-sm](https://s3454.nubex.ru/food/other_6497/food/2026-09-07-sm.xlsx) (xlsx) — _Корпус на Чаплыгина, 59_
+
 #### 04.09.2026г.
 
 📎 [/food/2026-09-04-sm](https://s3454.nubex.ru/food/2026-09-04-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
@@ -188,6 +198,12 @@ _https://s3454.nubex.ru/sveden/catering/_
 📎 [Перпективное 10-дневное меню 1-11 классы (многодетные, малоимущие, СВО) 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9897_f4/%D0%9F%D0%B5%D1%80%D0%BF%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5%2010-%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%201-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B%20%28%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%B4%D0%B5%D1%82%D0%BD%D1%8B%D0%B5%2C%20%D0%BC%D0%B0%D0%BB%D0%BE%D0%B8%D0%BC%D1%83%D1%89%D0%B8%D0%B5%2C%20%D0%A1%D0%92%D0%9E%29%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20%28%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81%20%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F%2C63%29.pdf) (pdf) — _корпус Советская,63_
 
 📎 [Перпективное 10-дневное меню 1-11 классы (многодетные, малоимущие, СВО) 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9895_5d/%D0%9F%D0%B5%D1%80%D0%BF%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5%2010-%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%201-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B%20%28%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%B4%D0%B5%D1%82%D0%BD%D1%8B%D0%B5%2C%20%D0%BC%D0%B0%D0%BB%D0%BE%D0%B8%D0%BC%D1%83%D1%89%D0%B8%D0%B5%2C%20%D0%A1%D0%92%D0%9E%29%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20%28%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81%20%D0%A7%D0%B0%D0%BF%D0%BB%D1%8B%D0%B3%D0%B8%D0%BD%D0%B0%2C59%29.pdf) (pdf) — _корпус Чаплыгина,59_
+
+📎 [Меню на 12.09.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10156_36/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2012.09.2026.pdf) (pdf)
+
+📎 [Меню на 11.09.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10155_b0/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2011.09.2026.pdf) (pdf)
+
+📎 [Меню на 10.09.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10154_57/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2010.09.2026.pdf) (pdf)
 
 📎 [Меню на 05.09.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9911_a9/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2005.09.2026.pdf) (pdf)
 
