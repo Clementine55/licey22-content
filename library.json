@@ -749,6 +749,69 @@
       {
         "type": "heading",
         "level": "h3",
+        "text": "11.09.2026г."
+      },
+      {
+        "type": "file",
+        "link_text": "/food/2026-09-11-sm",
+        "meta": "МАОУ «Лицей № 22 «Надежда Сибири»",
+        "file_name": "2026-09-11-sm.xlsx",
+        "extension": "xlsx",
+        "file_url": "https://s3454.nubex.ru/food/2026-09-11-sm.xlsx"
+      },
+      {
+        "type": "file",
+        "link_text": "/food/other_6497/food/2026-09-11-sm",
+        "meta": "Корпус на Чаплыгина, 59",
+        "file_name": "2026-09-11-sm.xlsx",
+        "extension": "xlsx",
+        "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-09-11-sm.xlsx"
+      },
+      {
+        "type": "heading",
+        "level": "h3",
+        "text": "10.09.2026г."
+      },
+      {
+        "type": "file",
+        "link_text": "/food/2026-09-10-sm",
+        "meta": "МАОУ «Лицей № 22 «Надежда Сибири»",
+        "file_name": "2026-09-10-sm.xlsx",
+        "extension": "xlsx",
+        "file_url": "https://s3454.nubex.ru/food/2026-09-10-sm.xlsx"
+      },
+      {
+        "type": "file",
+        "link_text": "/food/other_6497/food/2026-09-10-sm",
+        "meta": "Корпус на Чаплыгина, 59",
+        "file_name": "2026-09-10-sm.xlsx",
+        "extension": "xlsx",
+        "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-09-10-sm.xlsx"
+      },
+      {
+        "type": "heading",
+        "level": "h3",
+        "text": "09.09.2026г."
+      },
+      {
+        "type": "file",
+        "link_text": "/food/2026-09-09-sm",
+        "meta": "МАОУ «Лицей № 22 «Надежда Сибири»",
+        "file_name": "2026-09-09-sm.xlsx",
+        "extension": "xlsx",
+        "file_url": "https://s3454.nubex.ru/food/2026-09-09-sm.xlsx"
+      },
+      {
+        "type": "file",
+        "link_text": "/food/other_6497/food/2026-09-09-sm",
+        "meta": "Корпус на Чаплыгина, 59",
+        "file_name": "2026-09-09-sm.xlsx",
+        "extension": "xlsx",
+        "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-09-09-sm.xlsx"
+      },
+      {
+        "type": "heading",
+        "level": "h3",
         "text": "08.09.2026г."
       },
       {
@@ -758,6 +821,14 @@
         "file_name": "2026-09-08-sm.xlsx",
         "extension": "xlsx",
         "file_url": "https://s3454.nubex.ru/food/2026-09-08-sm.xlsx"
+      },
+      {
+        "type": "file",
+        "link_text": "/food/other_6497/food/2026-09-08-sm",
+        "meta": "Корпус на Чаплыгина, 59",
+        "file_name": "2026-09-08-sm.xlsx",
+        "extension": "xlsx",
+        "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-09-08-sm.xlsx"
       },
       {
         "type": "heading",
@@ -927,6 +998,14 @@
         "file_name": "Перпективное 10-дневное меню 1-11 классы (многодетные, малоимущие, СВО) 2026-2027 учебный год (корпус Чаплыгина,59).pdf",
         "extension": "pdf",
         "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9895_5d/%D0%9F%D0%B5%D1%80%D0%BF%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5%2010-%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%201-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B%20%28%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%B4%D0%B5%D1%82%D0%BD%D1%8B%D0%B5%2C%20%D0%BC%D0%B0%D0%BB%D0%BE%D0%B8%D0%BC%D1%83%D1%89%D0%B8%D0%B5%2C%20%D0%A1%D0%92%D0%9E%29%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20%28%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81%20%D0%A7%D0%B0%D0%BF%D0%BB%D1%8B%D0%B3%D0%B8%D0%BD%D0%B0%2C59%29.pdf"
+      },
+      {
+        "type": "file",
+        "link_text": "Перпективное 10-дневное меню 2 класс (многодетные, заболевание: пищевая аллергия/непереносимость молочного белка) 2026-2027 учебный год",
+        "meta": "",
+        "file_name": "Перпективное 10-дневное меню 2 класс (многодетные, заболевание пищевая аллергия непереносимость молочного белка) 2026-2027 учебный год.PDF",
+        "extension": "pdf",
+        "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10199_5b/%D0%9F%D0%B5%D1%80%D0%BF%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5%2010-%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%202%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%20%28%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%B4%D0%B5%D1%82%D0%BD%D1%8B%D0%B5%2C%20%D0%B7%D0%B0%D0%B1%D0%BE%D0%BB%D0%B5%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B8%D1%89%D0%B5%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%80%D0%B3%D0%B8%D1%8F%20%D0%BD%D0%B5%D0%BF%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%BC%D0%BE%D0%BB%D0%BE%D1%87%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B1%D0%B5%D0%BB%D0%BA%D0%B0%29%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.PDF"
       },
       {
         "type": "file",
@@ -6856,6 +6935,69 @@
       {
         "type": "heading",
         "level": "h3",
+        "text": "11.09.2026г."
+      },
+      {
+        "type": "file",
+        "link_text": "/food/2026-09-11-sm",
+        "meta": "МАОУ «Лицей № 22 «Надежда Сибири»",
+        "file_name": "2026-09-11-sm.xlsx",
+        "extension": "xlsx",
+        "file_url": "https://s3454.nubex.ru/food/2026-09-11-sm.xlsx"
+      },
+      {
+        "type": "file",
+        "link_text": "/food/other_6497/food/2026-09-11-sm",
+        "meta": "Корпус на Чаплыгина, 59",
+        "file_name": "2026-09-11-sm.xlsx",
+        "extension": "xlsx",
+        "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-09-11-sm.xlsx"
+      },
+      {
+        "type": "heading",
+        "level": "h3",
+        "text": "10.09.2026г."
+      },
+      {
+        "type": "file",
+        "link_text": "/food/2026-09-10-sm",
+        "meta": "МАОУ «Лицей № 22 «Надежда Сибири»",
+        "file_name": "2026-09-10-sm.xlsx",
+        "extension": "xlsx",
+        "file_url": "https://s3454.nubex.ru/food/2026-09-10-sm.xlsx"
+      },
+      {
+        "type": "file",
+        "link_text": "/food/other_6497/food/2026-09-10-sm",
+        "meta": "Корпус на Чаплыгина, 59",
+        "file_name": "2026-09-10-sm.xlsx",
+        "extension": "xlsx",
+        "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-09-10-sm.xlsx"
+      },
+      {
+        "type": "heading",
+        "level": "h3",
+        "text": "09.09.2026г."
+      },
+      {
+        "type": "file",
+        "link_text": "/food/2026-09-09-sm",
+        "meta": "МАОУ «Лицей № 22 «Надежда Сибири»",
+        "file_name": "2026-09-09-sm.xlsx",
+        "extension": "xlsx",
+        "file_url": "https://s3454.nubex.ru/food/2026-09-09-sm.xlsx"
+      },
+      {
+        "type": "file",
+        "link_text": "/food/other_6497/food/2026-09-09-sm",
+        "meta": "Корпус на Чаплыгина, 59",
+        "file_name": "2026-09-09-sm.xlsx",
+        "extension": "xlsx",
+        "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-09-09-sm.xlsx"
+      },
+      {
+        "type": "heading",
+        "level": "h3",
         "text": "08.09.2026г."
       },
       {
@@ -6865,6 +7007,14 @@
         "file_name": "2026-09-08-sm.xlsx",
         "extension": "xlsx",
         "file_url": "https://s3454.nubex.ru/food/2026-09-08-sm.xlsx"
+      },
+      {
+        "type": "file",
+        "link_text": "/food/other_6497/food/2026-09-08-sm",
+        "meta": "Корпус на Чаплыгина, 59",
+        "file_name": "2026-09-08-sm.xlsx",
+        "extension": "xlsx",
+        "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-09-08-sm.xlsx"
       },
       {
         "type": "heading",
@@ -7034,6 +7184,14 @@
         "file_name": "Перпективное 10-дневное меню 1-11 классы (многодетные, малоимущие, СВО) 2026-2027 учебный год (корпус Чаплыгина,59).pdf",
         "extension": "pdf",
         "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9895_5d/%D0%9F%D0%B5%D1%80%D0%BF%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5%2010-%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%201-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B%20%28%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%B4%D0%B5%D1%82%D0%BD%D1%8B%D0%B5%2C%20%D0%BC%D0%B0%D0%BB%D0%BE%D0%B8%D0%BC%D1%83%D1%89%D0%B8%D0%B5%2C%20%D0%A1%D0%92%D0%9E%29%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20%28%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81%20%D0%A7%D0%B0%D0%BF%D0%BB%D1%8B%D0%B3%D0%B8%D0%BD%D0%B0%2C59%29.pdf"
+      },
+      {
+        "type": "file",
+        "link_text": "Перпективное 10-дневное меню 2 класс (многодетные, заболевание: пищевая аллергия/непереносимость молочного белка) 2026-2027 учебный год",
+        "meta": "",
+        "file_name": "Перпективное 10-дневное меню 2 класс (многодетные, заболевание пищевая аллергия непереносимость молочного белка) 2026-2027 учебный год.PDF",
+        "extension": "pdf",
+        "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10199_5b/%D0%9F%D0%B5%D1%80%D0%BF%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5%2010-%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%202%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%20%28%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%B4%D0%B5%D1%82%D0%BD%D1%8B%D0%B5%2C%20%D0%B7%D0%B0%D0%B1%D0%BE%D0%BB%D0%B5%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B8%D1%89%D0%B5%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%80%D0%B3%D0%B8%D1%8F%20%D0%BD%D0%B5%D0%BF%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%BC%D0%BE%D0%BB%D0%BE%D1%87%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B1%D0%B5%D0%BB%D0%BA%D0%B0%29%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.PDF"
       },
       {
         "type": "file",
