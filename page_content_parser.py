@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import hashlib
 import json
 import re
 import sys
@@ -47,6 +48,21 @@ USER_AGENT = "Mozilla/5.0 (compatible; Lyceum22ContentBot/1.0)"
 HEADERS = {"User-Agent": USER_AGENT}
 
 OUTPUT_DIR = Path("pages_content")
+
+# Хэш содержимого каждой страницы с прошлого запуска — позволяет
+# пропускать разбор страниц, которые не поменялись со старого сайта, и
+# гонять парсер часто (хоть каждые 5 минут) не тратя время и не создавая
+# лишних коммитов на пустом месте.
+STATE_FILE = Path("page_state.json")
+if STATE_FILE.exists():
+    PAGE_STATE = json.loads(STATE_FILE.read_text(encoding="utf-8"))
+else:
+    PAGE_STATE = {}
+
+
+def content_hash(html: str) -> str:
+    return hashlib.sha256(html.encode("utf-8", errors="ignore")).hexdigest()
+
 
 EMAILS_MAP_FILE = Path("emails_map.json")
 if EMAILS_MAP_FILE.exists():
@@ -563,15 +579,36 @@ def main():
             unique_pages.append(url)
 
     toc = []
+    skipped = 0
 
     for i, url in enumerate(unique_pages, 1):
-        print(f"[{now()}] [{i}/{len(unique_pages)}] Разбираю {url}", flush=True)
         resp = fetch(url)
         time.sleep(REQUEST_DELAY)
         if resp is None:
             continue
 
-        soup = BeautifulSoup(resp.text, "html.parser")
+        html = resp.text
+        new_hash = content_hash(html)
+        slug = slugify(url)
+
+        if PAGE_STATE.get(url) == new_hash:
+            # страница не изменилась с прошлого запуска — не разбираем
+            # заново, переиспользуем уже лежащий на диске JSON для сводки
+            print(f"[{now()}] [{i}/{len(unique_pages)}] без изменений: {url}", flush=True)
+            skipped += 1
+            existing_path = OUTPUT_DIR / f"{slug}.json"
+            if existing_path.exists():
+                existing = json.loads(existing_path.read_text(encoding="utf-8"))
+                headings = [b["text"] for b in existing.get("blocks", []) if b["type"] == "heading"]
+                file_count = sum(1 for b in existing.get("blocks", []) if b["type"] == "file")
+                toc.append({
+                    "url": url, "title": existing.get("title", url), "slug": slug,
+                    "headings": headings, "file_count": file_count,
+                })
+            continue
+
+        print(f"[{now()}] [{i}/{len(unique_pages)}] Разбираю {url}", flush=True)
+        soup = BeautifulSoup(html, "html.parser")
         title_tag = soup.find("h1") or soup.find("title")
         page_title = title_tag.get_text(strip=True) if title_tag else url
 
@@ -579,7 +616,6 @@ def main():
         headings = [b["text"] for b in blocks if b["type"] == "heading"]
         file_count = sum(1 for b in blocks if b["type"] == "file")
 
-        slug = slugify(url)
         page_data = {
             "url": url,
             "title": page_title,
@@ -596,10 +632,12 @@ def main():
             "headings": headings,
             "file_count": file_count,
         })
+        PAGE_STATE[url] = new_hash
 
     (OUTPUT_DIR / "_toc.json").write_text(json.dumps(toc, ensure_ascii=False, indent=2), encoding="utf-8")
+    STATE_FILE.write_text(json.dumps(PAGE_STATE, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    print(f"\n[{now()}] Готово. Разобрано страниц: {len(toc)}")
+    print(f"\n[{now()}] Готово. Разобрано страниц: {len(toc)} (без изменений пропущено: {skipped})")
     print(f"Результат в папке: {OUTPUT_DIR.resolve()}")
 
 if __name__ == "__main__":
