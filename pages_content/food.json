@@ -98,14 +98,6 @@
     },
     {
       "type": "file",
-      "link_text": "Об_организации_питания_в_2025_2026_учебном_году",
-      "meta": "",
-      "file_name": "Об_организации_питания_в_2025_2026_учебном_году_249_од_от_29_08.pdf",
-      "extension": "pdf",
-      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f7961_43/%D0%9E%D0%B1_%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8_%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F_%D0%B2_2025_2026_%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%BC_%D0%B3%D0%BE%D0%B4%D1%83_249_%D0%BE%D0%B4_%D0%BE%D1%82_29_08.pdf"
-    },
-    {
-      "type": "file",
       "link_text": "Проверочный лист Советская 23.01.2026",
       "meta": "",
       "file_name": "Проверочный лист 23.01 Советская.pdf",
@@ -259,6 +251,14 @@
       "file_name": "Постановление мэрии 1032.pdf",
       "extension": "pdf",
       "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f512_2c/%D0%9F%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BC%D1%8D%D1%80%D0%B8%D0%B8%201032.pdf"
+    },
+    {
+      "type": "file",
+      "link_text": "Приказ №250 от 28.08.2026 Об организации питания в 2026-2027 учебном году",
+      "meta": "",
+      "file_name": "250_од от 28.08.2026 Об организации питания в 2026-2027 учебном году.pdf",
+      "extension": "pdf",
+      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10216_e1/250_%D0%BE%D0%B4%20%D0%BE%D1%82%2028.08.2026%20%D0%9E%D0%B1%20%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%20%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B2%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%BC%20%D0%B3%D0%BE%D0%B4%D1%83.pdf"
     },
     {
       "type": "paragraph",
@@ -431,6 +431,90 @@
       "type": "heading",
       "level": "h2",
       "text": "Меню ежедневного горячего питания"
+    },
+    {
+      "type": "heading",
+      "level": "h3",
+      "text": "17.09.2026г."
+    },
+    {
+      "type": "file",
+      "link_text": "/food/2026-09-17-sm",
+      "meta": "МАОУ «Лицей № 22 «Надежда Сибири»",
+      "file_name": "2026-09-17-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/2026-09-17-sm.xlsx"
+    },
+    {
+      "type": "file",
+      "link_text": "/food/other_6497/food/2026-09-17-sm",
+      "meta": "Корпус на Чаплыгина, 59",
+      "file_name": "2026-09-17-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-09-17-sm.xlsx"
+    },
+    {
+      "type": "heading",
+      "level": "h3",
+      "text": "16.09.2026г."
+    },
+    {
+      "type": "file",
+      "link_text": "/food/2026-09-16-sm",
+      "meta": "МАОУ «Лицей № 22 «Надежда Сибири»",
+      "file_name": "2026-09-16-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/2026-09-16-sm.xlsx"
+    },
+    {
+      "type": "file",
+      "link_text": "/food/other_6497/food/2026-09-16-sm",
+      "meta": "Корпус на Чаплыгина, 59",
+      "file_name": "2026-09-16-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-09-16-sm.xlsx"
+    },
+    {
+      "type": "heading",
+      "level": "h3",
+      "text": "15.09.2026г."
+    },
+    {
+      "type": "file",
+      "link_text": "/food/2026-09-15-sm",
+      "meta": "МАОУ «Лицей № 22 «Надежда Сибири»",
+      "file_name": "2026-09-15-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/2026-09-15-sm.xlsx"
+    },
+    {
+      "type": "file",
+      "link_text": "/food/other_6497/food/2026-09-15-sm",
+      "meta": "Корпус на Чаплыгина, 59",
+      "file_name": "2026-09-15-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-09-15-sm.xlsx"
+    },
+    {
+      "type": "heading",
+      "level": "h3",
+      "text": "14.09.2026г."
+    },
+    {
+      "type": "file",
+      "link_text": "/food/2026-09-14-sm",
+      "meta": "МАОУ «Лицей № 22 «Надежда Сибири»",
+      "file_name": "2026-09-14-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/2026-09-14-sm.xlsx"
+    },
+    {
+      "type": "file",
+      "link_text": "/food/other_6497/food/2026-09-14-sm",
+      "meta": "Корпус на Чаплыгина, 59",
+      "file_name": "2026-09-14-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-09-14-sm.xlsx"
     },
     {
       "type": "heading",
@@ -692,6 +776,38 @@
       "file_name": "Перпективное 10-дневное меню 2 класс (многодетные, заболевание пищевая аллергия непереносимость молочного белка) 2026-2027 учебный год.PDF",
       "extension": "pdf",
       "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10199_5b/%D0%9F%D0%B5%D1%80%D0%BF%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5%2010-%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%202%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%20%28%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%B4%D0%B5%D1%82%D0%BD%D1%8B%D0%B5%2C%20%D0%B7%D0%B0%D0%B1%D0%BE%D0%BB%D0%B5%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B8%D1%89%D0%B5%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%80%D0%B3%D0%B8%D1%8F%20%D0%BD%D0%B5%D0%BF%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%BC%D0%BE%D0%BB%D0%BE%D1%87%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B1%D0%B5%D0%BB%D0%BA%D0%B0%29%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.PDF"
+    },
+    {
+      "type": "file",
+      "link_text": "Меню на 17.09.2026",
+      "meta": "",
+      "file_name": "Меню на 17.09.2026.pdf",
+      "extension": "pdf",
+      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10215_0e/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2017.09.2026.pdf"
+    },
+    {
+      "type": "file",
+      "link_text": "Меню на 16.09.2026",
+      "meta": "",
+      "file_name": "Меню на 16.09.2026.pdf",
+      "extension": "pdf",
+      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10214_9d/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2016.09.2026.pdf"
+    },
+    {
+      "type": "file",
+      "link_text": "Меню на 15.09.2026",
+      "meta": "",
+      "file_name": "Меню на 15.09.2026.pdf",
+      "extension": "pdf",
+      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10213_d0/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2015.09.2026.pdf"
+    },
+    {
+      "type": "file",
+      "link_text": "Меню на 14.09.2026",
+      "meta": "",
+      "file_name": "Меню на 14.09.2026.pdf",
+      "extension": "pdf",
+      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10212_50/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2014.09.2026.pdf"
     },
     {
       "type": "file",
