@@ -49,10 +49,23 @@ HEADERS = {"User-Agent": USER_AGENT}
 
 OUTPUT_DIR = Path("pages_content")
 
-# Хэш содержимого каждой страницы с прошлого запуска — позволяет
-# пропускать разбор страниц, которые не поменялись со старого сайта, и
-# гонять парсер часто (хоть каждые 5 минут) не тратя время и не создавая
-# лишних коммитов на пустом месте.
+# Хэш РАЗОБРАННОГО содержимого каждой страницы с прошлого запуска.
+#
+# ВАЖНО: парсим мы всегда, на каждой странице, при каждом запуске — сеть и
+# CPU дешёвые, а вот хэш сырого HTML для решения "разбирать ли страницу
+# заново" не годится: на старом сайте (Nubex) в HTML рядом с реальным
+# текстом сидит технический шум, меняющийся от запроса к запросу (счётчики,
+# токены форм, версии статики в ?v=... и т.п.), из-за чего сырой HTML
+# "меняется", даже когда видимое содержимое страницы не менялось ни на
+# байт. Это раньше приводило к тому, что git diff показывал изменения на
+# всех страницах разом, хотя реально ничего не поменялось.
+#
+# Поэтому хэш считается уже ПОСЛЕ extract_blocks() — то есть от того, что
+# реально попадёт в JSON/MD (заголовки, тексты, файлы, таблицы). Весь шум
+# из сырого HTML туда не долетает, потому что extract_blocks и так вытаскивает
+# только осмысленные теги. Хэш используется только для одного: писать ли
+# файл на диск заново (и, следовательно, попадёт ли страница в git diff/
+# коммит) — а не для того, чтобы решать, парсить страницу или нет.
 STATE_FILE = Path("page_state.json")
 if STATE_FILE.exists():
     PAGE_STATE = json.loads(STATE_FILE.read_text(encoding="utf-8"))
@@ -60,8 +73,19 @@ else:
     PAGE_STATE = {}
 
 
-def content_hash(html: str) -> str:
-    return hashlib.sha256(html.encode("utf-8", errors="ignore")).hexdigest()
+def content_hash(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8", errors="ignore")).hexdigest()
+
+
+def blocks_hash(page_data: dict) -> str:
+    """Хэш уже РАЗОБРАННОГО содержимого страницы (title + blocks), а не
+    сырого HTML. sort_keys=True — чтобы хэш не "прыгал" из-за случайного
+    порядка ключей в словарях; порядок самих блоков в списке при этом
+    сохраняется как есть (он определяется порядком блоков на странице,
+    а не сортировкой), так что реальная перестановка контента всё ещё
+    будет замечена."""
+    canonical = json.dumps(page_data, ensure_ascii=False, sort_keys=True)
+    return content_hash(canonical)
 
 
 EMAILS_MAP_FILE = Path("emails_map.json")
@@ -588,25 +612,11 @@ def main():
             continue
 
         html = resp.text
-        new_hash = content_hash(html)
         slug = slugify(url)
 
-        if PAGE_STATE.get(url) == new_hash:
-            # страница не изменилась с прошлого запуска — не разбираем
-            # заново, переиспользуем уже лежащий на диске JSON для сводки
-            print(f"[{now()}] [{i}/{len(unique_pages)}] без изменений: {url}", flush=True)
-            skipped += 1
-            existing_path = OUTPUT_DIR / f"{slug}.json"
-            if existing_path.exists():
-                existing = json.loads(existing_path.read_text(encoding="utf-8"))
-                headings = [b["text"] for b in existing.get("blocks", []) if b["type"] == "heading"]
-                file_count = sum(1 for b in existing.get("blocks", []) if b["type"] == "file")
-                toc.append({
-                    "url": url, "title": existing.get("title", url), "slug": slug,
-                    "headings": headings, "file_count": file_count,
-                })
-            continue
-
+        # Разбираем ВСЕГДА, независимо от того, менялась страница или нет —
+        # сеть и CPU дешёвые, а хэш сырого HTML для пропуска разбора
+        # ненадёжен (см. комментарий у STATE_FILE выше).
         print(f"[{now()}] [{i}/{len(unique_pages)}] Разбираю {url}", flush=True)
         soup = BeautifulSoup(html, "html.parser")
         title_tag = soup.find("h1") or soup.find("title")
@@ -622,9 +632,6 @@ def main():
             "blocks": blocks,
         }
 
-        (OUTPUT_DIR / f"{slug}.json").write_text(json.dumps(page_data, ensure_ascii=False, indent=2), encoding="utf-8")
-        (OUTPUT_DIR / f"{slug}.md").write_text(blocks_to_markdown(page_title, url, blocks), encoding="utf-8")
-
         toc.append({
             "url": url,
             "title": page_title,
@@ -632,6 +639,19 @@ def main():
             "headings": headings,
             "file_count": file_count,
         })
+
+        # А вот ПИСАТЬ на диск (и тем самым попадать в git diff/коммит)
+        # нужно, только если реально разобранное содержимое отличается от
+        # прошлого запуска — сравниваем хэш уже после extract_blocks(),
+        # а не хэш сырого HTML.
+        new_hash = blocks_hash(page_data)
+        if PAGE_STATE.get(url) == new_hash:
+            print(f"[{now()}] [{i}/{len(unique_pages)}] без изменений (содержимое не поменялось, файл не перезаписываю): {url}", flush=True)
+            skipped += 1
+            continue
+
+        (OUTPUT_DIR / f"{slug}.json").write_text(json.dumps(page_data, ensure_ascii=False, indent=2), encoding="utf-8")
+        (OUTPUT_DIR / f"{slug}.md").write_text(blocks_to_markdown(page_title, url, blocks), encoding="utf-8")
         PAGE_STATE[url] = new_hash
 
     (OUTPUT_DIR / "_toc.json").write_text(json.dumps(toc, ensure_ascii=False, indent=2), encoding="utf-8")

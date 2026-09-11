@@ -1,27 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Публикует pages_content/ и library.json в GitHub, чтобы у каждого файла
-был ПОСТОЯННЫЙ URL (не меняется между запусками), а содержимое под ним
-обновлялось при каждом запуске парсера.
-
-Эта версия — под структуру, где ВСЁ лежит в одной папке: сам парсер,
-publish_to_github.py и git-репозиторий — это одна и та же папка
-(licey22-content). Никакого копирования файлов из другого места не
-происходит — page_content_parser.py и combine_library.py и так пишут
-результат прямо сюда же, остаётся только закоммитить и запушить.
-
-Запуск (из этой же папки, или откуда угодно — пути не важны):
-    python3 publish_to_github.py
-
-Что делает по порядку:
-    1. Запускает page_content_parser.py (обходит старый сайт заново)
-    2. Запускает combine_library.py (собирает library.json/.md)
-    3. git add -A / git commit / git push — с сообщением коммита с датой
-
-В кроне — раз в день ночью, например:
-    0 3 * * * cd "/home/clementine/Visual Studio Code/Python/licey22-content" && "/home/clementine/Visual Studio Code/Python/licey22-content/.venv/bin/python" publish_to_github.py >> publish.log 2>&1
-"""
 
 import subprocess
 import sys
@@ -57,15 +35,15 @@ def run(cmd, cwd):
 
 
 def run_pipeline():
-    """Запускает page_content_parser.py, apply_link_map.py и combine_library.py
-    перед публикацией. Все скрипты ожидаются в этой же папке и сами кладут
-    результат сюда же — копировать никуда не нужно.
+    """Запускает page_content_parser.py и apply_link_map.py перед публикацией.
+    Оба скрипта ожидаются в этой же папке и сами кладут результат сюда же —
+    копировать никуда не нужно.
 
-    apply_link_map.py идёт СРАЗУ после парсера и ДО combine_library.py —
-    это важно: парсер каждый раз перезаписывает pages_content/ с нуля
-    (обходя старый сайт заново), так что замены ссылок нужно накатывать
-    заново при каждом запуске, а library.json должен собираться уже из
-    исправленных ссылок, а не из сырых.
+    apply_link_map.py идёт СРАЗУ после парсера — это важно: парсер каждый
+    раз перезаписывает pages_content/ с нуля (обходя старый сайт заново),
+    так что замены ссылок нужно накатывать заново при каждом запуске.
+
+    combine_library.py больше не используется и не запускается.
 
     Флаг -u (unbuffered) важен не только для живого терминала, но и для
     крона: если вывод перенаправлен в файл (>> publish.log), Python по
@@ -84,11 +62,6 @@ def run_pipeline():
             sys.exit(1)
     else:
         print("\n(apply_link_map.py не найден рядом — пропускаю замену ссылок)", flush=True)
-
-    print(f"\n[{datetime.now():%H:%M:%S}] Запускаю combine_library.py (сборка library.json/.md)...", flush=True)
-    if not run([sys.executable, "-u", str(REPO_DIR / "combine_library.py")], cwd=REPO_DIR):
-        print("Сборка библиотеки завершилась с ошибкой — публикацию прерываю.", file=sys.stderr)
-        sys.exit(1)
     print()
 
 
