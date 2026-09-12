@@ -107,15 +107,13 @@ def slugify(url: str) -> str:
 
 
 def resolve_email(query_key: str):
-    """query_key — например '?abc123'. Возвращает mailto:-ссылку, если адрес
-    уже известен, иначе регистрирует ключ как "неизвестный" и возвращает None."""
+    """query_key — например '?p=...'. Возвращает голый email, если адрес уже
+    известен, иначе регистрирует ключ как "неизвестный" и возвращает None."""
     global _email_map_dirty
 
-    email = EMAIL_MAP.get(query_key)
+    email = EMAIL_MAP.get(query_key, "").strip()
     if email:
-        if "@" in email and not email.startswith("mailto:"):
-            email = "mailto:" + email
-        return email
+        return email.removeprefix("mailto:")
 
     if query_key not in EMAIL_MAP:
         EMAIL_MAP[query_key] = ""

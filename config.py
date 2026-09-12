@@ -42,7 +42,22 @@ HEADERS = {"User-Agent": USER_AGENT}
 
 # Все пути — относительно текущей папки (парсер всегда запускается из неё)
 OUTPUT_DIR = Path("pages_content")
-STATE_FILE = Path("page_state.json")
-LINK_MAP_FILE = Path("link_map.json")
-EMAILS_MAP_FILE = Path("emails_map.json")
+STATE_DIR = Path("state")
+STATE_FILE = STATE_DIR / "page_state.json"
+LINK_MAP_FILE = STATE_DIR / "link_map.json"
+EMAILS_MAP_FILE = STATE_DIR / "emails_map.json"
 TOC_FILE = OUTPUT_DIR / "_toc.json"
+
+
+def _migrate_legacy_file(old: Path, new: Path) -> None:
+    """Разовый переезд: если файл раньше лежал прямо в корне репозитория
+    (старая раскладка), переносим его в новую папку state/ при первом же
+    запуске — руками ничего двигать не нужно."""
+    if old.exists() and not new.exists():
+        new.parent.mkdir(parents=True, exist_ok=True)
+        old.rename(new)
+
+
+for _target in (STATE_FILE, LINK_MAP_FILE, EMAILS_MAP_FILE):
+    _migrate_legacy_file(Path(_target.name), _target)
+

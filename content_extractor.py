@@ -41,7 +41,9 @@ def render_inline_text(tag: Tag, page_url: str = "", plain_links: bool = False) 
                 if query:
                     key = "?" + query
                     email = links.resolve_email(key)
-                    return email if email else f"[НЕИЗВЕСТНАЯ ПОЧТА: {key}]"
+                    if email:
+                        return email if plain_links else f"[{email}](mailto:{email})"
+                    return f"[НЕИЗВЕСТНАЯ ПОЧТА: {key}]"
 
             if src:
                 if plain_links:
