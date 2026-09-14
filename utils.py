@@ -1,5 +1,3 @@
-"""Мелкие утилиты общего назначения."""
-
 from datetime import datetime
 
 

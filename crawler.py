@@ -1,6 +1,3 @@
-"""Обход раздела старого сайта по ссылкам — находит все страницы внутри
-заданного префикса пути (BFS от корня раздела)."""
-
 import time
 from collections import deque
 from urllib.parse import urljoin, urlparse

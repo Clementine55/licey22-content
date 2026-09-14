@@ -1,0 +1,14 @@
+[Unit]
+Description=Плановый прогон парсера лицея (интервал задаётся в config.py)
+After=network.target
+
+[Service]
+Type=simple
+User=licey22
+WorkingDirectory=/opt/licey22-content
+ExecStart=/opt/licey22-content/.venv/bin/python -u /opt/licey22-content/scheduler.py
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target

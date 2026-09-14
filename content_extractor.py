@@ -1,6 +1,3 @@
-"""Разбор HTML-страницы в список блоков (заголовки, абзацы, списки, таблицы,
-файлы, подстраницы) — то, что в итоге попадает в JSON и Markdown."""
-
 import re
 from urllib.parse import urljoin, urlparse
 

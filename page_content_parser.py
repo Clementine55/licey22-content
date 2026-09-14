@@ -1,17 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Обходит старый сайт лицея и сохраняет содержимое каждой страницы в
-pages_content/ (JSON + Markdown на страницу) и в pages_content/_toc.json
-(оглавление). Устроено так, чтобы можно было гонять его хоть каждый день
-из крона: страницы разбираются заново всегда, а на диск перезаписываются
-только те, что реально изменились — см. state.py.
-
-Запуск:
-    python3 page_content_parser.py
-
-Подробности о том, как это всё устроено вместе с publish_to_github.py —
-в README.md.
-"""
 
 import json
 import sys
@@ -25,11 +13,12 @@ import config
 import http_client
 import links
 import state
+import changelog
 from content_extractor import extract_blocks
 from crawler import discover_section_pages
 from http_client import fetch
 from markdown_export import blocks_to_markdown
-from utils import now
+from utils import now, load_json
 
 
 def discover_all_pages() -> list:
@@ -72,27 +61,31 @@ def parse_page(url: str) -> Optional[dict]:
     return {"url": url, "title": page_title, "blocks": blocks}
 
 
-def remove_orphaned_files(expected_slugs: set) -> int:
+def remove_orphaned_files(expected_slugs: set) -> list:
     """Удаляет .json/.md страниц, которых больше нет среди текущих
-    unique_pages (раздел убрали/переименовали на старом сайте)."""
-    removed = 0
+    unique_pages (раздел убрали/переименовали на старом сайте).
+    Возвращает список slug'ов удалённых страниц (для журнала изменений)."""
+    removed_slugs = []
     for path in config.OUTPUT_DIR.glob("*.json"):
         if path == config.TOC_FILE:
             continue
         if path.stem not in expected_slugs:
             path.unlink()
-            removed += 1
+            removed_slugs.append(path.stem)
     for path in config.OUTPUT_DIR.glob("*.md"):
         if path.stem not in expected_slugs:
             path.unlink()
-            removed += 1
-    return removed
+    return removed_slugs
 
 
 def main():
     config.OUTPUT_DIR.mkdir(exist_ok=True)
 
-    previously_known = len(state.PAGE_STATE)
+    previously_known_urls = set(state.PAGE_STATE.keys())
+    previously_known = len(previously_known_urls)
+    previous_toc_by_slug = {
+        entry["slug"]: entry for entry in load_json(config.TOC_FILE, [])
+    }
 
     unique_pages = discover_all_pages()
 
@@ -115,6 +108,7 @@ def main():
 
     toc = []
     skipped = 0
+    added_log, updated_log = [], []
 
     for i, url in enumerate(unique_pages, 1):
         print(f"[{now()}] [{i}/{len(unique_pages)}] Разбираю {url}", flush=True)
@@ -139,27 +133,46 @@ def main():
             skipped += 1
             continue
 
+        md_path = config.OUTPUT_DIR / f"{slug}.md"
+        new_md = blocks_to_markdown(page_data["title"], url, page_data["blocks"])
+
+        entry = {"url": url, "title": page_data["title"], "slug": slug}
+        if url not in previously_known_urls:
+            added_log.append(entry)
+        else:
+            old_md = md_path.read_text(encoding="utf-8") if md_path.exists() else ""
+            added_lines, removed_lines = changelog.diff_snippet(old_md, new_md)
+            updated_log.append({**entry, "added_lines": added_lines, "removed_lines": removed_lines})
+
         (config.OUTPUT_DIR / f"{slug}.json").write_text(
             json.dumps(page_data, ensure_ascii=False, indent=2), encoding="utf-8"
         )
-        (config.OUTPUT_DIR / f"{slug}.md").write_text(
-            blocks_to_markdown(page_data["title"], url, page_data["blocks"]), encoding="utf-8"
-        )
+        md_path.write_text(new_md, encoding="utf-8")
         state.record(url, page_data)
 
-    removed = 0
+    removed_log = []
     if crawl_looks_healthy:
         state.prune(set(unique_pages))
-        removed = remove_orphaned_files({links.slugify(u) for u in unique_pages})
+        removed_slugs = remove_orphaned_files({links.slugify(u) for u in unique_pages})
+        removed_log = [
+            previous_toc_by_slug.get(slug, {"slug": slug, "title": slug, "url": ""})
+            for slug in removed_slugs
+        ]
         config.TOC_FILE.write_text(json.dumps(toc, ensure_ascii=False, indent=2), encoding="utf-8")
     else:
         print(f"[{now()}] _toc.json и чистка устаревших файлов пропущены (см. предупреждение выше).", flush=True)
 
     state.save()
     links.save_maps()
+    changelog.record_run(
+        added=added_log, updated=updated_log, removed=removed_log,
+        healthy=crawl_looks_healthy, pages_found=len(unique_pages),
+        pages_known_before=previously_known,
+    )
 
     print(f"\n[{now()}] Готово. Разобрано страниц: {len(toc)} "
-          f"(без изменений пропущено: {skipped}, удалено устаревших файлов: {removed})")
+          f"(без изменений пропущено: {skipped}, добавлено: {len(added_log)}, "
+          f"обновлено: {len(updated_log)}, удалено устаревших файлов: {len(removed_log)})")
     print(f"Результат в папке: {config.OUTPUT_DIR.resolve()}")
 
 

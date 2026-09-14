@@ -1,5 +1,3 @@
-"""Настройки парсера. Здесь и только здесь меняются пути, домены и таймауты."""
-
 from pathlib import Path
 
 # Разделы старого сайта, которые обходим
@@ -41,6 +39,11 @@ FILE_EXTENSIONS = {
 # лучше пропустить, чем случайно снести весь локальный кэш.
 MIN_HEALTHY_CRAWL_RATIO = 0.7
 
+# Интервал планового прогона для scheduler.py, в минутах. Поменять — просто
+# отредактировать эту строку и перезапустить сервис (systemctl restart
+# licey22-scheduler), без правки systemd-юнитов и daemon-reload.
+PUBLISH_INTERVAL_MINUTES = 60
+
 MAX_PAGES_PER_SECTION = 500
 
 REQUEST_DELAY = 0.15
@@ -54,6 +57,9 @@ STATE_DIR = Path("state")
 STATE_FILE = STATE_DIR / "page_state.json"
 LINK_MAP_FILE = STATE_DIR / "link_map.json"
 EMAILS_MAP_FILE = STATE_DIR / "emails_map.json"
+CHANGELOG_FILE = STATE_DIR / "changelog.json"
+RUN_STATUS_FILE = STATE_DIR / "run_status.json"
+CHANGELOG_MAX_ENTRIES = 300
 TOC_FILE = OUTPUT_DIR / "_toc.json"
 
 

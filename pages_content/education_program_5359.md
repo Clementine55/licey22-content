@@ -30,6 +30,8 @@ _https://s3454.nubex.ru/sveden/education/program_5359.html#eduPred_
 
 📎 [Приложение. Программа воспитания ООП ООО](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10350_84/%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5.%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%9E%D0%9E%D0%9F%20%D0%9E%D0%9E%D0%9E.pdf) (pdf) — _1,3 МБ_
 
+📎 [Приказ об утверждении УМК на 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10427_96/%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%20%D0%BE%D0%B1%20%D1%83%D1%82%D0%B2%D0%B5%D1%80%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%A3%D0%9C%D0%9A%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _6,1 МБ_
+
 📎 [АООП ООО ЗПР](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f7019_3d/%D0%90%D0%9E%D0%9E%D0%9F%20%D0%9E%D0%9E%D0%9E%20%D0%97%D0%9F%D0%A0%202024.docx) (docx) — _992 КБ_
 
 📎 [АООП ООО ТНР](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f7020_67/%D0%90%D0%9E%D0%9E%D0%9F%20%D0%9E%D0%9E%D0%9E%20%D0%A2%D0%9D%D0%A0%202024.DOCX) (docx) — _535 КБ_
@@ -273,8 +275,6 @@ _https://s3454.nubex.ru/sveden/education/program_5359.html#eduPred_
 📎 [Система_оценивания_по_предмету_Физическая_культура](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8626_ab/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%BE%D1%86%D0%B5%D0%BD%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_%D0%BF%D0%BE_%D0%BF%D1%80%D0%B5%D0%B4%D0%BC%D0%B5%D1%82%D1%83_%D0%A4%D0%B8%D0%B7%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0.pdf) (pdf) — _1,2 МБ_
 
 📎 [График оценочных процедур](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8628_e7/%D0%93%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BE%D1%87%D0%BD%D1%8B%D1%85%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D0%B4%D1%83%D1%80.xlsx) (xlsx) — _181 КБ_
-
-📎 [Приказ об утверждении графика оценочных процедур на 2025-2026 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8629_d2/%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%20%D0%BE%D0%B1%20%D1%83%D1%82%D0%B2%D0%B5%D1%80%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BE%D1%87%D0%BD%D1%8B%D1%85%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D0%B4%D1%83%D1%80%20%D0%BD%D0%B0%202025-2026%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20.pdf) (pdf) — _4,2 МБ_
 
 📎 [Приказ и положение об электронном обучении и использовании дистанционных образовательных технологий в образовательном процессе](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8982_82/%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%20%D0%B8%20%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B1%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%BC%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B8%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8%20%D0%B4%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B9%20%D0%B2%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B5.pdf) (pdf) — _851 КБ_
 

@@ -1,6 +1,3 @@
-"""Рендер списка блоков (из content_extractor.extract_blocks) в Markdown."""
-
-
 def blocks_to_markdown(page_title: str, page_url: str, blocks: list) -> str:
     lines = [f"# {page_title}", f"_{page_url}_", ""]
     for b in blocks:

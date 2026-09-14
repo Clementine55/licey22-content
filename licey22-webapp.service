@@ -1,0 +1,14 @@
+[Unit]
+Description=Веб-панель обновлений сайта лицея
+After=network.target
+
+[Service]
+Type=simple
+User=licey22
+WorkingDirectory=/opt/licey22-content
+ExecStart=/opt/licey22-content/.venv/bin/python /opt/licey22-content/webapp.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

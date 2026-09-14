@@ -30,6 +30,8 @@ _https://s3454.nubex.ru/sveden/education/program_5371.html#edu_programs_main_des
 
 📎 [Приложение. Календарный план воспитательной работы на 2026-2027 учебный год ООП СОО](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10356_41/%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5.%20%D0%9A%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%BB%D0%B0%D0%BD%20%D0%B2%D0%BE%D1%81%D0%BF%D0%B8%D1%82%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20%D0%9E%D0%9E%D0%9F%20%D0%A1%D0%9E%D0%9E.pdf) (pdf) — _231 КБ_
 
+📎 [Приказ об утверждении УМК на 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10428_40/%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%20%D0%BE%D0%B1%20%D1%83%D1%82%D0%B2%D0%B5%D1%80%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%A3%D0%9C%D0%9A%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _6,1 МБ_
+
 📎 [Реестровая выписка аккредитации](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9029_bb/%D0%A0%D0%B5%D0%B5%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B2%D1%8B%D0%BF%D0%B8%D1%81%D0%BA%D0%B0%20%D0%B0%D0%BA%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%B0%D1%86%D0%B8%D0%B8%20%281%29.pdf) (pdf) — _73 КБ_
 
 ### Ссылка на учебный план
@@ -130,8 +132,6 @@ _https://s3454.nubex.ru/sveden/education/program_5371.html#edu_programs_main_des
 
 📎 [РП Технология и предпринимательство 10-11 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10403_10/%D0%A0%D0%9F%20%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%D0%B8%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BF%D1%80%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%2010-11%20%D0%BA%D0%BB.pdf) (pdf) — _526 КБ_
 
-📎 [РП физкультура 10-11 класс](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10404_6b/%D0%A0%D0%9F%20%D1%84%D0%B8%D0%B7%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0%2010-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _454 КБ_
-
 📎 [РП Философия 10-11 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10405_6d/%D0%A0%D0%9F%20%D0%A4%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B8%D1%8F%2010-11%20%D0%BA%D0%BB.pdf) (pdf) — _363 КБ_
 
 📎 [РП Химия в задачах 10-11 класс](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10406_4a/%D0%A0%D0%9F%20%D0%A5%D0%B8%D0%BC%D0%B8%D1%8F%20%D0%B2%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%D1%85%2010-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _312 КБ_
@@ -163,6 +163,8 @@ _https://s3454.nubex.ru/sveden/education/program_5371.html#edu_programs_main_des
 📎 [РП Литература 10-](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10423_b7/%D0%A0%D0%9F%20%D0%9B%D0%98%D0%A2%2010-11%20%28%D0%B1%D0%B0%D0%B7%D0%B0%29.pdf) (pdf) — _11 база 1,1 МБ_
 
 📎 [РП Литература 10-11](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10424_b9/%D0%A0%D0%9F%20%D0%9B%D0%98%D0%A2%2010-11%20%28%D1%83%D0%B3%D0%BB%D1%83%D0%B1%D0%BB%29.pdf) (pdf) — _угл, 998 КБ_
+
+📎 [РП физкультура 10-11 класс](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10429_8d/%D0%A0%D0%9F%20%D1%84%D0%B8%D0%B7%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0%2010-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _927 КБ_
 
 ### Ссылка на календарный учебный график
 
