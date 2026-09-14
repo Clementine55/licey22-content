@@ -14,6 +14,7 @@ pages_content/ (JSON + Markdown на страницу) и в pages_content/_toc.
 """
 
 import json
+import sys
 import time
 from typing import Optional
 from urllib.parse import urlparse
@@ -91,7 +92,26 @@ def remove_orphaned_files(expected_slugs: set) -> int:
 def main():
     config.OUTPUT_DIR.mkdir(exist_ok=True)
 
+    previously_known = len(state.PAGE_STATE)
+
     unique_pages = discover_all_pages()
+
+    if not unique_pages:
+        print(f"\n[{now()}] [!] Не нашёл ни одной страницы — похоже, сайт недоступен "
+              f"(нет сети или сайт лёг). Ничего не удаляю и не перезаписываю, выхожу.",
+              file=sys.stderr, flush=True)
+        sys.exit(1)
+
+    crawl_looks_healthy = (
+        previously_known == 0
+        or len(unique_pages) >= previously_known * config.MIN_HEALTHY_CRAWL_RATIO
+    )
+    if not crawl_looks_healthy:
+        print(f"\n[{now()}] [!] Нашёл заметно меньше страниц, чем в прошлый раз "
+              f"({len(unique_pages)} вместо {previously_known}) — похоже на частичный сбой "
+              f"обхода, а не на реальное удаление страниц с сайта. Пропускаю чистку "
+              f"устаревших файлов и перезапись _toc.json в этом прогоне; найденные "
+              f"страницы всё равно проверю и обновлю как обычно.", file=sys.stderr, flush=True)
 
     toc = []
     skipped = 0
@@ -127,10 +147,14 @@ def main():
         )
         state.record(url, page_data)
 
-    state.prune(set(unique_pages))
-    removed = remove_orphaned_files({links.slugify(u) for u in unique_pages})
+    removed = 0
+    if crawl_looks_healthy:
+        state.prune(set(unique_pages))
+        removed = remove_orphaned_files({links.slugify(u) for u in unique_pages})
+        config.TOC_FILE.write_text(json.dumps(toc, ensure_ascii=False, indent=2), encoding="utf-8")
+    else:
+        print(f"[{now()}] _toc.json и чистка устаревших файлов пропущены (см. предупреждение выше).", flush=True)
 
-    config.TOC_FILE.write_text(json.dumps(toc, ensure_ascii=False, indent=2), encoding="utf-8")
     state.save()
     links.save_maps()
 

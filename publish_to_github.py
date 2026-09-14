@@ -12,9 +12,9 @@
     python3 publish_to_github.py
 
 Что делает по порядку:
-    1. page_content_parser.py (обходит старый сайт заново)
-    2. apply_link_map.py, если он есть рядом (замена ссылок по словарю)
-    3. git add -A / commit / push
+    1. page_content_parser.py (обходит старый сайт заново — ссылки на
+       "красивые" пути подставляются сразу при парсинге)
+    2. git add -A / commit / push
 
 Подробности — в README.md. Пример строки для крона там же.
 """
@@ -45,15 +45,6 @@ def run_pipeline() -> None:
     if not run([sys.executable, "-u", str(REPO_DIR / "page_content_parser.py")], cwd=REPO_DIR):
         print("Парсер завершился с ошибкой — публикацию прерываю.", file=sys.stderr)
         sys.exit(1)
-
-    link_map_script = REPO_DIR / "apply_link_map.py"
-    if link_map_script.exists():
-        print(f"\n[{datetime.now():%H:%M:%S}] Запускаю apply_link_map.py (замена ссылок по словарю)...", flush=True)
-        if not run([sys.executable, "-u", str(link_map_script)], cwd=REPO_DIR):
-            print("Замена ссылок завершилась с ошибкой — публикацию прерываю.", file=sys.stderr)
-            sys.exit(1)
-    else:
-        print("\n(apply_link_map.py не найден рядом — пропускаю замену ссылок)", flush=True)
     print()
 
 
