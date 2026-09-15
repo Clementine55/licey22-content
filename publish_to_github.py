@@ -45,17 +45,29 @@ def write_status(**fields) -> None:
     )
 
 
-def run(cmd, cwd) -> bool:
+def run(cmd, cwd, timeout=None) -> bool:
     """Выводит команду в терминал сразу по мере поступления, а не одним
-    куском в конце (важно и для крона: см. флаг -u в run_pipeline)."""
+    куском в конце (важно и для крона: см. флаг -u в run_pipeline).
+
+    timeout — предохранитель от зависшего намертво прогона. Без него
+    достаточно, чтобы старый сайт начал отвечать по байту в минуту (не
+    попадая в per-request TIMEOUT), и процесс повиснет навсегда, держа
+    publish.lock: плановые прогоны перестанут запускаться, а панель
+    навсегда покажет «идёт проверка»."""
     print(f"  $ {' '.join(str(c) for c in cmd)}", flush=True)
-    result = subprocess.run(cmd, cwd=cwd)
+    try:
+        result = subprocess.run(cmd, cwd=cwd, timeout=timeout)
+    except subprocess.TimeoutExpired:
+        print(f"[!] Превышен лимит времени ({timeout} с) — процесс прерван.",
+              file=sys.stderr, flush=True)
+        return False
     return result.returncode == 0
 
 
 def run_pipeline() -> None:
     print(f"[{datetime.now():%H:%M:%S}] Запускаю page_content_parser.py (обход старого сайта)...", flush=True)
-    if not run([sys.executable, "-u", str(REPO_DIR / "page_content_parser.py")], cwd=REPO_DIR):
+    if not run([sys.executable, "-u", str(REPO_DIR / "page_content_parser.py")],
+               cwd=REPO_DIR, timeout=config.PARSER_TIMEOUT_SECONDS):
         print("Парсер завершился с ошибкой — публикацию прерываю.", file=sys.stderr)
         write_status(
             started_at=started_at, finished_at=datetime.now().isoformat(timespec="seconds"),

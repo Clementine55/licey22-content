@@ -6,9 +6,38 @@ After=network.target
 Type=simple
 User=licey22
 WorkingDirectory=/opt/licey22-content
-ExecStart=/opt/licey22-content/.venv/bin/python /opt/licey22-content/webapp.py
+
+# Пароль для кнопки "Обновить сейчас". Без него панель работает в режиме
+# "только просмотр" — журнал виден, кнопки нет. Сгенерировать значение:
+#     python3 -c "import secrets; print(secrets.token_urlsafe(16))"
+#
+# ВАЖНО: не оставляйте пароль прямо здесь, если юнит попадает в git.
+# Лучше вынести в отдельный файл (chmod 600, вне репозитория):
+#     EnvironmentFile=/etc/licey22-panel.env
+# где внутри одна строка:  LICEY22_PANEL_TOKEN=ваш-пароль
+Environment=LICEY22_PANEL_TOKEN=ЗАМЕНИТЕ_НА_СВОЙ_ПАРОЛЬ
+
+# 2 воркера: панель почти ничего не считает, но каждый запрос лезет на
+# диск (flock + чтение JSON) — второй воркер не даст одному подвисшему
+# запросу заблокировать панель для остальных. Переменная _running из
+# памяти процесса здесь бы сломалась, поэтому её и убрали: единственный
+# источник правды о прогоне — файловый лок (см. webapp.is_publish_running).
+ExecStart=/opt/licey22-content/.venv/bin/gunicorn \
+    --workers 2 \
+    --bind 0.0.0.0:8420 \
+    --access-logfile - \
+    --error-logfile - \
+    webapp:app
+
 Restart=on-failure
 RestartSec=5
+
+# Базовое ужесточение прав: процессу нужен только свой рабочий каталог
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=read-only
+ReadWritePaths=/opt/licey22-content
 
 [Install]
 WantedBy=multi-user.target

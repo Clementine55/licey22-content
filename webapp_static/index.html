@@ -67,6 +67,26 @@
   }
   .status-text.error .dot { background: var(--rust); }
   .status-time { color: var(--ink-soft); font-size: 14px; margin-top: 2px; }
+  .controls { display: flex; gap: 10px; align-items: center; }
+  #panel-token {
+    font-family: inherit;
+    font-size: 15px;
+    padding: 9px 12px;
+    border-radius: 5px;
+    border: 1px solid var(--paper-line);
+    background: #fff;
+    color: var(--ink);
+    width: 130px;
+  }
+  #panel-token:focus { outline: none; border-color: var(--green); }
+  .action-message {
+    border-radius: 5px;
+    padding: 12px 16px;
+    margin: -20px 0 28px;
+    font-size: 15px;
+    background: var(--rust-soft);
+    color: var(--rust);
+  }
   button#update-btn {
     font-family: inherit;
     font-size: 15px;
@@ -90,12 +110,37 @@
     padding: 20px 0;
   }
   .entry:last-child { border-bottom: 1px solid var(--paper-line); }
+  .entry-changed { background: var(--gold-soft); margin: 0 -20px; padding: 20px; border-radius: 6px; border-top: none; }
+  .entry-changed + .entry { border-top: none; }
   .entry-date {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 17px;
     margin-bottom: 10px;
   }
   .entry-date .warn { color: var(--rust); font-size: 14px; font-family: inherit; margin-left: 8px; }
+  details summary {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    cursor: pointer;
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::before {
+    content: "▸";
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 13px;
+    color: var(--gold);
+    transition: transform 0.15s;
+  }
+  details[open] summary::before { transform: rotate(90deg); }
+  .change-count {
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--gold);
+    margin-left: 10px;
+  }
   .change-list { list-style: none; margin: 0; padding: 0; }
   .change-list li {
     display: flex;
@@ -122,8 +167,8 @@
     color: var(--ink-soft);
   }
   .diff-lines div { padding: 1px 0; }
-  .diff-lines .plus::before { content: "+ "; color: var(--green); }
-  .diff-lines .minus::before { content: "− "; color: var(--rust); }
+  .diff-lines .plus { color: var(--green); }
+  .diff-lines .minus { color: var(--rust); }
   .no-changes { color: var(--ink-soft); font-size: 15px; }
   .empty-state { color: var(--ink-soft); padding: 40px 0; text-align: center; }
 </style>
@@ -138,8 +183,13 @@
       <div class="status-text" id="status-text">Загружаю…</div>
       <div class="status-time" id="status-time"></div>
     </div>
-    <button id="update-btn">Обновить сейчас</button>
+    <div class="controls" id="controls" hidden>
+      <input type="password" id="panel-token" placeholder="пароль" autocomplete="current-password">
+      <button id="update-btn">Обновить сейчас</button>
+    </div>
   </div>
+
+  <div id="action-message" class="action-message" hidden></div>
 
   <div id="log"></div>
 </div>
@@ -155,10 +205,17 @@ function formatDate(iso) {
   return d.toLocaleString("ru-RU", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
 }
 
+let latestLogTimestamp = null; // синхронизирует время в статус-баре с верхней записью журнала
+
 function renderStatus(data) {
   const textEl = document.getElementById("status-text");
   const timeEl = document.getElementById("status-time");
   const btn = document.getElementById("update-btn");
+  const controls = document.getElementById("controls");
+
+  // кнопка есть только если на сервере задан LICEY22_PANEL_TOKEN —
+  // иначе панель работает в режиме "только просмотр"
+  controls.hidden = !data.can_trigger;
 
   if (data.running) {
     textEl.className = "status-text";
@@ -187,22 +244,23 @@ function renderStatus(data) {
     textEl.className = "status-text error";
     textEl.innerHTML = '<span class="dot"></span>' + last.message;
   }
-  timeEl.textContent = "Последняя проверка: " + formatDate(last.finished_at || last.started_at);
+  timeEl.textContent = "Последняя проверка: " + formatDate(latestLogTimestamp || last.finished_at || last.started_at);
 }
 
 function renderChangeItem(tag, tagLabel, title, url, diffAdded, diffRemoved) {
+  const safeTitle = escapeHtml(title);
   const titleHtml = url
-    ? '<a href="' + url + '" target="_blank" rel="noopener">' + title + '</a>'
-    : title;
+    ? '<a href="' + url + '" target="_blank" rel="noopener">' + safeTitle + '</a>'
+    : safeTitle;
   let html = '<li><span class="tag ' + tag + '">' + tagLabel + '</span>'
     + '<span class="change-title">' + titleHtml + '</span></li>';
   if ((diffAdded && diffAdded.length) || (diffRemoved && diffRemoved.length)) {
     html += '<div class="diff-lines">';
     (diffAdded || []).slice(0, 3).forEach(line => {
-      html += '<div class="plus">' + escapeHtml(line) + '</div>';
+      html += '<div class="plus">+ ' + renderDiffLine(line) + '</div>';
     });
     (diffRemoved || []).slice(0, 3).forEach(line => {
-      html += '<div class="minus">' + escapeHtml(line) + '</div>';
+      html += '<div class="minus">\u2212 ' + renderDiffLine(line) + '</div>';
     });
     html += '</div>';
   }
@@ -211,6 +269,22 @@ function renderChangeItem(tag, tagLabel, title, url, diffAdded, diffRemoved) {
 
 function escapeHtml(s) {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+// diff-строки приходят как сырой Markdown страницы (из markdown_export.py) —
+// раньше показывались буквально как текст, со скобками [текст](url) и
+// звёздочками **bold** — уродливо и нечитаемо. Рендерим по-человечески,
+// той же логикой, что и на самом сайте (см. tilda_page_block.html).
+function renderDiffLine(text) {
+  let html = escapeHtml(text);
+  html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  // курсив — только в точно известном месте (meta в конце строки, см.
+  // markdown_export.py: " — _{meta}_"), а не как общий поиск по всей
+  // строке — иначе подчёркивания внутри URL (их там много: .../f10426_e7/...)
+  // ложно считались бы началом/концом курсива
+  html = html.replace(/ — _([^_]+)_$/, ' — <em>$1</em>');
+  html = html.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  return html;
 }
 
 function renderLog(entries) {
@@ -222,20 +296,30 @@ function renderLog(entries) {
 
   log.innerHTML = entries.map(entry => {
     const total = entry.added.length + entry.updated.length + entry.removed.length;
-    let body;
-    if (total === 0) {
-      body = '<div class="no-changes">Без изменений — проверено страниц: ' + entry.pages_found + '</div>';
-    } else {
-      let items = "";
-      entry.added.forEach(p => items += renderChangeItem("added", "новая", p.title, p.url));
-      entry.updated.forEach(p => items += renderChangeItem("updated", "обновилась", p.title, p.url, p.added_lines, p.removed_lines));
-      entry.removed.forEach(p => items += renderChangeItem("removed", "пропала", p.title, p.url));
-      body = '<ul class="change-list">' + items + '</ul>';
-    }
     const warn = entry.healthy === false
       ? '<span class="warn">частичный сбой обхода — показаны только доступные страницы</span>'
       : '';
-    return '<div class="entry"><div class="entry-date">' + formatDate(entry.timestamp) + warn + '</div>' + body + '</div>';
+    const dateHtml = '<div class="entry-date">' + formatDate(entry.timestamp) + warn + '</div>';
+
+    if (total === 0) {
+      // ничего не изменилось — плоская строка, раскрывать нечего
+      return '<div class="entry entry-empty">' + dateHtml
+        + '<div class="no-changes">Ничего нового не найдено — проверено страниц: ' + entry.pages_found + '</div></div>';
+    }
+
+    let items = "";
+    entry.added.forEach(p => items += renderChangeItem("added", "новая", p.title, p.url));
+    entry.updated.forEach(p => items += renderChangeItem("updated", "обновилась", p.title, p.url, p.added_lines, p.removed_lines));
+    entry.removed.forEach(p => items += renderChangeItem("removed", "пропала", p.title, p.url));
+
+    // есть реальные изменения — подсвечиваем и делаем раскрывающимся
+    // (open по умолчанию — свежие изменения сразу видно без клика,
+    // но можно свернуть, если мешает)
+    return '<div class="entry entry-changed">'
+      + '<details open><summary>' + formatDate(entry.timestamp) + warn
+      + '<span class="change-count">изменений: ' + total + '</span></summary>'
+      + '<ul class="change-list">' + items + '</ul>'
+      + '</details></div>';
   }).join("");
 }
 
@@ -247,15 +331,57 @@ async function refreshStatus() {
 
 async function refreshLog() {
   const entries = await fetchJSON("/api/changelog");
+  latestLogTimestamp = entries.length ? entries[0].timestamp : null;
   renderLog(entries);
+  // если статус уже был отрисован раньше — перерисуем со свежим временем
+  const status = await fetchJSON("/api/status");
+  if (!status.running) renderStatus(status);
+}
+
+function showActionMessage(text) {
+  const el = document.getElementById("action-message");
+  if (!text) {
+    el.hidden = true;
+    return;
+  }
+  el.textContent = text;
+  el.hidden = false;
 }
 
 document.getElementById("update-btn").addEventListener("click", async () => {
   const btn = document.getElementById("update-btn");
+  const tokenInput = document.getElementById("panel-token");
+  const token = tokenInput.value.trim();
+
+  if (!token) {
+    showActionMessage("Введите пароль, чтобы запустить обновление.");
+    tokenInput.focus();
+    return;
+  }
+
+  showActionMessage("");
   btn.disabled = true;
   btn.textContent = "Запускаю…";
-  await fetchJSON("/api/update-now", { method: "POST" });
+
+  const res = await fetch("/api/update-now", {
+    method: "POST",
+    headers: { "X-Panel-Token": token },
+  });
+  const data = await res.json();
+
+  if (!data.started) {
+    showActionMessage(data.message || "Не удалось запустить обновление.");
+    btn.disabled = false;
+    btn.textContent = "Обновить сейчас";
+    return;
+  }
+
   poll();
+});
+
+// Enter в поле пароля = нажатие кнопки
+document.getElementById("panel-token").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") document.getElementById("update-btn").click();
 });
 
 let pollTimer = null;

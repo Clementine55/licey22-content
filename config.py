@@ -46,6 +46,13 @@ PUBLISH_INTERVAL_MINUTES = 60
 
 MAX_PAGES_PER_SECTION = 500
 
+# Предохранитель: сколько максимум может длиться один прогон парсера.
+# Обычный прогон занимает ~1-2 минуты; если упёрлись в этот лимит —
+# что-то пошло не так (сайт отвечает крайне медленно, но не настолько,
+# чтобы сработал TIMEOUT отдельного запроса), процесс прерывается, чтобы
+# не держать publish.lock вечно.
+PARSER_TIMEOUT_SECONDS = 30 * 60
+
 REQUEST_DELAY = 0.15
 TIMEOUT = 8
 USER_AGENT = "Mozilla/5.0 (compatible; Lyceum22ContentBot/1.0)"
@@ -59,7 +66,8 @@ LINK_MAP_FILE = STATE_DIR / "link_map.json"
 EMAILS_MAP_FILE = STATE_DIR / "emails_map.json"
 CHANGELOG_FILE = STATE_DIR / "changelog.json"
 RUN_STATUS_FILE = STATE_DIR / "run_status.json"
-CHANGELOG_MAX_ENTRIES = 300
+CHANGELOG_MAX_ENTRIES = 3000  # аварийный потолок на случай очень частого расписания — см. changelog.py
+CHANGELOG_KEEP_DAYS = 7  # сколько дней истории показывать в веб-панели
 TOC_FILE = OUTPUT_DIR / "_toc.json"
 
 

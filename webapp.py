@@ -2,12 +2,14 @@
 # -*- coding: utf-8 -*-
 
 import fcntl
+import os
+import secrets
 import subprocess
 import sys
-import threading
+import time
 from pathlib import Path
 
-from flask import Flask, jsonify, send_from_directory
+from flask import Flask, jsonify, request, send_from_directory
 
 import config
 from utils import load_json
@@ -17,16 +19,30 @@ STATIC_DIR = REPO_DIR / "webapp_static"
 
 app = Flask(__name__, static_folder=None)
 
-_run_lock = threading.Lock()
-_running = False
+# Пароль для кнопки "Обновить сейчас". Берётся из переменной окружения
+# (в systemd-юните — Environment=LICEY22_PANEL_TOKEN=...). Если не задан,
+# панель работает в режиме "только просмотр": журнал виден всем в школьной
+# сети, но запустить обновление нельзя. Так безопаснее по умолчанию: без
+# настройки нельзя случайно оставить открытую кнопку, дёргающую git push.
+PANEL_TOKEN = os.environ.get("LICEY22_PANEL_TOKEN", "").strip()
+
+# Минимальный интервал между запусками через кнопку, секунд. Защищает от
+# «задолбить кнопку» — лок и так не даст двум прогонам идти параллельно,
+# но без этого можно наплодить процессов, которые стартуют и сразу умирают.
+MIN_SECONDS_BETWEEN_MANUAL_RUNS = 30
+RATE_LIMIT_FILE = config.STATE_DIR / "last_manual_run"
 
 
 def is_publish_running() -> bool:
     """Проверяет РЕАЛЬНОЕ состояние publish.lock — того же файла, который
-    берёт publish_to_github.py. В отличие от _running (которая знает только
-    про запуски, стартовавшие через кнопку на этой же панели), это видит
-    и плановые прогоны от scheduler.py — это отдельный процесс, у него нет
-    доступа к памяти webapp.py, но лок-файл на диске общий для всех."""
+    берёт publish_to_github.py.
+
+    Единственный источник правды о том, идёт ли прогон. Раньше рядом жила
+    ещё и переменная _running в памяти процесса — от неё пришлось
+    отказаться: она не видела плановые прогоны от scheduler.py (отдельный
+    процесс, чужая память) и окончательно сломалась бы под gunicorn с
+    несколькими воркерами, где у каждого воркера своя копия памяти.
+    Файловый лок же общий для всех процессов на машине."""
     config.STATE_DIR.mkdir(exist_ok=True)
     try:
         with open(config.STATE_DIR / "publish.lock", "w") as fp:
@@ -34,19 +50,38 @@ def is_publish_running() -> bool:
             fcntl.flock(fp, fcntl.LOCK_UN)  # смогли взять — значит свободно, сразу отпускаем
             return False
     except OSError:
-        return True  # кто-то другой (плановый прогон или другая кнопка) уже держит лок
+        return True  # кто-то другой (плановый прогон или другая вкладка) уже держит лок
 
 
-def _run_publish_in_background():
-    global _running
+def _rate_limited() -> bool:
+    """True, если с прошлого ручного запуска прошло слишком мало времени."""
     try:
-        subprocess.run(
-            [sys.executable, "-u", str(REPO_DIR / "publish_to_github.py")],
-            cwd=REPO_DIR,
-        )
-    finally:
-        with _run_lock:
-            _running = False
+        last = float(RATE_LIMIT_FILE.read_text())
+    except (OSError, ValueError):
+        return False
+    return (time.time() - last) < MIN_SECONDS_BETWEEN_MANUAL_RUNS
+
+
+def _mark_manual_run() -> None:
+    config.STATE_DIR.mkdir(exist_ok=True)
+    RATE_LIMIT_FILE.write_text(str(time.time()))
+
+
+def _run_publish_detached() -> None:
+    """Запускает publish_to_github.py как самостоятельный фоновый процесс.
+
+    Раньше это делалось через threading + subprocess.run, и поток жил
+    внутри веб-процесса: при перезапуске/падении панели (или при рестарте
+    воркера gunicorn) прогон обрывался на середине. Теперь процесс
+    отвязан (start_new_session) — панель может перезапускаться, прогон
+    продолжается сам."""
+    subprocess.Popen(
+        [sys.executable, "-u", str(REPO_DIR / "publish_to_github.py")],
+        cwd=REPO_DIR,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        start_new_session=True,
+    )
 
 
 @app.route("/")
@@ -63,25 +98,49 @@ def api_changelog():
 @app.route("/api/status")
 def api_status():
     status = load_json(config.RUN_STATUS_FILE, None)
-    with _run_lock:
-        own_run = _running
-    running = own_run or is_publish_running()
-    return jsonify({"running": running, "last_run": status})
+    return jsonify({
+        "running": is_publish_running(),
+        "last_run": status,
+        # фронтенд прячет кнопку, если запуск не настроен — чтобы не
+        # показывать кнопку, которая заведомо ответит 403
+        "can_trigger": bool(PANEL_TOKEN),
+    })
 
 
 @app.route("/api/update-now", methods=["POST"])
 def api_update_now():
-    global _running
-    with _run_lock:
-        if _running or is_publish_running():
-            return jsonify({"started": False, "reason": "already_running"}), 409
-        _running = True
-    thread = threading.Thread(target=_run_publish_in_background, daemon=True)
-    thread.start()
+    if not PANEL_TOKEN:
+        return jsonify({
+            "started": False,
+            "reason": "disabled",
+            "message": "Запуск с панели не настроен (нет LICEY22_PANEL_TOKEN).",
+        }), 403
+
+    provided = (request.headers.get("X-Panel-Token") or "").strip()
+    # secrets.compare_digest — сравнение за постоянное время, чтобы по
+    # скорости ответа нельзя было подбирать токен посимвольно
+    if not provided or not secrets.compare_digest(provided, PANEL_TOKEN):
+        return jsonify({"started": False, "reason": "forbidden",
+                        "message": "Неверный пароль."}), 403
+
+    if _rate_limited():
+        return jsonify({
+            "started": False,
+            "reason": "rate_limited",
+            "message": f"Слишком часто — подождите {MIN_SECONDS_BETWEEN_MANUAL_RUNS} сек.",
+        }), 429
+
+    if is_publish_running():
+        return jsonify({"started": False, "reason": "already_running",
+                        "message": "Обновление уже идёт."}), 409
+
+    _mark_manual_run()
+    _run_publish_detached()
     return jsonify({"started": True})
 
 
 if __name__ == "__main__":
-    # host="0.0.0.0" — доступно из локальной сети (школьный сервер),
-    # не только с самой машины. Порт можно поменять при необходимости.
-    app.run(host="0.0.0.0", port=8420)
+    # Локальная разработка. На сервере панель поднимается через gunicorn
+    # (см. deploy/licey22-webapp.service и README) — встроенный сервер
+    # Flask для постоянной работы не предназначен.
+    app.run(host="127.0.0.1", port=8420)
