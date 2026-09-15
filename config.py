@@ -66,6 +66,7 @@ LINK_MAP_FILE = STATE_DIR / "link_map.json"
 EMAILS_MAP_FILE = STATE_DIR / "emails_map.json"
 CHANGELOG_FILE = STATE_DIR / "changelog.json"
 RUN_STATUS_FILE = STATE_DIR / "run_status.json"
+PROGRESS_FILE = STATE_DIR / "progress.json"
 CHANGELOG_MAX_ENTRIES = 3000  # аварийный потолок на случай очень частого расписания — см. changelog.py
 CHANGELOG_KEEP_DAYS = 7  # сколько дней истории показывать в веб-панели
 TOC_FILE = OUTPUT_DIR / "_toc.json"

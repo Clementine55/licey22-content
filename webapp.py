@@ -98,8 +98,13 @@ def api_changelog():
 @app.route("/api/status")
 def api_status():
     status = load_json(config.RUN_STATUS_FILE, None)
+    running = is_publish_running()
+    # прогресс отдаём, только пока реально идёт прогон — иначе можно
+    # случайно показать цифры от прошлого завершённого запуска
+    progress = load_json(config.PROGRESS_FILE, None) if running else None
     return jsonify({
-        "running": is_publish_running(),
+        "running": running,
+        "progress": progress,
         "last_run": status,
         # фронтенд прячет кнопку, если запуск не настроен — чтобы не
         # показывать кнопку, которая заведомо ответит 403
@@ -136,6 +141,19 @@ def api_update_now():
 
     _mark_manual_run()
     _run_publish_detached()
+
+    # Popen() возвращается мгновенно, но дочерний процесс (запуск python,
+    # импорты) реально берёт publish.lock не сразу — может пройти
+    # 100-300мс. Если ответить браузеру ДО этого момента, его первый же
+    # запрос /api/status ещё увидит running: false (лок пока не взят) и
+    # решит, что обновление уже закончилось, хотя оно только стартовало.
+    # Ждём здесь (недолго, с запасом) реального появления лока, чтобы
+    # к моменту ответа браузеру статус был гарантированно верным.
+    for _ in range(40):  # 40 x 50мс = 2 секунды максимум
+        if is_publish_running():
+            break
+        time.sleep(0.05)
+
     return jsonify({"started": True})
 
 

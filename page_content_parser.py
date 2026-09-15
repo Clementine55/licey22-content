@@ -18,7 +18,15 @@ from content_extractor import extract_blocks
 from crawler import discover_section_pages
 from http_client import fetch
 from markdown_export import blocks_to_markdown
-from utils import now, load_json
+from utils import now, load_json, save_json
+
+
+def write_progress(*, stage: str, current: int, total: int) -> None:
+    """Пишет state/progress.json — читает веб-панель, чтобы показать
+    прогресс-бар вместо голого "идёт проверка" без единой цифры.
+    stage: "discovering" (обход разделов, до того как известно точное
+    число страниц) или "parsing" (известно total, идёт разбор по одной)."""
+    save_json(config.PROGRESS_FILE, {"stage": stage, "current": current, "total": total})
 
 
 def discover_all_pages() -> list:
@@ -81,6 +89,8 @@ def remove_orphaned_files(expected_slugs: set) -> list:
 def main():
     config.OUTPUT_DIR.mkdir(exist_ok=True)
 
+    write_progress(stage="discovering", current=0, total=0)
+
     previously_known_urls = set(state.PAGE_STATE.keys())
     previously_known = len(previously_known_urls)
     previous_toc_by_slug = {
@@ -106,12 +116,15 @@ def main():
               f"устаревших файлов и перезапись _toc.json в этом прогоне; найденные "
               f"страницы всё равно проверю и обновлю как обычно.", file=sys.stderr, flush=True)
 
+    write_progress(stage="parsing", current=0, total=len(unique_pages))
+
     toc = []
     skipped = 0
     added_log, updated_log = [], []
 
     for i, url in enumerate(unique_pages, 1):
         print(f"[{now()}] [{i}/{len(unique_pages)}] Разбираю {url}", flush=True)
+        write_progress(stage="parsing", current=i, total=len(unique_pages))
         page_data = parse_page(url)
         if page_data is None:
             continue

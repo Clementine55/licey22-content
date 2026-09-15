@@ -67,6 +67,30 @@
   }
   .status-text.error .dot { background: var(--rust); }
   .status-time { color: var(--ink-soft); font-size: 14px; margin-top: 2px; }
+  .progress-wrap { margin-top: 8px; }
+  .progress-track {
+    width: 220px;
+    height: 6px;
+    background: var(--paper-line);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--green);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+  }
+  .progress-fill.indeterminate {
+    width: 35% !important;
+    animation: progress-slide 1.2s ease-in-out infinite;
+  }
+  @keyframes progress-slide {
+    0% { margin-left: 0%; }
+    50% { margin-left: 65%; }
+    100% { margin-left: 0%; }
+  }
+  .progress-label { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
   .controls { display: flex; gap: 10px; align-items: center; }
   #panel-token {
     font-family: inherit;
@@ -182,6 +206,10 @@
     <div>
       <div class="status-text" id="status-text">Загружаю…</div>
       <div class="status-time" id="status-time"></div>
+      <div class="progress-wrap" id="progress-wrap" hidden>
+        <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+        <div class="progress-label" id="progress-label"></div>
+      </div>
     </div>
     <div class="controls" id="controls" hidden>
       <input type="password" id="panel-token" placeholder="пароль" autocomplete="current-password">
@@ -217,15 +245,38 @@ function renderStatus(data) {
   // иначе панель работает в режиме "только просмотр"
   controls.hidden = !data.can_trigger;
 
+  const progressWrap = document.getElementById("progress-wrap");
+  const progressFill = document.getElementById("progress-fill");
+  const progressLabel = document.getElementById("progress-label");
+
   if (data.running) {
     textEl.className = "status-text";
     textEl.innerHTML = '<span class="dot"></span>Проверяю сайт сейчас…';
     timeEl.textContent = "";
     btn.disabled = true;
     btn.textContent = "Идёт проверка…";
+
+    const p = data.progress;
+    progressWrap.hidden = false;
+    if (p && p.stage === "parsing" && p.total > 0) {
+      const pct = Math.round((p.current / p.total) * 100);
+      progressFill.className = "progress-fill";
+      progressFill.style.width = pct + "%";
+      progressLabel.textContent = "Страница " + p.current + " из " + p.total + " (" + pct + "%)";
+    } else {
+      // либо ещё идёт обход разделов (общее число страниц пока не
+      // известно), либо прогресса нет вообще — неопределённая анимация
+      // вместо голой надписи "идёт проверка" без единой цифры
+      progressFill.className = "progress-fill indeterminate";
+      progressFill.style.width = "";
+      progressLabel.textContent = p && p.stage === "discovering"
+        ? "Обхожу разделы старого сайта…"
+        : "Запускаю…";
+    }
     return;
   }
 
+  progressWrap.hidden = true;
   btn.disabled = false;
   btn.textContent = "Обновить сейчас";
 
@@ -323,19 +374,10 @@ function renderLog(entries) {
   }).join("");
 }
 
-async function refreshStatus() {
-  const data = await fetchJSON("/api/status");
-  renderStatus(data);
-  return data.running;
-}
-
 async function refreshLog() {
   const entries = await fetchJSON("/api/changelog");
   latestLogTimestamp = entries.length ? entries[0].timestamp : null;
   renderLog(entries);
-  // если статус уже был отрисован раньше — перерисуем со свежим временем
-  const status = await fetchJSON("/api/status");
-  if (!status.running) renderStatus(status);
 }
 
 function showActionMessage(text) {
@@ -360,6 +402,7 @@ document.getElementById("update-btn").addEventListener("click", async () => {
   }
 
   showActionMessage("");
+  // мгновенный отклик, не дожидаясь сети — кнопка реагирует на клик сразу
   btn.disabled = true;
   btn.textContent = "Запускаю…";
 
@@ -376,7 +419,11 @@ document.getElementById("update-btn").addEventListener("click", async () => {
     return;
   }
 
-  poll();
+  // сервер уже дождался, пока дочерний процесс реально возьмёт лок (см.
+  // webapp.api_update_now) — можно сразу считать, что идёт проверка, не
+  // дожидаясь следующего тика опроса
+  wasRunning = true;
+  scheduleCheck(0);
 });
 
 // Enter в поле пароля = нажатие кнопки
@@ -384,22 +431,44 @@ document.getElementById("panel-token").addEventListener("keydown", (e) => {
   if (e.key === "Enter") document.getElementById("update-btn").click();
 });
 
-let pollTimer = null;
-async function poll() {
-  const running = await refreshStatus();
-  if (running) {
-    pollTimer = setTimeout(poll, 3000);
-  } else {
+// --- Единый цикл опроса статуса ---
+//
+// Раньше здесь были ДВЕ независимые системы слежения (poll() с
+// setTimeout + отдельный setInterval-подстраховщик), и между ними была
+// переменная pollTimer, которая выставлялась, но никогда не сбрасывалась
+// обратно в null — из-за этого подстраховка переставала работать уже
+// после первого прогона, и иногда обновление лога после завершения
+// прогона просто не происходило, пока не перезагрузишь страницу руками.
+//
+// Теперь один цикл: сам решает интервал (быстро — пока идёт прогон,
+// медленнее — в покое) и явно ловит МОМЕНТ перехода running -> idle
+// через wasRunning, а не два независимых куска кода, гадающих о
+// состоянии друг друга.
+let wasRunning = false;
+let checkTimer = null;
+
+async function checkStatusOnce() {
+  const data = await fetchJSON("/api/status");
+  renderStatus(data);
+
+  if (wasRunning && !data.running) {
+    // прогон только что закончился — подтягиваем свежий журнал
     await refreshLog();
   }
+  wasRunning = data.running;
+  return data.running;
 }
 
-refreshStatus();
+function scheduleCheck(delayMs) {
+  clearTimeout(checkTimer);
+  checkTimer = setTimeout(async () => {
+    const running = await checkStatusOnce();
+    scheduleCheck(running ? 1500 : 15000);
+  }, delayMs);
+}
+
 refreshLog();
-setInterval(async () => {
-  const running = await refreshStatus();
-  if (running && !pollTimer) poll();
-}, 10000);
+scheduleCheck(0);
 </script>
 </body>
 </html>

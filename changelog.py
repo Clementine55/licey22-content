@@ -1,5 +1,5 @@
 import difflib
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import config
 from utils import load_json, save_json
@@ -27,8 +27,16 @@ def diff_snippet(old_text: str, new_text: str, limit: int = 6):
 
 def record_run(*, added: list, updated: list, removed: list,
                healthy: bool, pages_found: int, pages_known_before: int) -> None:
-    """Добавляет запись об этом прогоне в конец журнала и обрезает историю
-    до config.CHANGELOG_MAX_ENTRIES самых свежих записей."""
+    """Добавляет запись об этом прогоне в конец журнала и обрезает историю.
+
+    Раньше хранились последние config.CHANGELOG_MAX_ENTRIES записей — при
+    частом расписании (например, раз в 5-15 минут) это могло оказаться
+    заметно МЕНЬШЕ семи дней, а не "история за неделю", как хотелось.
+    Теперь обрезка по времени (config.CHANGELOG_KEEP_DAYS), а не по счётчику
+    записей — сколько бы прогонов ни было в сутки, неделя остаётся неделей.
+    config.CHANGELOG_MAX_ENTRIES по-прежнему действует как аварийный потолок
+    на случай, если расписание однажды поставят совсем частым (раз в
+    минуту) — чтобы файл не разросся бесконтрольно."""
     entries = load_json(config.CHANGELOG_FILE, [])
     entries.append({
         "timestamp": datetime.now().isoformat(timespec="seconds"),
@@ -39,5 +47,18 @@ def record_run(*, added: list, updated: list, removed: list,
         "updated": updated,
         "removed": removed,
     })
+
+    cutoff = datetime.now() - timedelta(days=config.CHANGELOG_KEEP_DAYS)
+    entries = [e for e in entries if _entry_timestamp(e) >= cutoff]
     entries = entries[-config.CHANGELOG_MAX_ENTRIES:]
+
     save_json(config.CHANGELOG_FILE, entries)
+
+
+def _entry_timestamp(entry: dict) -> datetime:
+    try:
+        return datetime.fromisoformat(entry["timestamp"])
+    except (KeyError, ValueError):
+        # запись без валидного времени (например, из очень старой версии
+        # формата) — считаем её "древней", чтобы обрезалась в первую очередь
+        return datetime.min
