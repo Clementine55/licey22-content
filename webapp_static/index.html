@@ -233,8 +233,6 @@ function formatDate(iso) {
   return d.toLocaleString("ru-RU", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
 }
 
-let latestLogTimestamp = null; // синхронизирует время в статус-баре с верхней записью журнала
-
 function renderStatus(data) {
   const textEl = document.getElementById("status-text");
   const timeEl = document.getElementById("status-time");
@@ -295,7 +293,7 @@ function renderStatus(data) {
     textEl.className = "status-text error";
     textEl.innerHTML = '<span class="dot"></span>' + last.message;
   }
-  timeEl.textContent = "Последняя проверка: " + formatDate(latestLogTimestamp || last.finished_at || last.started_at);
+  timeEl.textContent = "Последняя проверка: " + formatDate(last.finished_at || last.started_at);
 }
 
 function renderChangeItem(tag, tagLabel, title, url, diffAdded, diffRemoved) {
@@ -376,7 +374,6 @@ function renderLog(entries) {
 
 async function refreshLog() {
   const entries = await fetchJSON("/api/changelog");
-  latestLogTimestamp = entries.length ? entries[0].timestamp : null;
   renderLog(entries);
 }
 
