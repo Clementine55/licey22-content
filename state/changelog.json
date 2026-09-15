@@ -107,5 +107,25 @@
     "added": [],
     "updated": [],
     "removed": []
+  },
+  {
+    "timestamp": "2026-09-15T15:27:23",
+    "healthy": true,
+    "pages_found": 78,
+    "pages_known_before": 78,
+    "added": [],
+    "updated": [
+      {
+        "url": "https://s3454.nubex.ru/sveden/document/",
+        "title": "Документы",
+        "slug": "document",
+        "added_lines": [
+          "- [base64.txt](/_/static/r1.nubex.ru/s139249-bd6/f10430_aa/base64.txt)",
+          "(1,3 МБ)"
+        ],
+        "removed_lines": []
+      }
+    ],
+    "removed": []
   }
 ]
