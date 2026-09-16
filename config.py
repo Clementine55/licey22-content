@@ -58,9 +58,21 @@ TIMEOUT = 8
 USER_AGENT = "Mozilla/5.0 (compatible; Lyceum22ContentBot/1.0)"
 HEADERS = {"User-Agent": USER_AGENT}
 
-# Все пути — относительно текущей папки (парсер всегда запускается из неё)
-OUTPUT_DIR = Path("pages_content")
-STATE_DIR = Path("state")
+# Пути привязаны к папке, где лежит САМ этот файл (config.py), а не к
+# текущей рабочей директории процесса. Раньше было Path("pages_content")/
+# Path("state") — относительные пути, которые resolve'ятся от os.getcwd()
+# в момент обращения. Это работало, пока скрипт запускался ровно так, как
+# задумано (publish_to_github.py сам делает cwd=REPO_DIR перед стартом
+# парсера) — но стоило запустить файл вручную не из той папки (например,
+# для отладки: `sudo -u site-svc .../python /opt/licey22-content/
+# publish_to_github.py`, стоя в /home/site) — и все файлы состояния начинали
+# искаться там, куда как раз запускали, а не там, где реально лежит проект.
+# У вас это всплыло как "Permission denied" — потому что /home/site
+# сервисному пользователю и на чтение-то недоступен, не то что на запись.
+BASE_DIR = Path(__file__).resolve().parent
+
+OUTPUT_DIR = BASE_DIR / "pages_content"
+STATE_DIR = BASE_DIR / "state"
 STATE_FILE = STATE_DIR / "page_state.json"
 LINK_MAP_FILE = STATE_DIR / "link_map.json"
 EMAILS_MAP_FILE = STATE_DIR / "emails_map.json"
