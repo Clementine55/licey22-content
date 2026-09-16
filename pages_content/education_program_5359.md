@@ -250,6 +250,46 @@ _https://s3454.nubex.ru/sveden/education/program_5359.html#eduPred_
 
 📎 [РП Цифровая гигиена 7-9 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10349_88/%D0%A0%D0%9F%20%D0%A6%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B3%D0%B8%D0%B3%D0%B8%D0%B5%D0%BD%D0%B0%207-9%20%D0%BA%D0%BB.pdf) (pdf) — _394 КБ_
 
+📎 [РП 7ен Введение в химию](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10431_65/%D0%A0%D0%9F%207%D0%B5%D0%BD%20%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D1%85%D0%B8%D0%BC%D0%B8%D1%8E.pdf) (pdf) — _263 КБ_
+
+📎 [РП 7 ЕН Основы физической химии](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10432_63/%D0%A0%D0%9F%207%20%D0%95%D0%9D%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%84%D0%B8%D0%B7%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%20%D1%85%D0%B8%D0%BC%D0%B8%D0%B8.pdf) (pdf) — _251 КБ_
+
+📎 [РП Биология. Агротехнологии 6-8 класс](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10433_08/%D0%A0%D0%9F%20%D0%91%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F.%20%D0%90%D0%B3%D1%80%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%206-8%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _461 КБ_
+
+📎 [РП Биология. Биотехнологии 7 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10434_df/%D0%A0%D0%9F%20%D0%91%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F.%20%D0%91%D0%B8%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%207%20%D0%BA%D0%BB.pdf) (pdf) — _300 КБ_
+
+📎 [РП Биология 6-9 кл (угл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10435_9d/%D0%A0%D0%9F%20%D0%91%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%206-9%20%D0%BA%D0%BB%20%28%D1%83%D0%B3%D0%BB%29.pdf) (pdf) — _1,2 МБ_
+
+📎 [РП ВД Исследовательская деятельность по химии 8-9 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10436_6c/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B0%D1%8F%20%D0%B4%D0%B5%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%BF%D0%BE%20%D1%85%D0%B8%D0%BC%D0%B8%D0%B8%208-9%20%D0%BA%D0%BB.pdf) (pdf) — _199 КБ_
+
+📎 [РП Введение в химию 6-7](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10437_6a/%D0%A0%D0%9F%20%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D1%85%D0%B8%D0%BC%D0%B8%D1%8E%206-7.pdf) (pdf) — _345 КБ_
+
+📎 [РП ВД Первые шаги в химии 7 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10438_fb/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%9F%D0%B5%D1%80%D0%B2%D1%8B%D0%B5%20%D1%88%D0%B0%D0%B3%D0%B8%20%D0%B2%20%D1%85%D0%B8%D0%BC%D0%B8%D0%B8%207%20%D0%BA%D0%BB.pdf) (pdf) — _189 КБ_
+
+📎 [РП Биология 5-9 кл (база](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10439_b3/%D0%A0%D0%9F%20%D0%91%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%205-9%20%D0%BA%D0%BB%20%28%D0%B1%D0%B0%D0%B7%D0%B0%29.pdf) (pdf) — _2,6 МБ_
+
+📎 [РП ВД Химия в задачах 8-9 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10440_67/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%A5%D0%B8%D0%BC%D0%B8%D1%8F%20%D0%B2%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%D1%85%208-9%20%D0%BA%D0%BB.pdf) (pdf) — _270 КБ_
+
+📎 [РП Основы биохимии 8класс](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10441_41/%D0%A0%D0%9F%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D0%B1%D0%B8%D0%BE%D1%85%D0%B8%D0%BC%D0%B8%D0%B8%208%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _268 КБ_
+
+📎 [РП Основы физической химии 7-8](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10442_d2/%D0%A0%D0%9F%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%84%D0%B8%D0%B7%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%20%D1%85%D0%B8%D0%BC%D0%B8%D0%B8%207-8.pdf) (pdf) — _279 КБ_
+
+📎 [РП Практическая и молекулярная генетика 8-9 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10443_50/%D0%A0%D0%9F%20%D0%9F%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%B8%20%D0%BC%D0%BE%D0%BB%D0%B5%D0%BA%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%B0%D1%8F%20%D0%B3%D0%B5%D0%BD%D0%B5%D1%82%D0%B8%D0%BA%D0%B0%208-9%20%D0%BA%D0%BB.pdf) (pdf) — _511 КБ_
+
+📎 [РП ВД Современные медицинские технологии 7 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10444_e2/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%A1%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B5%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%207%20%D0%BA%D0%BB.pdf) (pdf) — _227 КБ_
+
+📎 [РП Физика в экспериментах 6 класс 26-27](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10445_bc/%D0%A0%D0%9F%20%D0%A4%D0%B8%D0%B7%D0%B8%D0%BA%D0%B0%20%D0%B2%20%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%85%206%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%2026-27.pdf) (pdf) — _381 КБ_
+
+📎 [РП Физика 7-](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10446_44/%D0%A0%D0%9F%20%D0%A4%D0%B8%D0%B7%D0%B8%D0%BA%D0%B0%207-9%20%D0%B1%D0%B0%D0%B7%D0%B0.pdf) (pdf) — _9 база 1,3 МБ_
+
+📎 [РП Физика 7-9 классы (угл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10447_a2/%D0%A0%D0%9F%20%D0%A4%D0%B8%D0%B7%D0%B8%D0%BA%D0%B0%207-9%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B%20%28%D1%83%D0%B3%D0%BB%29.pdf) (pdf) — _1,0 МБ_
+
+📎 [РП Химия 8-9 ЕН 26-27](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10448_96/%D0%A0%D0%9F%20%D0%A5%D0%B8%D0%BC%D0%B8%D1%8F%208-9%20%D0%95%D0%9D%2026-27.pdf) (pdf) — _609 КБ_
+
+📎 [РП Химия 8-9 классы](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10449_b1/%D0%A0%D0%9F%20%D0%A5%D0%B8%D0%BC%D0%B8%D1%8F%208-9%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B.pdf) (pdf) — _545 КБ_
+
+📎 [РП Химия 7-9 классы (углуб](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10450_64/%D0%A0%D0%9F%20%D0%A5%D0%B8%D0%BC%D0%B8%D1%8F%207-9%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B%20%28%D1%83%D0%B3%D0%BB%D1%83%D0%B1%29.pdf) (pdf) — _795 КБ_
+
 ### Ссылка на календарный учебный график
 
 📎 [Календарный учебный график на 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10131_75/%D0%9A%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _105 КБ_

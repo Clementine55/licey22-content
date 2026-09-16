@@ -17,7 +17,7 @@ from utils import load_json
 REPO_DIR = Path(__file__).resolve().parent
 STATIC_DIR = REPO_DIR / "webapp_static"
 
-app = Flask(__name__, static_folder=None)
+app = Flask(__name__, static_folder=str(STATIC_DIR), static_url_path="")
 
 # Пароль для кнопки "Обновить сейчас". Берётся из переменной окружения
 # (в systemd-юните — Environment=LICEY22_PANEL_TOKEN=...). Если не задан,

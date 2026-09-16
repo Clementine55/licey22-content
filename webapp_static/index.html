@@ -4,198 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Обновления сайта лицея №22</title>
-<style>
-  :root {
-    --paper: #F5F3EC;
-    --paper-line: #DEDACB;
-    --ink: #232620;
-    --ink-soft: #6B6A5E;
-    --green: #2F4A3D;
-    --green-soft: #E4ECE6;
-    --gold: #A9782E;
-    --gold-soft: #F3E7CE;
-    --rust: #A6432E;
-    --rust-soft: #F5E1DC;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  .page {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 40px 24px 80px;
-  }
-  h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: 400;
-    font-size: 30px;
-    margin: 0 0 4px;
-    letter-spacing: 0.2px;
-  }
-  .subtitle {
-    color: var(--ink-soft);
-    font-size: 15px;
-    margin: 0 0 28px;
-  }
-  .status-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-    border: 1px solid var(--paper-line);
-    border-radius: 6px;
-    padding: 16px 20px;
-    margin-bottom: 36px;
-    background: #FBFAF6;
-  }
-  .status-text { font-size: 15px; }
-  .status-text .dot {
-    display: inline-block;
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    margin-right: 8px;
-    background: var(--green);
-    position: relative;
-    top: -1px;
-  }
-  .status-text.error .dot { background: var(--rust); }
-  .status-time { color: var(--ink-soft); font-size: 14px; margin-top: 2px; }
-  .progress-wrap { margin-top: 8px; }
-  .progress-track {
-    width: 220px;
-    height: 6px;
-    background: var(--paper-line);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-  .progress-fill {
-    height: 100%;
-    background: var(--green);
-    border-radius: 3px;
-    transition: width 0.3s ease;
-  }
-  .progress-fill.indeterminate {
-    width: 35% !important;
-    animation: progress-slide 1.2s ease-in-out infinite;
-  }
-  @keyframes progress-slide {
-    0% { margin-left: 0%; }
-    50% { margin-left: 65%; }
-    100% { margin-left: 0%; }
-  }
-  .progress-label { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
-  .controls { display: flex; gap: 10px; align-items: center; }
-  #panel-token {
-    font-family: inherit;
-    font-size: 15px;
-    padding: 9px 12px;
-    border-radius: 5px;
-    border: 1px solid var(--paper-line);
-    background: #fff;
-    color: var(--ink);
-    width: 130px;
-  }
-  #panel-token:focus { outline: none; border-color: var(--green); }
-  .action-message {
-    border-radius: 5px;
-    padding: 12px 16px;
-    margin: -20px 0 28px;
-    font-size: 15px;
-    background: var(--rust-soft);
-    color: var(--rust);
-  }
-  button#update-btn {
-    font-family: inherit;
-    font-size: 15px;
-    padding: 10px 18px;
-    border-radius: 5px;
-    border: 1px solid var(--green);
-    background: var(--green);
-    color: #F5F3EC;
-    cursor: pointer;
-    white-space: nowrap;
-  }
-  button#update-btn:hover { background: #253c31; }
-  button#update-btn:disabled {
-    background: transparent;
-    color: var(--ink-soft);
-    border-color: var(--paper-line);
-    cursor: default;
-  }
-  .entry {
-    border-top: 1px solid var(--paper-line);
-    padding: 20px 0;
-  }
-  .entry:last-child { border-bottom: 1px solid var(--paper-line); }
-  .entry-changed { background: var(--gold-soft); margin: 0 -20px; padding: 20px; border-radius: 6px; border-top: none; }
-  .entry-changed + .entry { border-top: none; }
-  .entry-date {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 17px;
-    margin-bottom: 10px;
-  }
-  .entry-date .warn { color: var(--rust); font-size: 14px; font-family: inherit; margin-left: 8px; }
-  details summary {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 17px;
-    cursor: pointer;
-    list-style: none;
-    margin-bottom: 10px;
-  }
-  details summary::-webkit-details-marker { display: none; }
-  details summary::before {
-    content: "▸";
-    display: inline-block;
-    margin-right: 8px;
-    font-size: 13px;
-    color: var(--gold);
-    transition: transform 0.15s;
-  }
-  details[open] summary::before { transform: rotate(90deg); }
-  .change-count {
-    font-family: inherit;
-    font-size: 13px;
-    color: var(--gold);
-    margin-left: 10px;
-  }
-  .change-list { list-style: none; margin: 0; padding: 0; }
-  .change-list li {
-    display: flex;
-    gap: 10px;
-    padding: 5px 0;
-    font-size: 15px;
-    align-items: baseline;
-  }
-  .tag {
-    flex-shrink: 0;
-    font-size: 12px;
-    padding: 2px 7px;
-    border-radius: 4px;
-    line-height: 1.6;
-  }
-  .tag.added { background: var(--gold-soft); color: var(--gold); }
-  .tag.updated { background: var(--green-soft); color: var(--green); }
-  .tag.removed { background: var(--rust-soft); color: var(--rust); }
-  .change-title a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--paper-line); }
-  .change-title a:hover { border-bottom-color: var(--ink); }
-  .diff-lines {
-    margin: 4px 0 0 62px;
-    font-size: 13px;
-    color: var(--ink-soft);
-  }
-  .diff-lines div { padding: 1px 0; }
-  .diff-lines .plus { color: var(--green); }
-  .diff-lines .minus { color: var(--rust); }
-  .no-changes { color: var(--ink-soft); font-size: 15px; }
-  .empty-state { color: var(--ink-soft); padding: 40px 0; text-align: center; }
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="page">
@@ -348,12 +160,13 @@ function renderLog(entries) {
     const warn = entry.healthy === false
       ? '<span class="warn">частичный сбой обхода — показаны только доступные страницы</span>'
       : '';
-    const dateHtml = '<div class="entry-date">' + formatDate(entry.timestamp) + warn + '</div>';
 
     if (total === 0) {
-      // ничего не изменилось — плоская строка, раскрывать нечего
-      return '<div class="entry entry-empty">' + dateHtml
-        + '<div class="no-changes">Ничего нового не найдено — проверено страниц: ' + entry.pages_found + '</div></div>';
+      // ничего не изменилось — одна строка, раскрывать нечего
+      return '<div class="entry entry-empty">'
+        + '<span class="entry-date-inline">' + formatDate(entry.timestamp) + '</span>'
+        + '<span class="no-changes">Ничего нового — проверено страниц: ' + entry.pages_found + '</span>'
+        + warn + '</div>';
     }
 
     let items = "";
@@ -361,16 +174,34 @@ function renderLog(entries) {
     entry.updated.forEach(p => items += renderChangeItem("updated", "обновилась", p.title, p.url, p.added_lines, p.removed_lines));
     entry.removed.forEach(p => items += renderChangeItem("removed", "пропала", p.title, p.url));
 
-    // есть реальные изменения — подсвечиваем и делаем раскрывающимся
-    // (open по умолчанию — свежие изменения сразу видно без клика,
-    // но можно свернуть, если мешает)
+    // Есть реальные изменения — подсвечиваем и делаем раскрывающимся.
+    // Раньше был нативный <details>, но у него анимация раскрытия
+    // ломалась после первого закрытия (браузер сам решает, когда
+    // анимировать содержимое <details>, и делает это не всегда) —
+    // поэтому раскрытие теперь на чистом JS-классе .expanded,
+    // без завязки на поведение конкретного браузера.
     return '<div class="entry entry-changed">'
-      + '<details open><summary>' + formatDate(entry.timestamp) + warn
-      + '<span class="change-count">изменений: ' + total + '</span></summary>'
+      + '<div class="entry-summary" role="button" tabindex="0">' + formatDate(entry.timestamp) + warn
+      + '<span class="change-count">изменений: ' + total + '</span></div>'
+      + '<div class="content-wrap"><div class="content-inner">'
       + '<ul class="change-list">' + items + '</ul>'
-      + '</details></div>';
+      + '</div></div>'
+      + '</div>';
   }).join("");
 }
+
+document.getElementById("log").addEventListener("click", (e) => {
+  const summary = e.target.closest(".entry-summary");
+  if (summary) summary.closest(".entry").classList.toggle("expanded");
+});
+document.getElementById("log").addEventListener("keydown", (e) => {
+  if (e.key !== "Enter" && e.key !== " ") return;
+  const summary = e.target.closest(".entry-summary");
+  if (summary) {
+    e.preventDefault();
+    summary.closest(".entry").classList.toggle("expanded");
+  }
+});
 
 async function refreshLog() {
   const entries = await fetchJSON("/api/changelog");
