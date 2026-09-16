@@ -42,7 +42,7 @@ MIN_HEALTHY_CRAWL_RATIO = 0.7
 # Интервал планового прогона для scheduler.py, в минутах. Поменять — просто
 # отредактировать эту строку и перезапустить сервис (systemctl restart
 # licey22-scheduler), без правки systemd-юнитов и daemon-reload.
-PUBLISH_INTERVAL_MINUTES = 60
+PUBLISH_INTERVAL_MINUTES = 5
 
 MAX_PAGES_PER_SECTION = 500
 
