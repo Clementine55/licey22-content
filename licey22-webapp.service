@@ -4,18 +4,15 @@ After=network.target
 
 [Service]
 Type=simple
-User=licey22
+User=site-svc
 WorkingDirectory=/opt/licey22-content
 
 # Пароль для кнопки "Обновить сейчас". Без него панель работает в режиме
-# "только просмотр" — журнал виден, кнопки нет. Сгенерировать значение:
-#     python3 -c "import secrets; print(secrets.token_urlsafe(16))"
-#
-# ВАЖНО: не оставляйте пароль прямо здесь, если юнит попадает в git.
-# Лучше вынести в отдельный файл (chmod 600, вне репозитория):
-#     EnvironmentFile=/etc/licey22-panel.env
-# где внутри одна строка:  LICEY22_PANEL_TOKEN=ваш-пароль
-Environment=LICEY22_PANEL_TOKEN=ЗАМЕНИТЕ_НА_СВОЙ_ПАРОЛЬ
+# "только просмотр" — журнал виден, кнопки нет. Хранится вне git,
+# создаётся один раз при разворачивании (см. README):
+#     echo "LICEY22_PANEL_TOKEN=$(openssl rand -hex 24)" > /opt/licey22-content/.env
+#     chmod 600 /opt/licey22-content/.env
+EnvironmentFile=/opt/licey22-content/.env
 
 # 2 воркера: панель почти ничего не считает, но каждый запрос лезет на
 # диск (flock + чтение JSON) — второй воркер не даст одному подвисшему

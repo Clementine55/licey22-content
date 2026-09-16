@@ -4,11 +4,19 @@ After=network.target
 
 [Service]
 Type=simple
-User=licey22
+User=site-svc
 WorkingDirectory=/opt/licey22-content
 ExecStart=/opt/licey22-content/.venv/bin/python -u /opt/licey22-content/scheduler.py
 Restart=on-failure
 RestartSec=30
+
+# Тот же уровень ужесточения, что и у веб-панели (licey22-webapp.service) —
+# процессу нужен только свой рабочий каталог.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=read-only
+ReadWritePaths=/opt/licey22-content
 
 [Install]
 WantedBy=multi-user.target
