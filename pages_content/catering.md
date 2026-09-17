@@ -149,6 +149,30 @@ _https://s3454.nubex.ru/sveden/catering/_
 
 ### Меню ежедневного горячего питания
 
+#### 24.09.2026г.
+
+📎 [/food/2026-09-24-sm](https://s3454.nubex.ru/food/2026-09-24-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
+
+📎 [/food/other_6497/food/2026-09-24-sm](https://s3454.nubex.ru/food/other_6497/food/2026-09-24-sm.xlsx) (xlsx) — _Корпус на Чаплыгина, 59_
+
+#### 23.09.2026г.
+
+📎 [/food/2026-09-23-sm](https://s3454.nubex.ru/food/2026-09-23-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
+
+📎 [/food/other_6497/food/2026-09-23-sm](https://s3454.nubex.ru/food/other_6497/food/2026-09-23-sm.xlsx) (xlsx) — _Корпус на Чаплыгина, 59_
+
+#### 22.09.2026г.
+
+📎 [/food/2026-09-22-sm](https://s3454.nubex.ru/food/2026-09-22-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
+
+📎 [/food/other_6497/food/2026-09-22-sm](https://s3454.nubex.ru/food/other_6497/food/2026-09-22-sm.xlsx) (xlsx) — _Корпус на Чаплыгина, 59_
+
+#### 21.09.2026г.
+
+📎 [/food/2026-09-21-sm](https://s3454.nubex.ru/food/2026-09-21-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
+
+📎 [/food/other_6497/food/2026-09-21-sm](https://s3454.nubex.ru/food/other_6497/food/2026-09-21-sm.xlsx) (xlsx) — _Корпус на Чаплыгина, 59_
+
 #### 17.09.2026г.
 
 📎 [/food/2026-09-17-sm](https://s3454.nubex.ru/food/2026-09-17-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
@@ -244,6 +268,18 @@ _https://s3454.nubex.ru/sveden/catering/_
 📎 [Перпективное 10-дневное меню 1-11 классы (многодетные, малоимущие, СВО) 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9895_5d/%D0%9F%D0%B5%D1%80%D0%BF%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5%2010-%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%201-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B%20%28%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%B4%D0%B5%D1%82%D0%BD%D1%8B%D0%B5%2C%20%D0%BC%D0%B0%D0%BB%D0%BE%D0%B8%D0%BC%D1%83%D1%89%D0%B8%D0%B5%2C%20%D0%A1%D0%92%D0%9E%29%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20%28%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81%20%D0%A7%D0%B0%D0%BF%D0%BB%D1%8B%D0%B3%D0%B8%D0%BD%D0%B0%2C59%29.pdf) (pdf) — _корпус Чаплыгина,59_
 
 📎 [Перпективное 10-дневное меню 2 класс (многодетные, заболевание: пищевая аллергия/непереносимость молочного белка) 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10199_5b/%D0%9F%D0%B5%D1%80%D0%BF%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5%2010-%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%202%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%20%28%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%B4%D0%B5%D1%82%D0%BD%D1%8B%D0%B5%2C%20%D0%B7%D0%B0%D0%B1%D0%BE%D0%BB%D0%B5%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B8%D1%89%D0%B5%D0%B2%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%80%D0%B3%D0%B8%D1%8F%20%D0%BD%D0%B5%D0%BF%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D0%BC%D0%BE%D0%BB%D0%BE%D1%87%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B1%D0%B5%D0%BB%D0%BA%D0%B0%29%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.PDF) (pdf)
+
+📎 [Меню на 26.09.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10466_8e/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2026.09.2026.pdf) (pdf)
+
+📎 [Меню на 25.09.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10465_62/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2025.09.2026.pdf) (pdf)
+
+📎 [Меню на 24.09.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10464_30/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2024.09.2026.pdf) (pdf)
+
+📎 [Меню на 23.09.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10463_e1/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2023.09.2026.pdf) (pdf)
+
+📎 [Меню на 22.09.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10462_2a/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2022.09.2026.pdf) (pdf)
+
+📎 [Меню на 21.09.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10461_79/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2021.09.2026.pdf) (pdf)
 
 📎 [Меню на 17.09.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10215_0e/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2017.09.2026.pdf) (pdf)
 
