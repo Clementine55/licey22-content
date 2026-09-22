@@ -6,6 +6,8 @@ TARGET_ROOTS = [
     "https://s3454.nubex.ru/6184/",
     "https://s3454.nubex.ru/5933/",
     "https://s3454.nubex.ru/16451/",
+    "https://s3454.nubex.ru/about/5882/",
+    "https://s3454.nubex.ru/4736/",
 ]
 
 # Домены, которые считаем "своими" (разные зеркала старого сайта)
