@@ -257,7 +257,7 @@ function renderSections(data) {
   totalEl.textContent = "Страниц под наблюдением: " + data.total
     + " (разделов: " + sectionCount + ")";
 
-  wrap.innerHTML = data.sections.map((section, i) => {
+  wrap.innerHTML = data.sections.map((section) => {
     const headingText = section.label
       ? escapeHtml(section.label)
       : escapeHtml(section.path || "");
@@ -270,11 +270,10 @@ function renderSections(data) {
       + escapeHtml(pageLabel(p)) + '</a></li>'
     ).join("");
 
-    // Первый раздел раскрыт сразу, остальные свёрнуты — иначе список из
-    // полусотни страниц занимает весь сайдбар при первом же открытии панели.
-    const openAttr = i === 0 ? " open" : "";
-
-    return '<details class="section"' + openAttr + '>'
+    // Все разделы свёрнуты по умолчанию — сотрудник сам раскрывает то,
+    // что ему нужно посмотреть, вместо того чтобы при каждом открытии
+    // панели утыкаться в развёрнутый список из полусотни страниц.
+    return '<details class="section">'
       + '<summary>' + headingText + pathHint
       + '<span class="section-count">' + section.pages.length + '</span></summary>'
       + '<ul class="section-list">' + items + '</ul>'
