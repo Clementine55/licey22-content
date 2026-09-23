@@ -1,9 +1,4 @@
-command-not-found==0.3
-dbus-python==1.2.18
-distro-info===1.1build1
-netifaces==0.11.0
-PyGObject==3.42.0
-python-apt==2.3.0+ubuntu2
-PyYAML==5.4.1
-ubuntu-advantage-tools==27.7
-ufw==0.36.1
+Flask==3.0.3
+gunicorn==22.0.0
+requests==2.32.3
+beautifulsoup4==4.12.3
