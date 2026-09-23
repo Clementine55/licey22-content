@@ -32,7 +32,7 @@ body {
   font-variant-numeric: lining-nums;
 }
 .page {
-  max-width: 1180px;
+  max-width: 1260px;
   margin: 0 auto;
   padding: 40px 24px 80px;
 }
@@ -44,14 +44,14 @@ body {
      иногда схлопывалось обратно в одну колонку из-за того, что flex
      считает предпочитаемую ширину по контенту. Grid с фиксированным
      треком для сайдбара ведёт себя предсказуемее. */
-  grid-template-columns: minmax(0, 1fr) 300px;
+  grid-template-columns: minmax(0, 1fr) 380px;
   align-items: start;
   gap: 28px;
 }
 .main-col {
   min-width: 0; /* иначе длинные URL в diff-строках распирают колонку */
 }
-@media (max-width: 840px) {
+@media (max-width: 920px) {
   .layout { grid-template-columns: 1fr; }
 }
 h1 {
@@ -277,7 +277,7 @@ button#update-btn:disabled {
   max-height: calc(100vh - 48px);
   overflow-y: auto;
 }
-@media (max-width: 840px) {
+@media (max-width: 920px) {
   .sidebar {
     width: 100%;
     position: static;
