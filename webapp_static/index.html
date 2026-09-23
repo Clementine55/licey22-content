@@ -14,24 +14,43 @@
   <h1>Обновления сайта лицея</h1>
   <p class="subtitle">Что менялось на старом сайте и когда — журнал автоматической проверки.</p>
 
-  <div class="status-bar">
-    <div>
-      <div class="status-text" id="status-text">Загружаю…</div>
-      <div class="status-time" id="status-time"></div>
-      <div class="progress-wrap" id="progress-wrap" hidden>
-        <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
-        <div class="progress-label" id="progress-label"></div>
+  <div class="layout">
+    <div class="main-col">
+      <div class="status-bar">
+        <div>
+          <div class="status-text" id="status-text">Загружаю…</div>
+          <div class="status-time" id="status-time"></div>
+          <div class="progress-wrap" id="progress-wrap" hidden>
+            <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+            <div class="progress-label" id="progress-label"></div>
+          </div>
+        </div>
+        <div class="controls" id="controls" hidden>
+          <input type="password" id="panel-token" placeholder="пароль" autocomplete="current-password">
+          <button id="update-btn">Обновить сейчас</button>
+        </div>
       </div>
+
+      <div id="action-message" class="action-message" hidden></div>
+
+      <div id="log"></div>
     </div>
-    <div class="controls" id="controls" hidden>
-      <input type="password" id="panel-token" placeholder="пароль" autocomplete="current-password">
-      <button id="update-btn">Обновить сейчас</button>
-    </div>
+
+    <aside class="sidebar">
+      <h2 class="sidebar-title">Что отслеживаем со старого сайта</h2>
+      <p class="sidebar-note">
+        Автоматически проверяются только разделы старого сайта из списка ниже.
+        Если нужной страницы здесь нет — она <strong>не</strong> отслеживается,
+        и её изменения на этой панели не появятся.
+      </p>
+      <div class="sidebar-total" id="sidebar-total"></div>
+      <div id="sections"></div>
+      <p class="sidebar-note sidebar-excluded">
+        Также никогда не отслеживаются: раздел «Новости», служебные версии
+        страниц для печати и технические файлы движка старого сайта.
+      </p>
+    </aside>
   </div>
-
-  <div id="action-message" class="action-message" hidden></div>
-
-  <div id="log"></div>
 </div>
 
 <script>
@@ -208,6 +227,73 @@ async function refreshLog() {
   renderLog(entries);
 }
 
+// --- Сайдбар "что отслеживаем" ---
+//
+// Показывает не журнал изменений, а статичный список: какие разделы
+// старого сайта вообще обходит парсер (config.TARGET_ROOTS), сгруппированные
+// по _toc.json. Загружается один раз при открытии панели — список разделов
+// меняется редко (только при правке config.py), в отличие от журнала.
+
+function pageLabel(page) {
+  // "generic_title" — заголовок-заглушка движка старого сайта (см.
+  // webapp.py: _pages_by_section). В этом случае показываем путь страницы
+  // вместо повторяющегося на десятках страниц названия сайта — иначе в
+  // списке было бы просто много одинаковых строк без смысла.
+  if (page.generic_title) {
+    try {
+      return new URL(page.url).pathname;
+    } catch (e) {
+      return page.url;
+    }
+  }
+  return page.title;
+}
+
+function renderSections(data) {
+  const totalEl = document.getElementById("sidebar-total");
+  const wrap = document.getElementById("sections");
+
+  const sectionCount = data.sections.filter(s => s.root !== null).length;
+  totalEl.textContent = "Страниц под наблюдением: " + data.total
+    + " (разделов: " + sectionCount + ")";
+
+  wrap.innerHTML = data.sections.map((section, i) => {
+    const headingText = section.label
+      ? escapeHtml(section.label)
+      : escapeHtml(section.path || "");
+    const pathHint = (section.label && section.path)
+      ? '<span class="section-path">' + escapeHtml(section.path) + '</span>'
+      : "";
+
+    const items = section.pages.map(p =>
+      '<li><a href="' + p.url + '" target="_blank" rel="noopener">'
+      + escapeHtml(pageLabel(p)) + '</a></li>'
+    ).join("");
+
+    // Первый раздел раскрыт сразу, остальные свёрнуты — иначе список из
+    // полусотни страниц занимает весь сайдбар при первом же открытии панели.
+    const openAttr = i === 0 ? " open" : "";
+
+    return '<details class="section"' + openAttr + '>'
+      + '<summary>' + headingText + pathHint
+      + '<span class="section-count">' + section.pages.length + '</span></summary>'
+      + '<ul class="section-list">' + items + '</ul>'
+      + '</details>';
+  }).join("");
+}
+
+async function loadSections() {
+  try {
+    const data = await fetchJSON("/api/pages");
+    renderSections(data);
+  } catch (e) {
+    // Список разделов — вспомогательная панель, не основная функция;
+    // если он не загрузился, не мешаем работать остальной части страницы.
+    document.getElementById("sections").innerHTML =
+      '<div class="empty-state">Не удалось загрузить список разделов.</div>';
+  }
+}
+
 function showActionMessage(text) {
   const el = document.getElementById("action-message");
   if (!text) {
@@ -296,6 +382,7 @@ function scheduleCheck(delayMs) {
 }
 
 refreshLog();
+loadSections();
 scheduleCheck(0);
 </script>
 </body>

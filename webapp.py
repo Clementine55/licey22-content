@@ -7,7 +7,9 @@ import secrets
 import subprocess
 import sys
 import time
+from collections import Counter
 from pathlib import Path
+from urllib.parse import urlparse
 
 from flask import Flask, jsonify, request, send_from_directory
 
@@ -93,6 +95,83 @@ def index():
 def api_changelog():
     entries = load_json(config.CHANGELOG_FILE, [])
     return jsonify(list(reversed(entries)))
+
+
+# Порог, начиная с которого повторяющийся заголовок в _toc.json считаем
+# не настоящим названием страницы, а заглушкой движка старого сайта (Nubex
+# у части страниц вместо <h1> отдаёт название всего сайта). Держим порог,
+# а не жёстко зашитую строку — заглушка не всегда одна и та же, но она
+# всегда встречается заметно чаще, чем реальное совпадающее название двух
+# разных страниц.
+GENERIC_TITLE_MIN_COUNT = 3
+
+
+def _pages_by_section() -> dict:
+    """Раскладывает pages_content/_toc.json по разделам старого сайта
+    (config.TARGET_ROOTS) — тем самым списком, который реально обходит
+    crawler.py. Нужно для веб-панели: показать сотруднику, какие разделы
+    старого сайта вообще проверяются автоматически, а какие — нет (см.
+    README, "Веб-панель обновлений")."""
+    toc = load_json(config.TOC_FILE, [])
+
+    title_counts = Counter(e.get("title", "") for e in toc)
+    generic_title = None
+    if title_counts:
+        top_title, top_count = title_counts.most_common(1)[0]
+        if top_count >= GENERIC_TITLE_MIN_COUNT:
+            generic_title = top_title
+
+    buckets = {root: [] for root in config.TARGET_ROOTS}
+    other = []
+    for entry in toc:
+        url = entry.get("url", "")
+        root = next((r for r in config.TARGET_ROOTS if url.startswith(r)), None)
+        (buckets[root] if root is not None else other).append(entry)
+
+    def page_view(entry: dict) -> dict:
+        title = entry.get("title") or entry["url"]
+        return {
+            "url": entry["url"],
+            "title": title,
+            # заглушка вместо реального заголовка — фронтенд в этом случае
+            # покажет путь страницы вместо повторяющегося названия сайта
+            "generic_title": generic_title is not None and title == generic_title,
+            "file_count": entry.get("file_count", 0),
+        }
+
+    sections = []
+    for root in config.TARGET_ROOTS:
+        entries = sorted(buckets[root], key=lambda e: e["url"])
+        root_entry = next((e for e in entries if e["url"] == root), None)
+        label = None
+        if root_entry:
+            root_title = root_entry.get("title") or ""
+            if root_title and root_title != generic_title:
+                label = root_title
+        sections.append({
+            "root": root,
+            "path": urlparse(root).path,
+            "label": label,
+            "pages": [page_view(e) for e in entries],
+        })
+
+    if other:
+        # Страницы, которые есть в _toc.json, но не попали ни под один
+        # текущий TARGET_ROOTS — обычно значит, что список разделов в
+        # config.py поменяли, а _toc.json ещё от прошлого прогона.
+        sections.append({
+            "root": None,
+            "path": None,
+            "label": "Прочее (вне текущих разделов)",
+            "pages": [page_view(e) for e in sorted(other, key=lambda e: e["url"])],
+        })
+
+    return {"total": len(toc), "sections": sections}
+
+
+@app.route("/api/pages")
+def api_pages():
+    return jsonify(_pages_by_section())
 
 
 @app.route("/api/status")

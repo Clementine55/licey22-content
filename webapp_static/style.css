@@ -32,9 +32,27 @@ body {
   font-variant-numeric: lining-nums;
 }
 .page {
-  max-width: 760px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 40px 24px 80px;
+}
+.layout {
+  display: grid;
+  /* Жёстко фиксированная правая колонка + вся оставшаяся ширина под
+     журнал слева. Раньше здесь был flex с flex-basis — на не очень
+     широких окнах браузера (даже когда места формально хватало) это
+     иногда схлопывалось обратно в одну колонку из-за того, что flex
+     считает предпочитаемую ширину по контенту. Grid с фиксированным
+     треком для сайдбара ведёт себя предсказуемее. */
+  grid-template-columns: minmax(0, 1fr) 300px;
+  align-items: start;
+  gap: 28px;
+}
+.main-col {
+  min-width: 0; /* иначе длинные URL в diff-строках распирают колонку */
+}
+@media (max-width: 840px) {
+  .layout { grid-template-columns: 1fr; }
 }
 h1 {
   font-family: inherit;
@@ -247,3 +265,106 @@ button#update-btn:disabled {
 .diff-lines .minus { color: var(--wine); }
 .no-changes { color: var(--ink-soft); font-size: 15px; }
 .empty-state { color: var(--ink-soft); padding: 40px 0; text-align: center; }
+
+/* --- Сайдбар "что отслеживаем" --- */
+.sidebar {
+  border: 1px solid var(--paper-line);
+  border-radius: 10px;
+  background: #FBFAF6;
+  padding: 20px;
+  position: sticky;
+  top: 24px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+}
+@media (max-width: 840px) {
+  .sidebar {
+    width: 100%;
+    position: static;
+    max-height: none;
+  }
+}
+.sidebar-title {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 17px;
+  margin: 0 0 10px;
+}
+.sidebar-note {
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+.sidebar-note strong { color: var(--wine); }
+.sidebar-excluded { margin: 14px 0 0; padding-top: 14px; border-top: 1px solid var(--paper-line); }
+.sidebar-total {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--teal);
+  margin-bottom: 14px;
+}
+
+/* Каждый раздел — отдельная карточка (белый блок с рамкой и тенью), а не
+   строка текста в общем списке: так сразу видно, что это самостоятельные,
+   свёрнутые по умолчанию блоки, которые можно раскрыть. */
+.section {
+  background: #fff;
+  border: 1px solid var(--paper-line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 2px rgba(28, 35, 31, 0.04);
+}
+.section:last-of-type { margin-bottom: 0; }
+.section summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  outline: none;
+}
+.section summary::-webkit-details-marker { display: none; }
+.section summary::before {
+  content: "▸";
+  font-size: 11px;
+  color: var(--teal);
+  transition: transform 0.15s ease;
+  flex-shrink: 0;
+}
+.section[open] summary::before { transform: rotate(90deg); }
+.section[open] summary { margin-bottom: 10px; }
+.section-path {
+  font-weight: 400;
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+.section-count {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-weight: 500;
+  font-size: 11px;
+  color: var(--teal);
+  background: var(--teal-soft);
+  border-radius: 10px;
+  padding: 2px 8px;
+}
+.section-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--paper-line);
+}
+.section-list li { padding: 0; }
+.section-list a {
+  display: block;
+  color: var(--ink);
+  font-size: 13px;
+  text-decoration: none;
+  padding: 7px 4px 7px 19px;
+  border-radius: 5px;
+}
+.section-list a:hover { background: var(--teal-soft); color: var(--emerald); }
