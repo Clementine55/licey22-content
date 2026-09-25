@@ -149,6 +149,24 @@ _https://s3454.nubex.ru/sveden/food/_
 
 ### Меню ежедневного горячего питания
 
+#### 30.09.2026г.
+
+📎 [/food/2026-09-30-sm](https://s3454.nubex.ru/food/2026-09-30-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
+
+📎 [/food/other_6497/food/2026-09-30-sm](https://s3454.nubex.ru/food/other_6497/food/2026-09-30-sm.xlsx) (xlsx) — _Корпус на Чаплыгина, 59_
+
+#### 29.09.2026г.
+
+📎 [/food/2026-09-29-sm](https://s3454.nubex.ru/food/2026-09-29-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
+
+📎 [/food/other_6497/food/2026-09-29-sm](https://s3454.nubex.ru/food/other_6497/food/2026-09-29-sm.xlsx) (xlsx) — _Корпус на Чаплыгина, 59_
+
+#### 28.09.2026г.
+
+📎 [/food/2026-09-28-sm](https://s3454.nubex.ru/food/2026-09-28-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
+
+📎 [/food/other_6497/food/2026-09-28-sm](https://s3454.nubex.ru/food/other_6497/food/2026-09-28-sm.xlsx) (xlsx) — _Корпус на Чаплыгина, 59_
+
 #### 25.09.2026г.
 
 📎 [/food/2026-09-25-sm](https://s3454.nubex.ru/food/2026-09-25-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
