@@ -297,6 +297,12 @@ _https://s3454.nubex.ru/sveden/food/_
 
 📎 [Перпективное 10-дневное меню 5-11 классы (ОВЗ и инвалиды 7-11 лет) 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10481_ca/%D0%9F%D0%B5%D1%80%D0%BF%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5%2010-%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%205-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B%20%28%D0%9E%D0%92%D0%97%20%D0%B8%20%D0%B8%D0%BD%D0%B2%D0%B0%D0%BB%D0%B8%D0%B4%D1%8B%207-11%20%D0%BB%D0%B5%D1%82%29%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20%28%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81%20%D0%A7%D0%B0%D0%BF%D0%BB%D1%8B%D0%B3%D0%B8%D0%BD%D0%B0%2C59%29.pdf) (pdf) — _корпус Чаплыгина,59_
 
+📎 [Меню на 30.09.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10489_9d/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2030.09.2026.pdf) (pdf)
+
+📎 [Меню на 29.09.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10490_bf/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2029.09.2026.pdf) (pdf)
+
+📎 [Меню на 28.09.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10491_b6/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2028.09.2026.pdf) (pdf)
+
 📎 [Меню на 26.09.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10466_8e/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2026.09.2026.pdf) (pdf)
 
 📎 [Меню на 25.09.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10465_62/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2025.09.2026.pdf) (pdf)
