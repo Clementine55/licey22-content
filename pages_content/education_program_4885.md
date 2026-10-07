@@ -100,6 +100,10 @@ _https://s3454.nubex.ru/sveden/education/program_4885.html#eduPred_
 
 📎 [РП ВД Пионербол.НОО](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10416_1c/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%9F%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D0%B1%D0%BE%D0%BB.%D0%9D%D0%9E%D0%9E.pdf) (pdf) — _251 КБ_
 
+📎 [РП ВД 1-4 ИЗО 2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10519_45/%D0%A0%D0%9F%20%D0%92%D0%94%201-4%20%D0%98%D0%97%D0%9E%202026.pdf) (pdf) — _258 КБ_
+
+📎 [РП ВД Вокально-хоровая деятельность](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10520_65/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%92%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE-%D1%85%D0%BE%D1%80%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B4%D0%B5%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20.pdf) (pdf) — _627 КБ_
+
 ### Ссылка на календарный учебный график
 
 📎 [Календарный учебный график на 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10130_d4/%D0%9A%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _105 КБ_

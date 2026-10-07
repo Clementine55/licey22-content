@@ -290,6 +290,28 @@ _https://s3454.nubex.ru/sveden/education/program_5359.html#eduPred_
 
 📎 [РП Химия 7-9 классы (углуб](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10450_64/%D0%A0%D0%9F%20%D0%A5%D0%B8%D0%BC%D0%B8%D1%8F%207-9%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B%20%28%D1%83%D0%B3%D0%BB%D1%83%D0%B1%29.pdf) (pdf) — _795 КБ_
 
+📎 [РП История военной славы России 6 гум](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10521_26/%D0%A0%D0%9F%20%20%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20%D0%B2%D0%BE%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9%20%D1%81%D0%BB%D0%B0%D0%B2%D1%8B%20%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8%206%20%D0%B3%D1%83%D0%BC.pdf) (pdf) — _214 КБ_
+
+📎 [РП ВД 5-10 ИЗО 2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10522_d9/%D0%A0%D0%9F%20%D0%92%D0%94%205-10%20%D0%98%D0%97%D0%9E%202026.pdf) (pdf) — _259 КБ_
+
+📎 [РП Английский 5-9 классы](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10523_c0/%D0%A0%D0%9F%20%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9%205-9%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B.pdf) (pdf) — _1,9 МБ_
+
+📎 [РП ДНКР 5-7](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10524_46/%D0%A0%D0%9F%20%D0%94%D0%9D%D0%9A%D0%A0%205-7.pdf) (pdf) — _431 КБ_
+
+📎 [РП ВД Сложные вопросы математики 9 класс](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10525_4c/%D0%A0%D0%9F%20%D0%92%D0%94%20%D0%A1%D0%BB%D0%BE%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B%20%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B8%209%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81.pdf) (pdf) — _313 КБ_
+
+📎 [РП Основы поэтики 9 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10526_40/%D0%A0%D0%9F%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D0%BF%D0%BE%D1%8D%D1%82%D0%B8%D0%BA%D0%B8%209%20%D0%BA%D0%BB..pdf) (pdf) — _240 КБ_
+
+📎 [РП Китайская каллиграфия](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10527_23/%D0%A0%D0%9F%20%D0%9A%D0%B8%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BA%D0%B0%D0%BB%D0%BB%D0%B8%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F..pdf) (pdf) — _562 КБ_
+
+📎 [РП Основы добровольчества 6 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10528_2c/%D0%A0%D0%9F%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D0%B4%D0%BE%D0%B1%D1%80%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0%206%20%D0%BA%D0%BB.pdf) (pdf) — _264 КБ_
+
+📎 [РП Физика 6 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10529_d4/%D0%A0%D0%9F%20%D0%A4%D0%B8%D0%B7%D0%B8%D0%BA%D0%B0%206%20%D0%BA%D0%BB.pdf) (pdf) — _564 КБ_
+
+📎 [РП СВРЯ 9 кл](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10530_ec/%D0%A0%D0%9F%20%D0%A1%D0%92%D0%A0%D0%AF%209%20%D0%BA%D0%BB.pdf) (pdf) — _204 КБ_
+
+📎 [Технология.ЧиИГ](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10531_7b/%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F.%D0%A7%D0%B8%D0%98%D0%93.%209%D0%91%D0%90%D0%A1.%20%D0%A7%D0%A4%D0%A3%D0%9E%D0%9E.pdf) (pdf) — _9БАС. ЧФУОО 392 КБ_
+
 ### Ссылка на календарный учебный график
 
 📎 [Календарный учебный график на 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10131_75/%D0%9A%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D0%BD%D0%B0%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _105 КБ_
@@ -314,9 +336,9 @@ _https://s3454.nubex.ru/sveden/education/program_5359.html#eduPred_
 
 📎 [Система_оценивания_по_предмету_Физическая_культура](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8626_ab/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%BE%D1%86%D0%B5%D0%BD%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_%D0%BF%D0%BE_%D0%BF%D1%80%D0%B5%D0%B4%D0%BC%D0%B5%D1%82%D1%83_%D0%A4%D0%B8%D0%B7%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0.pdf) (pdf) — _1,2 МБ_
 
-📎 [График оценочных процедур](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8628_e7/%D0%93%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BE%D1%87%D0%BD%D1%8B%D1%85%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D0%B4%D1%83%D1%80.xlsx) (xlsx) — _181 КБ_
-
 📎 [Приказ и положение об электронном обучении и использовании дистанционных образовательных технологий в образовательном процессе](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8982_82/%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7%20%D0%B8%20%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B1%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%BC%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B8%20%D0%B8%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8%20%D0%B4%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B9%20%D0%B2%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B5.pdf) (pdf) — _851 КБ_
+
+📎 [График оценочных процедур 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10517_04/%D0%93%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BE%D1%87%D0%BD%D1%8B%D1%85%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D0%B4%D1%83%D1%80%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4.pdf) (pdf) — _1,4 МБ_
 
 ### Перечень научных направлений, в рамках которых ведется научная деятельность
 
