@@ -403,6 +403,27 @@
     {
       "type": "heading",
       "level": "h3",
+      "text": "16.10.2026г."
+    },
+    {
+      "type": "file",
+      "link_text": "/food/2026-10-16-sm",
+      "meta": "МАОУ «Лицей № 22 «Надежда Сибири»",
+      "file_name": "2026-10-16-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/2026-10-16-sm.xlsx"
+    },
+    {
+      "type": "file",
+      "link_text": "/food/other_6497/food/2026-10-16-sm",
+      "meta": "Корпус на Чаплыгина, 59",
+      "file_name": "2026-10-16-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-10-16-sm.xlsx"
+    },
+    {
+      "type": "heading",
+      "level": "h3",
       "text": "15.10.2026г."
     },
     {
@@ -798,27 +819,6 @@
       "file_name": "2026-09-11-sm.xlsx",
       "extension": "xlsx",
       "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-09-11-sm.xlsx"
-    },
-    {
-      "type": "heading",
-      "level": "h3",
-      "text": "10.09.2026г."
-    },
-    {
-      "type": "file",
-      "link_text": "/food/2026-09-10-sm",
-      "meta": "МАОУ «Лицей № 22 «Надежда Сибири»",
-      "file_name": "2026-09-10-sm.xlsx",
-      "extension": "xlsx",
-      "file_url": "https://s3454.nubex.ru/food/2026-09-10-sm.xlsx"
-    },
-    {
-      "type": "file",
-      "link_text": "/food/other_6497/food/2026-09-10-sm",
-      "meta": "Корпус на Чаплыгина, 59",
-      "file_name": "2026-09-10-sm.xlsx",
-      "extension": "xlsx",
-      "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-09-10-sm.xlsx"
     },
     {
       "type": "heading",

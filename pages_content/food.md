@@ -141,6 +141,12 @@ _https://s3454.nubex.ru/sveden/food/_
 
 ### Меню ежедневного горячего питания
 
+#### 16.10.2026г.
+
+📎 [/food/2026-10-16-sm](https://s3454.nubex.ru/food/2026-10-16-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
+
+📎 [/food/other_6497/food/2026-10-16-sm](https://s3454.nubex.ru/food/other_6497/food/2026-10-16-sm.xlsx) (xlsx) — _Корпус на Чаплыгина, 59_
+
 #### 15.10.2026г.
 
 📎 [/food/2026-10-15-sm](https://s3454.nubex.ru/food/2026-10-15-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
@@ -254,12 +260,6 @@ _https://s3454.nubex.ru/sveden/food/_
 📎 [/food/2026-09-11-sm](https://s3454.nubex.ru/food/2026-09-11-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
 
 📎 [/food/other_6497/food/2026-09-11-sm](https://s3454.nubex.ru/food/other_6497/food/2026-09-11-sm.xlsx) (xlsx) — _Корпус на Чаплыгина, 59_
-
-#### 10.09.2026г.
-
-📎 [/food/2026-09-10-sm](https://s3454.nubex.ru/food/2026-09-10-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
-
-📎 [/food/other_6497/food/2026-09-10-sm](https://s3454.nubex.ru/food/other_6497/food/2026-09-10-sm.xlsx) (xlsx) — _Корпус на Чаплыгина, 59_
 
 ### Информация о наличии диетического меню в образовательной организации
 
