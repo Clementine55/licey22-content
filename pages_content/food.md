@@ -141,6 +141,30 @@ _https://s3454.nubex.ru/sveden/food/_
 
 ### Меню ежедневного горячего питания
 
+#### 15.10.2026г.
+
+📎 [/food/2026-10-15-sm](https://s3454.nubex.ru/food/2026-10-15-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
+
+📎 [/food/other_6497/food/2026-10-15-sm](https://s3454.nubex.ru/food/other_6497/food/2026-10-15-sm.xlsx) (xlsx) — _Корпус на Чаплыгина, 59_
+
+#### 14.10.2026г.
+
+📎 [/food/2026-10-14-sm](https://s3454.nubex.ru/food/2026-10-14-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
+
+📎 [/food/other_6497/food/2026-10-14-sm](https://s3454.nubex.ru/food/other_6497/food/2026-10-14-sm.xlsx) (xlsx) — _Корпус на Чаплыгина, 59_
+
+#### 13.10.2026г.
+
+📎 [/food/2026-10-13-sm](https://s3454.nubex.ru/food/2026-10-13-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
+
+📎 [/food/other_6497/food/2026-10-13-sm](https://s3454.nubex.ru/food/other_6497/food/2026-10-13-sm.xlsx) (xlsx) — _Корпус на Чаплыгина, 59_
+
+#### 12.10.2026г.
+
+📎 [/food/2026-10-12-sm](https://s3454.nubex.ru/food/2026-10-12-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
+
+📎 [/food/other_6497/food/2026-10-12-sm](https://s3454.nubex.ru/food/other_6497/food/2026-10-12-sm.xlsx) (xlsx) — _Корпус на Чаплыгина, 59_
+
 #### 02.10.2026г.
 
 📎 [/food/2026-10-02-sm](https://s3454.nubex.ru/food/2026-10-02-sm.xlsx) (xlsx) — _МАОУ «Лицей № 22 «Надежда Сибири»_
@@ -264,6 +288,18 @@ _https://s3454.nubex.ru/sveden/food/_
 📎 [Перпективное 10-дневное меню 5-11 классы (ОВЗ и инвалиды 7-11 лет) 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10482_f6/%D0%9F%D0%B5%D1%80%D0%BF%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5%2010-%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%205-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B%20%28%D0%9E%D0%92%D0%97%20%D0%B8%20%D0%B8%D0%BD%D0%B2%D0%B0%D0%BB%D0%B8%D0%B4%D1%8B%207-11%20%D0%BB%D0%B5%D1%82%29%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20%28%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81%20%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F%2C63%29.pdf) (pdf) — _корпус Советская,63_
 
 📎 [Перпективное 10-дневное меню 5-11 классы (ОВЗ и инвалиды 7-11 лет) 2026-2027 учебный год](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10481_ca/%D0%9F%D0%B5%D1%80%D0%BF%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5%2010-%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%205-11%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B%20%28%D0%9E%D0%92%D0%97%20%D0%B8%20%D0%B8%D0%BD%D0%B2%D0%B0%D0%BB%D0%B8%D0%B4%D1%8B%207-11%20%D0%BB%D0%B5%D1%82%29%202026-2027%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D0%B9%20%D0%B3%D0%BE%D0%B4%20%28%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81%20%D0%A7%D0%B0%D0%BF%D0%BB%D1%8B%D0%B3%D0%B8%D0%BD%D0%B0%2C59%29.pdf) (pdf) — _корпус Чаплыгина,59_
+
+📎 [Меню на 17.10.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10573_e4/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2017.10.2026.pdf) (pdf)
+
+📎 [Меню на 16.10.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10572_bd/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2016.10.2026.pdf) (pdf)
+
+📎 [Меню на 15.10.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10571_55/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2015.10.2026.pdf) (pdf)
+
+📎 [Меню на 14.10.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10570_8f/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2014.10.2026.pdf) (pdf)
+
+📎 [Меню на 13.10.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10569_85/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2013.10.2026.pdf) (pdf)
+
+📎 [Меню на 12.10.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10568_78/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2012.10.2026.pdf) (pdf)
 
 📎 [Меню на 03.10.2026](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10497_6a/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2003.10.2026.pdf) (pdf)
 
