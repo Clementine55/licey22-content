@@ -103,6 +103,8 @@ _https://s3454.nubex.ru/sveden/document/_
 
 📎 [ДК_по_снижению_бюрократической_нагрузки_на_педработников_МАОУ_Лицей](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8880_69/%D0%94%D0%9A_%D0%BF%D0%BE_%D1%81%D0%BD%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E_%D0%B1%D1%8E%D1%80%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%BD%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8_%D0%BD%D0%B0_%D0%BF%D0%B5%D0%B4%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2_%D0%9C%D0%90%D0%9E%D0%A3_%D0%9B%D0%B8%D1%86%D0%B5%D0%B9.pdf) (pdf) — _2,3 МБ, принят 20.01.2026_
 
+📎 [Положение о закупках](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10601_5e/223-%D0%A4%D0%97%20%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85%2012.10.26%D0%B3%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BB%D0%B8%D1%86%D0%B5%D1%8F.pdf) (pdf) — _2,0 МБ, принят 12.10.2026_
+
 ##### 2025
 
 📎 [Должностная инструкция учителя](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8647_fe/organized%20%2818%29.pdf) (pdf) — _4,8 МБ, принят 18.11.2025_
@@ -122,8 +124,6 @@ _https://s3454.nubex.ru/sveden/document/_
 📎 [Положение по оплате труда](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f5346_e4/%D0%9F%D0%9E%D0%9B%D0%9E%D0%96%D0%95%D0%9D%D0%98%D0%95%20%D0%9F%D0%9E%20%D0%A1%D0%9E%D0%A2.pdf) (pdf) — _1,5 МБ, принят 01.09.2024_
 
 📎 [Приказ об утверждении Положения об оплате труда](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f5367_bb/%D0%9F%D1%80%D0%B8%D0%BA%D0%B0%D0%B7_%D0%BE%D0%B1_%D1%83%D1%82%D0%B2%D0%B5%D1%80%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B8_%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D0%BE_%D0%9E%D0%BF%D0%BB%D0%B0%D1%82%D0%B5_%D1%82%D1%80%D1%83%D0%B4%D0%B0.pdf) (pdf) — _472 КБ, принят 02.09.2024_
-
-📎 [Положение о закупках](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f5786_de/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%20%D0%B7%D0%B0%D0%BA%D1%83%D0%BF%D0%BA%D0%B0%D1%85.pdf) (pdf) — _2,2 МБ, принят 13.12.2024_
 
 📎 [№316-5 О создании комиссии](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f6427_f1/%E2%84%96316-5%20%D0%9E%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B8%20%D0%BA%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B8%D0%B8.pdf) (pdf) — _2,4 МБ, принят 03.09.2024_
 
