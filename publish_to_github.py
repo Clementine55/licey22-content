@@ -15,6 +15,7 @@ BRANCH = "main"
 started_at = None
 LOCK_FILE = config.STATE_DIR / "publish.lock"
 _lock_fp = None  # держим файл открытым на весь процесс — ОС снимет блокировку сама, даже если процесс упадёт
+NEWS_OK = True
 
 
 def acquire_lock_or_exit() -> None:
@@ -64,17 +65,95 @@ def run(cmd, cwd, timeout=None) -> bool:
     return result.returncode == 0
 
 
+def run_news_pipeline() -> bool:
+    if not config.NEWS_ENABLED:
+        return True
+    if not run(
+        [sys.executable, "-u", str(REPO_DIR / "news_scraper.py"),
+         "--out-dir", str(config.NEWS_OUTPUT_DIR)],
+        cwd=REPO_DIR,
+        timeout=config.NEWS_PARSER_TIMEOUT_SECONDS,
+    ):
+        previous = {}
+        try:
+            previous = json.loads(config.NEWS_STATUS_FILE.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            pass
+        previous.update(ok=False, attempted_at=datetime.now().isoformat(timespec="seconds"),
+                        message="Не удалось обновить новости. Сохранена предыдущая версия.")
+        config.NEWS_STATUS_FILE.write_text(json.dumps(previous, ensure_ascii=False, indent=2), encoding="utf-8")
+        return False
+    return True
+
+
 def run_pipeline() -> None:
-    print(f"[{datetime.now():%H:%M:%S}] Запускаю page_content_parser.py (обход старого сайта)...", flush=True)
-    if not run([sys.executable, "-u", str(REPO_DIR / "page_content_parser.py")],
-               cwd=REPO_DIR, timeout=config.PARSER_TIMEOUT_SECONDS):
-        print("Парсер завершился с ошибкой — публикацию прерываю.", file=sys.stderr)
+    global NEWS_OK
+    print(
+        f"[{datetime.now():%H:%M:%S}] "
+        f"Запускаю page_content_parser.py (обход старого сайта)...",
+        flush=True,
+    )
+
+    if not run(
+        [
+            sys.executable,
+            "-u",
+            str(REPO_DIR / "page_content_parser.py"),
+        ],
+        cwd=REPO_DIR,
+        timeout=config.PARSER_TIMEOUT_SECONDS,
+    ):
+        print(
+            "Парсер страниц завершился с ошибкой — публикацию прерываю.",
+            file=sys.stderr,
+            flush=True,
+        )
         write_status(
-            started_at=started_at, finished_at=datetime.now().isoformat(timespec="seconds"),
-            ok=False, stage="parser", message="Парсер завершился с ошибкой (см. лог).",
+            started_at=started_at,
+            finished_at=datetime.now().isoformat(timespec="seconds"),
+            ok=False,
+            stage="parser",
+            message="Парсер страниц завершился с ошибкой.",
         )
         sys.exit(1)
+
+    NEWS_OK = run_news_pipeline()
+
     print()
+
+
+def is_publishable_path(name: str) -> bool:
+    parts = Path(name).parts
+    if name == "sources.json":
+        return True
+    if len(parts) != 2:
+        return False
+    if parts[0] == "pages_content":
+        return Path(name).suffix in {".json", ".md"} and not parts[1].startswith(".")
+    return NEWS_OK and name in {"news_data/news_index.json", "news_data/news_full.json"}
+
+
+def git_checked(*args, capture=False):
+    return subprocess.run(["git", *args], cwd=REPO_DIR, check=True,
+                          stdout=subprocess.PIPE if capture else None).stdout
+
+
+def stage_content() -> None:
+    staged = git_checked("diff", "--cached", "--name-only", "-z", capture=True).decode().split("\0")
+    unexpected = [name for name in staged if name and not is_publishable_path(name)]
+    if unexpected:
+        raise RuntimeError("В индексе есть посторонние файлы; автопубликация отменена: " + ", ".join(unexpected))
+    tracked = git_checked("ls-files", "-z", capture=True).decode().split("\0")
+    candidates = {name for name in tracked if name and is_publishable_path(name)}
+    for folder in ("pages_content", "news_data"):
+        candidates.update(p.relative_to(REPO_DIR).as_posix() for p in (REPO_DIR / folder).glob("*")
+                          if p.is_file() and is_publishable_path(p.relative_to(REPO_DIR).as_posix()))
+    if (REPO_DIR / "sources.json").is_file():
+        candidates.add("sources.json")
+    if any((REPO_DIR / name).is_symlink() for name in candidates):
+        raise RuntimeError("В публикуемых данных обнаружена символическая ссылка.")
+    if candidates:
+        git_checked("add", "-A", "--", *sorted(candidates))
 
 
 def git_publish() -> None:
@@ -89,15 +168,19 @@ def git_publish() -> None:
         sys.exit(1)
 
     print("\nОбновляю git...")
-    subprocess.run(["git", "add", "-A"], cwd=REPO_DIR)
-
-    status = subprocess.getoutput(f"git -C \"{REPO_DIR}\" status --porcelain")
-    if status:
-        print("Найдены изменения, сохраняю (commit)...")
-        commit_message = f"Обновление данных сайта — {datetime.now():%Y-%m-%d %H:%M}"
-        subprocess.run(["git", "commit", "-m", commit_message], cwd=REPO_DIR)
-    else:
-        print("Локальных изменений нет. Проверяем очередь на отправку...")
+    try:
+        stage_content()
+        status = git_checked("diff", "--cached", "--name-only", capture=True).strip()
+        if status:
+            print("Найдены изменения контента, сохраняю (commit)...")
+            commit_message = f"Обновление данных сайта — {datetime.now():%Y-%m-%d %H:%M}"
+            git_checked("commit", "-m", commit_message)
+        else:
+            print("Изменений контента нет. Проверяем очередь на отправку...")
+    except (subprocess.CalledProcessError, RuntimeError) as exc:
+        write_status(started_at=started_at, finished_at=datetime.now().isoformat(timespec="seconds"),
+                     ok=False, stage="git", message=f"Автопубликация остановлена: {exc}")
+        sys.exit(1)
 
     # Пушим в любом случае: если предыдущая отправка сорвалась по сети,
     # локальный коммит остался и должен уйти сейчас.
@@ -115,8 +198,10 @@ def git_publish() -> None:
     else:
         print("\n[+] Синхронизация с сервером успешно завершена!")
         write_status(
-            started_at=started_at, finished_at=finished_at, ok=True, stage="done",
-            message="Успешно обновлено и отправлено на GitHub.",
+            started_at=started_at, finished_at=finished_at, ok=NEWS_OK,
+            stage="done" if NEWS_OK else "news",
+            message="Успешно обновлено и отправлено на GitHub." if NEWS_OK else
+                    "Страницы опубликованы. Новости не обновились — сохранена предыдущая версия.",
         )
 
 

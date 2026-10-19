@@ -10,3 +10,14 @@ __pycache__/
 state/
 .venv/
 venv/
+
+# Логи, резервные копии и временные файлы не публикуются.
+*.log
+*.bak
+*.backup
+*.tmp
+.sources-*
+.deploy-*
+.ui-*
+.news-*
+.pytest_cache/

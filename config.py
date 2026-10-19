@@ -55,6 +55,10 @@ MAX_PAGES_PER_SECTION = 500
 # не держать publish.lock вечно.
 PARSER_TIMEOUT_SECONDS = 30 * 60
 
+NEWS_PARSER_TIMEOUT_SECONDS = 30 * 60
+NEWS_ENABLED = True
+
+
 REQUEST_DELAY = 0.15
 TIMEOUT = 8
 USER_AGENT = "Mozilla/5.0 (compatible; Lyceum22ContentBot/1.0)"
@@ -74,6 +78,7 @@ HEADERS = {"User-Agent": USER_AGENT}
 BASE_DIR = Path(__file__).resolve().parent
 
 OUTPUT_DIR = BASE_DIR / "pages_content"
+NEWS_OUTPUT_DIR = BASE_DIR / "news_data"
 STATE_DIR = BASE_DIR / "state"
 SOURCES_FILE = BASE_DIR / "sources.json"
 STATE_FILE = STATE_DIR / "page_state.json"
@@ -82,10 +87,10 @@ EMAILS_MAP_FILE = STATE_DIR / "emails_map.json"
 CHANGELOG_FILE = STATE_DIR / "changelog.json"
 RUN_STATUS_FILE = STATE_DIR / "run_status.json"
 PROGRESS_FILE = STATE_DIR / "progress.json"
+NEWS_STATUS_FILE = STATE_DIR / "news_status.json"
 CHANGELOG_MAX_ENTRIES = 3000  # аварийный потолок на случай очень частого расписания — см. changelog.py
 CHANGELOG_KEEP_DAYS = 7  # сколько дней истории показывать в веб-панели
 TOC_FILE = OUTPUT_DIR / "_toc.json"
-
 
 def _migrate_legacy_file(old: Path, new: Path) -> None:
     """Разовый переезд: если файл раньше лежал прямо в корне репозитория

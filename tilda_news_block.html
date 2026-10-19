@@ -1,0 +1,490 @@
+<!--
+  Блок «Новости» для Тильды: список + статья на ОДНОЙ странице
+  =============================================================
+
+  Как подключить:
+    1. Создайте на Тильде одну страницу (например, адрес /news).
+    2. Добавьте на неё блок «HTML-код» (T123) и вставьте сюда весь файл.
+    3. Ссылки на JSON в GitHub уже настроены. Сохраните и опубликуйте страницу.
+
+  Как это работает:
+    /news            — список новостей (поиск, фильтр по году)
+    /news?n=22725    — открывается новость с номером 22725
+
+  Номер новости — это число из адреса на старом сайте:
+  старый.лицей22.рф/news/22725.html  ->  /news?n=22725
+  Поэтому ссылки на новости можно давать в соцсетях и на других страницах.
+  Внутренние ссылки между новостями на старом сайте блок переписывает сам.
+
+  Если ничего не загружается:
+    - откройте обе ссылки из CONFIG в браузере: должен скачаться JSON;
+    - откройте консоль (F12) на странице Тильды: ошибка «CORS» /
+      «Failed to fetch» означает, что хостинг файлов не разрешает запросы
+      с другого домена — нужен публичный доступ к файлам без пароля
+      либо другое место для хранения JSON.
+-->
+
+<style>
+  .lyc22-news {
+    --lyc22-accent: #2451B7;
+    --lyc22-ink: #1f2430;
+    --lyc22-muted: #6b7280;
+    --lyc22-line: #e2e5ea;
+    --lyc22-soft: #f5f7fa;
+    max-width: 960px; margin: 0 auto;
+    font-family: inherit; color: var(--lyc22-ink); line-height: 1.45;
+  }
+  .lyc22-news *, .lyc22-news *::before, .lyc22-news *::after { box-sizing: border-box; }
+
+  /* ---------- список ---------- */
+  .lyc22-news__head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 6px 14px; margin: 0 0 14px; }
+  .lyc22-news__title { font-size: 1.5em; font-weight: 600; margin: 0; }
+  .lyc22-news__count { font-size: .85em; color: var(--lyc22-muted); }
+
+  .lyc22-news__controls { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+  .lyc22-news__search, .lyc22-news__year {
+    padding: 10px 14px; border: 1px solid #d8dce3; border-radius: 8px; background: #fff;
+    font: inherit; font-size: .95em; color: var(--lyc22-ink); outline: none;
+    transition: border-color .15s, box-shadow .15s;
+  }
+  .lyc22-news__search { flex: 1 1 240px; min-width: 0; }
+  .lyc22-news__year { flex: 0 0 auto; }
+  .lyc22-news__search::placeholder { color: #97a0ad; }
+  .lyc22-news__search:focus, .lyc22-news__year:focus { border-color: var(--lyc22-accent); box-shadow: 0 0 0 3px rgba(36,81,183,.12); }
+
+  .lyc22-news__list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--lyc22-line); }
+  .lyc22-news__list li { margin: 0; padding: 0; }
+  .lyc22-news__card {
+    display: flex !important; align-items: flex-start; gap: 16px; padding: 16px 6px;
+    border-bottom: 1px solid var(--lyc22-line); color: inherit !important; text-decoration: none !important;
+    transition: background-color .12s;
+  }
+  .lyc22-news__card:hover { background: var(--lyc22-soft); }
+  .lyc22-news__card:focus-visible { outline: 2px solid var(--lyc22-accent); outline-offset: -2px; }
+
+  /* дата как «листок календаря»: новости идут по хронологии, поэтому дата — главный ориентир */
+  .lyc22-news__date { flex: 0 0 62px; text-align: center; padding-top: 2px; }
+  .lyc22-news__day { display: block; font-size: 1.9em; font-weight: 700; line-height: 1; color: var(--lyc22-accent); font-variant-numeric: tabular-nums; }
+  .lyc22-news__mon { display: block; margin-top: 4px; font-size: .72em; text-transform: uppercase; letter-spacing: .06em; color: var(--lyc22-muted); }
+  .lyc22-news__year-label { display: block; font-size: .72em; color: var(--lyc22-muted); }
+
+  .lyc22-news__text { flex: 1 1 auto; min-width: 0; }
+  .lyc22-news__name { display: block; font-size: 1.05em; font-weight: 600; line-height: 1.35; word-break: break-word; }
+  .lyc22-news__card:hover .lyc22-news__name { color: var(--lyc22-accent); }
+  .lyc22-news__announce { display: block; margin-top: 4px; font-size: .9em; color: var(--lyc22-muted); }
+
+  .lyc22-news__thumb { flex: 0 0 auto; width: 104px; height: 78px; border-radius: 8px; object-fit: cover; background: var(--lyc22-soft); }
+
+  .lyc22-news__more { display: block; margin: 18px auto 0; padding: 11px 26px; border: 1px solid var(--lyc22-accent); border-radius: 8px; background: #fff; color: var(--lyc22-accent); font: inherit; font-weight: 600; cursor: pointer; transition: background-color .15s, color .15s; }
+  .lyc22-news__more:hover, .lyc22-news__more:focus-visible { background: var(--lyc22-accent); color: #fff; outline: none; }
+
+  /* ---------- статья ---------- */
+  .lyc22-news__back { display: inline-block; margin-bottom: 14px; padding: 0; border: 0; background: none; color: var(--lyc22-accent); font: inherit; font-size: .95em; cursor: pointer; text-decoration: none !important; }
+  .lyc22-news__back:hover { text-decoration: underline !important; }
+  .lyc22-news__article-title { margin: 0 0 6px; font-size: 1.7em; font-weight: 700; line-height: 1.25; word-break: break-word; }
+  .lyc22-news__article-date { margin: 0 0 20px; font-size: .9em; color: var(--lyc22-muted); }
+
+  .lyc22-news__body { font-size: 1.02em; line-height: 1.65; overflow-wrap: anywhere; }
+  .lyc22-news__body p { margin: 0 0 1em; }
+  .lyc22-news__body ul, .lyc22-news__body ol { margin: 0 0 1em; padding-left: 1.4em; }
+  .lyc22-news__body a { color: var(--lyc22-accent); text-decoration: underline; }
+  .lyc22-news__body img { max-width: 100%; height: auto; border-radius: 6px; }
+  .lyc22-news__body iframe { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 0; border-radius: 8px; margin: 0 0 1em; }
+  .lyc22-news__body table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 0 0 1em; }
+  .lyc22-news__body td, .lyc22-news__body th { padding: 6px 10px; border: 1px solid var(--lyc22-line); }
+
+  .lyc22-news__gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; margin-top: 22px; }
+  .lyc22-news__shot { display: block; width: 100%; aspect-ratio: 4 / 3; padding: 0; border: 0; border-radius: 8px; overflow: hidden; background: var(--lyc22-soft); cursor: zoom-in; }
+  .lyc22-news__shot img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .2s; }
+  .lyc22-news__shot:hover img { transform: scale(1.04); }
+  .lyc22-news__shot:focus-visible { outline: 2px solid var(--lyc22-accent); outline-offset: 2px; }
+
+  /* ---------- служебные состояния ---------- */
+  .lyc22-news__status, .lyc22-news__empty, .lyc22-news__error { padding: 18px; text-align: center; font-size: .92em; color: var(--lyc22-muted); border: 1px dashed #d8dce3; border-radius: 10px; }
+  .lyc22-news__error { color: #9b2c2c; border: 1px solid #f1c2c2; background: #fdf3f3; }
+  .lyc22-news__note { margin: 0 0 1em; padding: 10px 14px; border-radius: 8px; background: var(--lyc22-soft); color: var(--lyc22-muted); font-size: .9em; }
+
+  @media (max-width: 560px) {
+    .lyc22-news__card { gap: 12px; }
+    .lyc22-news__date { flex-basis: 48px; }
+    .lyc22-news__day { font-size: 1.5em; }
+    .lyc22-news__thumb { width: 72px; height: 56px; }
+    .lyc22-news__article-title { font-size: 1.35em; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lyc22-news *, .lyc22-news-lb * { transition: none !important; }
+  }
+
+  /* ---------- просмотр фото (вешается на body, поэтому стили отдельно) ---------- */
+  .lyc22-news-lb { position: fixed; inset: 0; z-index: 100000; display: flex; align-items: center; justify-content: center; background: rgba(10,12,18,.92); font-family: inherit; }
+  .lyc22-news-lb__img { max-width: 94vw; max-height: 86vh; object-fit: contain; border-radius: 4px; }
+  .lyc22-news-lb__btn { position: absolute; width: 46px; height: 46px; border: 0; border-radius: 50%; background: rgba(255,255,255,.14); color: #fff; font-size: 24px; line-height: 1; cursor: pointer; transition: background-color .15s; }
+  .lyc22-news-lb__btn:hover, .lyc22-news-lb__btn:focus-visible { background: rgba(255,255,255,.3); outline: none; }
+  .lyc22-news-lb__close { top: 14px; right: 14px; }
+  .lyc22-news-lb__prev { left: 12px; top: 50%; margin-top: -23px; }
+  .lyc22-news-lb__next { right: 12px; top: 50%; margin-top: -23px; }
+  .lyc22-news-lb__count { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; color: #cfd4dc; font-size: 14px; }
+</style>
+
+<div class="lyc22-news"><div class="lyc22-news__status">Загружаем новости…</div></div>
+
+<script>
+(function () {
+  // ------------------------- НАСТРОЙКИ БЛОКА -------------------------
+  var CONFIG = {
+    indexUrl: "https://raw.githubusercontent.com/Clementine55/licey22-content/refs/heads/main/news_data/news_index.json",
+    fullUrl:  "https://raw.githubusercontent.com/Clementine55/licey22-content/refs/heads/main/news_data/news_full.json",
+    title: "Новости",
+    perPage: 12,       // сколько новостей показывать за раз
+    param: "n"         // имя параметра в адресе: /news?n=22725
+  };
+  // ---------------------------------------------------------------------
+
+  var root = document.currentScript && document.currentScript.previousElementSibling;
+  if (!root || !root.classList || !root.classList.contains("lyc22-news")) {
+    root = document.querySelector(".lyc22-news");
+  }
+  if (!root) return;
+
+  var IFRAME_HOSTS = ["vk.com", "vk.ru", "vkvideo.ru", "rutube.ru", "ok.ru",
+    "youtube.com", "www.youtube.com", "youtube-nocookie.com", "www.youtube-nocookie.com"];
+  var MONTHS_FULL = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+  var MONTHS_SHORT = ["янв", "фев", "мар", "апр", "мая", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
+
+  var BASE_TITLE = document.title;   // исходный заголовок вкладки
+  var state = { index: null, byId: {}, full: null, shown: 0, query: "", year: "" };
+  var cache = {};
+
+  // ----------------------------- утилиты -----------------------------
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function loadJson(url) {
+    if (!cache[url]) {
+        cache[url] = fetch(url, {cache: "no-cache"}).then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status + " для " + url);
+        return r.json();
+      }).catch(function (e) { delete cache[url]; throw e; });
+    }
+    return cache[url];
+  }
+
+  function parseDate(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || "");
+    return m ? { y: +m[1], m: +m[2], d: +m[3] } : null;
+  }
+  function longDate(iso) {
+    var p = parseDate(iso);
+    return p ? p.d + " " + MONTHS_FULL[p.m - 1] + " " + p.y + " г." : "";
+  }
+  function plural(n, one, few, many) {
+    var a = n % 10, b = n % 100;
+    if (b > 10 && b < 20) return many;
+    if (a === 1) return one;
+    if (a > 1 && a < 5) return few;
+    return many;
+  }
+
+  function currentId() {
+    var v = new URLSearchParams(window.location.search).get(CONFIG.param);
+    return v && /^\d+$/.test(v) ? v : null;
+  }
+  function articleUrl(id) {
+    var q = new URLSearchParams(window.location.search);
+    q.set(CONFIG.param, id);
+    return window.location.pathname + "?" + q.toString();
+  }
+  function listUrl() {
+    var q = new URLSearchParams(window.location.search);
+    q.delete(CONFIG.param);
+    var s = q.toString();
+    return window.location.pathname + (s ? "?" + s : "");
+  }
+
+  function scrollToTop() {
+    try {
+      var top = root.getBoundingClientRect().top + (window.pageYOffset || 0) - 20;
+      window.scrollTo(0, Math.max(0, top));
+    } catch (e) {}
+  }
+
+  function httpUrl(value) {
+    if (!value || /[\u0000-\u0020]/.test(value)) return "";
+    try {
+      var url = new URL(value, window.location.href);
+      return /^https?:$/.test(url.protocol) && !url.username && !url.password ? url.href : "";
+    } catch (e) { return ""; }
+  }
+
+  // Вторая линия защиты: даже очищенный в скрапере HTML проверяем ещё раз
+  function sanitizeBody(html) {
+    var tpl = document.createElement("template");
+    tpl.innerHTML = html || "";
+    var frag = tpl.content;
+
+    Array.prototype.forEach.call(frag.querySelectorAll("script,style,object,embed,form,link,meta,base,svg,math,template,input,select,textarea,button"), function (n) { n.remove(); });
+
+    Array.prototype.forEach.call(frag.querySelectorAll("*"), function (el) {
+      var tag = el.tagName.toLowerCase();
+      var allowed = {a:["href"],img:["src","alt"],iframe:["src","allowfullscreen"],td:["colspan","rowspan"],th:["colspan","rowspan"]};
+      if (["p","br","strong","b","em","i","u","s","span","a","img","ul","ol","li","h2","h3","h4","h5","h6","blockquote","table","thead","tbody","tr","td","th","div","iframe","figure","figcaption","sub","sup","hr"].indexOf(tag) === -1) {
+        while (el.firstChild) el.parentNode.insertBefore(el.firstChild, el);
+        el.remove();
+        return;
+      }
+      Array.prototype.slice.call(el.attributes).forEach(function (a) {
+        if ((allowed[tag] || []).indexOf(a.name) === -1) el.removeAttribute(a.name);
+      });
+
+      if (tag === "a") {
+        var href = (el.getAttribute("href") || "").trim();
+        if (/[\u0000-\u0020]/.test(href) || (!/^(mailto:|tel:|#)/i.test(href) && !httpUrl(href))) { el.removeAttribute("href"); return; }
+        var sourceHost = "";
+        try { sourceHost = new URL(href, window.location.href).hostname; } catch(e) {}
+        var oldHosts = ["s3454.nubex.ru","xn--80asucf0d.xn--22-mlclgj2f.xn--p1ai","xn--22-mlclgj2f.xn--p1ai","xn--80a1acny.xn--22-mlclgj2f.xn--p1ai"];
+        var m = oldHosts.indexOf(sourceHost) >= 0 && /\/news\/(\d+)\.html(?:[?#].*)?$/.exec(href);
+        if (m) {
+          el.setAttribute("href", articleUrl(m[1]));
+          el.setAttribute("data-news-id", m[1]);
+        } else if (/^https?:/i.test(href)) {
+          el.setAttribute("target", "_blank");
+          el.setAttribute("rel", "noopener");
+        }
+      } else if (tag === "iframe") {
+        var host = "";
+        try { host = new URL(el.getAttribute("src") || "", window.location.href).hostname.toLowerCase(); } catch (e) {}
+        if (!httpUrl(el.getAttribute("src")) || !/^https:/i.test(el.getAttribute("src")) || IFRAME_HOSTS.indexOf(host) === -1) el.remove();
+        else el.setAttribute("loading", "lazy");
+      } else if (tag === "img") {
+        if (!httpUrl(el.getAttribute("src"))) el.remove();
+        else el.setAttribute("loading", "lazy");
+      }
+    });
+
+    var wrap = document.createElement("div");
+    wrap.appendChild(frag);
+    return wrap.innerHTML;
+  }
+
+  // ----------------------------- навигация -----------------------------
+
+  function go(url, push) {
+    if (push) window.history.pushState({}, "", url);
+    render(true);
+  }
+
+  root.addEventListener("click", function (e) {
+    var a = e.target.closest ? e.target.closest("a[data-internal], a[data-news-id]") : null;
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    go(a.getAttribute("href"), true);
+  });
+  window.addEventListener("popstate", function () { render(true); });
+
+  // ----------------------------- список -----------------------------
+
+  function filtered() {
+    var q = state.query.trim().toLowerCase();
+    return state.index.filter(function (it) {
+      if (state.year && (it.date || "").slice(0, 4) !== state.year) return false;
+      if (!q) return true;
+      return ((it.title || "") + " " + (it.announce || "")).toLowerCase().indexOf(q) !== -1;
+    });
+  }
+
+  function cardHtml(it) {
+    var p = parseDate(it.date);
+    var dateHtml = p
+      ? '<span class="lyc22-news__date"><span class="lyc22-news__day">' + p.d + '</span>' +
+        '<span class="lyc22-news__mon">' + MONTHS_SHORT[p.m - 1] + '</span>' +
+        '<span class="lyc22-news__year-label">' + p.y + '</span></span>'
+      : '<span class="lyc22-news__date"></span>';
+    return '<li><a class="lyc22-news__card" data-internal href="' + esc(articleUrl(it.id)) + '">' +
+      dateHtml +
+      '<span class="lyc22-news__text"><span class="lyc22-news__name">' + esc(it.title) + '</span>' +
+      (it.announce ? '<span class="lyc22-news__announce">' + esc(it.announce) + '</span>' : '') +
+      '</span>' +
+      (httpUrl(it.thumb) ? '<img class="lyc22-news__thumb" src="' + esc(httpUrl(it.thumb)) + '" alt="" loading="lazy">' : '') +
+      '</a></li>';
+  }
+
+  function buildListShell() {
+    var years = [];
+    state.index.forEach(function (it) {
+      var y = (it.date || "").slice(0, 4);
+      if (y && years.indexOf(y) === -1) years.push(y);
+    });
+    years.sort().reverse();
+
+    root.innerHTML =
+      '<div class="lyc22-news__head"><h2 class="lyc22-news__title">' + esc(CONFIG.title) + '</h2>' +
+      '<span class="lyc22-news__count" data-role="count"></span></div>' +
+      '<div class="lyc22-news__controls">' +
+        '<input class="lyc22-news__search" type="search" placeholder="Поиск по новостям…" aria-label="Поиск по новостям" value="' + esc(state.query) + '">' +
+        '<select class="lyc22-news__year" aria-label="Год"><option value="">Все годы</option>' +
+          years.map(function (y) { return '<option value="' + y + '"' + (y === state.year ? " selected" : "") + '>' + y + '</option>'; }).join("") +
+        '</select>' +
+      '</div>' +
+      '<div data-role="results"></div>';
+
+    var search = root.querySelector(".lyc22-news__search");
+    var yearSel = root.querySelector(".lyc22-news__year");
+    search.addEventListener("input", function () { state.query = search.value; state.shown = CONFIG.perPage; updateList(); });
+    yearSel.addEventListener("change", function () { state.year = yearSel.value; state.shown = CONFIG.perPage; updateList(); });
+  }
+
+  function updateList() {
+    var items = filtered();
+    var box = root.querySelector('[data-role="results"]');
+    var count = root.querySelector('[data-role="count"]');
+    count.textContent = items.length + " " + plural(items.length, "новость", "новости", "новостей");
+
+    if (!items.length) {
+      box.innerHTML = '<div class="lyc22-news__empty">' +
+        (state.query || state.year ? "Ничего не найдено. Попробуйте изменить запрос или год." : "Новостей пока нет.") + "</div>";
+      return;
+    }
+    var visible = items.slice(0, state.shown);
+    box.innerHTML = '<ul class="lyc22-news__list">' + visible.map(cardHtml).join("") + "</ul>" +
+      (items.length > visible.length
+        ? '<button type="button" class="lyc22-news__more">Показать ещё (' + (items.length - visible.length) + ")</button>" : "");
+
+    var more = box.querySelector(".lyc22-news__more");
+    if (more) more.addEventListener("click", function () { state.shown += CONFIG.perPage; updateList(); });
+  }
+
+  function renderList() {
+    document.title = BASE_TITLE;
+    buildListShell();
+    if (!state.shown) state.shown = CONFIG.perPage;
+    updateList();
+  }
+
+  // ----------------------------- статья -----------------------------
+
+  function renderArticle(id) {
+    root.innerHTML = '<div class="lyc22-news__status">Загружаем новость…</div>';
+    loadJson(CONFIG.fullUrl).then(function (full) {
+      if (currentId() !== id) return; // пользователь мог уже нажать «Назад»
+      state.full = full;
+      var meta = state.byId[id];
+      var art = full[id];
+
+      var back = '<a class="lyc22-news__back" data-internal href="' + esc(listUrl()) + '">← Все новости</a>';
+      if (!meta && !art) {
+        root.innerHTML = back + '<div class="lyc22-news__empty">Такой новости не нашлось. Возможно, она была удалена или ссылка набрана с ошибкой.</div>';
+        return;
+      }
+
+      var title = (meta && meta.title) || "Новость";
+      var gallery = ((art && art.gallery) || []).filter(function(g) { return httpUrl(g.full) || httpUrl(g.thumb); });
+      document.title = BASE_TITLE ? title + " — " + BASE_TITLE : title;
+
+      root.innerHTML = back +
+        '<h2 class="lyc22-news__article-title">' + esc(title) + '</h2>' +
+        (meta && meta.date ? '<p class="lyc22-news__article-date">' + esc(longDate(meta.date)) + '</p>' : '') +
+        (art ? '' : '<p class="lyc22-news__note">Текст этой новости ещё не загружен. Обновите файлы новостей.</p>') +
+        '<div class="lyc22-news__body">' + sanitizeBody(art && art.body) + '</div>' +
+        (gallery.length
+          ? '<div class="lyc22-news__gallery">' + gallery.map(function (g, i) {
+              return '<button type="button" class="lyc22-news__shot" data-shot="' + i + '" aria-label="Открыть фото ' + (i + 1) + ' из ' + gallery.length + '">' +
+                '<img src="' + esc(httpUrl(g.thumb) || httpUrl(g.full)) + '" alt="" loading="lazy"></button>';
+            }).join("") + "</div>"
+          : "");
+
+      Array.prototype.forEach.call(root.querySelectorAll("[data-shot]"), function (btn) {
+        btn.addEventListener("click", function () { openLightbox(gallery, +btn.getAttribute("data-shot"), btn); });
+      });
+    }).catch(function (e) {
+      if (currentId() !== id) return;
+      console.error("lyc22-news: ошибка загрузки текстов", e);
+      showError();
+    });
+  }
+
+  // ----------------------------- просмотр фото -----------------------------
+
+  function openLightbox(gallery, start, opener) {
+    var i = start, prevOverflow = document.body.style.overflow;
+    var lb = document.createElement("div");
+    lb.className = "lyc22-news-lb";
+    lb.setAttribute("role", "dialog");
+    lb.setAttribute("aria-modal", "true");
+    lb.setAttribute("aria-label", "Просмотр фото");
+    lb.innerHTML =
+      '<img class="lyc22-news-lb__img" alt="">' +
+      '<button type="button" class="lyc22-news-lb__btn lyc22-news-lb__close" aria-label="Закрыть">×</button>' +
+      '<button type="button" class="lyc22-news-lb__btn lyc22-news-lb__prev" aria-label="Предыдущее фото">‹</button>' +
+      '<button type="button" class="lyc22-news-lb__btn lyc22-news-lb__next" aria-label="Следующее фото">›</button>' +
+      '<div class="lyc22-news-lb__count"></div>';
+    document.body.appendChild(lb);
+    document.body.style.overflow = "hidden";
+
+    var img = lb.querySelector(".lyc22-news-lb__img");
+    var counter = lb.querySelector(".lyc22-news-lb__count");
+    var prev = lb.querySelector(".lyc22-news-lb__prev");
+    var next = lb.querySelector(".lyc22-news-lb__next");
+    var closeBtn = lb.querySelector(".lyc22-news-lb__close");
+
+    function show(n) {
+      i = (n + gallery.length) % gallery.length;
+      img.src = httpUrl(gallery[i].full) || httpUrl(gallery[i].thumb);
+      counter.textContent = (i + 1) + " / " + gallery.length;
+    }
+    function close() {
+      document.removeEventListener("keydown", onKey);
+      lb.remove();
+      document.body.style.overflow = prevOverflow;
+      if (opener && opener.focus) opener.focus();
+    }
+    function onKey(e) {
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowLeft") show(i - 1);
+      else if (e.key === "ArrowRight") show(i + 1);
+    }
+
+    if (gallery.length < 2) { prev.style.display = "none"; next.style.display = "none"; counter.style.display = "none"; }
+    prev.addEventListener("click", function (e) { e.stopPropagation(); show(i - 1); });
+    next.addEventListener("click", function (e) { e.stopPropagation(); show(i + 1); });
+    closeBtn.addEventListener("click", close);
+    lb.addEventListener("click", function (e) { if (e.target === lb || e.target === img) close(); });
+    document.addEventListener("keydown", onKey);
+    show(i);
+    closeBtn.focus();
+  }
+
+  // ----------------------------- запуск -----------------------------
+
+  function showError(msg) {
+    root.innerHTML = '<div class="lyc22-news__error">' + esc(msg ||
+      "Не удалось загрузить новости. Попробуйте обновить страницу или сообщите администратору сайта.") + "</div>";
+  }
+
+  var firstRender = true;
+  function render(scroll) {
+    if (!state.index) return;
+    var id = currentId();
+    if (id) renderArticle(id); else renderList();
+    if (scroll && !firstRender) scrollToTop();
+    firstRender = false;
+  }
+
+  if (/ВСТАВЬТЕ/.test(CONFIG.indexUrl) || /ВСТАВЬТЕ/.test(CONFIG.fullUrl)) {
+    showError("Блок не настроен: вставьте ссылки на news_index.json и news_full.json в CONFIG.");
+    return;
+  }
+
+  loadJson(CONFIG.indexUrl).then(function (data) {
+    state.index = (Array.isArray(data) ? data : []).filter(function (it) { return it && it.id != null; });
+    state.index.forEach(function (it) { state.byId[String(it.id)] = it; });
+    render(false);
+  }).catch(function (e) {
+    console.error("lyc22-news: ошибка загрузки списка", e);
+    showError();
+  });
+})();
+</script>

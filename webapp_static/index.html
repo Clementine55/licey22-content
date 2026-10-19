@@ -42,8 +42,16 @@
       <p id="source-message" class="source-feedback" role="status" hidden></p>
       <div class="sidebar-total" id="sidebar-total"></div>
       <div id="sections"></div>
+      <section class="news-summary" aria-labelledby="news-title">
+        <h3 id="news-title">Новости</h3>
+        <p id="news-status" class="sidebar-note">Загружаю статус…</p>
+        <div class="news-links">
+          <a href="/news-preview" target="_blank" rel="noopener">Посмотреть ленту ↗</a>
+          <a href="/tilda/news-block" download>Код для Тильды ↓</a>
+        </div>
+      </section>
       <p class="sidebar-note sidebar-excluded">
-        Без новостей и служебных страниц.
+        Служебные страницы не проверяются. Новости обновляются отдельно от разделов.
       </p>
     </aside>
   </div>
@@ -73,6 +81,16 @@ function renderStatus(data) {
   // иначе панель работает в режиме "только просмотр"
   controls.hidden = !data.can_trigger;
   document.getElementById("open-source-btn").hidden = !data.can_trigger;
+  const news = data.news;
+  const newsStatus = document.getElementById("news-status");
+  if (news && news.enabled) {
+    const latest = news.last_run;
+    newsStatus.textContent = latest && latest.count
+      ? latest.count + " новостей · " + (latest.ok ? "обновлено " + formatDate(latest.checked_at) : "ошибка обновления, сохранён архив")
+      : "Архив готовится. Новости обновляются вместе со страницами.";
+  } else {
+    newsStatus.textContent = "Обновление новостей пока не включено.";
+  }
 
   const progressWrap = document.getElementById("progress-wrap");
   const progressFill = document.getElementById("progress-fill");
@@ -87,11 +105,11 @@ function renderStatus(data) {
 
     const p = data.progress;
     progressWrap.hidden = false;
-    if (p && p.stage === "parsing" && p.total > 0) {
+    if (p && (p.stage === "parsing" || p.stage === "news") && p.total > 0) {
       const pct = Math.round((p.current / p.total) * 100);
       progressFill.className = "progress-fill";
       progressFill.style.width = pct + "%";
-      progressLabel.textContent = "Страница " + p.current + " из " + p.total + " (" + pct + "%)";
+      progressLabel.textContent = (p.stage === "news" ? "Новость " : "Страница ") + p.current + " из " + p.total + " (" + pct + "%)";
     } else {
       // либо ещё идёт обход разделов (общее число страниц пока не
       // известно), либо прогресса нет вообще — неопределённая анимация
@@ -100,6 +118,7 @@ function renderStatus(data) {
       progressFill.style.width = "";
       progressLabel.textContent = p && p.stage === "discovering"
         ? "Обхожу разделы старого сайта…"
+        : p && p.stage === "news_discovering" ? "Проверяю архив новостей…"
         : "Запускаю…";
     }
     return;
