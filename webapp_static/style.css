@@ -22,6 +22,7 @@
   --wine-soft: #F3E1DE;
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 body {
   margin: 0;
   background: var(--paper);
@@ -126,7 +127,7 @@ h1::after {
 }
 .progress-label { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
 .controls { display: flex; gap: 10px; align-items: center; }
-#panel-token {
+#management-form input {
   font-family: inherit;
   font-size: 15px;
   padding: 9px 12px;
@@ -134,9 +135,10 @@ h1::after {
   border: 1px solid var(--paper-line);
   background: #fff;
   color: var(--ink);
-  width: 130px;
+  width: 100%;
+  min-height: 44px;
 }
-#panel-token:focus { outline: none; border-color: var(--teal); }
+#management-form input:focus { outline: 3px solid var(--teal-soft); border-color: var(--teal); }
 .action-message {
   border-radius: 5px;
   padding: 12px 16px;
@@ -145,7 +147,7 @@ h1::after {
   background: var(--wine-soft);
   color: var(--wine);
 }
-button#update-btn {
+.button-primary, .button-secondary, .button-add {
   font-family: inherit;
   font-size: 15px;
   padding: 10px 18px;
@@ -155,9 +157,11 @@ button#update-btn {
   color: #F5F3EC;
   cursor: pointer;
   white-space: nowrap;
+  min-height: 42px;
+  transition: background .15s, border-color .15s, box-shadow .15s;
 }
-button#update-btn:hover { background: var(--emerald-hover); }
-button#update-btn:disabled {
+.button-primary:hover { background: var(--emerald-hover); }
+.button-primary:disabled, .button-secondary:disabled {
   background: transparent;
   color: var(--ink-soft);
   border-color: var(--paper-line);
@@ -369,10 +373,27 @@ button#update-btn:disabled {
 }
 .section-list a:hover { background: var(--teal-soft); color: var(--emerald); }
 
-.source-form { margin-bottom: 14px; }
-.source-form label { display: block; font-size: 13px; margin-bottom: 6px; }
-.source-form input { width: 100%; box-sizing: border-box; padding: 9px; margin-bottom: 8px; border: 1px solid var(--paper-line); border-radius: 5px; }
-.source-form button { margin-bottom: 8px; }
+.button-add { width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px; margin: 0 0 20px; border-color: #B9CEC5; background: #EDF3EF; color: var(--emerald); font-weight: 500; border-radius: 8px; }
+.button-add span { font-size: 23px; font-weight: 400; line-height: 1; }
+.button-add:hover { background: #DFEBE4; border-color: var(--teal); }
+.button-primary:focus-visible, .button-secondary:focus-visible, .button-add:focus-visible { outline: 3px solid #A7D4C7; outline-offset: 3px; }
+.button-secondary { background: #fff; color: var(--ink-soft); border-color: var(--paper-line); }
+.button-secondary:hover { background: var(--paper); }
+.source-feedback { margin: -6px 0 16px; padding: 10px 12px; border-radius: 6px; background: var(--teal-soft); color: var(--emerald); font-size: 13px; line-height: 1.5; }
+.source-feedback.error { background: var(--wine-soft); color: var(--wine); }
+#management-dialog { max-width: 460px; padding: 28px; box-shadow: 0 20px 80px rgba(15, 61, 51, .18); }
+#management-dialog h2 { font-size: 23px; font-weight: 500; margin: 4px 0 8px; }
+#management-note { color: var(--ink-soft); margin: 0 0 22px; }
+.dialog-eyebrow { color: var(--teal); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+.form-field { margin-bottom: 16px; }
+.form-field label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 7px; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px; }
+.dialog-error { color: var(--wine); background: var(--wine-soft); border-radius: 6px; padding: 10px 12px; }
+@media (max-width: 480px) {
+  #management-dialog { padding: 22px; width: calc(100% - 24px); }
+  .dialog-actions { flex-direction: column-reverse; }
+  .dialog-actions button { width: 100%; }
+}
 .embed-btn { font: inherit; font-size: 11px; padding: 4px 8px; margin: 0 0 8px 19px; cursor: pointer; }
 dialog { max-width: 560px; width: calc(100% - 56px); border: 1px solid var(--paper-line); border-radius: 10px; padding: 24px; color: var(--ink); }
 dialog::backdrop { background: rgba(0, 0, 0, 0.35); }

@@ -26,8 +26,7 @@
           </div>
         </div>
         <div class="controls" id="controls" hidden>
-          <input type="password" id="panel-token" placeholder="пароль" autocomplete="current-password">
-          <button id="update-btn">Обновить сейчас</button>
+          <button id="update-btn" class="button-primary">Обновить сейчас</button>
         </div>
       </div>
 
@@ -37,30 +36,21 @@
     </div>
 
     <aside class="sidebar">
-      <h2 class="sidebar-title">Что отслеживаем со старого сайта</h2>
-      <p class="sidebar-note">
-        Автоматически проверяются только разделы старого сайта из списка ниже.
-        Если нужной страницы здесь нет — она <strong>не</strong> отслеживается,
-        и её изменения на этой панели не появятся.
-      </p>
-      <form id="source-form" class="source-form" hidden>
-        <label for="source-url">Добавить раздел старого сайта</label>
-        <input id="source-url" type="url" required maxlength="2048" placeholder="https://s3454.nubex.ru/12345/">
-        <button id="source-add-btn" type="submit">Добавить раздел</button>
-        <p class="sidebar-note">Используется пароль из поля над журналом. Будут проверяться раздел и его дочерние страницы.</p>
-      </form>
-      <p id="source-message" class="sidebar-note" role="status" hidden></p>
+      <h2 class="sidebar-title">Отслеживаемые разделы</h2>
+      <p class="sidebar-note">Проверяем эти разделы и их дочерние страницы.</p>
+      <button id="open-source-btn" class="button-add" type="button" hidden><span aria-hidden="true">+</span> Добавить раздел</button>
+      <p id="source-message" class="source-feedback" role="status" hidden></p>
       <div class="sidebar-total" id="sidebar-total"></div>
       <div id="sections"></div>
       <p class="sidebar-note sidebar-excluded">
-        Также никогда не отслеживаются: раздел «Новости», служебные версии
-        страниц для печати и технические файлы движка старого сайта.
+        Без новостей и служебных страниц.
       </p>
     </aside>
   </div>
 </div>
 
 <script>
+document.addEventListener("DOMContentLoaded", () => {
 async function fetchJSON(url, opts) {
   const res = await fetch(url, opts);
   const data = await res.json();
@@ -82,7 +72,7 @@ function renderStatus(data) {
   // кнопка есть только если на сервере задан LICEY22_PANEL_TOKEN —
   // иначе панель работает в режиме "только просмотр"
   controls.hidden = !data.can_trigger;
-  document.getElementById("source-form").hidden = !data.can_trigger;
+  document.getElementById("open-source-btn").hidden = !data.can_trigger;
 
   const progressWrap = document.getElementById("progress-wrap");
   const progressFill = document.getElementById("progress-fill");
@@ -304,33 +294,122 @@ async function loadSections() {
   }
 }
 
-document.getElementById("source-form").addEventListener("submit", async (event) => {
-  event.preventDefault();
+// Общий диалог для действий. Пароль живёт только в памяти вкладки.
+let panelToken = "";
+let managementAction = "add";
+let managementBusy = false;
+
+function openManagement(action) {
+  managementAction = action;
+  const adding = action === "add";
+  document.getElementById("management-title").textContent = adding ? "Новый раздел" : "Обновить сайт";
+  document.getElementById("management-note").textContent = adding
+    ? "Укажите ссылку — добавим раздел и проверим его страницы."
+    : "Запустим проверку всех отслеживаемых разделов.";
+  document.getElementById("source-url-field").hidden = !adding;
+  document.getElementById("source-url").required = adding;
+  document.getElementById("token-field").hidden = Boolean(panelToken);
+  document.getElementById("panel-token").required = !panelToken;
+  document.getElementById("management-submit").textContent = adding ? "Добавить и обновить" : "Обновить сейчас";
+  document.getElementById("management-error").hidden = true;
+  document.getElementById("management-dialog").showModal();
+  document.getElementById(adding ? "source-url" : panelToken ? "management-submit" : "panel-token").focus();
+}
+
+function sourceMessage(text, error = false) {
   const message = document.getElementById("source-message");
-  const button = document.getElementById("source-add-btn");
-  const input = document.getElementById("source-url");
-  const token = document.getElementById("panel-token").value.trim();
-  message.hidden = false;
+  message.textContent = text;
+  message.hidden = !text;
+  message.classList.toggle("error", error);
+}
+
+async function requestUpdate(token) {
+  const response = await fetch("/api/update-now", {method: "POST", headers: {"X-Panel-Token": token}});
+  const data = await response.json();
+  if (data.started) {
+    wasRunning = true;
+    scheduleCheck(0);
+  }
+  return {response, data};
+}
+
+document.getElementById("open-source-btn").addEventListener("click", () => openManagement("add"));
+document.getElementById("management-cancel").addEventListener("click", () => {
+  if (!managementBusy) document.getElementById("management-dialog").close();
+});
+document.getElementById("management-dialog").addEventListener("cancel", event => {
+  if (managementBusy) event.preventDefault();
+});
+document.getElementById("management-dialog").addEventListener("close", () => {
+  document.getElementById("panel-token").value = "";
+});
+
+document.getElementById("management-form").addEventListener("submit", async event => {
+  event.preventDefault();
+  if (managementBusy) return;
+  const token = panelToken || document.getElementById("panel-token").value.trim();
+  const adding = managementAction === "add";
+  const button = document.getElementById("management-submit");
+  const errorBox = document.getElementById("management-error");
   if (!token) {
-    message.textContent = "Введите пароль панели в поле над журналом.";
+    errorBox.textContent = "Введите пароль панели.";
+    errorBox.hidden = false;
     document.getElementById("panel-token").focus();
     return;
   }
+  managementBusy = true;
   button.disabled = true;
-  message.textContent = "Сохраняю раздел…";
+  document.getElementById("management-cancel").disabled = true;
+  button.textContent = adding ? "Добавляю…" : "Запускаю…";
+  errorBox.hidden = true;
+  let saved = false;
   try {
-    const data = await fetchJSON("/api/sources", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "X-Panel-Token": token },
-      body: JSON.stringify({ url: input.value.trim() }),
-    });
-    input.value = "";
-    message.textContent = data.message;
-    await loadSections();
+    if (adding) {
+      const response = await fetch("/api/sources", {
+        method: "POST",
+        headers: {"Content-Type": "application/json", "X-Panel-Token": token},
+        body: JSON.stringify({url: document.getElementById("source-url").value.trim()}),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        if (response.status === 403) panelToken = "";
+        throw new Error(data.message || "Не удалось добавить раздел.");
+      }
+      saved = true;
+      panelToken = token;
+      document.getElementById("source-url").value = "";
+    }
+    const {response, data} = await requestUpdate(token);
+    if (response.status === 403) panelToken = "";
+    if (!data.started && !saved && data.reason !== "already_running") {
+      throw new Error(data.message || "Не удалось запустить проверку.");
+    }
+    if (response.ok) panelToken = token;
+    document.getElementById("management-dialog").close();
+    if (adding) {
+      sourceMessage(data.started ? "Раздел добавлен. Проверяем…" : "Раздел добавлен. Проверим в следующем обновлении.");
+      await loadSections();
+    } else {
+      showActionMessage(data.started ? "" : "Проверка уже идёт.");
+    }
   } catch (error) {
-    message.textContent = error.message || "Не удалось добавить раздел.";
+    if (saved) {
+      document.getElementById("management-dialog").close();
+      sourceMessage("Раздел сохранён. Проверку можно запустить кнопкой «Обновить сейчас».", true);
+      await loadSections();
+    } else {
+      errorBox.textContent = error.message || "Не удалось выполнить действие.";
+      errorBox.hidden = false;
+      if (!panelToken) {
+        document.getElementById("token-field").hidden = false;
+        document.getElementById("panel-token").required = true;
+      }
+    }
   } finally {
+    managementBusy = false;
     button.disabled = false;
+    document.getElementById("management-cancel").disabled = false;
+    button.textContent = adding ? "Добавить и обновить" : "Обновить сейчас";
   }
 });
 
@@ -357,46 +436,7 @@ function showActionMessage(text) {
   el.hidden = false;
 }
 
-document.getElementById("update-btn").addEventListener("click", async () => {
-  const btn = document.getElementById("update-btn");
-  const tokenInput = document.getElementById("panel-token");
-  const token = tokenInput.value.trim();
-
-  if (!token) {
-    showActionMessage("Введите пароль, чтобы запустить обновление.");
-    tokenInput.focus();
-    return;
-  }
-
-  showActionMessage("");
-  // мгновенный отклик, не дожидаясь сети — кнопка реагирует на клик сразу
-  btn.disabled = true;
-  btn.textContent = "Запускаю…";
-
-  const res = await fetch("/api/update-now", {
-    method: "POST",
-    headers: { "X-Panel-Token": token },
-  });
-  const data = await res.json();
-
-  if (!data.started) {
-    showActionMessage(data.message || "Не удалось запустить обновление.");
-    btn.disabled = false;
-    btn.textContent = "Обновить сейчас";
-    return;
-  }
-
-  // сервер уже дождался, пока дочерний процесс реально возьмёт лок (см.
-  // webapp.api_update_now) — можно сразу считать, что идёт проверка, не
-  // дожидаясь следующего тика опроса
-  wasRunning = true;
-  scheduleCheck(0);
-});
-
-// Enter в поле пароля = нажатие кнопки
-document.getElementById("panel-token").addEventListener("keydown", (e) => {
-  if (e.key === "Enter") document.getElementById("update-btn").click();
-});
+document.getElementById("update-btn").addEventListener("click", () => openManagement("update"));
 
 // --- Единый цикл опроса статуса ---
 //
@@ -443,7 +483,28 @@ function scheduleCheck(delayMs) {
 refreshLog();
 loadSections();
 scheduleCheck(0);
+});
 </script>
+<dialog id="management-dialog" aria-labelledby="management-title" aria-describedby="management-note">
+  <form id="management-form">
+    <div class="dialog-eyebrow">Управление сайтом</div>
+    <h2 id="management-title">Новый раздел</h2>
+    <p id="management-note"></p>
+    <div id="source-url-field" class="form-field">
+      <label for="source-url">Ссылка на раздел</label>
+      <input id="source-url" name="url" type="url" required maxlength="2048" placeholder="https://s3454.nubex.ru/12345/" autocomplete="url">
+    </div>
+    <div id="token-field" class="form-field">
+      <label for="panel-token">Пароль панели</label>
+      <input id="panel-token" name="password" type="password" autocomplete="current-password" required placeholder="Введите пароль">
+    </div>
+    <p id="management-error" class="dialog-error" role="alert" hidden></p>
+    <div class="dialog-actions">
+      <button id="management-cancel" class="button-secondary" type="button">Отмена</button>
+      <button id="management-submit" class="button-primary" type="submit">Добавить и обновить</button>
+    </div>
+  </form>
+</dialog>
 <dialog id="embed-dialog">
   <h2>Код для Тильды</h2>
   <p>Добавьте этот код в HTML-блок T123 нужной страницы. На сайте должен быть подключён ваш общий скрипт загрузки контента.</p>
