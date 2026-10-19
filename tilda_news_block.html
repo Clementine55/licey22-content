@@ -8,7 +8,8 @@
     3. Ссылки на JSON в GitHub уже настроены. Сохраните и опубликуйте страницу.
 
   Как это работает:
-    /news            — список новостей (поиск, фильтр по году)
+    /news            — карточки новостей, поиск, фильтр по году, 24 новости на страницу
+    /news?p=2        — вторая страница архива (q — поиск, year — год)
     /news?n=22725    — открывается новость с номером 22725
 
   Номер новости — это число из адреса на старом сайте:
@@ -26,68 +27,74 @@
 
 <style>
   .lyc22-news {
-    --lyc22-accent: #2451B7;
-    --lyc22-ink: #1f2430;
-    --lyc22-muted: #6b7280;
-    --lyc22-line: #e2e5ea;
-    --lyc22-soft: #f5f7fa;
-    max-width: 960px; margin: 0 auto;
-    font-family: inherit; color: var(--lyc22-ink); line-height: 1.45;
+    --lyc22-accent: #c71f3d;
+    --lyc22-ink: #0e2f4e;
+    --lyc22-muted: #71859a;
+    --lyc22-line: #dce7f0;
+    --lyc22-soft: #f4f8fc;
+    max-width: 1160px; margin: 0 auto; padding: 32px 0 48px;
+    font-family: 'Lato', Arial, sans-serif; font-size: 16px;
+    color: var(--lyc22-ink); line-height: 1.5; scroll-margin-top: 100px;
   }
   .lyc22-news *, .lyc22-news *::before, .lyc22-news *::after { box-sizing: border-box; }
+  .lyc22-news [hidden] { display: none !important; }
 
   /* ---------- список ---------- */
-  .lyc22-news__head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 6px 14px; margin: 0 0 14px; }
-  .lyc22-news__title { font-size: 1.5em; font-weight: 600; margin: 0; }
-  .lyc22-news__count { font-size: .85em; color: var(--lyc22-muted); }
+  .lyc22-news__head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px; margin: 0 0 24px; }
+  .lyc22-news .lyc22-news__title { font-family: 'Geologica', Arial, sans-serif; font-size: 36px; line-height: 1.2; font-weight: 600; color: var(--lyc22-ink); margin: 0; }
+  .lyc22-news__count { font-size: 14px; color: var(--lyc22-muted); }
 
-  .lyc22-news__controls { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+  .lyc22-news__controls { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
   .lyc22-news__search, .lyc22-news__year {
-    padding: 10px 14px; border: 1px solid #d8dce3; border-radius: 8px; background: #fff;
-    font: inherit; font-size: .95em; color: var(--lyc22-ink); outline: none;
+    padding: 12px 16px; min-height: 48px; border: 1px solid var(--lyc22-line); border-radius: 14px; background: var(--lyc22-soft);
+    font: inherit; font-size: 15px; color: var(--lyc22-ink); outline: none;
     transition: border-color .15s, box-shadow .15s;
   }
   .lyc22-news__search { flex: 1 1 240px; min-width: 0; }
   .lyc22-news__year { flex: 0 0 auto; }
   .lyc22-news__search::placeholder { color: #97a0ad; }
-  .lyc22-news__search:focus, .lyc22-news__year:focus { border-color: var(--lyc22-accent); box-shadow: 0 0 0 3px rgba(36,81,183,.12); }
+  .lyc22-news__search:focus, .lyc22-news__year:focus { border-color: var(--lyc22-accent); box-shadow: 0 0 0 3px rgba(199,31,61,.1); }
 
-  .lyc22-news__list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--lyc22-line); }
-  .lyc22-news__list li { margin: 0; padding: 0; }
+  .lyc22-news .lyc22-news__list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; list-style: none; margin: 0; padding: 0; }
+  .lyc22-news__list li { margin: 0; padding: 0; min-width: 0; }
   .lyc22-news__card {
-    display: flex !important; align-items: flex-start; gap: 16px; padding: 16px 6px;
-    border-bottom: 1px solid var(--lyc22-line); color: inherit !important; text-decoration: none !important;
-    transition: background-color .12s;
+    display: flex !important; flex-direction: column; height: 100%; padding: 10px;
+    background: var(--lyc22-soft); border: 1px solid #edf3f8; border-radius: 24px;
+    color: var(--lyc22-ink) !important; text-decoration: none !important;
+    transition: box-shadow .18s, transform .18s;
   }
-  .lyc22-news__card:hover { background: var(--lyc22-soft); }
-  .lyc22-news__card:focus-visible { outline: 2px solid var(--lyc22-accent); outline-offset: -2px; }
-
-  /* дата как «листок календаря»: новости идут по хронологии, поэтому дата — главный ориентир */
-  .lyc22-news__date { flex: 0 0 62px; text-align: center; padding-top: 2px; }
-  .lyc22-news__day { display: block; font-size: 1.9em; font-weight: 700; line-height: 1; color: var(--lyc22-accent); font-variant-numeric: tabular-nums; }
-  .lyc22-news__mon { display: block; margin-top: 4px; font-size: .72em; text-transform: uppercase; letter-spacing: .06em; color: var(--lyc22-muted); }
-  .lyc22-news__year-label { display: block; font-size: .72em; color: var(--lyc22-muted); }
-
-  .lyc22-news__text { flex: 1 1 auto; min-width: 0; }
-  .lyc22-news__name { display: block; font-size: 1.05em; font-weight: 600; line-height: 1.35; word-break: break-word; }
+  .lyc22-news__card:hover { box-shadow: 0 10px 28px rgba(14,47,78,.09); transform: translateY(-3px); }
+  .lyc22-news__card:focus-visible { outline: 3px solid var(--lyc22-accent); outline-offset: 3px; }
+  .lyc22-news__cover { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; background: #e6eef6; }
+  .lyc22-news__placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; background: linear-gradient(135deg,#e4edf6,#f1f6fa); color: #698198; }
+  .lyc22-news__placeholder strong { font: 600 26px 'Geologica',Arial,sans-serif; letter-spacing: -.02em; }
+  .lyc22-news__placeholder small { font-size: 12px; }
+  .lyc22-news__thumb { position: relative; display: block; width: 100%; height: 100%; object-fit: cover; }
+  .lyc22-news__text { display: flex; flex-direction: column; flex: 1; padding: 16px 12px 10px; min-width: 0; }
+  .lyc22-news__date { display: block; font-size: 12px; color: var(--lyc22-muted); margin: 0 0 10px; }
+  .lyc22-news .lyc22-news__name { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font: 500 18px/1.35 'Geologica',Arial,sans-serif; color: var(--lyc22-ink); margin: 0; overflow-wrap: anywhere; }
   .lyc22-news__card:hover .lyc22-news__name { color: var(--lyc22-accent); }
-  .lyc22-news__announce { display: block; margin-top: 4px; font-size: .9em; color: var(--lyc22-muted); }
-
-  .lyc22-news__thumb { flex: 0 0 auto; width: 104px; height: 78px; border-radius: 8px; object-fit: cover; background: var(--lyc22-soft); }
-
-  .lyc22-news__more { display: block; margin: 18px auto 0; padding: 11px 26px; border: 1px solid var(--lyc22-accent); border-radius: 8px; background: #fff; color: var(--lyc22-accent); font: inherit; font-weight: 600; cursor: pointer; transition: background-color .15s, color .15s; }
-  .lyc22-news__more:hover, .lyc22-news__more:focus-visible { background: var(--lyc22-accent); color: #fff; outline: none; }
+  .lyc22-news .lyc22-news__announce { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin: 10px 0 0; font-size: 15px; line-height: 1.5; color: #425f79; }
+  .lyc22-news__read { display: block; padding-top: 20px; margin-top: auto; color: var(--lyc22-accent); font: 500 13px/1.4 'Geologica',Arial,sans-serif; }
+  .lyc22-news__pager { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; margin: 32px 0 0; }
+  .lyc22-news .lyc22-news__page { display: inline-flex; align-items: center; justify-content: center; min-width: 42px; min-height: 42px; padding: 8px 12px; border: 1px solid var(--lyc22-line); border-radius: 12px; text-decoration: none; color: var(--lyc22-ink); font: 500 14px 'Geologica',Arial,sans-serif; }
+  .lyc22-news__page:hover { background: var(--lyc22-soft); }
+  .lyc22-news .lyc22-news__page[aria-current="page"] { background: var(--lyc22-accent); border-color: var(--lyc22-accent); color: #fff; }
+  .lyc22-news__gap { align-self: center; color: var(--lyc22-muted); }
+  .lyc22-news__range { text-align: center; color: var(--lyc22-muted); font-size: 13px; margin-top: 14px; }
 
   /* ---------- статья ---------- */
-  .lyc22-news__back { display: inline-block; margin-bottom: 14px; padding: 0; border: 0; background: none; color: var(--lyc22-accent); font: inherit; font-size: .95em; cursor: pointer; text-decoration: none !important; }
+  .lyc22-news__article { max-width: 800px; margin: 0 auto; }
+  .lyc22-news .lyc22-news__back { display: inline-block; margin-bottom: 24px; padding: 0; border: 0; background: none; color: var(--lyc22-accent); font: inherit; font-size: 15px; cursor: pointer; text-decoration: none !important; }
   .lyc22-news__back:hover { text-decoration: underline !important; }
-  .lyc22-news__article-title { margin: 0 0 6px; font-size: 1.7em; font-weight: 700; line-height: 1.25; word-break: break-word; }
+  .lyc22-news .lyc22-news__article-title { margin: 0 0 16px; font: 600 34px/1.25 'Geologica',Arial,sans-serif; color: var(--lyc22-ink); overflow-wrap: anywhere; }
   .lyc22-news__article-date { margin: 0 0 20px; font-size: .9em; color: var(--lyc22-muted); }
 
-  .lyc22-news__body { font-size: 1.02em; line-height: 1.65; overflow-wrap: anywhere; }
+  .lyc22-news__body { font-size: 18px; line-height: 1.7; overflow-wrap: anywhere; }
+  .lyc22-news__body h2, .lyc22-news__body h3 { font-family: 'Geologica',Arial,sans-serif; color: var(--lyc22-ink); line-height: 1.35; }
   .lyc22-news__body p { margin: 0 0 1em; }
   .lyc22-news__body ul, .lyc22-news__body ol { margin: 0 0 1em; padding-left: 1.4em; }
-  .lyc22-news__body a { color: var(--lyc22-accent); text-decoration: underline; }
+  .lyc22-news .lyc22-news__body a { color: var(--lyc22-accent); text-decoration: underline; }
   .lyc22-news__body img { max-width: 100%; height: auto; border-radius: 6px; }
   .lyc22-news__body iframe { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 0; border-radius: 8px; margin: 0 0 1em; }
   .lyc22-news__body table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 0 0 1em; }
@@ -103,20 +110,23 @@
   .lyc22-news__status, .lyc22-news__empty, .lyc22-news__error { padding: 18px; text-align: center; font-size: .92em; color: var(--lyc22-muted); border: 1px dashed #d8dce3; border-radius: 10px; }
   .lyc22-news__error { color: #9b2c2c; border: 1px solid #f1c2c2; background: #fdf3f3; }
   .lyc22-news__note { margin: 0 0 1em; padding: 10px 14px; border-radius: 8px; background: var(--lyc22-soft); color: var(--lyc22-muted); font-size: .9em; }
+  .lyc22-news__retry { display: block; margin: 12px auto 0; border: 0; border-radius: 12px; padding: 10px 18px; background: var(--lyc22-accent); color: #fff; font: inherit; cursor: pointer; }
 
-  @media (max-width: 560px) {
-    .lyc22-news__card { gap: 12px; }
-    .lyc22-news__date { flex-basis: 48px; }
-    .lyc22-news__day { font-size: 1.5em; }
-    .lyc22-news__thumb { width: 72px; height: 56px; }
-    .lyc22-news__article-title { font-size: 1.35em; }
+  @media (max-width: 1199px) { .lyc22-news { margin: 0 20px; } }
+  @media (max-width: 1023px) { .lyc22-news .lyc22-news__list { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; } }
+  @media (max-width: 639px) {
+    .lyc22-news { padding: 24px 0 32px; margin: 0 16px; }
+    .lyc22-news .lyc22-news__list { grid-template-columns: minmax(0,1fr); gap: 18px; }
+    .lyc22-news .lyc22-news__title { font-size: 28px; }
+    .lyc22-news .lyc22-news__article-title { font-size: 26px; }
+    .lyc22-news__body { font-size: 17px; }
   }
   @media (prefers-reduced-motion: reduce) {
     .lyc22-news *, .lyc22-news-lb * { transition: none !important; }
   }
 
   /* ---------- просмотр фото (вешается на body, поэтому стили отдельно) ---------- */
-  .lyc22-news-lb { position: fixed; inset: 0; z-index: 100000; display: flex; align-items: center; justify-content: center; background: rgba(10,12,18,.92); font-family: inherit; }
+  .lyc22-news-lb { position: fixed; inset: 0; z-index: 100000; display: flex; align-items: center; justify-content: center; background: rgba(10,12,18,.92); font-family: 'Lato',Arial,sans-serif; }
   .lyc22-news-lb__img { max-width: 94vw; max-height: 86vh; object-fit: contain; border-radius: 4px; }
   .lyc22-news-lb__btn { position: absolute; width: 46px; height: 46px; border: 0; border-radius: 50%; background: rgba(255,255,255,.14); color: #fff; font-size: 24px; line-height: 1; cursor: pointer; transition: background-color .15s; }
   .lyc22-news-lb__btn:hover, .lyc22-news-lb__btn:focus-visible { background: rgba(255,255,255,.3); outline: none; }
@@ -134,8 +144,8 @@
   var CONFIG = {
     indexUrl: "https://raw.githubusercontent.com/Clementine55/licey22-content/refs/heads/main/news_data/news_index.json",
     fullUrl:  "https://raw.githubusercontent.com/Clementine55/licey22-content/refs/heads/main/news_data/news_full.json",
-    title: "Новости",
-    perPage: 12,       // сколько новостей показывать за раз
+    title: "Новости лицея",
+    perPage: 24,
     param: "n"         // имя параметра в адресе: /news?n=22725
   };
   // ---------------------------------------------------------------------
@@ -145,15 +155,17 @@
     root = document.querySelector(".lyc22-news");
   }
   if (!root) return;
+  if (root.dataset.initialized) return;
+  root.dataset.initialized = "true";
 
   var IFRAME_HOSTS = ["vk.com", "vk.ru", "vkvideo.ru", "rutube.ru", "ok.ru",
     "youtube.com", "www.youtube.com", "youtube-nocookie.com", "www.youtube-nocookie.com"];
   var MONTHS_FULL = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
-  var MONTHS_SHORT = ["янв", "фев", "мар", "апр", "мая", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
 
   var BASE_TITLE = document.title;   // исходный заголовок вкладки
-  var state = { index: null, byId: {}, full: null, shown: 0, query: "", year: "" };
+  var state = { index: null, byId: {}, full: null, page: 1, query: "", year: "" };
   var cache = {};
+  var renderVersion = 0;
 
   // ----------------------------- утилиты -----------------------------
 
@@ -179,7 +191,7 @@
   }
   function longDate(iso) {
     var p = parseDate(iso);
-    return p ? p.d + " " + MONTHS_FULL[p.m - 1] + " " + p.y + " г." : "";
+    return p ? p.d + " " + MONTHS_FULL[p.m - 1] + " " + p.y : "";
   }
   function plural(n, one, few, many) {
     var a = n % 10, b = n % 100;
@@ -205,9 +217,31 @@
     return window.location.pathname + (s ? "?" + s : "");
   }
 
+  function listRoute(page, query, year) {
+    var url = new URL(window.location.href);
+    url.searchParams.delete(CONFIG.param);
+    if (page > 1) url.searchParams.set("p", page); else url.searchParams.delete("p");
+    if (query.trim()) url.searchParams.set("q", query.trim()); else url.searchParams.delete("q");
+    if (year) url.searchParams.set("year", year); else url.searchParams.delete("year");
+    return url.pathname + url.search;
+  }
+
+  function readRoute() {
+    var q = new URLSearchParams(window.location.search);
+    state.page = /^\d+$/.test(q.get("p") || "") ? Math.max(1, Number(q.get("p"))) : 1;
+    state.query = q.get("q") || "";
+    state.year = /^\d{4}$/.test(q.get("year") || "") ? q.get("year") : "";
+    if (!state.index.some(function(it) { return (it.date || "").slice(0,4) === state.year; })) state.year = "";
+  }
+
+  function saveScroll() {
+    var saved = Object.assign({}, window.history.state, {lc22NewsScroll: window.scrollY});
+    window.history.replaceState(saved, "", window.location.href);
+  }
+
   function scrollToTop() {
     try {
-      var top = root.getBoundingClientRect().top + (window.pageYOffset || 0) - 20;
+      var top = root.getBoundingClientRect().top + (window.pageYOffset || 0) - 100;
       window.scrollTo(0, Math.max(0, top));
     } catch (e) {}
   }
@@ -272,18 +306,39 @@
 
   // ----------------------------- навигация -----------------------------
 
-  function go(url, push) {
-    if (push) window.history.pushState({}, "", url);
-    render(true);
+  function go(url) {
+    var target = new URL(url, window.location.href);
+    if (target.href === window.location.href) return;
+    saveScroll();
+    var next = {};
+    if (target.searchParams.has(CONFIG.param)) {
+      var depth = (window.history.state || {}).lc22NewsDepth || 0;
+      next.lc22NewsDepth = currentId() ? (depth ? depth + 1 : 0) : 1;
+    }
+    window.history.pushState(next, "", url);
+    render("top");
   }
 
   root.addEventListener("click", function (e) {
+    var retry = e.target.closest && e.target.closest("[data-news-retry]");
+    if (retry) { e.preventDefault(); if (state.index) render(null); else loadIndex(); return; }
     var a = e.target.closest ? e.target.closest("a[data-internal], a[data-news-id]") : null;
     if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
-    go(a.getAttribute("href"), true);
+    // Тильда может обрабатывать ссылки повторно на уровне документа.
+    // Внутреннюю навигацию компонента завершаем здесь.
+    e.stopPropagation();
+    var depth = (window.history.state || {}).lc22NewsDepth || 0;
+    if (a.hasAttribute("data-back") && depth) window.history.go(-depth);
+    else go(a.getAttribute("href"));
   });
-  window.addEventListener("popstate", function () { render(true); });
+  window.addEventListener("popstate", function (event) {
+    var scroll = event.state && event.state.lc22NewsScroll;
+    render(typeof scroll === "number" ? scroll : "top");
+  });
+  root.addEventListener("error", function(event) {
+    if (event.target.matches(".lyc22-news__thumb")) event.target.hidden = true;
+  }, true);
 
   // ----------------------------- список -----------------------------
 
@@ -297,19 +352,33 @@
   }
 
   function cardHtml(it) {
-    var p = parseDate(it.date);
-    var dateHtml = p
-      ? '<span class="lyc22-news__date"><span class="lyc22-news__day">' + p.d + '</span>' +
-        '<span class="lyc22-news__mon">' + MONTHS_SHORT[p.m - 1] + '</span>' +
-        '<span class="lyc22-news__year-label">' + p.y + '</span></span>'
-      : '<span class="lyc22-news__date"></span>';
-    return '<li><a class="lyc22-news__card" data-internal href="' + esc(articleUrl(it.id)) + '">' +
-      dateHtml +
-      '<span class="lyc22-news__text"><span class="lyc22-news__name">' + esc(it.title) + '</span>' +
+    var image = httpUrl(it.cover) || httpUrl(it.thumb);
+    return '<li><a class="lyc22-news__card" data-internal aria-label="' + esc(it.title) + '" href="' + esc(articleUrl(it.id)) + '">' +
+      '<span class="lyc22-news__cover"><span class="lyc22-news__placeholder" aria-hidden="true"><strong>Лицей 22</strong><small>Надежда Сибири</small></span>' +
+      (image ? '<img class="lyc22-news__thumb" src="' + esc(image) + '" alt="" loading="lazy" decoding="async">' : '') + '</span>' +
+      '<span class="lyc22-news__text">' +
+      (it.date ? '<time class="lyc22-news__date" datetime="' + esc(it.date) + '">' + esc(longDate(it.date)) + '</time>' : '') +
+      '<span class="lyc22-news__name">' + esc(it.title) + '</span>' +
       (it.announce ? '<span class="lyc22-news__announce">' + esc(it.announce) + '</span>' : '') +
-      '</span>' +
-      (httpUrl(it.thumb) ? '<img class="lyc22-news__thumb" src="' + esc(httpUrl(it.thumb)) + '" alt="" loading="lazy">' : '') +
-      '</a></li>';
+      '<span class="lyc22-news__read">Подробнее <span aria-hidden="true">→</span></span></span></a></li>';
+  }
+
+  function pagerHtml(total) {
+    if (total <= 1) return "";
+    function link(page, label, aria) {
+      return '<a class="lyc22-news__page" data-internal href="' + esc(listRoute(page,state.query,state.year)) + '"' +
+        (aria ? ' aria-label="' + aria + '"' : '') + (page === state.page && !aria ? ' aria-current="page"' : '') + '>' + label + '</a>';
+    }
+    var html = '<nav class="lyc22-news__pager" aria-label="Страницы новостей">';
+    if (state.page > 1) html += link(state.page - 1, '←', 'Предыдущая страница');
+    var previous = 0;
+    for (var p = 1; p <= total; p++) {
+      if (p !== 1 && p !== total && Math.abs(p-state.page) > 1) continue;
+      if (previous && p-previous > 1) html += '<span class="lyc22-news__gap" aria-hidden="true">…</span>';
+      html += link(p,p,""); previous = p;
+    }
+    if (state.page < total) html += link(state.page + 1, '→', 'Следующая страница');
+    return html + '</nav>';
   }
 
   function buildListShell() {
@@ -321,7 +390,7 @@
     years.sort().reverse();
 
     root.innerHTML =
-      '<div class="lyc22-news__head"><h2 class="lyc22-news__title">' + esc(CONFIG.title) + '</h2>' +
+      '<div class="lyc22-news__head"><h1 class="lyc22-news__title">' + esc(CONFIG.title) + '</h1>' +
       '<span class="lyc22-news__count" data-role="count"></span></div>' +
       '<div class="lyc22-news__controls">' +
         '<input class="lyc22-news__search" type="search" placeholder="Поиск по новостям…" aria-label="Поиск по новостям" value="' + esc(state.query) + '">' +
@@ -333,12 +402,20 @@
 
     var search = root.querySelector(".lyc22-news__search");
     var yearSel = root.querySelector(".lyc22-news__year");
-    search.addEventListener("input", function () { state.query = search.value; state.shown = CONFIG.perPage; updateList(); });
-    yearSel.addEventListener("change", function () { state.year = yearSel.value; state.shown = CONFIG.perPage; updateList(); });
+    search.addEventListener("input", function () {
+      state.query = search.value; state.page = 1;
+      window.history.replaceState(window.history.state, "", listRoute(1,state.query,state.year));
+      updateList();
+    });
+    yearSel.addEventListener("change", function () { go(listRoute(1,search.value,yearSel.value)); });
   }
 
   function updateList() {
     var items = filtered();
+    var pages = Math.max(1, Math.ceil(items.length / CONFIG.perPage));
+    state.page = Math.min(state.page, pages);
+    var normalized = listRoute(state.page,state.query,state.year);
+    if (normalized !== window.location.pathname + window.location.search) window.history.replaceState(window.history.state, "", normalized);
     var box = root.querySelector('[data-role="results"]');
     var count = root.querySelector('[data-role="count"]');
     count.textContent = items.length + " " + plural(items.length, "новость", "новости", "новостей");
@@ -348,19 +425,15 @@
         (state.query || state.year ? "Ничего не найдено. Попробуйте изменить запрос или год." : "Новостей пока нет.") + "</div>";
       return;
     }
-    var visible = items.slice(0, state.shown);
+    var start = (state.page - 1) * CONFIG.perPage;
+    var visible = items.slice(start, start + CONFIG.perPage);
     box.innerHTML = '<ul class="lyc22-news__list">' + visible.map(cardHtml).join("") + "</ul>" +
-      (items.length > visible.length
-        ? '<button type="button" class="lyc22-news__more">Показать ещё (' + (items.length - visible.length) + ")</button>" : "");
-
-    var more = box.querySelector(".lyc22-news__more");
-    if (more) more.addEventListener("click", function () { state.shown += CONFIG.perPage; updateList(); });
+      pagerHtml(pages) + '<p class="lyc22-news__range">' + (start+1) + '–' + (start+visible.length) + ' из ' + items.length + '</p>';
   }
 
   function renderList() {
     document.title = BASE_TITLE;
     buildListShell();
-    if (!state.shown) state.shown = CONFIG.perPage;
     updateList();
   }
 
@@ -368,13 +441,13 @@
 
   function renderArticle(id) {
     root.innerHTML = '<div class="lyc22-news__status">Загружаем новость…</div>';
-    loadJson(CONFIG.fullUrl).then(function (full) {
+    return loadJson(CONFIG.fullUrl).then(function (full) {
       if (currentId() !== id) return; // пользователь мог уже нажать «Назад»
       state.full = full;
       var meta = state.byId[id];
       var art = full[id];
 
-      var back = '<a class="lyc22-news__back" data-internal href="' + esc(listUrl()) + '">← Все новости</a>';
+      var back = '<a class="lyc22-news__back" data-internal data-back href="' + esc(listUrl()) + '">← К списку новостей</a>';
       if (!meta && !art) {
         root.innerHTML = back + '<div class="lyc22-news__empty">Такой новости не нашлось. Возможно, она была удалена или ссылка набрана с ошибкой.</div>';
         return;
@@ -384,8 +457,8 @@
       var gallery = ((art && art.gallery) || []).filter(function(g) { return httpUrl(g.full) || httpUrl(g.thumb); });
       document.title = BASE_TITLE ? title + " — " + BASE_TITLE : title;
 
-      root.innerHTML = back +
-        '<h2 class="lyc22-news__article-title">' + esc(title) + '</h2>' +
+      root.innerHTML = '<article class="lyc22-news__article">' + back +
+        '<h1 class="lyc22-news__article-title">' + esc(title) + '</h1>' +
         (meta && meta.date ? '<p class="lyc22-news__article-date">' + esc(longDate(meta.date)) + '</p>' : '') +
         (art ? '' : '<p class="lyc22-news__note">Текст этой новости ещё не загружен. Обновите файлы новостей.</p>') +
         '<div class="lyc22-news__body">' + sanitizeBody(art && art.body) + '</div>' +
@@ -394,7 +467,7 @@
               return '<button type="button" class="lyc22-news__shot" data-shot="' + i + '" aria-label="Открыть фото ' + (i + 1) + ' из ' + gallery.length + '">' +
                 '<img src="' + esc(httpUrl(g.thumb) || httpUrl(g.full)) + '" alt="" loading="lazy"></button>';
             }).join("") + "</div>"
-          : "");
+          : "") + '</article>';
 
       Array.prototype.forEach.call(root.querySelectorAll("[data-shot]"), function (btn) {
         btn.addEventListener("click", function () { openLightbox(gallery, +btn.getAttribute("data-shot"), btn); });
@@ -442,9 +515,14 @@
       if (opener && opener.focus) opener.focus();
     }
     function onKey(e) {
-      if (e.key === "Escape") close();
-      else if (e.key === "ArrowLeft") show(i - 1);
-      else if (e.key === "ArrowRight") show(i + 1);
+      if (e.key === "Escape") { e.preventDefault(); close(); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); show(i - 1); }
+      else if (e.key === "ArrowRight") { e.preventDefault(); show(i + 1); }
+      else if (e.key === "Tab") {
+        var buttons = gallery.length > 1 ? [closeBtn,prev,next] : [closeBtn];
+        var index = buttons.indexOf(document.activeElement);
+        e.preventDefault(); buttons[(index + (e.shiftKey ? -1 : 1) + buttons.length) % buttons.length].focus();
+      }
     }
 
     if (gallery.length < 2) { prev.style.display = "none"; next.style.display = "none"; counter.style.display = "none"; }
@@ -461,16 +539,23 @@
 
   function showError(msg) {
     root.innerHTML = '<div class="lyc22-news__error">' + esc(msg ||
-      "Не удалось загрузить новости. Попробуйте обновить страницу или сообщите администратору сайта.") + "</div>";
+      "Не удалось загрузить новости. Попробуйте ещё раз.") + '<button type="button" class="lyc22-news__retry" data-news-retry>Повторить</button></div>';
   }
 
-  var firstRender = true;
   function render(scroll) {
     if (!state.index) return;
+    readRoute();
+    var version = ++renderVersion;
     var id = currentId();
-    if (id) renderArticle(id); else renderList();
-    if (scroll && !firstRender) scrollToTop();
-    firstRender = false;
+    var pending = id ? renderArticle(id) : renderList();
+    Promise.resolve(pending).then(function() {
+      if (version !== renderVersion) return;
+      window.requestAnimationFrame(function() {
+        if (version !== renderVersion) return;
+        if (typeof scroll === "number") window.scrollTo(0,scroll);
+        else if (scroll === "top") scrollToTop();
+      });
+    });
   }
 
   if (/ВСТАВЬТЕ/.test(CONFIG.indexUrl) || /ВСТАВЬТЕ/.test(CONFIG.fullUrl)) {
@@ -478,13 +563,20 @@
     return;
   }
 
-  loadJson(CONFIG.indexUrl).then(function (data) {
-    state.index = (Array.isArray(data) ? data : []).filter(function (it) { return it && it.id != null; });
+  function loadIndex() {
+    loadJson(CONFIG.indexUrl).then(function (data) {
+    if (!Array.isArray(data)) throw new Error("Неверный формат индекса новостей");
+    state.index = data.filter(function (it) { return it && /^\d+$/.test(String(it.id)); }).sort(function(a,b) {
+      return String(b.date || "").localeCompare(String(a.date || "")) || Number(b.id)-Number(a.id);
+    });
     state.index.forEach(function (it) { state.byId[String(it.id)] = it; });
-    render(false);
+    var saved = (window.history.state || {}).lc22NewsScroll;
+    render(typeof saved === "number" ? saved : null);
   }).catch(function (e) {
     console.error("lyc22-news: ошибка загрузки списка", e);
     showError();
   });
+  }
+  loadIndex();
 })();
 </script>

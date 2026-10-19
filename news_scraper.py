@@ -288,6 +288,20 @@ def progress(stage, current=0, total=0):
     save_json(config.PROGRESS_FILE, {"stage": stage, "current": current, "total": total})
 
 
+def cover_url(item, detail):
+    """Обложка для карточки без скачивания полного архива в браузере."""
+    for photo in detail.get("gallery", []):
+        value = safe_url(photo.get("full"))
+        if value:
+            return value
+    body = BeautifulSoup(detail.get("body", ""), "html.parser")
+    for image in body.select("img[src]"):
+        value = safe_url(image.get("src"))
+        if value:
+            return value
+    return safe_url(item.get("thumb"))
+
+
 def scrape(out_dir, *, full_refresh=False, refresh_last=10, max_pages=200):
     out_dir = Path(out_dir)
     index_path = out_dir / "news_index.json"
@@ -364,6 +378,8 @@ def scrape(out_dir, *, full_refresh=False, refresh_last=10, max_pages=200):
     if not index_list or (full_refresh and len(index_list) < len(previous_index) * config.MIN_HEALTHY_CRAWL_RATIO):
         raise RuntimeError("Неполный архив новостей; прежние файлы сохранены.")
     full = {str(item["id"]): full[str(item["id"])] for item in index_list}
+    for item in index_list:
+        item["cover"] = cover_url(item, full[str(item["id"])])
     out_dir.mkdir(parents=True, exist_ok=True)
     staged = []
     try:

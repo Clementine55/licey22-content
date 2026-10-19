@@ -304,8 +304,6 @@ h1::after {
 .sidebar-excluded { margin: 14px 0 0; padding-top: 14px; border-top: 1px solid var(--paper-line); }
 .news-summary { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--paper-line); }
 .news-summary h3 { font-size: 15px; font-weight: 500; margin: 0 0 6px; }
-.news-links { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; }
-.news-links a { color: var(--emerald); text-underline-offset: 3px; }
 .sidebar-total {
   font-size: 13px;
   font-weight: 500;

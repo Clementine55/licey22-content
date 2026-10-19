@@ -95,6 +95,11 @@ class SourcesTests(unittest.TestCase):
         self.roots_file.write_text("not json")
         self.assertEqual(self.client.get("/api/pages").status_code, 503)
 
+    def test_news_status_remains_without_preview_or_download(self):
+        self.assertEqual(self.client.get('/news-preview').status_code, 404)
+        self.assertEqual(self.client.get('/tilda/news-block').status_code, 404)
+        self.assertIn('news', self.client.get('/api/status').json)
+
     def test_failed_section_aborts_before_cleanup(self):
         with patch.object(page_content_parser, "discover_section_pages", return_value=set()):
             with self.assertRaisesRegex(RuntimeError, "Публикация и чистка отменены"):

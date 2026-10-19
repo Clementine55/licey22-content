@@ -1,0 +1,77 @@
+<!--
+  Главная страница: вставьте весь файл в один блок T123 вместо прежнего блока новостей.
+  Четыре свежие новости. Карточка → /news?n=ID, кнопка → /news.
+  Виджет читает только news_index.json; тексты новостей не загружает.
+-->
+<style>
+  .lc22-news-home { --lc22-ink:#0e2f4e; --lc22-red:#c71f3d; --lc22-soft:#f4f8fc; max-width:1160px; margin:0 auto; padding:28px 0 40px; font:16px/1.5 'Lato',Arial,sans-serif; color:var(--lc22-ink); }
+  .lc22-news-home *, .lc22-news-home *::before, .lc22-news-home *::after { box-sizing:border-box; }
+  .lc22-news-home [hidden] { display:none !important; }
+  .lc22-news-home .lc22-news-home__title { margin:0 0 26px; font:500 26px/1.3 'Geologica',Arial,sans-serif; color:var(--lc22-ink); }
+  .lc22-news-home .lc22-news-home__grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; list-style:none; padding:0; margin:0; }
+  .lc22-news-home__grid li { min-width:0; margin:0; padding:0; }
+  .lc22-news-home .lc22-news-home__card { display:flex; flex-direction:column; height:100%; padding:9px; background:var(--lc22-soft); border:1px solid #edf3f8; border-radius:24px; color:var(--lc22-ink); text-decoration:none; transition:transform .18s,box-shadow .18s; }
+  .lc22-news-home__card:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(14,47,78,.09); }
+  .lc22-news-home__cover { display:block; position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:16px; background:#e6eef6; }
+  .lc22-news-home__placeholder { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:linear-gradient(135deg,#e4edf6,#f1f6fa); color:#698198; }
+  .lc22-news-home__placeholder strong { font:600 22px 'Geologica',Arial,sans-serif; letter-spacing:-.02em; }
+  .lc22-news-home__placeholder small { font-size:12px; }
+  .lc22-news-home__image { position:relative; display:block; width:100%; height:100%; object-fit:cover; }
+  .lc22-news-home__text { display:flex; flex-direction:column; flex:1; min-width:0; padding:15px 9px 10px; }
+  .lc22-news-home__date { display:block; margin:0 0 10px; font-size:12px; color:#71859a; }
+  .lc22-news-home .lc22-news-home__name { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; margin:0; font:500 15px/1.4 'Geologica',Arial,sans-serif; color:var(--lc22-ink); overflow-wrap:anywhere; }
+  .lc22-news-home__card:hover .lc22-news-home__name { color:var(--lc22-red); }
+  .lc22-news-home .lc22-news-home__announce { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; margin:10px 0 0; font-size:15px; line-height:1.5; color:#425f79; }
+  .lc22-news-home__read { display:block; margin-top:auto; padding-top:20px; font:500 12px/1.4 'Geologica',Arial,sans-serif; color:var(--lc22-red); }
+  .lc22-news-home .lc22-news-home__all { display:inline-flex; align-items:center; gap:14px; margin-top:28px; padding:13px 20px; min-height:46px; background:var(--lc22-red); border:1px solid var(--lc22-red); border-radius:18px; color:#fff; text-decoration:none; font:500 14px/1.3 'Geologica',Arial,sans-serif; transition:background .15s; }
+  .lc22-news-home__all:hover { background:#a91832; }
+  .lc22-news-home a:focus-visible { outline:3px solid var(--lc22-red); outline-offset:4px; }
+  .lc22-news-home__status { margin:0; padding:24px; border-radius:20px; background:var(--lc22-soft); color:#71859a; }
+  @media(max-width:1199px) { .lc22-news-home { margin:0 20px; } .lc22-news-home .lc22-news-home__grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; } }
+  @media(max-width:639px) { .lc22-news-home { margin:0 16px; padding:24px 0 32px; } .lc22-news-home .lc22-news-home__grid { grid-template-columns:minmax(0,1fr); gap:18px; } .lc22-news-home .lc22-news-home__title { font-size:24px; } }
+  @media(prefers-reduced-motion:reduce) { .lc22-news-home * { transition:none !important; transform:none !important; } }
+</style>
+<section class="lc22-news-home" aria-label="Новости лицея"><p class="lc22-news-home__status" role="status">Загружаем новости…</p></section>
+<script>
+(function() {
+  var script = document.currentScript;
+  var root = script && script.previousElementSibling;
+  if (!root || !root.classList.contains('lc22-news-home')) root = document.querySelector('.lc22-news-home');
+  if (!root || root.dataset.initialized) return;
+  root.dataset.initialized = 'true';
+  var INDEX = 'https://raw.githubusercontent.com/Clementine55/licey22-content/refs/heads/main/news_data/news_index.json';
+  var months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+  function esc(value) { return String(value == null ? '' : value).replace(/[&<>"']/g,function(c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function safe(value) {
+    if (!value || /[\u0000-\u0020]/.test(value)) return '';
+    try { var u = new URL(value,window.location.href); return /^https?:$/.test(u.protocol) && !u.username && !u.password ? u.href : ''; } catch(e) { return ''; }
+  }
+  function date(value) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value || ''); return m ? Number(m[3]) + ' ' + months[Number(m[2])-1] + ' ' + m[1] : ''; }
+  function card(item) {
+    var image = safe(item.cover) || safe(item.thumb);
+    return '<li><a class="lc22-news-home__card" href="/news?n=' + encodeURIComponent(item.id) + '" aria-label="' + esc(item.title) + '">' +
+      '<span class="lc22-news-home__cover"><span class="lc22-news-home__placeholder" aria-hidden="true"><strong>Лицей 22</strong><small>Надежда Сибири</small></span>' +
+      (image ? '<img class="lc22-news-home__image" src="' + esc(image) + '" alt="" loading="lazy" decoding="async">' : '') + '</span>' +
+      '<span class="lc22-news-home__text">' + (item.date ? '<time class="lc22-news-home__date" datetime="' + esc(item.date) + '">' + esc(date(item.date)) + '</time>' : '') +
+      '<span class="lc22-news-home__name">' + esc(item.title) + '</span>' +
+      (item.announce ? '<span class="lc22-news-home__announce">' + esc(item.announce) + '</span>' : '') +
+      '<span class="lc22-news-home__read">Подробнее <span aria-hidden="true">→</span></span></span></a></li>';
+  }
+  var heading = '<h2 class="lc22-news-home__title">Новости лицея</h2>';
+  var all = '<a class="lc22-news-home__all" href="/news">Все новости <span aria-hidden="true">→</span></a>';
+  root.addEventListener('error',function(event) { if (event.target.matches('.lc22-news-home__image')) event.target.hidden = true; },true);
+  fetch(INDEX,{cache:'no-cache'}).then(function(response) {
+    if (!response.ok) throw new Error('HTTP ' + response.status);
+    return response.json();
+  }).then(function(data) {
+    if (!Array.isArray(data)) throw new Error('Неверный формат новостей');
+    var items = data.filter(function(it) { return it && /^\d+$/.test(String(it.id)); }).sort(function(a,b) {
+      return String(b.date || '').localeCompare(String(a.date || '')) || Number(b.id)-Number(a.id);
+    }).slice(0,4);
+    root.innerHTML = heading + (items.length ? '<ul class="lc22-news-home__grid">' + items.map(card).join('') + '</ul>' : '<p class="lc22-news-home__status">Новости скоро появятся.</p>') + all;
+  }).catch(function(error) {
+    console.error('lc22-news-home:',error);
+    root.innerHTML = heading + '<p class="lc22-news-home__status" role="status">Не удалось загрузить новости. Попробуйте позже.</p>' + all;
+  });
+})();
+</script>

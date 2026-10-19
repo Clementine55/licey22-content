@@ -11,7 +11,7 @@ from collections import Counter
 from pathlib import Path
 from urllib.parse import urlparse
 
-from flask import Flask, Response, jsonify, request, send_from_directory
+from flask import Flask, jsonify, request, send_from_directory
 
 import config
 from utils import load_json
@@ -90,21 +90,6 @@ def _run_publish_detached() -> None:
 @app.route("/")
 def index():
     return send_from_directory(STATIC_DIR, "index.html")
-
-
-@app.route("/tilda/news-block")
-def news_block():
-    return send_from_directory(REPO_DIR, "tilda_news_block.html", as_attachment=True)
-
-
-@app.route("/news-preview")
-def news_preview():
-    block = (REPO_DIR / "tilda_news_block.html").read_text(encoding="utf-8")
-    return Response('<!doctype html><html lang="ru"><head><meta charset="utf-8">'
-                    '<meta name="viewport" content="width=device-width,initial-scale=1">'
-                    '<title>Новости лицея</title></head>'
-                    '<body style="font-family:Arial,sans-serif;margin:0;padding:24px">'
-                    + block + '</body></html>', mimetype="text/html")
 
 
 @app.route("/api/changelog")

@@ -103,6 +103,13 @@ class NewsTests(unittest.TestCase):
         self.assertIn('🙂', detail['body'])
         self.assertEqual(detail['gallery'][0]['full'], news.BASE + '/photo.jpg')
 
+    def test_cover_prefers_gallery_then_body_then_thumbnail(self):
+        item = {'thumb': '/thumb.jpg'}
+        self.assertEqual(news.cover_url(item, {'gallery': [{'full': '/large.jpg'}], 'body': '<img src="/body.jpg">'}), news.BASE + '/large.jpg')
+        self.assertEqual(news.cover_url(item, {'gallery': [], 'body': '<img src="javascript:bad()"><img src="/body.jpg">'}), news.BASE + '/body.jpg')
+        self.assertEqual(news.cover_url(item, {'body': ''}), news.BASE + '/thumb.jpg')
+        self.assertEqual(news.cover_url({}, {'body': ''}), '')
+
 
 if __name__ == '__main__':
     unittest.main()
