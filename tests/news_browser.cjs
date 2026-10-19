@@ -17,7 +17,11 @@ const bodies=Object.fromEntries(index.map(item=>[String(item.id),{
   body:'<p onclick="window.__xss=1">Article body '+item.id+'</p><script>window.__xss=1</script><img src="javascript:alert(1)" onerror="window.__xss=1"><iframe src="https://evil.test/" srcdoc="<script>window.__xss=1</script>"></iframe><a href="https://s3454.nubex.ru/news/2.html">Related news</a>',
   gallery:[{full:'https://photos.test/a.jpg',thumb:'https://photos.test/a.jpg'}, {full:'https://photos.test/b.jpg',thumb:'https://photos.test/b.jpg'}],
 }]));
-const html=content=>'<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Лицей</title></head><body style="margin:0;font-family:Times New Roman">'+content+'</body></html>';
+const html=content=>'<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Лицей</title></head><body style="margin:0;font-family:Times New Roman"><header style="position:fixed;top:0;left:0;right:0;height:70px;z-index:100;background:white">Шапка</header>'+content+'</body></html>';
+async function assertHeaderClear(page,selector) {
+ const top=await page.locator(selector).evaluate(el=>el.getBoundingClientRect().top);
+ assert.ok(top>=104&&top<=106,'content starts at 105px below fixed header: '+top);
+}
 
 (async()=>{
  const browser=await chromium.launch({executablePath:process.env.CHROME_BIN || undefined,headless:true});
@@ -49,12 +53,15 @@ const html=content=>'<!doctype html><html lang="ru"><head><meta charset="utf-8">
    await page.setViewportSize({width,height:1000});
    assert.equal(await page.locator('.lyc22-news__list').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length),columns,'archive columns at '+width);
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'archive overflow at '+width);
+   await page.evaluate(()=>window.scrollTo(0,0));
+   await assertHeaderClear(page,'.lyc22-news__title');
   }
   await page.setViewportSize({width:1440,height:1000});
   await page.getByRole('link',{name:'2',exact:true}).click();
   await page.waitForURL(/p=2/);
   assert.equal(await page.evaluate(()=>window.__outerLinkHandler),undefined,'internal navigation must not bubble into site handlers');
   assert.equal(await page.locator('.lyc22-news__card').count(),24);
+  await assertHeaderClear(page,'.lyc22-news__title');
   const samePageHistory=await page.evaluate(()=>history.length);
   await page.getByRole('link',{name:'2',exact:true}).click();
   assert.equal(await page.evaluate(()=>history.length),samePageHistory,'current page must not duplicate history');
@@ -62,6 +69,8 @@ const html=content=>'<!doctype html><html lang="ru"><head><meta charset="utf-8">
   const scroll=await page.evaluate(()=>scrollY);
   await page.locator('.lyc22-news__card').nth(8).click();
   await page.locator('.lyc22-news__body').waitFor();
+  await page.waitForFunction(()=>Math.abs(document.querySelector('.lyc22-news__article').getBoundingClientRect().top-105)<1);
+  await assertHeaderClear(page,'.lyc22-news__article');
   assert.equal(await page.locator('.lyc22-news__body script,.lyc22-news__body iframe,.lyc22-news__body [onclick],.lyc22-news__body [onerror]').count(),0);
   assert.equal(await page.evaluate(()=>window.__xss),undefined);
   await page.getByRole('link',{name:'← К списку новостей',exact:true}).click();
@@ -85,6 +94,7 @@ const html=content=>'<!doctype html><html lang="ru"><head><meta charset="utf-8">
   await page.goto('http://licey22.test/news?p=9999');await page.locator('.lyc22-news__card').first().waitFor();
   assert.match(page.url(),/p=3/);assert.equal(await page.locator('.lyc22-news__card').count(),17);
   await page.goto('http://licey22.test/news?n=1');await page.locator('.lyc22-news__body').waitFor();
+  await assertHeaderClear(page,'.lyc22-news__article');
   await page.getByRole('button',{name:/Открыть фото 1/}).click();
   const dialog=page.getByRole('dialog');await dialog.waitFor();
   await page.keyboard.press('ArrowRight');assert.match(await dialog.innerText(),/2 \/ 2/);

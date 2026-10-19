@@ -32,7 +32,8 @@
     --lyc22-muted: #71859a;
     --lyc22-line: #dce7f0;
     --lyc22-soft: #f4f8fc;
-    max-width: 1160px; margin: 0 auto; padding: 32px 0 48px;
+    /* Как t-rec_pt_105 у обычных страниц: место под закреплённую шапку. */
+    max-width: 1160px; margin: 0 auto; padding: 105px 0 48px;
     font-family: 'Lato', Arial, sans-serif; font-size: 16px;
     color: var(--lyc22-ink); line-height: 1.5; scroll-margin-top: 100px;
   }
@@ -115,7 +116,7 @@
   @media (max-width: 1199px) { .lyc22-news { margin: 0 20px; } }
   @media (max-width: 1023px) { .lyc22-news .lyc22-news__list { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; } }
   @media (max-width: 639px) {
-    .lyc22-news { padding: 24px 0 32px; margin: 0 16px; }
+    .lyc22-news { padding: 105px 0 32px; margin: 0 16px; }
     .lyc22-news .lyc22-news__list { grid-template-columns: minmax(0,1fr); gap: 18px; }
     .lyc22-news .lyc22-news__title { font-size: 28px; }
     .lyc22-news .lyc22-news__article-title { font-size: 26px; }
@@ -241,7 +242,8 @@
 
   function scrollToTop() {
     try {
-      var top = root.getBoundingClientRect().top + (window.pageYOffset || 0) - 100;
+      // Место для шапки уже предусмотрено padding-top самого блока.
+      var top = root.getBoundingClientRect().top + (window.pageYOffset || 0);
       window.scrollTo(0, Math.max(0, top));
     } catch (e) {}
   }
