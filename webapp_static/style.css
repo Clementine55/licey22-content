@@ -368,3 +368,13 @@ button#update-btn:disabled {
   border-radius: 5px;
 }
 .section-list a:hover { background: var(--teal-soft); color: var(--emerald); }
+
+.source-form { margin-bottom: 14px; }
+.source-form label { display: block; font-size: 13px; margin-bottom: 6px; }
+.source-form input { width: 100%; box-sizing: border-box; padding: 9px; margin-bottom: 8px; border: 1px solid var(--paper-line); border-radius: 5px; }
+.source-form button { margin-bottom: 8px; }
+.embed-btn { font: inherit; font-size: 11px; padding: 4px 8px; margin: 0 0 8px 19px; cursor: pointer; }
+dialog { max-width: 560px; width: calc(100% - 56px); border: 1px solid var(--paper-line); border-radius: 10px; padding: 24px; color: var(--ink); }
+dialog::backdrop { background: rgba(0, 0, 0, 0.35); }
+dialog p { font-size: 14px; line-height: 1.5; }
+#embed-code { box-sizing: border-box; width: 100%; margin-bottom: 16px; padding: 10px; resize: vertical; }

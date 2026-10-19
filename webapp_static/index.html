@@ -43,6 +43,13 @@
         Если нужной страницы здесь нет — она <strong>не</strong> отслеживается,
         и её изменения на этой панели не появятся.
       </p>
+      <form id="source-form" class="source-form" hidden>
+        <label for="source-url">Добавить раздел старого сайта</label>
+        <input id="source-url" type="url" required maxlength="2048" placeholder="https://s3454.nubex.ru/12345/">
+        <button id="source-add-btn" type="submit">Добавить раздел</button>
+        <p class="sidebar-note">Используется пароль из поля над журналом. Будут проверяться раздел и его дочерние страницы.</p>
+      </form>
+      <p id="source-message" class="sidebar-note" role="status" hidden></p>
       <div class="sidebar-total" id="sidebar-total"></div>
       <div id="sections"></div>
       <p class="sidebar-note sidebar-excluded">
@@ -56,7 +63,9 @@
 <script>
 async function fetchJSON(url, opts) {
   const res = await fetch(url, opts);
-  return res.json();
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.message || "Не удалось загрузить данные.");
+  return data;
 }
 
 function formatDate(iso) {
@@ -73,6 +82,7 @@ function renderStatus(data) {
   // кнопка есть только если на сервере задан LICEY22_PANEL_TOKEN —
   // иначе панель работает в режиме "только просмотр"
   controls.hidden = !data.can_trigger;
+  document.getElementById("source-form").hidden = !data.can_trigger;
 
   const progressWrap = document.getElementById("progress-wrap");
   const progressFill = document.getElementById("progress-fill");
@@ -148,7 +158,8 @@ function renderChangeItem(tag, tagLabel, title, url, diffAdded, diffRemoved) {
 }
 
 function escapeHtml(s) {
-  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
 
 // diff-строки приходят как сырой Markdown страницы (из markdown_export.py) —
@@ -229,10 +240,7 @@ async function refreshLog() {
 
 // --- Сайдбар "что отслеживаем" ---
 //
-// Показывает не журнал изменений, а статичный список: какие разделы
-// старого сайта вообще обходит парсер (config.TARGET_ROOTS), сгруппированные
-// по _toc.json. Загружается один раз при открытии панели — список разделов
-// меняется редко (только при правке config.py), в отличие от журнала.
+// Список корней читается с сервера; страницы обновляются после прогона.
 
 function pageLabel(page) {
   // "generic_title" — заголовок-заглушка движка старого сайта (см.
@@ -266,8 +274,10 @@ function renderSections(data) {
       : "";
 
     const items = section.pages.map(p =>
-      '<li><a href="' + p.url + '" target="_blank" rel="noopener">'
-      + escapeHtml(pageLabel(p)) + '</a></li>'
+      '<li><a href="' + escapeHtml(p.url) + '" target="_blank" rel="noopener">'
+      + escapeHtml(pageLabel(p)) + '</a>'
+      + (p.slug ? '<button type="button" class="embed-btn" data-slug="' + escapeHtml(p.slug)
+        + '">Код для Тильды</button>' : '') + '</li>'
     ).join("");
 
     // Все разделы свёрнуты по умолчанию — сотрудник сам раскрывает то,
@@ -276,7 +286,8 @@ function renderSections(data) {
     return '<details class="section">'
       + '<summary>' + headingText + pathHint
       + '<span class="section-count">' + section.pages.length + '</span></summary>'
-      + '<ul class="section-list">' + items + '</ul>'
+      + (items ? '<ul class="section-list">' + items + '</ul>'
+        : '<p class="sidebar-note">Ожидает проверки. Нажмите «Обновить сейчас» или дождитесь расписания.</p>')
       + '</details>';
   }).join("");
 }
@@ -289,9 +300,52 @@ async function loadSections() {
     // Список разделов — вспомогательная панель, не основная функция;
     // если он не загрузился, не мешаем работать остальной части страницы.
     document.getElementById("sections").innerHTML =
-      '<div class="empty-state">Не удалось загрузить список разделов.</div>';
+      '<div class="empty-state">' + escapeHtml(e.message) + '</div>';
   }
 }
+
+document.getElementById("source-form").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const message = document.getElementById("source-message");
+  const button = document.getElementById("source-add-btn");
+  const input = document.getElementById("source-url");
+  const token = document.getElementById("panel-token").value.trim();
+  message.hidden = false;
+  if (!token) {
+    message.textContent = "Введите пароль панели в поле над журналом.";
+    document.getElementById("panel-token").focus();
+    return;
+  }
+  button.disabled = true;
+  message.textContent = "Сохраняю раздел…";
+  try {
+    const data = await fetchJSON("/api/sources", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-Panel-Token": token },
+      body: JSON.stringify({ url: input.value.trim() }),
+    });
+    input.value = "";
+    message.textContent = data.message;
+    await loadSections();
+  } catch (error) {
+    message.textContent = error.message || "Не удалось добавить раздел.";
+  } finally {
+    button.disabled = false;
+  }
+});
+
+document.getElementById("sections").addEventListener("click", (event) => {
+  const button = event.target.closest(".embed-btn");
+  if (!button) return;
+  const code = '<div class="lc22-dynamic-app" data-file="' + button.dataset.slug + '"></div>';
+  // Поле позволяет скопировать код и через HTTP в школьной сети, где
+  // Clipboard API часто недоступен. Никаких дополнительных скриптов в Тильде.
+  const field = document.getElementById("embed-code");
+  field.value = code;
+  document.getElementById("embed-dialog").showModal();
+  field.focus();
+  field.select();
+});
 
 function showActionMessage(text) {
   const el = document.getElementById("action-message");
@@ -367,6 +421,7 @@ async function checkStatusOnce() {
   if (wasRunning && !data.running) {
     // прогон только что закончился — подтягиваем свежий журнал
     await refreshLog();
+    await loadSections();
   }
   wasRunning = data.running;
   return data.running;
@@ -375,8 +430,13 @@ async function checkStatusOnce() {
 function scheduleCheck(delayMs) {
   clearTimeout(checkTimer);
   checkTimer = setTimeout(async () => {
-    const running = await checkStatusOnce();
-    scheduleCheck(running ? 1500 : 15000);
+    try {
+      const running = await checkStatusOnce();
+      scheduleCheck(running ? 1500 : 15000);
+    } catch (error) {
+      showActionMessage(error.message || "Связь с панелью потеряна. Повторяю запрос…");
+      scheduleCheck(15000);
+    }
   }, delayMs);
 }
 
@@ -384,5 +444,12 @@ refreshLog();
 loadSections();
 scheduleCheck(0);
 </script>
+<dialog id="embed-dialog">
+  <h2>Код для Тильды</h2>
+  <p>Добавьте этот код в HTML-блок T123 нужной страницы. На сайте должен быть подключён ваш общий скрипт загрузки контента.</p>
+  <p>Новые данные появятся после успешной отправки на GitHub.</p>
+  <textarea id="embed-code" readonly aria-label="HTML-код для вставки в Тильду" rows="3"></textarea>
+  <form method="dialog"><button>Закрыть</button></form>
+</dialog>
 </body>
 </html>

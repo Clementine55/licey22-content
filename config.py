@@ -75,6 +75,7 @@ BASE_DIR = Path(__file__).resolve().parent
 
 OUTPUT_DIR = BASE_DIR / "pages_content"
 STATE_DIR = BASE_DIR / "state"
+SOURCES_FILE = BASE_DIR / "sources.json"
 STATE_FILE = STATE_DIR / "page_state.json"
 LINK_MAP_FILE = STATE_DIR / "link_map.json"
 EMAILS_MAP_FILE = STATE_DIR / "emails_map.json"

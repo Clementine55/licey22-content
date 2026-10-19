@@ -15,6 +15,7 @@ from flask import Flask, jsonify, request, send_from_directory
 
 import config
 from utils import load_json
+from sources import DuplicateSource, SourcesError, add_source, contains_page, load_sources
 
 REPO_DIR = Path(__file__).resolve().parent
 STATIC_DIR = REPO_DIR / "webapp_static"
@@ -113,6 +114,7 @@ def _pages_by_section() -> dict:
     старого сайта вообще проверяются автоматически, а какие — нет (см.
     README, "Веб-панель обновлений")."""
     toc = load_json(config.TOC_FILE, [])
+    roots = load_sources()
 
     title_counts = Counter(e.get("title", "") for e in toc)
     generic_title = None
@@ -121,11 +123,11 @@ def _pages_by_section() -> dict:
         if top_count >= GENERIC_TITLE_MIN_COUNT:
             generic_title = top_title
 
-    buckets = {root: [] for root in config.TARGET_ROOTS}
+    buckets = {root: [] for root in roots}
     other = []
     for entry in toc:
         url = entry.get("url", "")
-        root = next((r for r in config.TARGET_ROOTS if url.startswith(r)), None)
+        root = next((r for r in sorted(roots, key=len, reverse=True) if contains_page(r, url)), None)
         (buckets[root] if root is not None else other).append(entry)
 
     def page_view(entry: dict) -> dict:
@@ -137,10 +139,11 @@ def _pages_by_section() -> dict:
             # покажет путь страницы вместо повторяющегося названия сайта
             "generic_title": generic_title is not None and title == generic_title,
             "file_count": entry.get("file_count", 0),
+            "slug": entry.get("slug", ""),
         }
 
     sections = []
-    for root in config.TARGET_ROOTS:
+    for root in roots:
         entries = sorted(buckets[root], key=lambda e: e["url"])
         root_entry = next((e for e in entries if e["url"] == root), None)
         label = None
@@ -171,7 +174,34 @@ def _pages_by_section() -> dict:
 
 @app.route("/api/pages")
 def api_pages():
-    return jsonify(_pages_by_section())
+    try:
+        return jsonify(_pages_by_section())
+    except SourcesError as exc:
+        return jsonify({"message": str(exc)}), 503
+
+
+def panel_authorized() -> bool:
+    provided = (request.headers.get("X-Panel-Token") or "").strip()
+    return bool(PANEL_TOKEN and provided and secrets.compare_digest(provided, PANEL_TOKEN))
+
+
+@app.route("/api/sources", methods=["POST"])
+def api_add_source():
+    if not panel_authorized():
+        return jsonify({"message": "Введите верный пароль панели."}), 403
+    data = request.get_json(silent=True)
+    if not isinstance(data, dict):
+        return jsonify({"message": "Ожидалась ссылка в формате JSON."}), 400
+    try:
+        root = add_source(data.get("url"))
+    except DuplicateSource as exc:
+        return jsonify({"message": str(exc)}), 409
+    except SourcesError as exc:
+        return jsonify({"message": str(exc)}), 400
+    except OSError:
+        app.logger.exception("Не удалось сохранить список разделов")
+        return jsonify({"message": "Не удалось сохранить раздел. Проверьте права на сервере."}), 500
+    return jsonify({"root": root, "message": "Раздел добавлен. Нажмите «Обновить сейчас» или дождитесь плановой проверки. Если проверка уже идёт, раздел попадёт в следующую."}), 201
 
 
 @app.route("/api/status")
@@ -200,10 +230,9 @@ def api_update_now():
             "message": "Запуск с панели не настроен (нет LICEY22_PANEL_TOKEN).",
         }), 403
 
-    provided = (request.headers.get("X-Panel-Token") or "").strip()
     # secrets.compare_digest — сравнение за постоянное время, чтобы по
     # скорости ответа нельзя было подбирать токен посимвольно
-    if not provided or not secrets.compare_digest(provided, PANEL_TOKEN):
+    if not panel_authorized():
         return jsonify({"started": False, "reason": "forbidden",
                         "message": "Неверный пароль."}), 403
 

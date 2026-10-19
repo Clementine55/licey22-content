@@ -14,6 +14,7 @@ import http_client
 import links
 import state
 import changelog
+from sources import load_sources
 from content_extractor import extract_blocks
 from crawler import discover_section_pages
 from http_client import fetch
@@ -31,12 +32,14 @@ def write_progress(*, stage: str, current: int, total: int) -> None:
 
 def discover_all_pages() -> list:
     target_pages = []
-    for root_url in config.TARGET_ROOTS:
+    for root_url in load_sources():
         prefix = urlparse(root_url).path
         if not prefix.endswith("/"):
             prefix += "/"
         print(f"[{now()}] Обхожу раздел {prefix} (корень: {root_url}) ...", flush=True)
-        pages = discover_section_pages(prefix, root_url) or {root_url}
+        pages = discover_section_pages(prefix, root_url)
+        if root_url not in pages:
+            raise RuntimeError(f"Раздел недоступен: {root_url}. Публикация и чистка отменены.")
         print(f"[{now()}] Раздел {prefix}: найдено страниц — {len(pages)}", flush=True)
         target_pages.extend(sorted(pages))
 
@@ -127,7 +130,7 @@ def main():
         write_progress(stage="parsing", current=i, total=len(unique_pages))
         page_data = parse_page(url)
         if page_data is None:
-            continue
+            raise RuntimeError(f"Страница недоступна: {url}. Публикация и чистка отменены.")
 
         slug = links.slugify(url)
         headings = [b["text"] for b in page_data["blocks"] if b["type"] == "heading"]
