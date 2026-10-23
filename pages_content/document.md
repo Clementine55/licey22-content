@@ -99,6 +99,8 @@ _https://s3454.nubex.ru/sveden/document/_
 
 📎 [Положение_о_Комиссии_по_урегулированию_споров_между_участниками](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f9036_65/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BE_%D0%9A%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%83%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8E_%D1%81%D0%BF%D0%BE%D1%80%D0%BE%D0%B2_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0%D0%BC%D0%B8.pdf) (pdf) — _7,9 МБ_
 
+📎 [262_6 от 31.08.2026 Об организации деятельности школьного медиацентра](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10669_37/262_6%20%D0%BE%D1%82%2031.08.2026%20%D0%9E%D0%B1%20%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B4%D0%B5%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D1%88%D0%BA%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BC%D0%B5%D0%B4%D0%B8%D0%B0%D1%86%D0%B5%D0%BD%D1%82%D1%80%D0%B0.pdf) (pdf) — _800 КБ_
+
 ##### 2026
 
 📎 [ДК_по_снижению_бюрократической_нагрузки_на_педработников_МАОУ_Лицей](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f8880_69/%D0%94%D0%9A_%D0%BF%D0%BE_%D1%81%D0%BD%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E_%D0%B1%D1%8E%D1%80%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%BD%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8_%D0%BD%D0%B0_%D0%BF%D0%B5%D0%B4%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2_%D0%9C%D0%90%D0%9E%D0%A3_%D0%9B%D0%B8%D1%86%D0%B5%D0%B9.pdf) (pdf) — _2,3 МБ, принят 20.01.2026_
