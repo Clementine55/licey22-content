@@ -98,11 +98,11 @@
     },
     {
       "type": "file",
-      "link_text": "Проверочный лист по проведению родительского контроля в столовой по ул. Советская 63 и Чаплыгина 59 от 21 сентября 2026 г",
+      "link_text": "Проверочный лист по проведению родительского контроля в столовой по ул. Советская 63 и Чаплыгина 59 от 21 октября 2026 г",
       "meta": "",
-      "file_name": "род контроль сентябрь.pdf",
+      "file_name": "род контроль октябрь.pdf",
       "extension": "pdf",
-      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10492_e7/%D1%80%D0%BE%D0%B4%20%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%20%D1%81%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8C.pdf"
+      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10664_bd/%D1%80%D0%BE%D0%B4%20%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%20%D0%BE%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D1%8C.pdf"
     },
     {
       "type": "file",
@@ -399,6 +399,111 @@
       "type": "heading",
       "level": "h2",
       "text": "Меню ежедневного горячего питания"
+    },
+    {
+      "type": "heading",
+      "level": "h3",
+      "text": "30.10.2026г."
+    },
+    {
+      "type": "file",
+      "link_text": "/food/2026-10-30-sm",
+      "meta": "МАОУ «Лицей № 22 «Надежда Сибири»",
+      "file_name": "2026-10-30-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/2026-10-30-sm.xlsx"
+    },
+    {
+      "type": "file",
+      "link_text": "/food/other_6497/food/2026-10-30-sm",
+      "meta": "Корпус на Чаплыгина, 59",
+      "file_name": "2026-10-30-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-10-30-sm.xlsx"
+    },
+    {
+      "type": "heading",
+      "level": "h3",
+      "text": "29.10.2026г."
+    },
+    {
+      "type": "file",
+      "link_text": "/food/2026-10-29-sm",
+      "meta": "МАОУ «Лицей № 22 «Надежда Сибири»",
+      "file_name": "2026-10-29-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/2026-10-29-sm.xlsx"
+    },
+    {
+      "type": "file",
+      "link_text": "/food/other_6497/food/2026-10-29-sm",
+      "meta": "Корпус на Чаплыгина, 59",
+      "file_name": "2026-10-29-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-10-29-sm.xlsx"
+    },
+    {
+      "type": "heading",
+      "level": "h3",
+      "text": "28.10.2026г."
+    },
+    {
+      "type": "file",
+      "link_text": "/food/2026-10-28-sm",
+      "meta": "МАОУ «Лицей № 22 «Надежда Сибири»",
+      "file_name": "2026-10-28-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/2026-10-28-sm.xlsx"
+    },
+    {
+      "type": "file",
+      "link_text": "/food/other_6497/food/2026-10-28-sm",
+      "meta": "Корпус на Чаплыгина, 59",
+      "file_name": "2026-10-28-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-10-28-sm.xlsx"
+    },
+    {
+      "type": "heading",
+      "level": "h3",
+      "text": "27.10.2026г."
+    },
+    {
+      "type": "file",
+      "link_text": "/food/2026-10-27-sm",
+      "meta": "МАОУ «Лицей № 22 «Надежда Сибири»",
+      "file_name": "2026-10-27-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/2026-10-27-sm.xlsx"
+    },
+    {
+      "type": "file",
+      "link_text": "/food/other_6497/food/2026-10-27-sm",
+      "meta": "Корпус на Чаплыгина, 59",
+      "file_name": "2026-10-27-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-10-27-sm.xlsx"
+    },
+    {
+      "type": "heading",
+      "level": "h3",
+      "text": "26.10.2026г."
+    },
+    {
+      "type": "file",
+      "link_text": "/food/2026-10-26-sm",
+      "meta": "МАОУ «Лицей № 22 «Надежда Сибири»",
+      "file_name": "2026-10-26-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/2026-10-26-sm.xlsx"
+    },
+    {
+      "type": "file",
+      "link_text": "/food/other_6497/food/2026-10-26-sm",
+      "meta": "Корпус на Чаплыгина, 59",
+      "file_name": "2026-10-26-sm.xlsx",
+      "extension": "xlsx",
+      "file_url": "https://s3454.nubex.ru/food/other_6497/food/2026-10-26-sm.xlsx"
     },
     {
       "type": "heading",
@@ -847,6 +952,54 @@
     },
     {
       "type": "file",
+      "link_text": "Меню на 31.10.2026",
+      "meta": "",
+      "file_name": "Меню на 31.10.2026.pdf",
+      "extension": "pdf",
+      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10651_26/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2031.10.2026.pdf"
+    },
+    {
+      "type": "file",
+      "link_text": "Меню на 30.10.2026",
+      "meta": "",
+      "file_name": "Меню на 30.10.2026.pdf",
+      "extension": "pdf",
+      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10650_4b/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2030.10.2026.pdf"
+    },
+    {
+      "type": "file",
+      "link_text": "Меню на 29.10.2026",
+      "meta": "",
+      "file_name": "Меню на 29.10.2026.pdf",
+      "extension": "pdf",
+      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10649_6f/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2029.10.2026.pdf"
+    },
+    {
+      "type": "file",
+      "link_text": "Меню на 28.10.2026",
+      "meta": "",
+      "file_name": "Меню на 28.10.2026.pdf",
+      "extension": "pdf",
+      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10648_9b/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2028.10.2026.pdf"
+    },
+    {
+      "type": "file",
+      "link_text": "Меню на 27.10.2026",
+      "meta": "",
+      "file_name": "Меню на 27.10.2026.pdf",
+      "extension": "pdf",
+      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10647_27/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2027.10.2026.pdf"
+    },
+    {
+      "type": "file",
+      "link_text": "Меню на 26.10.2026",
+      "meta": "",
+      "file_name": "Меню на 26.10.2026.pdf",
+      "extension": "pdf",
+      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10646_e9/%D0%9C%D0%B5%D0%BD%D1%8E%20%D0%BD%D0%B0%2026.10.2026.pdf"
+    },
+    {
+      "type": "file",
       "link_text": "Меню на 24.10.2026",
       "meta": "",
       "file_name": "Меню на 24.10.2026.pdf",
@@ -1136,7 +1289,7 @@
       "meta": "13 КБ",
       "file_name": "findex.xlsx",
       "extension": "xlsx",
-      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10494_dd/findex.xlsx"
+      "file_url": "https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f10666_62/findex.xlsx"
     },
     {
       "type": "heading",
