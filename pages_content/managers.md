@@ -14,7 +14,7 @@ _https://s3454.nubex.ru/sveden/managers/_
  **8(383)222-35-15**
 
 Адрес электронной почты:
- **[НЕИЗВЕСТНАЯ ПОЧТА: ?p=JydZAHlWVBZbWlhDTA==]**
+ **[l_22@edu54.ru](mailto:l_22@edu54.ru)**
 
 ![Потеряева Лариса Владимировна](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/d663adbdaa_fit-in~240x0__f2799_5b.jpg)
 
@@ -29,7 +29,7 @@ _https://s3454.nubex.ru/sveden/managers/_
  **8(383) 222-62-18**
 
 Адрес электронной почты:
- **[НЕИЗВЕСТНАЯ ПОЧТА: ?p=JydZAHlWVBZbWlhDTA==]**
+ **[l_22@edu54.ru](mailto:l_22@edu54.ru)**
 
 ![Лобарева Татьяна Анатольевна](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/5f67489121_fit-in~240x0__f5200_03.jpg)
 
@@ -42,7 +42,7 @@ _https://s3454.nubex.ru/sveden/managers/_
  **8(383) 222-62-18**
 
 Адрес электронной почты:
- **[НЕИЗВЕСТНАЯ ПОЧТА: ?p=JydZAHlWVBZbWlhDTA==]**
+ **[l_22@edu54.ru](mailto:l_22@edu54.ru)**
 
 ![Плетнева Екатерина Геннадьевна](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/954d9c3367_fit-in~240x0__f9030_76.jpg)
 
@@ -55,7 +55,7 @@ _https://s3454.nubex.ru/sveden/managers/_
  **8(383) 222-84-61**
 
 Адрес электронной почты:
- **[НЕИЗВЕСТНАЯ ПОЧТА: ?p=JydZAHlWVBZbWlhDTA==]**
+ **[l_22@edu54.ru](mailto:l_22@edu54.ru)**
 
 ##### [Кулуева Наталья Ивановна](/employees/5221)
 
@@ -66,7 +66,7 @@ _https://s3454.nubex.ru/sveden/managers/_
  **8(383) 222-35-24**
 
 Адрес электронной почты:
- **[НЕИЗВЕСТНАЯ ПОЧТА: ?p=JydZAHlWVBZbWlhDTA==]**
+ **[l_22@edu54.ru](mailto:l_22@edu54.ru)**
 
 ![Кулуева Наталья Ивановна](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/41bba02e99_fit-in~240x0__f5199_22.jpg)
 
@@ -79,7 +79,7 @@ _https://s3454.nubex.ru/sveden/managers/_
  **8(383)222-35-15**
 
 Адрес электронной почты:
- **[НЕИЗВЕСТНАЯ ПОЧТА: ?p=JydZAHlWVBZbWlhDTA==]**
+ **[l_22@edu54.ru](mailto:l_22@edu54.ru)**
 
 ##### [Лозгунова Татьяна Геннадьевна](/employees/16373)
 
@@ -90,7 +90,7 @@ _https://s3454.nubex.ru/sveden/managers/_
  **8 (383) 222-84-61**
 
 Адрес электронной почты:
- **[НЕИЗВЕСТНАЯ ПОЧТА: ?p=JydZAHlWVBZbWlhDTA==]**
+ **[l_22@edu54.ru](mailto:l_22@edu54.ru)**
 
 ##### [Парфенцов Юрий Владимирович](/employees/22241)
 
@@ -101,4 +101,4 @@ _https://s3454.nubex.ru/sveden/managers/_
  **8(383)222-35-15**
 
 Адрес электронной почты:
- **[НЕИЗВЕСТНАЯ ПОЧТА: ?p=JydZAHlWVBZbWlhDTA==]**
+ **[l_22@edu54.ru](mailto:l_22@edu54.ru)**
