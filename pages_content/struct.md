@@ -22,6 +22,4 @@ _https://s3454.nubex.ru/sveden/struct/_
 
 📎 [Положение о педагогическом совете](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f368_cc/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BE_%D0%9F%D0%B5%D0%B4%D0%B0%D0%B3%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC_%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%B5-2.pdf) (pdf) — _501 КБ_
 
-📎 [Положение об Управляющем совете Лицея](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f369_27/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D0%B1-%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D1%8E%D1%89%D0%B5%D0%BC-%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%B5-%D0%A3%D1%87%D1%80%D0%B5%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F.pdf) (pdf) — _127 КБ_
-
 📎 [Положение о родительском комитете Лицея](https://s3454.nubex.ru/_/static/r1.nubex.ru/s139249-bd6/f370_c3/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE-%D0%A0%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%BC-%D0%BA%D0%BE%D0%BC%D0%B8%D1%82%D0%B5%D1%82%D0%B5-%D0%A3%D1%87%D1%80%D0%B5%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F.pdf) (pdf) — _123 КБ_
