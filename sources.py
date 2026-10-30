@@ -30,6 +30,8 @@ def normalize_source(value: str) -> str:
     except (ValueError, UnicodeError):
         raise SourcesError("Некорректная ссылка.") from None
     allowed = {h.encode("idna").decode("ascii").lower() for h in config.ALLOWED_PAGE_DOMAINS}
+    # Пользовательские ссылки старого сайта приводим к служебному зеркалу.
+    allowed.add("старый.лицей22.рф".encode("idna").decode("ascii"))
     if parsed.scheme not in {"http", "https"} or host not in allowed:
         raise SourcesError("Разрешены только ссылки HTTP/HTTPS на старый сайт лицея.")
     if parsed.username is not None or parsed.password is not None or port is not None:

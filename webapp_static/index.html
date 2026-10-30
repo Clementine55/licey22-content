@@ -313,6 +313,7 @@ async function loadSections() {
 let panelToken = "";
 let managementAction = "add";
 let managementBusy = false;
+let sourceMessageTimer = null;
 
 function openManagement(action) {
   managementAction = action;
@@ -332,11 +333,30 @@ function openManagement(action) {
 }
 
 function sourceMessage(text, error = false) {
+  clearTimeout(sourceMessageTimer);
   const message = document.getElementById("source-message");
   message.textContent = text;
   message.hidden = !text;
   message.classList.toggle("error", error);
+  if (text && !error) sourceMessageTimer = setTimeout(() => sourceMessage(""), 8000);
 }
+
+document.getElementById("copy-source-base").addEventListener("click", async event => {
+  const button = event.currentTarget;
+  const field = document.getElementById("source-base-url");
+  field.focus();
+  field.select();
+  field.setSelectionRange(0, field.value.length);
+  try {
+    // Панель доступна и по HTTP: там Clipboard API обычно отсутствует.
+    if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(field.value);
+    else if (!document.execCommand("copy")) throw new Error("manual-copy");
+    button.textContent = "Скопировано";
+  } catch (error) {
+    button.textContent = "Нажмите Ctrl+C";
+  }
+  setTimeout(() => { button.textContent = "Копировать"; }, 2500);
+});
 
 async function requestUpdate(token) {
   const response = await fetch("/api/update-now", {method: "POST", headers: {"X-Panel-Token": token}});
@@ -474,6 +494,8 @@ async function checkStatusOnce() {
   renderStatus(data);
 
   if (wasRunning && !data.running) {
+    // Сообщение добавления — временное, итог проверки показывает общий статус.
+    if (!document.getElementById("source-message").classList.contains("error")) sourceMessage("");
     // прогон только что закончился — подтягиваем свежий журнал
     await refreshLog();
     await loadSections();
@@ -508,6 +530,12 @@ scheduleCheck(0);
     <div id="source-url-field" class="form-field">
       <label for="source-url">Ссылка на раздел</label>
       <input id="source-url" name="url" type="url" required maxlength="2048" placeholder="https://s3454.nubex.ru/12345/" autocomplete="url">
+      <p class="source-help">Можно вставить ссылку со старый.лицей22.рф — заменим домен автоматически.</p>
+      <label for="source-base-url">Служебный адрес старого сайта</label>
+      <div class="source-copy-row">
+        <input id="source-base-url" type="text" readonly value="https://s3454.nubex.ru" spellcheck="false">
+        <button id="copy-source-base" class="button-secondary" type="button">Копировать</button>
+      </div>
     </div>
     <div id="token-field" class="form-field">
       <label for="panel-token">Пароль панели</label>

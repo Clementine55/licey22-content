@@ -389,6 +389,10 @@ h1::after {
 .dialog-eyebrow { color: var(--teal); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
 .form-field { margin-bottom: 16px; }
 .form-field label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 7px; }
+.source-help { margin: 8px 0 16px; color: var(--ink-soft); font-size: 12px; }
+.source-copy-row { display: flex; gap: 8px; align-items: center; }
+.source-copy-row input { flex: 1; min-width: 0; font-size: 13px; }
+.source-copy-row button { flex-shrink: 0; padding: 10px; font-size: 12px; }
 .dialog-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px; }
 .dialog-error { color: var(--wine); background: var(--wine-soft); border-radius: 6px; padding: 10px 12px; }
 @media (max-width: 480px) {

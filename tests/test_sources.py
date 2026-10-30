@@ -51,6 +51,23 @@ class SourcesTests(unittest.TestCase):
                 sources.add_source(url)
         self.assertFalse(self.roots_file.exists())
 
+    def test_old_site_alias_normalizes_to_service_host(self):
+        for url in ["https://старый.лицей22.рф/22955/",
+                    "https://старый.лицей22.рф/22955",
+                    "http://" + "старый.лицей22.рф".encode("idna").decode("ascii") + "/ru/22955/"]:
+            with self.subTest(url=url):
+                self.assertEqual(sources.normalize_source(url), "https://s3454.nubex.ru/22955/")
+        response = self.client.post("/api/sources", json={"url": "https://старый.лицей22.рф/22955/"},
+                                    headers={"X-Panel-Token": "test-only"})
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.json["root"], "https://s3454.nubex.ru/22955/")
+        self.assertEqual(sources.load_sources()[-1], response.json["root"])
+        for url in ["https://старый.лицей22.рф.evil.test/22955/",
+                    "https://старый.лицей22.рф@evil.test/22955/",
+                    "https://старый.лицей22.рф:443/22955/"]:
+            with self.subTest(url=url), self.assertRaises(sources.SourcesError):
+                sources.normalize_source(url)
+
     def test_duplicate_and_covered_page(self):
         for url in ["https://s3454.nubex.ru/5933/", "https://лицей22.рф/ru/5933/123/"]:
             with self.assertRaises(sources.DuplicateSource):
