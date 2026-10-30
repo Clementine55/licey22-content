@@ -78,6 +78,10 @@ h1::after {
   font-size: 15px;
   margin: 18px 0 28px;
 }
+.page-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.tilda-link { display: inline-flex; align-items: center; gap: 8px; color: var(--emerald); font-size: 14px; font-weight: 500; text-decoration: none; padding: 10px 14px; border: 1px solid #B9CEC5; border-radius: 8px; background: #EDF3EF; }
+.tilda-link:hover { background: #DFEBE4; border-color: var(--teal); }
+.tilda-link:focus-visible, .embed-btn:focus-visible { outline: 3px solid #A7D4C7; outline-offset: 3px; }
 .status-bar {
   display: flex;
   align-items: center;
@@ -400,8 +404,14 @@ h1::after {
   .dialog-actions { flex-direction: column-reverse; }
   .dialog-actions button { width: 100%; }
 }
-.embed-btn { font: inherit; font-size: 11px; padding: 4px 8px; margin: 0 0 8px 19px; cursor: pointer; }
+.embed-btn { font: inherit; font-size: 12px; font-weight: 500; padding: 6px 10px; margin: 0 0 10px 19px; cursor: pointer; border: 1px solid #B9CEC5; border-radius: 6px; background: #EDF3EF; color: var(--emerald); }
+.embed-btn:hover { background: #DFEBE4; border-color: var(--teal); }
 dialog { max-width: 560px; width: calc(100% - 56px); border: 1px solid var(--paper-line); border-radius: 10px; padding: 24px; color: var(--ink); }
 dialog::backdrop { background: rgba(0, 0, 0, 0.35); }
 dialog p { font-size: 14px; line-height: 1.5; }
-#embed-code { box-sizing: border-box; width: 100%; margin-bottom: 16px; padding: 10px; resize: vertical; }
+#embed-dialog { background: #FBFAF6; padding: 28px; box-shadow: 0 20px 80px rgba(15,61,51,.18); }
+#embed-dialog h2 { font-size: 23px; font-weight: 500; margin: 4px 0 8px; }
+#embed-note, .embed-note { color: var(--ink-soft); }
+#embed-code { box-sizing: border-box; width: 100%; margin: 8px 0 0; padding: 14px; resize: vertical; border: 1px solid var(--paper-line); border-radius: 8px; background: var(--paper); color: var(--emerald); font: 12px/1.65 ui-monospace, SFMono-Regular, Consolas, monospace; }
+#embed-code:focus { outline: 2px solid var(--teal); outline-offset: 2px; }
+@media (max-width: 480px) { #embed-dialog { padding: 20px; width: calc(100% - 24px); } }

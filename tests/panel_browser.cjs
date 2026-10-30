@@ -15,7 +15,7 @@ const repo=path.resolve(__dirname,'..');
     statusRequests++;
     return route.fulfill({json:{running,can_trigger:true,last_run:null,news:{enabled:false}}});
    }
-   if(url.pathname==='/api/pages')return route.fulfill({json:{total:0,sections:[]}});
+   if(url.pathname==='/api/pages')return route.fulfill({json:{total:1,sections:[{root:'https://s3454.nubex.ru/22955/',path:'/22955/',pages:[{url:'https://s3454.nubex.ru/22955/',title:'Test',slug:'22955'}]}]}});
    if(url.pathname==='/api/changelog')return route.fulfill({json:[]});
    if(url.pathname==='/api/sources'){
     submitted=route.request().postDataJSON();
@@ -31,6 +31,28 @@ const repo=path.resolve(__dirname,'..');
   page.on('pageerror',e=>errors.push(e.message));
   await page.goto('http://panel.test/');
   await page.clock.install();
+  assert.equal(await page.locator('.tilda-link').getAttribute('href'),'https://tilda.cc/projects/');
+  assert.equal(await page.locator('.tilda-link').getAttribute('rel'),'noopener noreferrer');
+  await page.locator('.section summary').click();
+  await page.locator('.embed-btn').click();
+  const code=await page.locator('#embed-code').inputValue();
+  assert.equal(await page.evaluate(code=>{
+   const doc=new DOMParser().parseFromString(code,'text/html');
+   const root=doc.querySelector('.lc22-dynamic-app');
+   return root.dataset.file==='22955'&&root.children.length===1&&root.textContent.trim()==='Загрузка данных...'&&doc.body.children.length===1;
+  },code),true,'loading placeholder must be nested inside the single app container');
+  await page.evaluate(()=>{document.execCommand=()=>true});
+  await page.locator('#embed-copy').click();
+  assert.equal(await page.locator('#embed-copy').innerText(),'Скопировано');
+  for(const width of [1280,390]){
+   await page.setViewportSize({width,height:900});
+   assert.equal(await page.locator('#embed-dialog').evaluate(el=>el.scrollWidth<=el.clientWidth),true);
+   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+   if(process.env.PANEL_SCREENSHOT_DIR)await page.screenshot({path:path.join(process.env.PANEL_SCREENSHOT_DIR,'tilda-dialog-'+width+'.png')});
+  }
+  await page.getByRole('button',{name:'Закрыть',exact:true}).click();
+  assert.equal(await page.locator('#embed-dialog').isVisible(),false);
+  await page.setViewportSize({width:1280,height:900});
   await page.locator('#open-source-btn').click();
   assert.equal(await page.locator('#source-base-url').inputValue(),'https://s3454.nubex.ru');
   // Exercise HTTP fallback deterministically, then manual-copy fallback.

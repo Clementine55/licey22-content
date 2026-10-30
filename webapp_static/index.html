@@ -11,7 +11,10 @@
 </head>
 <body>
 <div class="page">
-  <h1>Обновления сайта лицея</h1>
+  <div class="page-heading">
+    <h1>Обновления сайта лицея</h1>
+    <a class="tilda-link" href="https://tilda.cc/projects/" target="_blank" rel="noopener noreferrer">Открыть Тильду <span aria-hidden="true">↗</span></a>
+  </div>
   <p class="subtitle">Что менялось на старом сайте и когда — журнал автоматической проверки.</p>
 
   <div class="layout">
@@ -451,7 +454,9 @@ document.getElementById("management-form").addEventListener("submit", async even
 document.getElementById("sections").addEventListener("click", (event) => {
   const button = event.target.closest(".embed-btn");
   if (!button) return;
-  const code = '<div class="lc22-dynamic-app" data-file="' + button.dataset.slug + '"></div>';
+  const code = '<div class="lc22-dynamic-app" data-file="' + escapeHtml(button.dataset.slug) + '">\n'
+    + '    <div style="color:#64748b; font-family: sans-serif; padding: 20px 0; font-size: 15px;">Загрузка данных...</div>\n'
+    + '</div>';
   // Поле позволяет скопировать код и через HTTP в школьной сети, где
   // Clipboard API часто недоступен. Никаких дополнительных скриптов в Тильде.
   const field = document.getElementById("embed-code");
@@ -459,6 +464,21 @@ document.getElementById("sections").addEventListener("click", (event) => {
   document.getElementById("embed-dialog").showModal();
   field.focus();
   field.select();
+});
+
+document.getElementById("embed-copy").addEventListener("click", async event => {
+  const button = event.currentTarget;
+  const field = document.getElementById("embed-code");
+  field.focus();
+  field.select();
+  try {
+    if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(field.value);
+    else if (!document.execCommand("copy")) throw new Error("manual-copy");
+    button.textContent = "Скопировано";
+  } catch (error) {
+    button.textContent = "Нажмите Ctrl+C";
+  }
+  setTimeout(() => { button.textContent = "Копировать код"; }, 2500);
 });
 
 function showActionMessage(text) {
@@ -548,12 +568,16 @@ scheduleCheck(0);
     </div>
   </form>
 </dialog>
-<dialog id="embed-dialog">
-  <h2>Код для Тильды</h2>
-  <p>Добавьте этот код в HTML-блок T123 нужной страницы. На сайте должен быть подключён ваш общий скрипт загрузки контента.</p>
-  <p>Новые данные появятся после успешной отправки на GitHub.</p>
-  <textarea id="embed-code" readonly aria-label="HTML-код для вставки в Тильду" rows="3"></textarea>
-  <form method="dialog"><button>Закрыть</button></form>
+<dialog id="embed-dialog" aria-labelledby="embed-title" aria-describedby="embed-note">
+  <div class="dialog-eyebrow">Публикация страницы</div>
+  <h2 id="embed-title">Код для Тильды</h2>
+  <p id="embed-note">Вставьте код в HTML-блок T123. Общий скрипт загрузки контента должен быть подключён в настройках сайта.</p>
+  <textarea id="embed-code" readonly spellcheck="false" aria-label="HTML-код для вставки в Тильду" rows="6"></textarea>
+  <p class="embed-note">Данные появятся после успешной отправки на GitHub.</p>
+  <form method="dialog" class="dialog-actions">
+    <button class="button-secondary" type="submit">Закрыть</button>
+    <button id="embed-copy" class="button-primary" type="button">Копировать код</button>
+  </form>
 </dialog>
 </body>
 </html>
