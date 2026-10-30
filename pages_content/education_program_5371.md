@@ -1,5 +1,5 @@
 # Основная образовательная программа СОО
-_https://s3454.nubex.ru/sveden/education/program_5371.html#edu_programs_main_description_
+_https://s3454.nubex.ru/sveden/education/program_5371.html#eduPred_
 
 ## Основная образовательная программа СОО
 
@@ -16,11 +16,11 @@ _https://s3454.nubex.ru/sveden/education/program_5371.html#edu_programs_main_des
 
 ### Учебные предметы, курсы, дисциплины (модули)
 
-Не используются
+Представлены в учебном плане
 
 ### Практики
 
-Не используются
+Прохождение практики не предусмотрено
 
 ### Ссылка на описание образовательной программы с приложением ее копии
 

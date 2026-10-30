@@ -186,7 +186,7 @@
     "file_count": 153
   },
   {
-    "url": "https://s3454.nubex.ru/sveden/education/program_5371.html#edu_programs_main_description",
+    "url": "https://s3454.nubex.ru/sveden/education/program_5371.html#eduPred",
     "title": "Основная образовательная программа СОО",
     "slug": "education_program_5371",
     "headings": [
@@ -207,7 +207,7 @@
     "file_count": 87
   },
   {
-    "url": "https://s3454.nubex.ru/sveden/education/program_5755.html#edu_programs_main_description",
+    "url": "https://s3454.nubex.ru/sveden/education/program_5755.html#eduPred",
     "title": "Программы дополнительного образования",
     "slug": "education_program_5755",
     "headings": [
@@ -318,7 +318,7 @@
       "Персональный состав педагогических \n (научно-педагогических) работников образовательной программы \n «Основная образовательная программа НОО»",
       "Педагогический состав"
     ],
-    "file_count": 0
+    "file_count": 1
   },
   {
     "url": "https://s3454.nubex.ru/sveden/employees/programs/p5359/",
@@ -328,7 +328,7 @@
       "Персональный состав педагогических \n (научно-педагогических) работников образовательной программы \n «Основная образовательная программа ООО»",
       "Педагогический состав"
     ],
-    "file_count": 0
+    "file_count": 1
   },
   {
     "url": "https://s3454.nubex.ru/sveden/employees/programs/p5371/",
@@ -338,7 +338,7 @@
       "Персональный состав педагогических \n (научно-педагогических) работников образовательной программы \n «Основная образовательная программа СОО»",
       "Педагогический состав"
     ],
-    "file_count": 0
+    "file_count": 1
   },
   {
     "url": "https://s3454.nubex.ru/sveden/employees/programs/p5755/",
@@ -1035,7 +1035,10 @@
     "url": "https://s3454.nubex.ru/22955/",
     "title": "Лицей 22 \"Надежда Сибири\" г. Новосибирск.",
     "slug": "22955",
-    "headings": [],
-    "file_count": 0
+    "headings": [
+      "Школьные методические объединения",
+      "Планы работ методических объединений на 2026-2026 учебный год"
+    ],
+    "file_count": 6
   }
 ]

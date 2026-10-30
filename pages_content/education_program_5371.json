@@ -1,5 +1,5 @@
 {
-  "url": "https://s3454.nubex.ru/sveden/education/program_5371.html#edu_programs_main_description",
+  "url": "https://s3454.nubex.ru/sveden/education/program_5371.html#eduPred",
   "title": "Основная образовательная программа СОО",
   "blocks": [
     {
@@ -90,7 +90,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Не используются"
+      "text": "Представлены в учебном плане"
     },
     {
       "type": "heading",
@@ -99,7 +99,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Не используются"
+      "text": "Прохождение практики не предусмотрено"
     },
     {
       "type": "heading",

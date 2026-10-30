@@ -1,5 +1,5 @@
 # Программы дополнительного образования
-_https://s3454.nubex.ru/sveden/education/program_5755.html#edu_programs_main_description_
+_https://s3454.nubex.ru/sveden/education/program_5755.html#eduPred_
 
 ## Программы дополнительного образования
 
@@ -16,11 +16,11 @@ _https://s3454.nubex.ru/sveden/education/program_5755.html#edu_programs_main_des
 
 ### Учебные предметы, курсы, дисциплины (модули)
 
-Не используются
+Представлены в ДООП
 
 ### Практики
 
-Не используются
+Прохождение практики не предусмотрено
 
 ### Ссылка на описание образовательной программы с приложением ее копии
 
